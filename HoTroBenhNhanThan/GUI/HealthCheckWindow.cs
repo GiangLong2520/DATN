@@ -18,13 +18,19 @@ namespace HoTroBenhNhanThan.GUI
             InitializeComponent();
         }
 
-        private void HealthCheckWindow_Load(object sender, EventArgs e)
+        private void loadTodayPatient()
         {
+            cb_selectPatient.DataSource = null;
             Hashtable ht = new Hashtable();
             ht.Add("@day", picker_DateTime.Value.Day);
             ht.Add("@month", picker_DateTime.Value.Month);
             ht.Add("@year", picker_DateTime.Value.Year);
             LibCRUD.loadList("st_getTodayPatients", cb_selectPatient, "Patient ID", "Patient", ht);
+        }
+        private void HealthCheckWindow_Load(object sender, EventArgs e)
+        {
+            loadTodayPatient();
+
         }
 
         public static int turnNo;

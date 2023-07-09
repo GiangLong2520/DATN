@@ -154,6 +154,7 @@
             this.ClientSize = new System.Drawing.Size(1272, 760);
             this.Name = "RoleWindow";
             this.Text = "RoleWindow";
+            this.Load += new System.EventHandler(this.RoleWindow_Load);
             this.groupBox1.ResumeLayout(false);
             this.flowPanel.ResumeLayout(false);
             this.flowPanel.PerformLayout();

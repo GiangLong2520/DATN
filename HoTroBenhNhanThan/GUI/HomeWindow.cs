@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HoTroBenhNhanThan.GUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,13 +31,32 @@ namespace HoTroBenhNhanThan
 
         private void btn_staffs_Click(object sender, EventArgs e)
         {
-
+            StaffWindow staff = new StaffWindow();
+            LibMainClass.showWindow(staff, this, MDI.ActiveForm);
         }
 
         private void btn_benhAn_Click(object sender, EventArgs e)
         {
             BenhAnWindow benhAnform = new BenhAnWindow();
             LibMainClass.showWindow(benhAnform, this, MDI.ActiveForm);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            UserWindow userform = new UserWindow();
+            LibMainClass.showWindow(userform, this, MDI.ActiveForm);
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MedicineWindow Mediform = new MedicineWindow();
+            LibMainClass.showWindow(Mediform, this, MDI.ActiveForm);
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            PatienRegisterWindow patienform = new PatienRegisterWindow();
+            LibMainClass.showWindow(patienform, this, MDI.ActiveForm);
         }
     }
 }

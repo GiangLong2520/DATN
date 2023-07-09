@@ -21,7 +21,7 @@ namespace HoTroBenhNhanThan
         int UserID;
         private void txt_Name_TextChanged(object sender, EventArgs e)
         {
-            if (txt_Name.Text == "")
+                if (txt_Name.Text == "")
             {
                 txt_Name.BackColor = Color.Firebrick;
             }
@@ -93,17 +93,17 @@ namespace HoTroBenhNhanThan
 
         private void LoadUsers()
         {
-            ListBox loadData = new ListBox();
-            loadData.Items.Add(userIDGV);
-            loadData.Items.Add(nameGV);
-            loadData.Items.Add(UserNameGV);
-            loadData.Items.Add(PasswordGV);
-            loadData.Items.Add(PhoneGV);
-            loadData.Items.Add(AddressGV);
-            loadData.Items.Add(RoleIDGV);
-            loadData.Items.Add(RoleGV);
+            //ListBox loadData = new ListBox();
+            //loadData.Items.Add(userIDGV);
+            //loadData.Items.Add(nameGV);
+            //loadData.Items.Add(UserNameGV);
+            //loadData.Items.Add(PasswordGV);
+            //loadData.Items.Add(PhoneGV);
+            //loadData.Items.Add(AddressGV);
+            //loadData.Items.Add(RoleIDGV);
+            //loadData.Items.Add(RoleGV);
 
-            LibCRUD.loadData("st_getUsers", dataGridView1, loadData);
+            dataGridView1.DataSource = LibCRUD.LoadDataTable("st_getUsers");
         }
 
         public override void button3_Click(object sender, EventArgs e)          //save btn
@@ -194,5 +194,14 @@ namespace HoTroBenhNhanThan
             }
         }
 
+        private void UserWindow_Load(object sender, EventArgs e)
+        {
+            LoadUsers();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_Name = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,15 +43,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cb_Roles = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserNameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PasswordGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AddressGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoleIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoleGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.flowPanel.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
@@ -70,6 +61,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // flowPanel
             // 
@@ -213,33 +205,23 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.snoGV,
-            this.userIDGV,
-            this.nameGV,
-            this.UserNameGV,
-            this.PasswordGV,
-            this.PhoneGV,
-            this.AddressGV,
-            this.RoleIDGV,
-            this.RoleGV});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 23);
             this.dataGridView1.Name = "dataGridView1";
@@ -250,74 +232,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(943, 601);
             this.dataGridView1.TabIndex = 0;
             // 
-            // snoGV
-            // 
-            this.snoGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.snoGV.HeaderText = "#";
-            this.snoGV.MinimumWidth = 6;
-            this.snoGV.Name = "snoGV";
-            this.snoGV.ReadOnly = true;
-            this.snoGV.Width = 47;
-            // 
-            // userIDGV
-            // 
-            this.userIDGV.HeaderText = "UserID";
-            this.userIDGV.MinimumWidth = 6;
-            this.userIDGV.Name = "userIDGV";
-            this.userIDGV.ReadOnly = true;
-            this.userIDGV.Visible = false;
-            // 
-            // nameGV
-            // 
-            this.nameGV.HeaderText = "Name";
-            this.nameGV.MinimumWidth = 6;
-            this.nameGV.Name = "nameGV";
-            this.nameGV.ReadOnly = true;
-            // 
-            // UserNameGV
-            // 
-            this.UserNameGV.HeaderText = "UserName";
-            this.UserNameGV.MinimumWidth = 6;
-            this.UserNameGV.Name = "UserNameGV";
-            this.UserNameGV.ReadOnly = true;
-            // 
-            // PasswordGV
-            // 
-            this.PasswordGV.HeaderText = "Password";
-            this.PasswordGV.MinimumWidth = 6;
-            this.PasswordGV.Name = "PasswordGV";
-            this.PasswordGV.ReadOnly = true;
-            this.PasswordGV.Visible = false;
-            // 
-            // PhoneGV
-            // 
-            this.PhoneGV.HeaderText = "Phone";
-            this.PhoneGV.MinimumWidth = 6;
-            this.PhoneGV.Name = "PhoneGV";
-            this.PhoneGV.ReadOnly = true;
-            // 
-            // AddressGV
-            // 
-            this.AddressGV.HeaderText = "Address";
-            this.AddressGV.MinimumWidth = 6;
-            this.AddressGV.Name = "AddressGV";
-            this.AddressGV.ReadOnly = true;
-            // 
-            // RoleIDGV
-            // 
-            this.RoleIDGV.HeaderText = "RoleID";
-            this.RoleIDGV.MinimumWidth = 6;
-            this.RoleIDGV.Name = "RoleIDGV";
-            this.RoleIDGV.ReadOnly = true;
-            this.RoleIDGV.Visible = false;
-            // 
-            // RoleGV
-            // 
-            this.RoleGV.HeaderText = "Role";
-            this.RoleGV.MinimumWidth = 6;
-            this.RoleGV.Name = "RoleGV";
-            this.RoleGV.ReadOnly = true;
-            // 
             // UserWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -325,6 +239,7 @@
             this.ClientSize = new System.Drawing.Size(1272, 760);
             this.Name = "UserWindow";
             this.Text = "UserWindow";
+            this.Load += new System.EventHandler(this.UserWindow_Load);
             this.groupBox1.ResumeLayout(false);
             this.flowPanel.ResumeLayout(false);
             this.flowPanel.PerformLayout();
@@ -353,14 +268,5 @@
         private TextBox txt_Address;
         private Label label8;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn snoGV;
-        private DataGridViewTextBoxColumn userIDGV;
-        private DataGridViewTextBoxColumn nameGV;
-        private DataGridViewTextBoxColumn UserNameGV;
-        private DataGridViewTextBoxColumn PasswordGV;
-        private DataGridViewTextBoxColumn PhoneGV;
-        private DataGridViewTextBoxColumn AddressGV;
-        private DataGridViewTextBoxColumn RoleIDGV;
-        private DataGridViewTextBoxColumn RoleGV;
     }
 }

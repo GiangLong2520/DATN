@@ -46,6 +46,7 @@ namespace HoTroBenhNhanThan.Authentication
 
                 foreach(DictionaryEntry item in ht)
                 {
+
                     cmd.Parameters.AddWithValue(item.Key.ToString(), item.Value);
                 }    
                 LibMainClass.con.Open();
@@ -56,7 +57,7 @@ namespace HoTroBenhNhanThan.Authentication
                     {
                         USERID = Convert.ToInt32(dr[0].ToString());
                         NAME = dr[1].ToString();
-                        ROLEID = Convert.ToInt32(dr[2].ToString);
+                        ROLEID = Convert.ToInt32(dr[2].ToString());
                         ROLE = dr[3].ToString();
 
                     }
@@ -69,6 +70,7 @@ namespace HoTroBenhNhanThan.Authentication
                 LibMainClass.con.Close();
             }   catch(Exception ex)
             {
+                LibMainClass.con.Close();
                 LibMainClass.showMessage(ex.Message, "error");
             }
             return r;

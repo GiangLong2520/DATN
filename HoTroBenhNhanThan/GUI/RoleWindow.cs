@@ -32,7 +32,7 @@ namespace HoTroBenhNhanThan
         }
         private void txt_role_TextChanged(object sender, EventArgs e)
         {
-
+          
         }
 
         public override void button3_Click(object sender, EventArgs e)          //save btn
@@ -60,9 +60,9 @@ namespace HoTroBenhNhanThan
                 else if (edit == 1)
                 {
                     Hashtable ht = new Hashtable();
-                    ht.Add(@"name", txt_role.Text);
-                    ht.Add(@"id", roleID);
-                    if (LibCRUD.data_insert_update_delete("st_updateRoles",ht) > 0)
+                    ht.Add("@roleId", roleID);
+                    ht.Add("@newName", txt_role.Text);
+                    if (LibCRUD.data_insert_update_delete("st_updateRole",ht) > 0)
                     {
                         LibMainClass.showMessage(txt_role.Text + " added successfully..", "success");
                         LibMainClass.resetEnable(LEFTPANEL);
@@ -81,8 +81,8 @@ namespace HoTroBenhNhanThan
                 if (dr == DialogResult.Yes)
                 {
                     Hashtable ht = new Hashtable();
-                    ht.Add(@"id", roleID);
-                    if (LibCRUD.data_insert_update_delete("st_deleteRoles", ht) > 0)
+                    ht.Add("@roleId", roleID);
+                    if (LibCRUD.data_insert_update_delete("st_deleteRole", ht) > 0)
                     {
                         LibMainClass.showMessage(txt_role.Text + " deleted successfully..", "success");
                         LibMainClass.resetEnable(LEFTPANEL);
@@ -103,7 +103,7 @@ namespace HoTroBenhNhanThan
                 edit = 1;
                 LibMainClass.DisableControl(LEFTPANEL);
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                roleID = Convert.ToInt32(row.Cells["rolesIDGV"].Value.ToString());
+                roleID = Convert.ToInt32(row.Cells["RoleIDGV"].Value.ToString());
                 txt_role.Text = row.Cells["RoleGV"].Value.ToString();
             }
         }
@@ -114,6 +114,11 @@ namespace HoTroBenhNhanThan
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RoleWindow_Load(object sender, EventArgs e)
         {
 
         }

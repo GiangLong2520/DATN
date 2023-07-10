@@ -166,6 +166,7 @@
             this.button6.TabIndex = 6;
             this.button6.Text = "Roles";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -192,6 +193,7 @@
             this.button4.TabIndex = 4;
             this.button4.Text = "Roles";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -205,6 +207,7 @@
             this.button3.TabIndex = 3;
             this.button3.Text = "Roles";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btn_benhAn
             // 

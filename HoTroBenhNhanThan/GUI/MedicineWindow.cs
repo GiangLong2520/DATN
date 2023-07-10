@@ -11,7 +11,7 @@ namespace HoTroBenhNhanThan.GUI
 
         private void MedicineWindow_Load(object sender, EventArgs e)
         {
-
+            Loadmedicine();
         }
 
         private void Loadmedicine()
@@ -20,7 +20,7 @@ namespace HoTroBenhNhanThan.GUI
             loadData.Items.Add(MediIDGV);
             loadData.Items.Add(MedicineGV);
             loadData.Items.Add(CompanyGV);
-            loadData.Items.Add(DD_Type);
+            loadData.Items.Add(TypeGV);
 
             LibCRUD.loadData("st_getMedicine", dataGridView1, loadData);
         }
@@ -45,10 +45,10 @@ namespace HoTroBenhNhanThan.GUI
                     }
                     else
                     {
-                        ht.Add("@company", txt_company.Text);
+                        ht.Add("@comp", txt_company.Text);
                     }
 
-                    ht.Add("@type", DD_Type.SelectedIndex);
+                    ht.Add("@type", cb_Type.SelectedIndex);
 
                     int ret = LibCRUD.data_insert_update_delete("st_insertMedicine", ht);
                     if (ret > 0)
@@ -71,7 +71,7 @@ namespace HoTroBenhNhanThan.GUI
                         ht.Add("@company", txt_company.Text);
                     }
 
-                    ht.Add("@type", DD_Type.SelectedIndex);
+                    ht.Add("@type", cb_Type.SelectedIndex);
                     ht.Add("@id", MedID);
 
                     if (LibCRUD.data_insert_update_delete("st_updateUsers", ht) > 0)
@@ -118,7 +118,50 @@ namespace HoTroBenhNhanThan.GUI
                 MedID = Convert.ToInt32(row.Cells["MediIDGV"].Value.ToString());
                 txt_medi.Text = row.Cells["MedicineGV"].Value.ToString(); ;
                 txt_company.Text = row.Cells["CompanyGV"].Value.ToString();
-                DD_Type.SelectedItem = row.Cells["TypeGV"].Value.ToString();
+                cb_Type.SelectedItem = row.Cells["TypeGV"].Value.ToString();
+            }
+        }
+
+        private void txt_medi_TextChanged(object sender, EventArgs e)
+        {
+            if (txt_medi.Text == "")
+            {
+                txt_medi.BackColor = Color.Firebrick;
+            }
+            else
+            {
+                txt_medi.BackColor = Color.White;
+            }
+        }
+
+        private void txt_company_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DD_Type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cb_Type.SelectedIndex == -1)
+            {
+                cb_Type.BackColor = Color.Firebrick;
+            }
+            else
+            {
+                cb_Type.BackColor = Color.White;
+            }
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1 && e.ColumnIndex != -1)
+            {
+                edit = 1;
+                LibMainClass.DisableControl(LEFTPANEL);
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                MedID = Convert.ToInt32(row.Cells["MediIDGV"].Value.ToString());
+                txt_medi.Text = row.Cells["MedicineGV"].Value.ToString(); ;
+                txt_company.Text = row.Cells["CompanyGV"].Value.ToString();
+                cb_Type.SelectedItem = row.Cells["TypeGV"].Value.ToString();
             }
         }
     }

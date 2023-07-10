@@ -34,6 +34,16 @@ namespace HoTroBenhNhanThan
             }
             return res;
         }
+        public static DataTable LoadDataTable(string sql)
+        {
+            DataTable dt = new DataTable();
+            SqlCommand cmd = new SqlCommand(sql, LibMainClass.con);
+            cmd.CommandType = CommandType.Text;
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.Fill(dt);
+            return dt;
+        }
+
         public static void loadData(string proc,DataGridView gv, ListBox lb)
         {
             try
@@ -46,7 +56,9 @@ namespace HoTroBenhNhanThan
                 for(int i = 0; i<lb.Items.Count; i++)
                 {
                     string colName = ((DataGridViewColumn)lb.Items[i]).Name;
-                    gv.Columns[colName].DataPropertyName = dt.Columns[i].ToString();
+                    gv.Columns[colName].DataPropertyName = dt.Columns[i].ToString().TrimEnd().TrimStart();
+
+
                 }
                 gv.DataSource= dt;
                 int count = 0;                                              

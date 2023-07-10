@@ -41,17 +41,17 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txt_address = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.DD_role = new System.Windows.Forms.ComboBox();
+            this.cb_role = new System.Windows.Forms.ComboBox();
             this.dataGridViewstaff = new System.Windows.Forms.DataGridView();
             this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserNameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PasswordGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhoneGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddressGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoleGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PasswordGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.useIDgv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoleIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoleGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.flowPanel.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
@@ -84,7 +84,7 @@
             this.flowPanel.Controls.Add(this.label7);
             this.flowPanel.Controls.Add(this.txt_address);
             this.flowPanel.Controls.Add(this.label8);
-            this.flowPanel.Controls.Add(this.DD_role);
+            this.flowPanel.Controls.Add(this.cb_role);
             // 
             // btnBack
             // 
@@ -93,7 +93,6 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Enabled = false;
             this.label2.Location = new System.Drawing.Point(10, 20);
             this.label2.Margin = new System.Windows.Forms.Padding(10, 20, 3, 0);
             this.label2.Name = "label2";
@@ -103,7 +102,6 @@
             // 
             // txt_name
             // 
-            this.txt_name.Enabled = false;
             this.txt_name.Location = new System.Drawing.Point(10, 43);
             this.txt_name.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.txt_name.MaxLength = 50;
@@ -115,7 +113,6 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Enabled = false;
             this.label4.Location = new System.Drawing.Point(10, 73);
             this.label4.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.label4.Name = "label4";
@@ -125,7 +122,6 @@
             // 
             // txt_usename
             // 
-            this.txt_usename.Enabled = false;
             this.txt_usename.Location = new System.Drawing.Point(10, 96);
             this.txt_usename.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.txt_usename.MaxLength = 50;
@@ -137,7 +133,6 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Enabled = false;
             this.label5.Location = new System.Drawing.Point(10, 126);
             this.label5.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.label5.Name = "label5";
@@ -147,7 +142,6 @@
             // 
             // txt_password
             // 
-            this.txt_password.Enabled = false;
             this.txt_password.Location = new System.Drawing.Point(10, 149);
             this.txt_password.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.txt_password.MaxLength = 50;
@@ -159,7 +153,6 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Enabled = false;
             this.label6.Location = new System.Drawing.Point(10, 179);
             this.label6.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.label6.Name = "label6";
@@ -169,7 +162,6 @@
             // 
             // txt_phone
             // 
-            this.txt_phone.Enabled = false;
             this.txt_phone.Location = new System.Drawing.Point(10, 202);
             this.txt_phone.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.txt_phone.MaxLength = 50;
@@ -181,7 +173,6 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Enabled = false;
             this.label7.Location = new System.Drawing.Point(10, 232);
             this.label7.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.label7.Name = "label7";
@@ -191,7 +182,6 @@
             // 
             // txt_address
             // 
-            this.txt_address.Enabled = false;
             this.txt_address.Location = new System.Drawing.Point(10, 255);
             this.txt_address.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.txt_address.MaxLength = 50;
@@ -203,7 +193,6 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Enabled = false;
             this.label8.Location = new System.Drawing.Point(10, 285);
             this.label8.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.label8.Name = "label8";
@@ -211,17 +200,17 @@
             this.label8.TabIndex = 11;
             this.label8.Text = "Role";
             // 
-            // DD_role
+            // cb_role
             // 
-            this.DD_role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.DD_role.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.DD_role.FormattingEnabled = true;
-            this.DD_role.Location = new System.Drawing.Point(10, 308);
-            this.DD_role.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.DD_role.Name = "DD_role";
-            this.DD_role.Size = new System.Drawing.Size(303, 28);
-            this.DD_role.TabIndex = 12;
-            this.DD_role.SelectedIndexChanged += new System.EventHandler(this.DD_role_SelectedIndexChanged);
+            this.cb_role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_role.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cb_role.FormattingEnabled = true;
+            this.cb_role.Location = new System.Drawing.Point(10, 308);
+            this.cb_role.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.cb_role.Name = "cb_role";
+            this.cb_role.Size = new System.Drawing.Size(303, 28);
+            this.cb_role.TabIndex = 12;
+            this.cb_role.SelectedIndexChanged += new System.EventHandler(this.DD_role_SelectedIndexChanged);
             // 
             // dataGridViewstaff
             // 
@@ -240,14 +229,14 @@
             this.dataGridViewstaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewstaff.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.snoGV,
+            this.UserIDGV,
             this.nameGV,
             this.UserNameGV,
+            this.PasswordGV,
             this.PhoneGV,
             this.AddressGV,
-            this.RoleGV,
-            this.PasswordGV,
-            this.useIDgv,
-            this.RoleIDGV});
+            this.RoleIDGV,
+            this.RoleGV});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -265,7 +254,7 @@
             this.dataGridViewstaff.RowTemplate.Height = 29;
             this.dataGridViewstaff.Size = new System.Drawing.Size(943, 601);
             this.dataGridViewstaff.TabIndex = 2;
-            this.dataGridViewstaff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridViewstaff.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewstaff_CellContentClick);
             // 
             // snoGV
             // 
@@ -275,6 +264,14 @@
             this.snoGV.Name = "snoGV";
             this.snoGV.ReadOnly = true;
             this.snoGV.Width = 47;
+            // 
+            // UserIDGV
+            // 
+            this.UserIDGV.HeaderText = "ID";
+            this.UserIDGV.MinimumWidth = 6;
+            this.UserIDGV.Name = "UserIDGV";
+            this.UserIDGV.ReadOnly = true;
+            this.UserIDGV.Visible = false;
             // 
             // nameGV
             // 
@@ -290,6 +287,14 @@
             this.UserNameGV.Name = "UserNameGV";
             this.UserNameGV.ReadOnly = true;
             // 
+            // PasswordGV
+            // 
+            this.PasswordGV.HeaderText = "Partword";
+            this.PasswordGV.MinimumWidth = 6;
+            this.PasswordGV.Name = "PasswordGV";
+            this.PasswordGV.ReadOnly = true;
+            this.PasswordGV.Visible = false;
+            // 
             // PhoneGV
             // 
             this.PhoneGV.HeaderText = "Phone";
@@ -304,29 +309,6 @@
             this.AddressGV.Name = "AddressGV";
             this.AddressGV.ReadOnly = true;
             // 
-            // RoleGV
-            // 
-            this.RoleGV.HeaderText = "Role";
-            this.RoleGV.MinimumWidth = 6;
-            this.RoleGV.Name = "RoleGV";
-            this.RoleGV.ReadOnly = true;
-            // 
-            // PasswordGV
-            // 
-            this.PasswordGV.HeaderText = "Partword";
-            this.PasswordGV.MinimumWidth = 6;
-            this.PasswordGV.Name = "PasswordGV";
-            this.PasswordGV.ReadOnly = true;
-            this.PasswordGV.Visible = false;
-            // 
-            // useIDgv
-            // 
-            this.useIDgv.HeaderText = "ID";
-            this.useIDgv.MinimumWidth = 6;
-            this.useIDgv.Name = "useIDgv";
-            this.useIDgv.ReadOnly = true;
-            this.useIDgv.Visible = false;
-            // 
             // RoleIDGV
             // 
             this.RoleIDGV.HeaderText = "RoleID";
@@ -335,6 +317,13 @@
             this.RoleIDGV.ReadOnly = true;
             this.RoleIDGV.Visible = false;
             // 
+            // RoleGV
+            // 
+            this.RoleGV.HeaderText = "Role";
+            this.RoleGV.MinimumWidth = 6;
+            this.RoleGV.Name = "RoleGV";
+            this.RoleGV.ReadOnly = true;
+            // 
             // StaffWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -342,6 +331,7 @@
             this.ClientSize = new System.Drawing.Size(1272, 760);
             this.Name = "StaffWindow";
             this.Text = "StaffWindow";
+            this.Load += new System.EventHandler(this.StaffWindow_Load);
             this.groupBox1.ResumeLayout(false);
             this.flowPanel.ResumeLayout(false);
             this.flowPanel.PerformLayout();
@@ -368,16 +358,16 @@
         private Label label7;
         private TextBox txt_address;
         private Label label8;
-        private ComboBox DD_role;
+        private ComboBox cb_role;
         private DataGridView dataGridViewstaff;
         private DataGridViewTextBoxColumn snoGV;
+        private DataGridViewTextBoxColumn UserIDGV;
         private DataGridViewTextBoxColumn nameGV;
         private DataGridViewTextBoxColumn UserNameGV;
+        private DataGridViewTextBoxColumn PasswordGV;
         private DataGridViewTextBoxColumn PhoneGV;
         private DataGridViewTextBoxColumn AddressGV;
-        private DataGridViewTextBoxColumn RoleGV;
-        private DataGridViewTextBoxColumn PasswordGV;
-        private DataGridViewTextBoxColumn useIDgv;
         private DataGridViewTextBoxColumn RoleIDGV;
+        private DataGridViewTextBoxColumn RoleGV;
     }
 }

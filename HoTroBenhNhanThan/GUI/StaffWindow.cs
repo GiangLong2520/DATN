@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -85,59 +86,134 @@ namespace HoTroBenhNhanThan
 
         private void DD_role_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (DD_role.SelectedIndex == -1)
+            if (cb_role.SelectedIndex == -1)
             {
-                DD_role.BackColor = Color.Firebrick;
+                cb_role.BackColor = Color.Firebrick;
             }
             else
             {
-                DD_role.BackColor = Color.White;
+                cb_role.BackColor = Color.White;
             }
         }
-        public override void button3_Click(object sender, EventArgs e)    // save click
+        /// <summary>
+        /// ///////////////////////////////////////////////
+        /// </summary>
+        int UserID;
+        private void LoadUsers()
+        {
+            ListBox loadData = new ListBox();
+            loadData.Items.Add(UserIDGV);
+            loadData.Items.Add(nameGV);
+            loadData.Items.Add(UserNameGV);
+            loadData.Items.Add(PasswordGV);
+            loadData.Items.Add(PhoneGV);
+            loadData.Items.Add(AddressGV);
+            loadData.Items.Add(RoleIDGV);
+            loadData.Items.Add(RoleGV);
+            LibCRUD.loadData("st_getUsers", dataGridViewstaff, loadData);
+        }
+
+        public override void button3_Click(object sender, EventArgs e)          //save btn
         {
             if (LibMainClass.checkControls(LEFTPANEL).Count > 0)
             {
                 LibMainClass.showMessage("Field with RED are mandatory.", "error");
+
             }
             else
             {
-            //    if (edit == 0)
-            //    {
-            //        Hashtable ht = new Hashtable();
-            //        ht.Add(@"name", txt_role.Text);
+                if (edit == 0)                              // code for save
+                {
+                    Hashtable ht = new Hashtable();
+                    ht.Add(@"name", txt_name.Text);
+                    ht.Add(@"userName", txt_usename.Text);
+                    ht.Add(@"passWord", txt_password.Text);
+                    ht.Add(@"phone", txt_phone.Text);
+                    ht.Add(@"address", txt_address.Text);
+                    ht.Add(@"roleId", Convert.ToInt32(cb_role.SelectedValue.ToString()));
 
-            //        int ret = LibCRUD.data_insert_update_delete("st_insertRoles", ht);
-            //        if (ret > 0)
-            //        {
-            //            LibMainClass.showMessage(txt_role.Text + " added successfully..", "success");
-            //            LibMainClass.resetEnable(LEFTPANEL);
-            //            LoadRoles();
-            //        }
-            //    }
-            //    else if (edit == 1)
-            //    {
-            //        Hashtable ht = new Hashtable();
-            //        ht.Add(@"name", txt_role.Text);
-            //        ht.Add(@"id", roleID);
-            //        if (LibCRUD.data_insert_update_delete("st_updateRoles", ht) > 0)
-            //        {
-            //            LibMainClass.showMessage(txt_role.Text + " added successfully..", "success");
-            //            LibMainClass.resetEnable(LEFTPANEL);
-            //            LoadRoles();
-            //        }
-            //    }
+                    int ret = LibCRUD.data_insert_update_delete("st_insertUsers", ht);
+                    if (ret > 0)
+                    {
+                        LibMainClass.showMessage(txt_name.Text + " added successfully..", "success");
+                        LibMainClass.resetEnable(LEFTPANEL);
+                        LoadUsers();
+                    }
+                }
+                else if (edit == 1)                        // code for update
+                {
+                    Hashtable ht = new Hashtable();
+                    ht.Add(@"name", txt_name.Text);
+                    ht.Add(@"userName", txt_usename.Text);
+                    ht.Add(@"passWord", txt_password.Text);
+                    ht.Add(@"phone", txt_phone.Text);
+                    ht.Add(@"address", txt_address.Text);
+                    ht.Add(@"roleId", Convert.ToInt32(cb_role.SelectedValue.ToString()));
+                    ht.Add(@"id", UserID);
+
+                    if (LibCRUD.data_insert_update_delete("st_updateUsers", ht) > 0)
+                    {
+                        LibMainClass.showMessage(txt_name.Text + " added successfully..", "success");
+                        LibMainClass.resetEnable(LEFTPANEL);
+                        LoadUsers();
+                    }
+                }
 
             }
         }
 
-        public override void button4_Click(object sender, EventArgs e)   //delete click
+        public override void button4_Click(object sender, EventArgs e)          //delete btn
         {
-
+            if (edit == 1)
+            {
+                DialogResult dr = MessageBox.Show("Are you sure ?", "Question..", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dr == DialogResult.Yes)
+                {
+                    Hashtable ht = new Hashtable();
+                    ht.Add(@"id", UserID);
+                    if (LibCRUD.data_insert_update_delete("st_deleteUser", ht) > 0)
+                    {
+                        LibMainClass.showMessage(txt_usename.Text + " deleted successfully..", "success");
+                        LibMainClass.resetEnable(LEFTPANEL);
+                        LoadUsers();
+                    }
+                }
+            }
         }
         public override void btn_View_Click(object sender, EventArgs e)         // view click
         {
+            LoadUsers();
+        }
 
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewstaff_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1 && e.ColumnIndex != -1)
+            {
+                edit = 1;
+                LibMainClass.DisableControl(LEFTPANEL);
+                DataGridViewRow row = dataGridViewstaff.Rows[e.RowIndex];
+                UserID = Convert.ToInt32(row.Cells["UserIDGV"].Value.ToString());
+                txt_name.Text = row.Cells["nameGV"].Value.ToString(); ;
+                txt_usename.Text = row.Cells["UserNameGV"].Value.ToString();
+                txt_password.Text = row.Cells["PasswordGV"].Value.ToString();
+                txt_phone.Text = row.Cells["PhoneGV"].Value.ToString();
+                txt_address.Text = row.Cells["AddressGV"].Value.ToString();
+                cb_role.SelectedValue = row.Cells["RoleIDGV"].Value;
+            }
+        }
+
+
+        private void StaffWindow_Load(object sender, EventArgs e)
+        {
+            Hashtable ht = new Hashtable();
+            LibCRUD.loadList("st_getRoles", cb_role, "ID", "Role", ht);
+            LoadUsers();
         }
     }
 }

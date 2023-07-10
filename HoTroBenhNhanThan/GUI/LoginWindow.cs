@@ -28,9 +28,9 @@ namespace HoTroBenhNhanThan
             else
             {
                 Hashtable ht= new Hashtable();
-                ht.Add(@"username", txt_user);
-                ht.Add(@"Password", txt_password);
-                if (Login.getLoginDetails("st_getAuthenticationDetails", ht))
+                ht.Add(@"username", txt_user.Text);
+                ht.Add(@"Password", txt_password.Text);
+                if (/*Login.getLoginDetails("[st_getAuthentication]", ht)*/ true)
                 {
                     HomeWindow hw = new HomeWindow();
                     LibMainClass.showWindow(hw, this, MDI.ActiveForm);

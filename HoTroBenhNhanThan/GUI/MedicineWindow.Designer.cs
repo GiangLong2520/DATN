@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_medi = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_company = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.DD_Type = new System.Windows.Forms.ComboBox();
+            this.cb_Type = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MediIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,7 +68,7 @@
             this.flowPanel.Controls.Add(this.label4);
             this.flowPanel.Controls.Add(this.txt_company);
             this.flowPanel.Controls.Add(this.label8);
-            this.flowPanel.Controls.Add(this.DD_Type);
+            this.flowPanel.Controls.Add(this.cb_Type);
             // 
             // btnBack
             // 
@@ -77,7 +77,6 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Enabled = false;
             this.label2.Location = new System.Drawing.Point(10, 20);
             this.label2.Margin = new System.Windows.Forms.Padding(10, 20, 3, 0);
             this.label2.Name = "label2";
@@ -87,18 +86,17 @@
             // 
             // txt_medi
             // 
-            this.txt_medi.Enabled = false;
             this.txt_medi.Location = new System.Drawing.Point(10, 43);
             this.txt_medi.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.txt_medi.MaxLength = 50;
             this.txt_medi.Name = "txt_medi";
             this.txt_medi.Size = new System.Drawing.Size(303, 27);
             this.txt_medi.TabIndex = 7;
+            this.txt_medi.TextChanged += new System.EventHandler(this.txt_medi_TextChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Enabled = false;
             this.label4.Location = new System.Drawing.Point(10, 73);
             this.label4.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.label4.Name = "label4";
@@ -108,18 +106,17 @@
             // 
             // txt_company
             // 
-            this.txt_company.Enabled = false;
             this.txt_company.Location = new System.Drawing.Point(10, 96);
             this.txt_company.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.txt_company.MaxLength = 50;
             this.txt_company.Name = "txt_company";
             this.txt_company.Size = new System.Drawing.Size(303, 27);
             this.txt_company.TabIndex = 9;
+            this.txt_company.TextChanged += new System.EventHandler(this.txt_company_TextChanged);
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Enabled = false;
             this.label8.Location = new System.Drawing.Point(10, 126);
             this.label8.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.label8.Name = "label8";
@@ -127,19 +124,20 @@
             this.label8.TabIndex = 13;
             this.label8.Text = "Type";
             // 
-            // DD_Type
+            // cb_Type
             // 
-            this.DD_Type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.DD_Type.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.DD_Type.FormattingEnabled = true;
-            this.DD_Type.Items.AddRange(new object[] {
+            this.cb_Type.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cb_Type.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cb_Type.FormattingEnabled = true;
+            this.cb_Type.Items.AddRange(new object[] {
             "Internal",
             "External"});
-            this.DD_Type.Location = new System.Drawing.Point(10, 149);
-            this.DD_Type.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.DD_Type.Name = "DD_Type";
-            this.DD_Type.Size = new System.Drawing.Size(303, 28);
-            this.DD_Type.TabIndex = 14;
+            this.cb_Type.Location = new System.Drawing.Point(10, 149);
+            this.cb_Type.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.cb_Type.Name = "cb_Type";
+            this.cb_Type.Size = new System.Drawing.Size(303, 28);
+            this.cb_Type.TabIndex = 14;
+            this.cb_Type.SelectedIndexChanged += new System.EventHandler(this.DD_Type_SelectedIndexChanged);
             // 
             // dataGridView1
             // 
@@ -147,14 +145,14 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.snoGV,
@@ -162,14 +160,14 @@
             this.MedicineGV,
             this.CompanyGV,
             this.TypeGV});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 23);
             this.dataGridView1.Name = "dataGridView1";
@@ -179,6 +177,7 @@
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(943, 601);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // snoGV
             // 
@@ -247,12 +246,12 @@
         private Label label4;
         private TextBox txt_company;
         private Label label8;
-        private ComboBox DD_Type;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn snoGV;
         private DataGridViewTextBoxColumn MediIDGV;
         private DataGridViewTextBoxColumn MedicineGV;
         private DataGridViewTextBoxColumn CompanyGV;
         private DataGridViewTextBoxColumn TypeGV;
+        private ComboBox cb_Type;
     }
 }

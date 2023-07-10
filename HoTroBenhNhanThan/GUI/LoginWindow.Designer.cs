@@ -28,96 +28,99 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label2 = new System.Windows.Forms.Label();
-            this.txt_user = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_password = new System.Windows.Forms.TextBox();
-            this.btn_Login = new System.Windows.Forms.Button();
-            this.LEFTPANEL.SuspendLayout();
-            this.left_panel.SuspendLayout();
-            this.BtnBackPanel.SuspendLayout();
-            this.RIGHTPANEL.SuspendLayout();
-            this.UserPanel.SuspendLayout();
-            this.SuspendLayout();
+            label2 = new Label();
+            txt_user = new TextBox();
+            label3 = new Label();
+            txt_password = new TextBox();
+            btn_Login = new Button();
+            LEFTPANEL.SuspendLayout();
+            left_panel.SuspendLayout();
+            BtnBackPanel.SuspendLayout();
+            RIGHTPANEL.SuspendLayout();
+            UserPanel.SuspendLayout();
+            SuspendLayout();
             // 
             // left_panel
             // 
-            this.left_panel.Controls.Add(this.btn_Login);
-            this.left_panel.Controls.Add(this.txt_password);
-            this.left_panel.Controls.Add(this.label3);
-            this.left_panel.Controls.Add(this.txt_user);
-            this.left_panel.Controls.Add(this.label2);
+            left_panel.Controls.Add(btn_Login);
+            left_panel.Controls.Add(txt_password);
+            left_panel.Controls.Add(label3);
+            left_panel.Controls.Add(txt_user);
+            left_panel.Controls.Add(label2);
             // 
             // btnBack
             // 
-            this.btnBack.FlatAppearance.BorderSize = 0;
+            btnBack.FlatAppearance.BorderSize = 0;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 231);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "User Name";
+            label2.AutoSize = true;
+            label2.Location = new Point(10, 173);
+            label2.Name = "label2";
+            label2.Size = new Size(65, 15);
+            label2.TabIndex = 0;
+            label2.Text = "User Name";
             // 
             // txt_user
             // 
-            this.txt_user.Location = new System.Drawing.Point(12, 254);
-            this.txt_user.MaxLength = 50;
-            this.txt_user.Name = "txt_user";
-            this.txt_user.Size = new System.Drawing.Size(296, 27);
-            this.txt_user.TabIndex = 1;
-            this.txt_user.TextChanged += new System.EventHandler(this.txt_user_TextChanged);
+            txt_user.Location = new Point(10, 190);
+            txt_user.Margin = new Padding(3, 2, 3, 2);
+            txt_user.MaxLength = 50;
+            txt_user.Name = "txt_user";
+            txt_user.Size = new Size(260, 23);
+            txt_user.TabIndex = 1;
+            txt_user.TextChanged += txt_user_TextChanged;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 286);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(70, 20);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Password";
+            label3.AutoSize = true;
+            label3.Location = new Point(10, 214);
+            label3.Name = "label3";
+            label3.Size = new Size(57, 15);
+            label3.TabIndex = 0;
+            label3.Text = "Password";
             // 
             // txt_password
             // 
-            this.txt_password.Location = new System.Drawing.Point(12, 309);
-            this.txt_password.MaxLength = 50;
-            this.txt_password.Name = "txt_password";
-            this.txt_password.Size = new System.Drawing.Size(296, 27);
-            this.txt_password.TabIndex = 1;
-            this.txt_password.UseSystemPasswordChar = true;
-            this.txt_password.TextChanged += new System.EventHandler(this.txt_password_TextChanged);
+            txt_password.Location = new Point(10, 232);
+            txt_password.Margin = new Padding(3, 2, 3, 2);
+            txt_password.MaxLength = 50;
+            txt_password.Name = "txt_password";
+            txt_password.Size = new Size(260, 23);
+            txt_password.TabIndex = 1;
+            txt_password.UseSystemPasswordChar = true;
+            txt_password.TextChanged += txt_password_TextChanged;
             // 
             // btn_Login
             // 
-            this.btn_Login.FlatAppearance.BorderSize = 2;
-            this.btn_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Login.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_Login.Location = new System.Drawing.Point(12, 352);
-            this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(296, 47);
-            this.btn_Login.TabIndex = 2;
-            this.btn_Login.Text = "LOGIN";
-            this.btn_Login.UseVisualStyleBackColor = true;
-            this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
+            btn_Login.FlatAppearance.BorderSize = 2;
+            btn_Login.FlatStyle = FlatStyle.Flat;
+            btn_Login.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_Login.Location = new Point(10, 264);
+            btn_Login.Margin = new Padding(3, 2, 3, 2);
+            btn_Login.Name = "btn_Login";
+            btn_Login.Size = new Size(259, 35);
+            btn_Login.TabIndex = 2;
+            btn_Login.Text = "LOGIN";
+            btn_Login.UseVisualStyleBackColor = true;
+            btn_Login.Click += btn_Login_Click;
             // 
             // LoginWindow
             // 
-            this.AcceptButton = this.btn_Login;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1272, 760);
-            this.Name = "LoginWindow";
-            this.Text = "LoginWindow";
-            this.LEFTPANEL.ResumeLayout(false);
-            this.left_panel.ResumeLayout(false);
-            this.left_panel.PerformLayout();
-            this.BtnBackPanel.ResumeLayout(false);
-            this.RIGHTPANEL.ResumeLayout(false);
-            this.UserPanel.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AcceptButton = btn_Login;
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1113, 570);
+            Name = "LoginWindow";
+            Text = "LoginWindow";
+            Load += LoginWindow_Load;
+            LEFTPANEL.ResumeLayout(false);
+            left_panel.ResumeLayout(false);
+            left_panel.PerformLayout();
+            BtnBackPanel.ResumeLayout(false);
+            RIGHTPANEL.ResumeLayout(false);
+            UserPanel.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

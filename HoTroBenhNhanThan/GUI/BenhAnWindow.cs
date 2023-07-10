@@ -18,7 +18,6 @@ namespace HoTroBenhNhanThan
         SqlCommand sqlCommand;
         SqlDataAdapter sqlDataAdapter = new SqlDataAdapter();
         DataTable dataTable   = new DataTable();
-
         public BenhAnWindow()
         {
             InitializeComponent();

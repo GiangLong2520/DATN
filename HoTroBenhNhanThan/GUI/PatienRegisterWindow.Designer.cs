@@ -109,7 +109,6 @@
             // 
             // txt_Phone
             // 
-            this.txt_Phone.Enabled = false;
             this.txt_Phone.Location = new System.Drawing.Point(10, 29);
             this.txt_Phone.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.txt_Phone.MaxLength = 50;
@@ -141,7 +140,6 @@
             // 
             // txt_age
             // 
-            this.txt_age.Enabled = false;
             this.txt_age.Location = new System.Drawing.Point(10, 147);
             this.txt_age.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.txt_age.MaxLength = 50;
@@ -162,7 +160,6 @@
             // 
             // txt_Father
             // 
-            this.txt_Father.Enabled = false;
             this.txt_Father.Location = new System.Drawing.Point(10, 206);
             this.txt_Father.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.txt_Father.MaxLength = 50;
@@ -175,7 +172,6 @@
             // 
             this.Picker_ApointmentDate.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Picker_ApointmentDate.CustomFormat = "dd-MMM-yyyy hh:mm";
-            this.Picker_ApointmentDate.Enabled = false;
             this.Picker_ApointmentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.Picker_ApointmentDate.Location = new System.Drawing.Point(10, 265);
             this.Picker_ApointmentDate.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
@@ -206,7 +202,6 @@
             // 
             // cb_ApointmentFor
             // 
-            this.cb_ApointmentFor.Enabled = false;
             this.cb_ApointmentFor.FormattingEnabled = true;
             this.cb_ApointmentFor.Location = new System.Drawing.Point(10, 324);
             this.cb_ApointmentFor.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
@@ -302,7 +297,6 @@
             // 
             // txt_Patient
             // 
-            this.txt_Patient.Enabled = false;
             this.txt_Patient.Location = new System.Drawing.Point(10, 88);
             this.txt_Patient.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.txt_Patient.MaxLength = 50;

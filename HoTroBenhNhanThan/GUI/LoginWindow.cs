@@ -65,5 +65,10 @@ namespace HoTroBenhNhanThan
                 txt_password.BackColor = Color.White;
             }
         }
+
+        private void LoginWindow_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 using static Azure.Core.HttpHeader;
 
@@ -26,7 +27,7 @@ namespace HoTroBenhNhanThan.GUI
             bool check = false;
             try
             {
-                SqlCommand cmd = new SqlCommand("st_CheckPatientRegisteratonExist");
+                SqlCommand cmd = new SqlCommand("st_CheckPatientRegistrationExist", LibMainClass.con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@phone", phone);
                 LibMainClass.con.Open();
@@ -36,8 +37,7 @@ namespace HoTroBenhNhanThan.GUI
                     check = true;
                     while (dr.Read())
                     {
-                        partID = Convert.ToInt64(dr["PatientID"].ToString());
-                        txt_age.Text = dr["Patient"].ToString();
+                        txt_Patient.Text = dr["Patient"].ToString();
                         txt_Father.Text = dr["Guardian"].ToString();
                         txt_age.Text = dr["Age"].ToString();
                         picker_LastApointmentDate.Value = Convert.ToDateTime(dr["LastAppointment"].ToString());
@@ -60,7 +60,7 @@ namespace HoTroBenhNhanThan.GUI
         private void PatienRegisterWindow_Load(object sender, EventArgs e)
         {
             Hashtable ht= new Hashtable();// không có trong bài 10, nên check lại ở nội dung các bài khác
-            LibCRUD.loadList("st_getDocter", cb_ApointmentFor, "ID", "Docter", ht);
+            LibCRUD.loadList("st_getDoctors", cb_ApointmentFor, "ID", "Doctor", ht);
         }
 
         private void PhoneTxt_Leave(object sender, EventArgs e)
@@ -86,14 +86,15 @@ namespace HoTroBenhNhanThan.GUI
             loadData.Items.Add(patientIDGV);
             loadData.Items.Add(patientGV);
             loadData.Items.Add(GuardGV);
-            loadData.Items.Add(ageGV);
             loadData.Items.Add(apointDateGV);
+            loadData.Items.Add(ageGV);
             loadData.Items.Add(doctorGV);
             loadData.Items.Add(DoctorIDGV);
-           // loadData.Items.Add(statusGV);
-            //loadData.Items.Add(appIDGV);
+            loadData.Items.Add(statusGV);
+            loadData.Items.Add(appIDGV);
+            loadData.Items.Add(phoneGV);
 
-            LibCRUD.loadData("st_getPatientAppointmentRegisteration", dataGridView1, loadData);
+            LibCRUD.loadData("st_GetPatientAppointmentReg", dataGridView1, loadData);
         }
 
         Int64 partID;
@@ -107,32 +108,67 @@ namespace HoTroBenhNhanThan.GUI
             }
             else
             {
-                // check code for save in : 39;47 - 39;51
-                if (edit == 0)                              // code for save
-                {
-                    if (/*getCheckPatientRecord(txt_Phone.Text) - 1;14;17 - 1; */ true ) 
+
+                using (TransactionScope sc = new TransactionScope()) {
+                    // check code for save in : 39;47 - 39;51
+                    if (edit == 0)                              // code for save
                     {
-                        //LibMainClass.resetEnable(left_panel);
+                        if (/*getCheckPatientRecord(txt_Phone.Text) - 1;14;17 - 1; */ true)
+                        {
+                            //LibMainClass.resetEnable(left_panel);
+                            Hashtable ht = new Hashtable();
+                            ht.Add("@name", txt_Patient.Text);
+                            ht.Add("@guard", txt_Father.Text);
+                            ht.Add("@phone", txt_Phone.Text);
+                            ht.Add("@age",  txt_age.Text);
+                            // ht.Add("@id", partID);
+                            int ret = LibCRUD.data_insert_update_delete("st_insertPatientReg", ht); //  LibCRUD.data_insert_update_delete("st_insertPatientReg", ht) 55;03
+                            if (ret > 0)
+                            {
+                                Int64 patientID = Convert.ToInt64(LibCRUD.getLastID("st_getlastPatientID")); 
+                                Hashtable htt = new Hashtable();
+                                htt.Add("@date", picker_LastApointmentDate.Value);
+                                htt.Add("@doctorID", Convert.ToInt32(cb_ApointmentFor.SelectedValue.ToString()));
+                                htt.Add("@patientID", patientID);
+                                htt.Add("@status", 0);
+                                // htt.Add("@day", Picker_ApointmentDate.Value.Day);
+                                // htt.Add("@mount", Picker_ApointmentDate.Value.Month);
+                                // htt.Add("@year", Picker_ApointmentDate.Value.Year);
+                                if (LibCRUD.data_insert_update_delete("st_insertAppointment", htt) > 0)
+                                {
+
+                                    LibMainClass.showMessage(txt_Patient.Text + " added successfully..", "success");
+                                    LibMainClass.resetDisable(LEFTPANEL);
+                                    LoadPatient();
+                                }
+                            }
+                            else
+                            {
+                                LibMainClass.showMessage("Unable to save record.", "error");
+                            }
+                        }
+                    }
+                    else if (edit == 1)                        // code for update  1;19;08 - 
+                    {
                         Hashtable ht = new Hashtable();
-                        ht.Add("@name", txt_Patient.Text);
-                        ht.Add("@guard", txt_Father.Text);
-                        ht.Add("@phone", txt_Phone.Text);
-                        ht.Add("@age", txt_age.Text);
-                       // ht.Add("@id", partID);
-                        int ret = LibCRUD.data_insert_update_delete("st_updatePatientReg", ht); //  LibCRUD.data_insert_update_delete("st_insertPatientReg", ht) 55;03
+                        ht.Add(@"name", txt_Patient.Text);
+                        ht.Add(@"guard", txt_Father.Text);
+                        ht.Add(@"phone", txt_Phone.Text);
+                        ht.Add(@"age", txt_age.Text);
+                        ht.Add(@"id", partID);
+
+                        int ret = LibCRUD.data_insert_update_delete("st_updatePatientReg", ht);
                         if (ret > 0)
                         {
-                            Int64 patientID =partID;
-                            // Int64 patientID = Convert.ToInt64(LibCRUD.getLastID("st_getLastPatientID")); 56;08, 56;46, 1;13;21
+                            // Int64 patientID = Convert.ToInt64(LibCRUD.getLastID("st_getLastPatientID"));
+
                             Hashtable htt = new Hashtable();
                             htt.Add("@date", picker_LastApointmentDate.Value);
                             htt.Add("@doctorID", Convert.ToInt32(cb_ApointmentFor.SelectedValue.ToString()));
-                            htt.Add("@patientID", patientID);
+                            htt.Add("@patientID", partID);
                             htt.Add("@status", 0);
-                           // htt.Add("@day", Picker_ApointmentDate.Value.Day);
-                           // htt.Add("@mount", Picker_ApointmentDate.Value.Month);
-                           // htt.Add("@year", Picker_ApointmentDate.Value.Year);
-                            if (LibCRUD.data_insert_update_delete("st_insertAppointment", htt) > 0)
+                            htt.Add("@id", apointmentID);
+                            if (LibCRUD.data_insert_update_delete("st_updateAppointment", htt) > 0)
                             {
 
                                 LibMainClass.showMessage(txt_Patient.Text + " added successfully..", "success");
@@ -142,76 +178,10 @@ namespace HoTroBenhNhanThan.GUI
                         }
                         else
                         {
-                            LibMainClass.showMessage("Unable to save record.", "error");
+                            LibMainClass.showMessage("Unable to update record.", "error");
                         }
                     }
-                    //else 56:43
-                    //{
-                    //    //LibMainClass.resetEnable(left_panel);
-                    //    Hashtable ht = new Hashtable();
-                    //    ht.Add("@name", txt_Patient.Text);
-                    //    ht.Add("@guard", txt_Father.Text);
-                    //    ht.Add("@phone", txt_Phone.Text);
-                    //    ht.Add("@age", txt_age.Text);
-                    //    int ret = LibCRUD.data_insert_update_delete("st_insertPatientReg", ht);
-                    //    if (ret > 0)
-                    //    {
-                    //        Int64 patientID = Convert.ToInt64(LibCRUD.getLastID("st_getLastPatientID"));
-
-                    //        Hashtable htt = new Hashtable();
-                    //        htt.Add("@date", picker_LastApointmentDate.Value);
-                    //        htt.Add("@doctorID", Convert.ToInt32(cb_ApointmentFor.SelectedValue.ToString()));
-                    //        htt.Add("@patientID", patientID);
-                    //        htt.Add("@status", 0);
-                    //        htt.Add("@day", Picker_ApointmentDate.Value.Day);
-                    //        htt.Add("@mount", Picker_ApointmentDate.Value.Month);
-                    //        htt.Add("@year", Picker_ApointmentDate.Value.Year);
-                    //        if (LibCRUD.data_insert_update_delete("st_insertAppointment", htt) > 0)
-                    //        {
-
-                    //            LibMainClass.showMessage(txt_Patient.Text + " added successfully..", "success");
-                    //            LibMainClass.resetEnable(LEFTPANEL);
-                    //            LoadPatient();
-                    //        }
-                    //    }
-                    //    else
-                    //    {
-                    //        LibMainClass.showMessage("Unable to save record.", "error");
-                    //    }
-                    //}
-                }
-                else if (edit == 1)                        // code for update  1;19;08 - 
-                {
-                    Hashtable ht = new Hashtable();
-                    ht.Add(@"name", txt_Patient.Text);
-                    ht.Add(@"guard", txt_Father.Text);
-                    ht.Add(@"phone", txt_Phone.Text);
-                    ht.Add(@"age", txt_age.Text);
-                   // ht.Add(@"id", partID);
-
-                    int ret = LibCRUD.data_insert_update_delete("st_updatePatientReg", ht);
-                    if (ret > 0)
-                    {
-                       // Int64 patientID = Convert.ToInt64(LibCRUD.getLastID("st_getLastPatientID"));
-
-                        Hashtable htt = new Hashtable();
-                        htt.Add("@date", picker_LastApointmentDate.Value);
-                        htt.Add("@doctorID", Convert.ToInt32(cb_ApointmentFor.SelectedValue.ToString()));
-                        htt.Add("@patientID", partID);
-                        htt.Add("@status", 0);
-                        htt.Add("@id", apointmentID);
-                        if (LibCRUD.data_insert_update_delete("st_updateAppointment", htt) > 0)
-                        {
-
-                            LibMainClass.showMessage(txt_Patient.Text + " added successfully..", "success");
-                            LibMainClass.resetEnable(LEFTPANEL);
-                            LoadPatient();
-                        }
-                    }
-                    else
-                    {
-                        LibMainClass.showMessage("Unable to update record.", "error");
-                    }
+                    sc.Complete();
                 }
             }
         }
@@ -245,14 +215,14 @@ namespace HoTroBenhNhanThan.GUI
                 edit = 1;
                 LibMainClass.DisableControl(LEFTPANEL);
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                partID = Convert.ToInt64(row.Cells["PatientIDGV"].Value.ToString());
+                partID = Convert.ToInt64(row.Cells["patientIDGV"].Value.ToString());
                 apointmentID = Convert.ToInt64(row.Cells["appIDGV"].Value.ToString());
                 txt_Phone.Text = row.Cells["phoneGV"].Value.ToString();
                 txt_Patient.Text = row.Cells["patientGV"].Value.ToString();
                 txt_Father.Text = row.Cells["guardGV"].Value.ToString();
                 Picker_ApointmentDate.Value = Convert.ToDateTime( row.Cells["appointDateGV"].Value.ToString());
                 cb_ApointmentFor.SelectedValue = row.Cells["doctorIDGV"].Value;
-                txt_age.Text = row.Cells["ageGV"].Value.ToString();
+                //txt_age.Text = row.Cells["ageGV"].Value.ToString();
             }
         }
     }

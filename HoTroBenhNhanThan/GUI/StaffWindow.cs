@@ -213,6 +213,7 @@ namespace HoTroBenhNhanThan
         {
             Hashtable ht = new Hashtable();
             LibCRUD.loadList("st_getRoles", cb_role, "ID", "Role", ht);
+            cb_role.BackColor = Color.White;
             LoadUsers();
         }
     }

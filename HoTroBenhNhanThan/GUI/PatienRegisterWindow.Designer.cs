@@ -51,17 +51,16 @@
             this.txt_Patient = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.turnGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.statusGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doctorGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DoctorIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GuardGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ageGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apointDateGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctorGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DoctorIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.appIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.statusGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.flowPanel.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
@@ -115,7 +114,6 @@
             this.txt_Phone.Name = "txt_Phone";
             this.txt_Phone.Size = new System.Drawing.Size(303, 27);
             this.txt_Phone.TabIndex = 4;
-            this.txt_Phone.UseSystemPasswordChar = true;
             this.txt_Phone.Leave += new System.EventHandler(this.PhoneTxt_Leave);
             // 
             // label4
@@ -146,7 +144,6 @@
             this.txt_age.Name = "txt_age";
             this.txt_age.Size = new System.Drawing.Size(303, 27);
             this.txt_age.TabIndex = 6;
-            this.txt_age.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -166,7 +163,6 @@
             this.txt_Father.Name = "txt_Father";
             this.txt_Father.Size = new System.Drawing.Size(303, 27);
             this.txt_Father.TabIndex = 8;
-            this.txt_Father.UseSystemPasswordChar = true;
             // 
             // Picker_ApointmentDate
             // 
@@ -261,7 +257,6 @@
             this.txt_consultsTo.Size = new System.Drawing.Size(303, 27);
             this.txt_consultsTo.TabIndex = 21;
             this.txt_consultsTo.TabStop = false;
-            this.txt_consultsTo.UseSystemPasswordChar = true;
             // 
             // label11
             // 
@@ -283,7 +278,6 @@
             this.txt_Status.Size = new System.Drawing.Size(303, 27);
             this.txt_Status.TabIndex = 23;
             this.txt_Status.TabStop = false;
-            this.txt_Status.UseSystemPasswordChar = true;
             // 
             // label12
             // 
@@ -303,12 +297,10 @@
             this.txt_Patient.Name = "txt_Patient";
             this.txt_Patient.Size = new System.Drawing.Size(303, 27);
             this.txt_Patient.TabIndex = 25;
-            this.txt_Patient.UseSystemPasswordChar = true;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -322,17 +314,16 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.snoGV,
-            this.turnGV,
-            this.statusGV,
-            this.phoneGV,
-            this.doctorGV,
-            this.DoctorIDGV,
             this.patientIDGV,
             this.patientGV,
             this.GuardGV,
             this.ageGV,
+            this.phoneGV,
             this.apointDateGV,
-            this.appIDGV});
+            this.doctorGV,
+            this.DoctorIDGV,
+            this.appIDGV,
+            this.statusGV});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -344,10 +335,10 @@
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 23);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(943, 601);
             this.dataGridView1.TabIndex = 1;
             // 
@@ -359,42 +350,6 @@
             this.snoGV.Name = "snoGV";
             this.snoGV.ReadOnly = true;
             this.snoGV.Width = 47;
-            // 
-            // turnGV
-            // 
-            this.turnGV.HeaderText = "turn";
-            this.turnGV.MinimumWidth = 6;
-            this.turnGV.Name = "turnGV";
-            this.turnGV.ReadOnly = true;
-            // 
-            // statusGV
-            // 
-            this.statusGV.HeaderText = "Status";
-            this.statusGV.MinimumWidth = 6;
-            this.statusGV.Name = "statusGV";
-            this.statusGV.ReadOnly = true;
-            // 
-            // phoneGV
-            // 
-            this.phoneGV.HeaderText = "Phone";
-            this.phoneGV.MinimumWidth = 6;
-            this.phoneGV.Name = "phoneGV";
-            this.phoneGV.ReadOnly = true;
-            // 
-            // doctorGV
-            // 
-            this.doctorGV.HeaderText = "Doctor";
-            this.doctorGV.MinimumWidth = 6;
-            this.doctorGV.Name = "doctorGV";
-            this.doctorGV.ReadOnly = true;
-            // 
-            // DoctorIDGV
-            // 
-            this.DoctorIDGV.HeaderText = "DoctorID";
-            this.DoctorIDGV.MinimumWidth = 6;
-            this.DoctorIDGV.Name = "DoctorIDGV";
-            this.DoctorIDGV.ReadOnly = true;
-            this.DoctorIDGV.Visible = false;
             // 
             // patientIDGV
             // 
@@ -425,6 +380,13 @@
             this.ageGV.Name = "ageGV";
             this.ageGV.ReadOnly = true;
             // 
+            // phoneGV
+            // 
+            this.phoneGV.HeaderText = "Phone";
+            this.phoneGV.MinimumWidth = 6;
+            this.phoneGV.Name = "phoneGV";
+            this.phoneGV.ReadOnly = true;
+            // 
             // apointDateGV
             // 
             this.apointDateGV.HeaderText = "Apointment For";
@@ -432,13 +394,33 @@
             this.apointDateGV.Name = "apointDateGV";
             this.apointDateGV.ReadOnly = true;
             // 
+            // doctorGV
+            // 
+            this.doctorGV.HeaderText = "Doctor";
+            this.doctorGV.MinimumWidth = 6;
+            this.doctorGV.Name = "doctorGV";
+            this.doctorGV.ReadOnly = true;
+            // 
+            // DoctorIDGV
+            // 
+            this.DoctorIDGV.HeaderText = "DoctorID";
+            this.DoctorIDGV.MinimumWidth = 6;
+            this.DoctorIDGV.Name = "DoctorIDGV";
+            this.DoctorIDGV.Visible = false;
+            // 
             // appIDGV
             // 
             this.appIDGV.HeaderText = "APPID";
             this.appIDGV.MinimumWidth = 6;
             this.appIDGV.Name = "appIDGV";
-            this.appIDGV.ReadOnly = true;
             this.appIDGV.Visible = false;
+            // 
+            // statusGV
+            // 
+            this.statusGV.HeaderText = "Status";
+            this.statusGV.MinimumWidth = 6;
+            this.statusGV.Name = "statusGV";
+            this.statusGV.ReadOnly = true;
             // 
             // PatienRegisterWindow
             // 
@@ -485,16 +467,15 @@
         private Label label12;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn snoGV;
-        private DataGridViewTextBoxColumn turnGV;
-        private DataGridViewTextBoxColumn statusGV;
-        private DataGridViewTextBoxColumn phoneGV;
-        private DataGridViewTextBoxColumn doctorGV;
-        private DataGridViewTextBoxColumn DoctorIDGV;
         private DataGridViewTextBoxColumn patientIDGV;
         private DataGridViewTextBoxColumn patientGV;
         private DataGridViewTextBoxColumn GuardGV;
         private DataGridViewTextBoxColumn ageGV;
+        private DataGridViewTextBoxColumn phoneGV;
         private DataGridViewTextBoxColumn apointDateGV;
+        private DataGridViewTextBoxColumn doctorGV;
+        private DataGridViewTextBoxColumn DoctorIDGV;
         private DataGridViewTextBoxColumn appIDGV;
+        private DataGridViewTextBoxColumn statusGV;
     }
 }

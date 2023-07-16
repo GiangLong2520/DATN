@@ -21,14 +21,14 @@ namespace HoTroBenhNhanThan
         public static int edit = 0;
         private void button1_Click(object sender, EventArgs e) // add click
         {
-            LibMainClass.resetEnable(LEFTPANEL);    
+            LibMainClass.resetEnable(left_panel);    
             edit= 0;
         }
 
         private void button2_Click(object sender, EventArgs e) // edit click
         {
             edit = 1;
-            LibMainClass.EnableControl(LEFTPANEL);
+            LibMainClass.EnableControl(left_panel);
         }
 
         public virtual void button3_Click(object sender, EventArgs e)    // save click
@@ -51,6 +51,9 @@ namespace HoTroBenhNhanThan
             LibMainClass.showWindow(homeWindow, this, MDI.ActiveForm);
         }
 
-      
+        private void flowPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

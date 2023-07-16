@@ -51,6 +51,7 @@
             this.txt_Patient = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TurnGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GuardGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,9 +63,9 @@
             this.appIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            this.flowPanel.SuspendLayout();
-            this.LEFTPANEL.SuspendLayout();
             this.left_panel.SuspendLayout();
+            this.LEFTPANEL.SuspendLayout();
+            this.left_panel_common.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
             this.RIGHTPANEL.SuspendLayout();
             this.UserPanel.SuspendLayout();
@@ -80,27 +81,27 @@
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
             // 
-            // flowPanel
+            // left_panel
             // 
-            this.flowPanel.Controls.Add(this.label4);
-            this.flowPanel.Controls.Add(this.txt_Phone);
-            this.flowPanel.Controls.Add(this.label2);
-            this.flowPanel.Controls.Add(this.txt_Patient);
-            this.flowPanel.Controls.Add(this.label12);
-            this.flowPanel.Controls.Add(this.txt_age);
-            this.flowPanel.Controls.Add(this.label5);
-            this.flowPanel.Controls.Add(this.txt_Father);
-            this.flowPanel.Controls.Add(this.label6);
-            this.flowPanel.Controls.Add(this.Picker_ApointmentDate);
-            this.flowPanel.Controls.Add(this.label8);
-            this.flowPanel.Controls.Add(this.cb_ApointmentFor);
-            this.flowPanel.Controls.Add(this.label7);
-            this.flowPanel.Controls.Add(this.label9);
-            this.flowPanel.Controls.Add(this.picker_LastApointmentDate);
-            this.flowPanel.Controls.Add(this.label10);
-            this.flowPanel.Controls.Add(this.txt_consultsTo);
-            this.flowPanel.Controls.Add(this.label11);
-            this.flowPanel.Controls.Add(this.txt_Status);
+            this.left_panel.Controls.Add(this.label4);
+            this.left_panel.Controls.Add(this.txt_Phone);
+            this.left_panel.Controls.Add(this.label2);
+            this.left_panel.Controls.Add(this.txt_Patient);
+            this.left_panel.Controls.Add(this.label12);
+            this.left_panel.Controls.Add(this.txt_age);
+            this.left_panel.Controls.Add(this.label5);
+            this.left_panel.Controls.Add(this.txt_Father);
+            this.left_panel.Controls.Add(this.label6);
+            this.left_panel.Controls.Add(this.Picker_ApointmentDate);
+            this.left_panel.Controls.Add(this.label8);
+            this.left_panel.Controls.Add(this.cb_ApointmentFor);
+            this.left_panel.Controls.Add(this.label7);
+            this.left_panel.Controls.Add(this.label9);
+            this.left_panel.Controls.Add(this.picker_LastApointmentDate);
+            this.left_panel.Controls.Add(this.label10);
+            this.left_panel.Controls.Add(this.txt_consultsTo);
+            this.left_panel.Controls.Add(this.label11);
+            this.left_panel.Controls.Add(this.txt_Status);
             // 
             // btnBack
             // 
@@ -297,6 +298,7 @@
             this.txt_Patient.Name = "txt_Patient";
             this.txt_Patient.Size = new System.Drawing.Size(303, 27);
             this.txt_Patient.TabIndex = 25;
+            this.txt_Patient.TextChanged += new System.EventHandler(this.txt_Patient_TextChanged);
             // 
             // dataGridView1
             // 
@@ -314,6 +316,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.snoGV,
+            this.TurnGV,
             this.patientIDGV,
             this.patientGV,
             this.GuardGV,
@@ -341,6 +344,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(943, 601);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // snoGV
             // 
@@ -350,6 +354,13 @@
             this.snoGV.Name = "snoGV";
             this.snoGV.ReadOnly = true;
             this.snoGV.Width = 47;
+            // 
+            // TurnGV
+            // 
+            this.TurnGV.HeaderText = "Turn";
+            this.TurnGV.MinimumWidth = 6;
+            this.TurnGV.Name = "TurnGV";
+            this.TurnGV.ReadOnly = true;
             // 
             // patientIDGV
             // 
@@ -431,10 +442,10 @@
             this.Text = "Patien Registeration";
             this.Load += new System.EventHandler(this.PatienRegisterWindow_Load);
             this.groupBox1.ResumeLayout(false);
-            this.flowPanel.ResumeLayout(false);
-            this.flowPanel.PerformLayout();
-            this.LEFTPANEL.ResumeLayout(false);
             this.left_panel.ResumeLayout(false);
+            this.left_panel.PerformLayout();
+            this.LEFTPANEL.ResumeLayout(false);
+            this.left_panel_common.ResumeLayout(false);
             this.BtnBackPanel.ResumeLayout(false);
             this.RIGHTPANEL.ResumeLayout(false);
             this.UserPanel.ResumeLayout(false);
@@ -477,5 +488,6 @@
         private DataGridViewTextBoxColumn DoctorIDGV;
         private DataGridViewTextBoxColumn appIDGV;
         private DataGridViewTextBoxColumn statusGV;
+        private DataGridViewTextBoxColumn TurnGV;
     }
 }

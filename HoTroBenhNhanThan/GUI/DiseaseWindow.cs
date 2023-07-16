@@ -36,7 +36,7 @@ namespace HoTroBenhNhanThan.GUI
             //--------------------------------------------------------//
         public override void button3_Click(object sender, EventArgs e)          //save btn
         {
-            if (LibMainClass.checkControls(LEFTPANEL).Count > 0)
+            if (LibMainClass.checkControls(left_panel_common).Count > 0)
             {
                 LibMainClass.showMessage("Field with RED are mandatory.", "error");
 

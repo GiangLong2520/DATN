@@ -21,7 +21,7 @@ namespace HoTroBenhNhanThan
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            if (LibMainClass.checkControls(left_panel).Count > 0)
+            if (LibMainClass.checkControls(left_panel_common).Count > 0)
             {
                 LibMainClass.showMessage("Fields with RED are madatory", "error");
             }

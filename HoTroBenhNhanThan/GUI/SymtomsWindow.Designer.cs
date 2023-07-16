@@ -41,9 +41,9 @@
             this.diseaseIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiseaseGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            this.flowPanel.SuspendLayout();
-            this.LEFTPANEL.SuspendLayout();
             this.left_panel.SuspendLayout();
+            this.LEFTPANEL.SuspendLayout();
+            this.left_panel_common.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
             this.RIGHTPANEL.SuspendLayout();
             this.UserPanel.SuspendLayout();
@@ -61,10 +61,10 @@
             // 
             // flowPanel
             // 
-            this.flowPanel.Controls.Add(this.label7);
-            this.flowPanel.Controls.Add(this.txt_symptom);
-            this.flowPanel.Controls.Add(this.label8);
-            this.flowPanel.Controls.Add(this.cb_disease);
+            this.left_panel.Controls.Add(this.label7);
+            this.left_panel.Controls.Add(this.txt_symptom);
+            this.left_panel.Controls.Add(this.label8);
+            this.left_panel.Controls.Add(this.cb_disease);
             // 
             // btnBack
             // 
@@ -200,10 +200,10 @@
             this.Text = "SymtomsWindow";
             this.Load += new System.EventHandler(this.SymtomsWindow_Load);
             this.groupBox1.ResumeLayout(false);
-            this.flowPanel.ResumeLayout(false);
-            this.flowPanel.PerformLayout();
-            this.LEFTPANEL.ResumeLayout(false);
             this.left_panel.ResumeLayout(false);
+            this.left_panel.PerformLayout();
+            this.LEFTPANEL.ResumeLayout(false);
+            this.left_panel_common.ResumeLayout(false);
             this.BtnBackPanel.ResumeLayout(false);
             this.RIGHTPANEL.ResumeLayout(false);
             this.UserPanel.ResumeLayout(false);

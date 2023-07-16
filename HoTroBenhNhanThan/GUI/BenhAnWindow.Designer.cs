@@ -31,7 +31,7 @@
             this.dgv_BenhAn = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
-            this.left_panel.SuspendLayout();
+            this.left_panel_common.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
             this.RIGHTPANEL.SuspendLayout();
             this.UserPanel.SuspendLayout();
@@ -71,7 +71,7 @@
             this.Text = "BenhAnWindow";
             this.groupBox1.ResumeLayout(false);
             this.LEFTPANEL.ResumeLayout(false);
-            this.left_panel.ResumeLayout(false);
+            this.left_panel_common.ResumeLayout(false);
             this.BtnBackPanel.ResumeLayout(false);
             this.RIGHTPANEL.ResumeLayout(false);
             this.UserPanel.ResumeLayout(false);

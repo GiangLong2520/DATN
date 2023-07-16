@@ -53,9 +53,9 @@
             this.RoleIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoleGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            this.flowPanel.SuspendLayout();
-            this.LEFTPANEL.SuspendLayout();
             this.left_panel.SuspendLayout();
+            this.LEFTPANEL.SuspendLayout();
+            this.left_panel_common.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
             this.RIGHTPANEL.SuspendLayout();
             this.UserPanel.SuspendLayout();
@@ -73,18 +73,18 @@
             // 
             // flowPanel
             // 
-            this.flowPanel.Controls.Add(this.label2);
-            this.flowPanel.Controls.Add(this.txt_name);
-            this.flowPanel.Controls.Add(this.label4);
-            this.flowPanel.Controls.Add(this.txt_usename);
-            this.flowPanel.Controls.Add(this.label5);
-            this.flowPanel.Controls.Add(this.txt_password);
-            this.flowPanel.Controls.Add(this.label6);
-            this.flowPanel.Controls.Add(this.txt_phone);
-            this.flowPanel.Controls.Add(this.label7);
-            this.flowPanel.Controls.Add(this.txt_address);
-            this.flowPanel.Controls.Add(this.label8);
-            this.flowPanel.Controls.Add(this.cb_role);
+            this.left_panel.Controls.Add(this.label2);
+            this.left_panel.Controls.Add(this.txt_name);
+            this.left_panel.Controls.Add(this.label4);
+            this.left_panel.Controls.Add(this.txt_usename);
+            this.left_panel.Controls.Add(this.label5);
+            this.left_panel.Controls.Add(this.txt_password);
+            this.left_panel.Controls.Add(this.label6);
+            this.left_panel.Controls.Add(this.txt_phone);
+            this.left_panel.Controls.Add(this.label7);
+            this.left_panel.Controls.Add(this.txt_address);
+            this.left_panel.Controls.Add(this.label8);
+            this.left_panel.Controls.Add(this.cb_role);
             // 
             // btnBack
             // 
@@ -333,10 +333,10 @@
             this.Text = "StaffWindow";
             this.Load += new System.EventHandler(this.StaffWindow_Load);
             this.groupBox1.ResumeLayout(false);
-            this.flowPanel.ResumeLayout(false);
-            this.flowPanel.PerformLayout();
-            this.LEFTPANEL.ResumeLayout(false);
             this.left_panel.ResumeLayout(false);
+            this.left_panel.PerformLayout();
+            this.LEFTPANEL.ResumeLayout(false);
+            this.left_panel_common.ResumeLayout(false);
             this.BtnBackPanel.ResumeLayout(false);
             this.RIGHTPANEL.ResumeLayout(false);
             this.UserPanel.ResumeLayout(false);

@@ -39,7 +39,7 @@
             this.isCB = new System.Windows.Forms.CheckBox();
             this.btn_Save = new System.Windows.Forms.Button();
             this.LEFTPANEL.SuspendLayout();
-            this.left_panel.SuspendLayout();
+            this.left_panel_common.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
             this.RIGHTPANEL.SuspendLayout();
             this.UserPanel.SuspendLayout();
@@ -47,16 +47,16 @@
             // 
             // left_panel
             // 
-            this.left_panel.Controls.Add(this.btn_Save);
-            this.left_panel.Controls.Add(this.isCB);
-            this.left_panel.Controls.Add(this.txt_source);
-            this.left_panel.Controls.Add(this.label5);
-            this.left_panel.Controls.Add(this.txt_Db);
-            this.left_panel.Controls.Add(this.label4);
-            this.left_panel.Controls.Add(this.txt_userid);
-            this.left_panel.Controls.Add(this.label3);
-            this.left_panel.Controls.Add(this.txt_pass);
-            this.left_panel.Controls.Add(this.label2);
+            this.left_panel_common.Controls.Add(this.btn_Save);
+            this.left_panel_common.Controls.Add(this.isCB);
+            this.left_panel_common.Controls.Add(this.txt_source);
+            this.left_panel_common.Controls.Add(this.label5);
+            this.left_panel_common.Controls.Add(this.txt_Db);
+            this.left_panel_common.Controls.Add(this.label4);
+            this.left_panel_common.Controls.Add(this.txt_userid);
+            this.left_panel_common.Controls.Add(this.label3);
+            this.left_panel_common.Controls.Add(this.txt_pass);
+            this.left_panel_common.Controls.Add(this.label2);
             // 
             // btnBack
             // 
@@ -162,8 +162,8 @@
             this.Name = "SettingWindow";
             this.Text = "Setting...";
             this.LEFTPANEL.ResumeLayout(false);
-            this.left_panel.ResumeLayout(false);
-            this.left_panel.PerformLayout();
+            this.left_panel_common.ResumeLayout(false);
+            this.left_panel_common.PerformLayout();
             this.BtnBackPanel.ResumeLayout(false);
             this.RIGHTPANEL.ResumeLayout(false);
             this.UserPanel.ResumeLayout(false);

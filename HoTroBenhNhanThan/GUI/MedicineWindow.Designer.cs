@@ -43,9 +43,9 @@
             this.CompanyGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TypeGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            this.flowPanel.SuspendLayout();
-            this.LEFTPANEL.SuspendLayout();
             this.left_panel.SuspendLayout();
+            this.LEFTPANEL.SuspendLayout();
+            this.left_panel_common.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
             this.RIGHTPANEL.SuspendLayout();
             this.UserPanel.SuspendLayout();
@@ -63,12 +63,12 @@
             // 
             // flowPanel
             // 
-            this.flowPanel.Controls.Add(this.label2);
-            this.flowPanel.Controls.Add(this.txt_medi);
-            this.flowPanel.Controls.Add(this.label4);
-            this.flowPanel.Controls.Add(this.txt_company);
-            this.flowPanel.Controls.Add(this.label8);
-            this.flowPanel.Controls.Add(this.cb_Type);
+            this.left_panel.Controls.Add(this.label2);
+            this.left_panel.Controls.Add(this.txt_medi);
+            this.left_panel.Controls.Add(this.label4);
+            this.left_panel.Controls.Add(this.txt_company);
+            this.left_panel.Controls.Add(this.label8);
+            this.left_panel.Controls.Add(this.cb_Type);
             // 
             // btnBack
             // 
@@ -226,10 +226,10 @@
             this.Text = "MedicineWindow";
             this.Load += new System.EventHandler(this.MedicineWindow_Load);
             this.groupBox1.ResumeLayout(false);
-            this.flowPanel.ResumeLayout(false);
-            this.flowPanel.PerformLayout();
-            this.LEFTPANEL.ResumeLayout(false);
             this.left_panel.ResumeLayout(false);
+            this.left_panel.PerformLayout();
+            this.LEFTPANEL.ResumeLayout(false);
+            this.left_panel_common.ResumeLayout(false);
             this.BtnBackPanel.ResumeLayout(false);
             this.RIGHTPANEL.ResumeLayout(false);
             this.UserPanel.ResumeLayout(false);

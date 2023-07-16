@@ -33,9 +33,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cb_selectPatient = new System.Windows.Forms.ComboBox();
             this.btnCall = new System.Windows.Forms.Button();
-            this.flowPanel.SuspendLayout();
-            this.LEFTPANEL.SuspendLayout();
             this.left_panel.SuspendLayout();
+            this.LEFTPANEL.SuspendLayout();
+            this.left_panel_common.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
             this.RIGHTPANEL.SuspendLayout();
             this.UserPanel.SuspendLayout();
@@ -48,11 +48,11 @@
             // 
             // flowPanel
             // 
-            this.flowPanel.Controls.Add(this.label9);
-            this.flowPanel.Controls.Add(this.picker_DateTime);
-            this.flowPanel.Controls.Add(this.label8);
-            this.flowPanel.Controls.Add(this.cb_selectPatient);
-            this.flowPanel.Controls.Add(this.btnCall);
+            this.left_panel.Controls.Add(this.label9);
+            this.left_panel.Controls.Add(this.picker_DateTime);
+            this.left_panel.Controls.Add(this.label8);
+            this.left_panel.Controls.Add(this.cb_selectPatient);
+            this.left_panel.Controls.Add(this.btnCall);
             // 
             // btnBack
             // 
@@ -126,10 +126,10 @@
             this.Name = "HealthCheckWindow";
             this.Text = "HealthCheck";
             this.Load += new System.EventHandler(this.HealthCheckWindow_Load);
-            this.flowPanel.ResumeLayout(false);
-            this.flowPanel.PerformLayout();
-            this.LEFTPANEL.ResumeLayout(false);
             this.left_panel.ResumeLayout(false);
+            this.left_panel.PerformLayout();
+            this.LEFTPANEL.ResumeLayout(false);
+            this.left_panel_common.ResumeLayout(false);
             this.BtnBackPanel.ResumeLayout(false);
             this.RIGHTPANEL.ResumeLayout(false);
             this.UserPanel.ResumeLayout(false);

@@ -34,7 +34,7 @@
             txt_password = new TextBox();
             btn_Login = new Button();
             LEFTPANEL.SuspendLayout();
-            left_panel.SuspendLayout();
+            left_panel_common.SuspendLayout();
             BtnBackPanel.SuspendLayout();
             RIGHTPANEL.SuspendLayout();
             UserPanel.SuspendLayout();
@@ -42,11 +42,11 @@
             // 
             // left_panel
             // 
-            left_panel.Controls.Add(btn_Login);
-            left_panel.Controls.Add(txt_password);
-            left_panel.Controls.Add(label3);
-            left_panel.Controls.Add(txt_user);
-            left_panel.Controls.Add(label2);
+            left_panel_common.Controls.Add(btn_Login);
+            left_panel_common.Controls.Add(txt_password);
+            left_panel_common.Controls.Add(label3);
+            left_panel_common.Controls.Add(txt_user);
+            left_panel_common.Controls.Add(label2);
             // 
             // btnBack
             // 
@@ -115,8 +115,8 @@
             Text = "LoginWindow";
             Load += LoginWindow_Load;
             LEFTPANEL.ResumeLayout(false);
-            left_panel.ResumeLayout(false);
-            left_panel.PerformLayout();
+            left_panel_common.ResumeLayout(false);
+            left_panel_common.PerformLayout();
             BtnBackPanel.ResumeLayout(false);
             RIGHTPANEL.ResumeLayout(false);
             UserPanel.ResumeLayout(false);

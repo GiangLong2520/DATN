@@ -40,7 +40,7 @@ namespace HoTroBenhNhanThan
             {
                 txt_userid.AllowDrop = true;
                 txt_pass.AllowDrop = true;
-                if (LibMainClass.checkControls(left_panel).Count > 0)
+                if (LibMainClass.checkControls(left_panel_common).Count > 0)
                 {
                     LibMainClass.showMessage("Fields With Red Coler Are Mandatory", "error");
                 }

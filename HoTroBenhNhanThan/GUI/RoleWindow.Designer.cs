@@ -37,9 +37,9 @@
             this.RoleIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoleGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
-            this.flowPanel.SuspendLayout();
-            this.LEFTPANEL.SuspendLayout();
             this.left_panel.SuspendLayout();
+            this.LEFTPANEL.SuspendLayout();
+            this.left_panel_common.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
             this.RIGHTPANEL.SuspendLayout();
             this.UserPanel.SuspendLayout();
@@ -57,9 +57,9 @@
             // 
             // flowPanel
             // 
-            this.flowPanel.Controls.Add(this.label3);
-            this.flowPanel.Controls.Add(this.txt_role);
-            this.flowPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowPanel_Paint);
+            this.left_panel.Controls.Add(this.label3);
+            this.left_panel.Controls.Add(this.txt_role);
+            this.left_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowPanel_Paint);
             // 
             // btnBack
             // 
@@ -156,10 +156,10 @@
             this.Text = "RoleWindow";
             this.Load += new System.EventHandler(this.RoleWindow_Load);
             this.groupBox1.ResumeLayout(false);
-            this.flowPanel.ResumeLayout(false);
-            this.flowPanel.PerformLayout();
-            this.LEFTPANEL.ResumeLayout(false);
             this.left_panel.ResumeLayout(false);
+            this.left_panel.PerformLayout();
+            this.LEFTPANEL.ResumeLayout(false);
+            this.left_panel_common.ResumeLayout(false);
             this.BtnBackPanel.ResumeLayout(false);
             this.RIGHTPANEL.ResumeLayout(false);
             this.UserPanel.ResumeLayout(false);

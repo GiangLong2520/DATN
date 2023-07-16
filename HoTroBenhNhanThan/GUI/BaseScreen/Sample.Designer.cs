@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sample));
             this.LEFTPANEL = new System.Windows.Forms.Panel();
-            this.left_panel = new System.Windows.Forms.Panel();
+            this.left_panel_common = new System.Windows.Forms.Panel();
             this.BtnBackPanel = new System.Windows.Forms.Panel();
             this.btnBack = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             // LEFTPANEL
             // 
             this.LEFTPANEL.BackColor = System.Drawing.Color.DarkGreen;
-            this.LEFTPANEL.Controls.Add(this.left_panel);
+            this.LEFTPANEL.Controls.Add(this.left_panel_common);
             this.LEFTPANEL.Controls.Add(this.BtnBackPanel);
             this.LEFTPANEL.Dock = System.Windows.Forms.DockStyle.Left;
             this.LEFTPANEL.ForeColor = System.Drawing.Color.White;
@@ -56,13 +56,13 @@
             this.LEFTPANEL.Size = new System.Drawing.Size(323, 760);
             this.LEFTPANEL.TabIndex = 0;
             // 
-            // left_panel
+            // left_panel_common
             // 
-            this.left_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.left_panel.Location = new System.Drawing.Point(0, 71);
-            this.left_panel.Name = "left_panel";
-            this.left_panel.Size = new System.Drawing.Size(323, 689);
-            this.left_panel.TabIndex = 1;
+            this.left_panel_common.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.left_panel_common.Location = new System.Drawing.Point(0, 71);
+            this.left_panel_common.Name = "left_panel_common";
+            this.left_panel_common.Size = new System.Drawing.Size(323, 689);
+            this.left_panel_common.TabIndex = 1;
             // 
             // BtnBackPanel
             // 
@@ -163,7 +163,7 @@
         #endregion
 
         protected Panel LEFTPANEL;
-        protected Panel left_panel;
+        protected Panel left_panel_common;
         protected Panel BtnBackPanel;
         protected Button btnBack;
         protected Label label1;

@@ -356,7 +356,7 @@ namespace HoTroBenhNhanThan
                 }
             }
         }
-        public static ArrayList checkControls(Panel p)
+        public static ArrayList checkControls(Panel p, int editmode = 0)
         {
             ArrayList arr = new ArrayList();
             foreach (Control c in p.Controls)
@@ -370,7 +370,7 @@ namespace HoTroBenhNhanThan
                     }
                     else
                     {
-                        if (tb.Text == "")
+                        if (tb.Text == "" && tb.TabStop != false)
                         {
                             arr.Add(tb);
                         }
@@ -381,7 +381,10 @@ namespace HoTroBenhNhanThan
                                 arr.Remove(tb);
                             }
                         }
-                        tb.BackColor = tb.Text == "" ? tb.BackColor = Color.Firebrick : tb.BackColor = Color.White;
+                        if (tb.TabStop != false)
+                        {
+                            tb.BackColor = tb.Text == "" ? tb.BackColor = Color.Firebrick : tb.BackColor = Color.White;
+                        }
                     }
                 }
                 if (c is ComboBox)
@@ -393,7 +396,7 @@ namespace HoTroBenhNhanThan
                     }
                     else
                     {
-                        if (cb.SelectedIndex == -1)
+                        if (cb.SelectedIndex == -1 && cb.TabStop != false)
                         {
                             arr.Add(cb);
                         }
@@ -404,14 +407,17 @@ namespace HoTroBenhNhanThan
                                 arr.Remove(cb);
                             }
                         }
-                        cb.BackColor = cb.SelectedIndex == -1 ? cb.BackColor = Color.Firebrick : cb.BackColor = Color.White;
+                        if (cb.TabStop != false)
+                        {
+                            cb.BackColor = cb.SelectedIndex == -1 ? cb.BackColor = Color.Firebrick : cb.BackColor = Color.White;
+                        }
                     }
 
                 }
                 if (c is RadioButton)
                 {
                     RadioButton rb = (RadioButton)c;
-                    if (!rb.Checked)
+                    if (!rb.Checked && rb.TabStop != false)
                     {
                         arr.Add(rb);
                     }
@@ -422,12 +428,15 @@ namespace HoTroBenhNhanThan
                             arr.Remove(rb);
                         }
                     }
-                    rb.BackColor = !rb.Checked ? rb.BackColor = Color.Firebrick : rb.BackColor = Color.White;
+                    if (rb.TabStop != false)
+                    {
+                        rb.BackColor = !rb.Checked ? rb.BackColor = Color.Firebrick : rb.BackColor = Color.White;
+                    }
                 }
                 if (c is CheckBox)
                 {
                     CheckBox cb = (CheckBox)c;
-                    if (!cb.Checked)
+                    if (!cb.Checked && cb.TabStop != false)
                     {
                         arr.Add(cb);
                     }
@@ -438,13 +447,16 @@ namespace HoTroBenhNhanThan
                             arr.Remove(cb);
                         }
                     }
-                    cb.BackColor = !cb.Checked ? cb.BackColor = Color.Firebrick : cb.BackColor = Color.White;
+                    if (cb.TabStop != false)
+                    {
+                        cb.BackColor = !cb.Checked ? cb.BackColor = Color.Firebrick : cb.BackColor = Color.White;
+                    }
                 }
 
                 if (c is NumericUpDown)
                 {
                     NumericUpDown cb = (NumericUpDown)c;
-                    if (cb.Value == 0)
+                    if (cb.Value == 0 && cb.TabStop != false)
                     {
                         arr.Add((NumericUpDown)cb);
                     }
@@ -455,17 +467,20 @@ namespace HoTroBenhNhanThan
                             arr.Remove(cb);
                         }
                     }
-                    cb.BackColor = cb.Value == 0 ? cb.BackColor = Color.Firebrick : cb.BackColor = Color.White;
+                    if (cb.TabStop != false)
+                    {
+                        cb.BackColor = cb.Value == 0 ? cb.BackColor = Color.Firebrick : cb.BackColor = Color.White;
+                    }
                 }
                 if(c is DateTimePicker) {
                     DateTimePicker dt = (DateTimePicker)c;
-                    if(dt.AllowDrop == true)
+                    if (dt.AllowDrop == true)
                     {
 
                     }
                     else
                     {
-                        if(dt.Value<DateTime.Today)
+                        if (dt.Value < DateTime.Today && dt.TabStop != false && editmode == 0)
                         {
                             arr.Add(dt);
                         }
@@ -477,7 +492,10 @@ namespace HoTroBenhNhanThan
                                 arr.Remove(dt);
                             }
                         }
-                        dt.BackColor = dt.Value <DateTime.Today ? dt.BackColor = Color.Firebrick : dt.BackColor = Color.White;
+                        if (dt.TabStop != false)
+                        {
+                            dt.BackColor = dt.Value < DateTime.Today ? dt.BackColor = Color.Firebrick : dt.BackColor = Color.White;
+                        }
                     }
                 }
             }

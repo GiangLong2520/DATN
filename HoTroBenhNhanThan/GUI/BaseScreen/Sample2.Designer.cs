@@ -41,9 +41,9 @@ namespace HoTroBenhNhanThan
             this.txt_search = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.flowPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.left_panel = new System.Windows.Forms.FlowLayoutPanel();
             this.LEFTPANEL.SuspendLayout();
-            this.left_panel.SuspendLayout();
+            this.left_panel_common.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
             this.RIGHTPANEL.SuspendLayout();
             this.UserPanel.SuspendLayout();
@@ -52,10 +52,10 @@ namespace HoTroBenhNhanThan
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // left_panel
+            // left_panel_common
             // 
-            this.left_panel.Controls.Add(this.flowPanel);
-            this.left_panel.Controls.Add(this.panel2);
+            this.left_panel_common.Controls.Add(this.left_panel);
+            this.left_panel_common.Controls.Add(this.panel2);
             // 
             // btnBack
             // 
@@ -229,14 +229,15 @@ namespace HoTroBenhNhanThan
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Details";
             // 
-            // flowPanel
+            // left_panel
             // 
-            this.flowPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowPanel.Location = new System.Drawing.Point(0, 62);
-            this.flowPanel.Name = "flowPanel";
-            this.flowPanel.Size = new System.Drawing.Size(323, 627);
-            this.flowPanel.TabIndex = 1;
+            this.left_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.left_panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.left_panel.Location = new System.Drawing.Point(0, 62);
+            this.left_panel.Name = "left_panel";
+            this.left_panel.Size = new System.Drawing.Size(323, 627);
+            this.left_panel.TabIndex = 1;
+            this.left_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowPanel_Paint);
             // 
             // Sample2
             // 
@@ -246,7 +247,7 @@ namespace HoTroBenhNhanThan
             this.Name = "Sample2";
             this.Text = "Sample2";
             this.LEFTPANEL.ResumeLayout(false);
-            this.left_panel.ResumeLayout(false);
+            this.left_panel_common.ResumeLayout(false);
             this.BtnBackPanel.ResumeLayout(false);
             this.RIGHTPANEL.ResumeLayout(false);
             this.UserPanel.ResumeLayout(false);
@@ -267,7 +268,7 @@ namespace HoTroBenhNhanThan
         protected Button button3;
         protected Panel panel2;
         protected GroupBox groupBox1;
-        protected FlowLayoutPanel flowPanel;
+        protected FlowLayoutPanel left_panel;
         protected Button btn_Edit;
         protected Button btn_Add;
         protected Button btn_Save;

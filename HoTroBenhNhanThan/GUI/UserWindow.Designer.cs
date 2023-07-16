@@ -44,9 +44,9 @@
             this.cb_Roles = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            this.flowPanel.SuspendLayout();
-            this.LEFTPANEL.SuspendLayout();
             this.left_panel.SuspendLayout();
+            this.LEFTPANEL.SuspendLayout();
+            this.left_panel_common.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
             this.RIGHTPANEL.SuspendLayout();
             this.UserPanel.SuspendLayout();
@@ -65,18 +65,18 @@
             // 
             // flowPanel
             // 
-            this.flowPanel.Controls.Add(this.label3);
-            this.flowPanel.Controls.Add(this.txt_Name);
-            this.flowPanel.Controls.Add(this.label4);
-            this.flowPanel.Controls.Add(this.txt_usename);
-            this.flowPanel.Controls.Add(this.label5);
-            this.flowPanel.Controls.Add(this.txt_Pass);
-            this.flowPanel.Controls.Add(this.label6);
-            this.flowPanel.Controls.Add(this.txt_Phone);
-            this.flowPanel.Controls.Add(this.label7);
-            this.flowPanel.Controls.Add(this.txt_Address);
-            this.flowPanel.Controls.Add(this.label8);
-            this.flowPanel.Controls.Add(this.cb_Roles);
+            this.left_panel.Controls.Add(this.label3);
+            this.left_panel.Controls.Add(this.txt_Name);
+            this.left_panel.Controls.Add(this.label4);
+            this.left_panel.Controls.Add(this.txt_usename);
+            this.left_panel.Controls.Add(this.label5);
+            this.left_panel.Controls.Add(this.txt_Pass);
+            this.left_panel.Controls.Add(this.label6);
+            this.left_panel.Controls.Add(this.txt_Phone);
+            this.left_panel.Controls.Add(this.label7);
+            this.left_panel.Controls.Add(this.txt_Address);
+            this.left_panel.Controls.Add(this.label8);
+            this.left_panel.Controls.Add(this.cb_Roles);
             // 
             // btnBack
             // 
@@ -241,10 +241,10 @@
             this.Text = "UserWindow";
             this.Load += new System.EventHandler(this.UserWindow_Load);
             this.groupBox1.ResumeLayout(false);
-            this.flowPanel.ResumeLayout(false);
-            this.flowPanel.PerformLayout();
-            this.LEFTPANEL.ResumeLayout(false);
             this.left_panel.ResumeLayout(false);
+            this.left_panel.PerformLayout();
+            this.LEFTPANEL.ResumeLayout(false);
+            this.left_panel_common.ResumeLayout(false);
             this.BtnBackPanel.ResumeLayout(false);
             this.RIGHTPANEL.ResumeLayout(false);
             this.UserPanel.ResumeLayout(false);

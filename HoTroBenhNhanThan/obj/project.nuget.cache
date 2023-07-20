@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "A3+F052ootyeO4BudC/E8FvP/Y1LAnEL5fwNzRoTQ/VzjrlkpbVut6Q6PA4xwAuCuSNyMZY9qUOttXzcn/iAew==",
+  "dgSpecHash": "AnAUgIJAVakUFK91W7CziPbWMZLS3ehHLPPsY8wVZ8M6cJHOpmNOG+vyafP6FyWf9dzxgs2NcjXUrYAYd6QjTg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\longd\\source\\repos\\HoTroBenhNhanThan\\HoTroBenhNhanThan\\HoTroBenhNhanThan.csproj",
+  "projectFilePath": "D:\\Refer to DA3\\source\\DATN\\HoTroBenhNhanThan\\HoTroBenhNhanThan.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\longd\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\longd\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

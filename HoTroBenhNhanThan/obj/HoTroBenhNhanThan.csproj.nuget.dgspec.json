@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\longd\\source\\repos\\HoTroBenhNhanThan\\HoTroBenhNhanThan\\HoTroBenhNhanThan.csproj": {}
+    "D:\\Refer to DA3\\source\\DATN\\HoTroBenhNhanThan\\HoTroBenhNhanThan.csproj": {}
   },
   "projects": {
-    "C:\\Users\\longd\\source\\repos\\HoTroBenhNhanThan\\HoTroBenhNhanThan\\HoTroBenhNhanThan.csproj": {
+    "D:\\Refer to DA3\\source\\DATN\\HoTroBenhNhanThan\\HoTroBenhNhanThan.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\longd\\source\\repos\\HoTroBenhNhanThan\\HoTroBenhNhanThan\\HoTroBenhNhanThan.csproj",
+        "projectUniqueName": "D:\\Refer to DA3\\source\\DATN\\HoTroBenhNhanThan\\HoTroBenhNhanThan.csproj",
         "projectName": "HoTroBenhNhanThan",
-        "projectPath": "C:\\Users\\longd\\source\\repos\\HoTroBenhNhanThan\\HoTroBenhNhanThan\\HoTroBenhNhanThan.csproj",
+        "projectPath": "D:\\Refer to DA3\\source\\DATN\\HoTroBenhNhanThan\\HoTroBenhNhanThan.csproj",
         "packagesPath": "C:\\Users\\longd\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\longd\\source\\repos\\HoTroBenhNhanThan\\HoTroBenhNhanThan\\obj\\",
+        "outputPath": "D:\\Refer to DA3\\source\\DATN\\HoTroBenhNhanThan\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\longd\\AppData\\Roaming\\NuGet\\NuGet.Config",

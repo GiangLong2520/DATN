@@ -39,6 +39,10 @@
             this.right_panel.SuspendLayout();
             this.SuspendLayout();
             // 
+            // left_panel_common
+            // 
+            this.left_panel_common.Paint += new System.Windows.Forms.PaintEventHandler(this.left_panel_common_Paint);
+            // 
             // btnBack
             // 
             this.btnBack.FlatAppearance.BorderSize = 0;
@@ -62,14 +66,14 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label3
+            // lb_token
             // 
             this.lb_token.AutoSize = true;
             this.lb_token.Font = new System.Drawing.Font("Segoe UI", 100.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lb_token.ForeColor = System.Drawing.Color.DarkGreen;
             this.lb_token.Location = new System.Drawing.Point(140, 275);
-            this.lb_token.Name = "label3";
-            this.lb_token.Size = new System.Drawing.Size(596, 222);
+            this.lb_token.Name = "lb_token";
+            this.lb_token.Size = new System.Drawing.Size(591, 221);
             this.lb_token.TabIndex = 0;
             this.lb_token.Text = "CLINIC";
             this.lb_token.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

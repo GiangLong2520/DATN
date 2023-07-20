@@ -28,7 +28,7 @@ namespace HoTroBenhNhanThan.GUI
             ticks++;
             if(ticks == 60) {
                 ticks= 0;
-                lb_token.Text = HealthCheckWindow.turnNo.ToString() + " # CLINIC";
+                lb_token.Text = BioTestWinform.turnNo.ToString() + " CLINIC";
             }
         }
 
@@ -40,6 +40,11 @@ namespace HoTroBenhNhanThan.GUI
         private void TurnWindow_FormClosing(object sender, FormClosingEventArgs e)
         {
             timer1.Stop();
+        }
+
+        private void left_panel_common_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

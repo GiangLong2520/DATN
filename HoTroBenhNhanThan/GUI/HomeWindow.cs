@@ -1,4 +1,5 @@
 ﻿using HoTroBenhNhanThan.GUI;
+using HoTroBenhNhanThan.GUI.BaseScreen;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -57,6 +58,29 @@ namespace HoTroBenhNhanThan
         {
             PatienRegisterWindow patienform = new PatienRegisterWindow();
             LibMainClass.showWindow(patienform, this, MDI.ActiveForm);
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            BioTestWinform bioform = new BioTestWinform();
+            LibMainClass.showWindow(bioform, this, MDI.ActiveForm);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            TurnWindow turnWin = new TurnWindow();
+            LibMainClass.showWindow(turnWin, this, MDI.ActiveForm);
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Sample01 sam = new Sample01();
+            LibMainClass.showWindow(sam, this, MDI.ActiveForm);
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

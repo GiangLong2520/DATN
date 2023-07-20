@@ -1,7 +1,8 @@
-C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\bin\Debug\net6.0-windows\HoTroBenhNhanThan.dll
 C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\bin\Debug\net6.0-windows\HoTroBenhNhanThan.exe
 C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\bin\Debug\net6.0-windows\HoTroBenhNhanThan.deps.json
 C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\bin\Debug\net6.0-windows\HoTroBenhNhanThan.runtimeconfig.json
+C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\bin\Debug\net6.0-windows\HoTroBenhNhanThan.dll
+C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\bin\Debug\net6.0-windows\HoTroBenhNhanThan.pdb
 C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\bin\Debug\net6.0-windows\Azure.Core.dll
 C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\bin\Debug\net6.0-windows\Azure.Identity.dll
 C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\bin\Debug\net6.0-windows\Microsoft.Bcl.AsyncInterfaces.dll
@@ -28,8 +29,11 @@ C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\bin\Debug\net6.0
 C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\obj\Debug\net6.0-windows\HoTroBenhNhanThan.csproj.AssemblyReference.cache
 C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\obj\Debug\net6.0-windows\HoTroBenhNhanThan.MDI.resources
 C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\obj\Debug\net6.0-windows\HoTroBenhNhanThan.Sample.resources
+C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\obj\Debug\net6.0-windows\HoTroBenhNhanThan.GUI.BaseScreen.Sample01.resources
 C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\obj\Debug\net6.0-windows\HoTroBenhNhanThan.Sample2.resources
+C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\obj\Debug\net6.0-windows\HoTroBenhNhanThan.GUI.BaseScreen.Sample21.resources
 C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\obj\Debug\net6.0-windows\HoTroBenhNhanThan.BenhAnWindow.resources
+C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\obj\Debug\net6.0-windows\HoTroBenhNhanThan.GUI.BioTestWinform.resources
 C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\obj\Debug\net6.0-windows\HoTroBenhNhanThan.GUI.DiseaseWindow.resources
 C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\obj\Debug\net6.0-windows\HoTroBenhNhanThan.GUI.HealthCheckWindow.resources
 C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\obj\Debug\net6.0-windows\HoTroBenhNhanThan.HomeWindow.resources
@@ -54,5 +58,4 @@ C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\obj\Debug\net6.0
 C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\obj\Debug\net6.0-windows\refint\HoTroBenhNhanThan.dll
 C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\obj\Debug\net6.0-windows\HoTroBenhNhanThan.pdb
 C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\obj\Debug\net6.0-windows\HoTroBenhNhanThan.genruntimeconfig.cache
-C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\bin\Debug\net6.0-windows\HoTroBenhNhanThan.pdb
 C:\Users\longd\source\repos\HoTroBenhNhanThan\HoTroBenhNhanThan\obj\Debug\net6.0-windows\ref\HoTroBenhNhanThan.dll

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using HoTroBenhNhanThan.API;
 using HoTroBenhNhanThan.NewFolder;
-
+using HoTroBenhNhanThan.GUI.BaseScreen;                    
 namespace HoTroBenhNhanThan
 {
     public partial class Sample2 : Sample
@@ -47,8 +47,7 @@ namespace HoTroBenhNhanThan
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            HomeWindow homeWindow = new HomeWindow();
-            LibMainClass.showWindow(homeWindow, this, MDI.ActiveForm);
+
         }
 
         private void flowPanel_Paint(object sender, PaintEventArgs e)

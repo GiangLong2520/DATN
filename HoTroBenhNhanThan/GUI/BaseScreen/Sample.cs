@@ -39,5 +39,11 @@ namespace HoTroBenhNhanThan
                 User.Text = Authentication.Login.NAME;
             }
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            HomeWindow homeWindow = new HomeWindow();
+            LibMainClass.showWindow(homeWindow, this, MDI.ActiveForm);
+        }
     }
 }

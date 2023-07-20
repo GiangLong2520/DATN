@@ -40,8 +40,8 @@ namespace HoTroBenhNhanThan
             this.btn_View = new System.Windows.Forms.Button();
             this.txt_search = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.left_panel = new System.Windows.Forms.FlowLayoutPanel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.LEFTPANEL.SuspendLayout();
             this.left_panel_common.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
@@ -217,6 +217,16 @@ namespace HoTroBenhNhanThan
             this.panel2.Size = new System.Drawing.Size(323, 62);
             this.panel2.TabIndex = 0;
             // 
+            // left_panel
+            // 
+            this.left_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.left_panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.left_panel.Location = new System.Drawing.Point(0, 62);
+            this.left_panel.Name = "left_panel";
+            this.left_panel.Size = new System.Drawing.Size(323, 627);
+            this.left_panel.TabIndex = 1;
+            this.left_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowPanel_Paint);
+            // 
             // groupBox1
             // 
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -228,16 +238,6 @@ namespace HoTroBenhNhanThan
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Details";
-            // 
-            // left_panel
-            // 
-            this.left_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.left_panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.left_panel.Location = new System.Drawing.Point(0, 62);
-            this.left_panel.Name = "left_panel";
-            this.left_panel.Size = new System.Drawing.Size(323, 627);
-            this.left_panel.TabIndex = 1;
-            this.left_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowPanel_Paint);
             // 
             // Sample2
             // 

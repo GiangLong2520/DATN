@@ -75,8 +75,8 @@ namespace HoTroBenhNhanThan
         }
         public static void loadList(string proc, ComboBox cb, string valueNumber, string displayMember, Hashtable ht) {
             try
-            {
-                cb.Items.Clear();
+            {                                                      
+               // cb.Items.Clear();
                 SqlCommand cmd = new SqlCommand(proc, LibMainClass.con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 foreach(DictionaryEntry item in ht)

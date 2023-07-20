@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="GUI\BaseScreen\MDI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\BaseScreen\Sample.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\BaseScreen\Sample01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\BaseScreen\Sample2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\BaseScreen\Sample21.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\BenhAnWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\BioTestWinform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\DiseaseWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\HealthCheckWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\HomeWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\LoginWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\MedicineWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\PatienRegisterWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\RoleWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\SettingWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\StaffWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\SymtomsWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\TestWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\TurnWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\UserWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

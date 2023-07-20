@@ -1,0 +1,12 @@
+C:\Users\longd\source\repos\HoTroBenhNhanThan\Authentication\bin\Debug\net7.0\Authentication.deps.json
+C:\Users\longd\source\repos\HoTroBenhNhanThan\Authentication\bin\Debug\net7.0\Authentication.dll
+C:\Users\longd\source\repos\HoTroBenhNhanThan\Authentication\bin\Debug\net7.0\Authentication.pdb
+C:\Users\longd\source\repos\HoTroBenhNhanThan\Authentication\obj\Debug\net7.0\Authentication.csproj.AssemblyReference.cache
+C:\Users\longd\source\repos\HoTroBenhNhanThan\Authentication\obj\Debug\net7.0\Authentication.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\longd\source\repos\HoTroBenhNhanThan\Authentication\obj\Debug\net7.0\Authentication.AssemblyInfoInputs.cache
+C:\Users\longd\source\repos\HoTroBenhNhanThan\Authentication\obj\Debug\net7.0\Authentication.AssemblyInfo.cs
+C:\Users\longd\source\repos\HoTroBenhNhanThan\Authentication\obj\Debug\net7.0\Authentication.csproj.CoreCompileInputs.cache
+C:\Users\longd\source\repos\HoTroBenhNhanThan\Authentication\obj\Debug\net7.0\Authentication.dll
+C:\Users\longd\source\repos\HoTroBenhNhanThan\Authentication\obj\Debug\net7.0\refint\Authentication.dll
+C:\Users\longd\source\repos\HoTroBenhNhanThan\Authentication\obj\Debug\net7.0\Authentication.pdb
+C:\Users\longd\source\repos\HoTroBenhNhanThan\Authentication\obj\Debug\net7.0\ref\Authentication.dll

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sample01));
             this.left_panel_common = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.left_panel = new System.Windows.Forms.FlowLayoutPanel();
             this.LEFTPANEL = new System.Windows.Forms.Panel();
             this.BtnBackPanel = new System.Windows.Forms.Panel();
             this.btnBack = new System.Windows.Forms.Button();
@@ -50,6 +49,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.UserPanel = new System.Windows.Forms.Panel();
             this.User = new System.Windows.Forms.Label();
+            this.left_panel = new System.Windows.Forms.FlowLayoutPanel();
             this.left_panel_common.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
@@ -62,8 +62,8 @@
             // 
             // left_panel_common
             // 
-            this.left_panel_common.Controls.Add(this.panel2);
             this.left_panel_common.Controls.Add(this.left_panel);
+            this.left_panel_common.Controls.Add(this.panel2);
             this.left_panel_common.Dock = System.Windows.Forms.DockStyle.Fill;
             this.left_panel_common.Location = new System.Drawing.Point(0, 71);
             this.left_panel_common.Name = "left_panel_common";
@@ -77,15 +77,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(500, 62);
             this.panel2.TabIndex = 3;
-            // 
-            // left_panel
-            // 
-            this.left_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.left_panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.left_panel.Location = new System.Drawing.Point(0, 0);
-            this.left_panel.Name = "left_panel";
-            this.left_panel.Size = new System.Drawing.Size(500, 689);
-            this.left_panel.TabIndex = 2;
             // 
             // LEFTPANEL
             // 
@@ -314,6 +305,15 @@
             this.User.Text = "User";
             this.User.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // left_panel
+            // 
+            this.left_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.left_panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.left_panel.Location = new System.Drawing.Point(0, 62);
+            this.left_panel.Name = "left_panel";
+            this.left_panel.Size = new System.Drawing.Size(500, 627);
+            this.left_panel.TabIndex = 4;
+            // 
             // Sample01
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -359,7 +359,7 @@
         private Label label3;
         protected Button btn_View;
         private TextBox txt_search;
-        protected FlowLayoutPanel left_panel;
         protected Panel panel2;
+        protected FlowLayoutPanel left_panel;
     }
 }

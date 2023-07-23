@@ -98,6 +98,29 @@ namespace HoTroBenhNhanThan
             } 
         }
 
+        public static void getInforPatientReg(string proc,DateTimePicker date,TextBox text,  Hashtable ht)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand(proc, LibMainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                foreach (DictionaryEntry item in ht)
+                {
+                    cmd.Parameters.AddWithValue(item.Key.ToString(), item.Value);
+                }
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+
+            }
+            catch (Exception ex)
+            {
+                LibMainClass.showMessage(ex.Message, "error");
+
+            }
+        }
         public static int getTurnNumber(string proc, Hashtable ht)
         {
 

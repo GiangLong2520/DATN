@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label6 = new System.Windows.Forms.Label();
-            this.Picker_ApointmentDate = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.picker_LastApointmentDate = new System.Windows.Forms.DateTimePicker();
@@ -158,8 +156,6 @@
             // 
             // left_panel
             // 
-            this.left_panel.Controls.Add(this.label6);
-            this.left_panel.Controls.Add(this.Picker_ApointmentDate);
             this.left_panel.Controls.Add(this.label12);
             this.left_panel.Controls.Add(this.picker_DateTime);
             this.left_panel.Controls.Add(this.label24);
@@ -173,35 +169,13 @@
             this.left_panel.Controls.Add(this.label55);
             this.left_panel.Controls.Add(this.tableLayoutPanel2);
             this.left_panel.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.left_panel.Size = new System.Drawing.Size(500, 882);
+            this.left_panel.Size = new System.Drawing.Size(500, 820);
             this.left_panel.WrapContents = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 3);
-            this.label6.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(133, 20);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "Appointment Date";
-            // 
-            // Picker_ApointmentDate
-            // 
-            this.Picker_ApointmentDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Picker_ApointmentDate.CustomFormat = "dd-MMM-yyyy hh:mm";
-            this.Picker_ApointmentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Picker_ApointmentDate.Location = new System.Drawing.Point(10, 29);
-            this.Picker_ApointmentDate.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.Picker_ApointmentDate.Name = "Picker_ApointmentDate";
-            this.Picker_ApointmentDate.ShowUpDown = true;
-            this.Picker_ApointmentDate.Size = new System.Drawing.Size(303, 27);
-            this.Picker_ApointmentDate.TabIndex = 24;
             // 
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.Location = new System.Drawing.Point(10, 252);
+            this.label7.Location = new System.Drawing.Point(10, 193);
             this.label7.Margin = new System.Windows.Forms.Padding(10, 15, 3, 3);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(295, 33);
@@ -212,7 +186,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(10, 291);
+            this.label9.Location = new System.Drawing.Point(10, 232);
             this.label9.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(154, 20);
@@ -224,7 +198,7 @@
             this.picker_LastApointmentDate.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.picker_LastApointmentDate.CustomFormat = "dd-MMM-yyyy";
             this.picker_LastApointmentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.picker_LastApointmentDate.Location = new System.Drawing.Point(10, 317);
+            this.picker_LastApointmentDate.Location = new System.Drawing.Point(10, 258);
             this.picker_LastApointmentDate.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.picker_LastApointmentDate.Name = "picker_LastApointmentDate";
             this.picker_LastApointmentDate.Size = new System.Drawing.Size(303, 27);
@@ -234,7 +208,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(10, 350);
+            this.label10.Location = new System.Drawing.Point(10, 291);
             this.label10.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(84, 20);
@@ -243,7 +217,7 @@
             // 
             // txt_consultsTo
             // 
-            this.txt_consultsTo.Location = new System.Drawing.Point(10, 376);
+            this.txt_consultsTo.Location = new System.Drawing.Point(10, 317);
             this.txt_consultsTo.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.txt_consultsTo.MaxLength = 50;
             this.txt_consultsTo.Name = "txt_consultsTo";
@@ -451,7 +425,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(10, 62);
+            this.label12.Location = new System.Drawing.Point(10, 3);
             this.label12.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(41, 20);
@@ -463,7 +437,7 @@
             this.picker_DateTime.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.picker_DateTime.CustomFormat = "dd-MMM-yyyy";
             this.picker_DateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.picker_DateTime.Location = new System.Drawing.Point(10, 88);
+            this.picker_DateTime.Location = new System.Drawing.Point(10, 29);
             this.picker_DateTime.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.picker_DateTime.Name = "picker_DateTime";
             this.picker_DateTime.Size = new System.Drawing.Size(303, 27);
@@ -473,7 +447,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(10, 121);
+            this.label24.Location = new System.Drawing.Point(10, 62);
             this.label24.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(98, 20);
@@ -488,17 +462,19 @@
             this.cb_selectPatient.Items.AddRange(new object[] {
             "Internal",
             "External"});
-            this.cb_selectPatient.Location = new System.Drawing.Point(10, 147);
+            this.cb_selectPatient.Location = new System.Drawing.Point(10, 88);
             this.cb_selectPatient.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.cb_selectPatient.Name = "cb_selectPatient";
             this.cb_selectPatient.Size = new System.Drawing.Size(303, 28);
             this.cb_selectPatient.TabIndex = 47;
+            this.cb_selectPatient.DropDown += new System.EventHandler(this.dropdown);
+            this.cb_selectPatient.SelectedIndexChanged += new System.EventHandler(this.cb_selectPatient_SelectedIndexChanged);
             // 
             // btnCall
             // 
             this.btnCall.FlatAppearance.BorderSize = 2;
             this.btnCall.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCall.Location = new System.Drawing.Point(10, 181);
+            this.btnCall.Location = new System.Drawing.Point(10, 122);
             this.btnCall.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.btnCall.Name = "btnCall";
             this.btnCall.Size = new System.Drawing.Size(154, 53);
@@ -530,7 +506,7 @@
             // label55
             // 
             this.label55.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label55.Location = new System.Drawing.Point(10, 421);
+            this.label55.Location = new System.Drawing.Point(10, 362);
             this.label55.Margin = new System.Windows.Forms.Padding(10, 15, 3, 3);
             this.label55.Name = "label55";
             this.label55.Size = new System.Drawing.Size(295, 33);
@@ -1098,7 +1074,7 @@
             this.tableLayoutPanel2.Controls.Add(this.label36, 2, 4);
             this.tableLayoutPanel2.Controls.Add(this.label37, 2, 6);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 1);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 477);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 418);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 8;
@@ -1164,9 +1140,6 @@
         }
 
         #endregion
-
-        private Label label6;
-        private DateTimePicker Picker_ApointmentDate;
         private Label label7;
         private Label label9;
         private DateTimePicker picker_LastApointmentDate;

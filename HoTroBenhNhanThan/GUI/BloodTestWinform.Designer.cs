@@ -45,34 +45,34 @@
             this.txt_trigly = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.label50 = new System.Windows.Forms.Label();
-            this.txt_cholesLDL = new System.Windows.Forms.TextBox();
+            this.txt_huyetSacTo = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
             this.label49 = new System.Windows.Forms.Label();
-            this.txt_cholesHDL = new System.Windows.Forms.TextBox();
+            this.txt_NhomMau = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
             this.label48 = new System.Windows.Forms.Label();
-            this.txt_GGT = new System.Windows.Forms.TextBox();
+            this.txt_MCNC = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
             this.label47 = new System.Windows.Forms.Label();
-            this.txt_ALT = new System.Windows.Forms.TextBox();
+            this.txt_pbTieuCau = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label46 = new System.Windows.Forms.Label();
-            this.txt_AST = new System.Windows.Forms.TextBox();
+            this.txt_TieuCau = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
             this.label45 = new System.Windows.Forms.Label();
-            this.txt_biliTT = new System.Windows.Forms.TextBox();
+            this.txt_MCN = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label44 = new System.Windows.Forms.Label();
-            this.txt_biliTP = new System.Windows.Forms.TextBox();
+            this.txt_pbBachCau = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
             this.label43 = new System.Windows.Forms.Label();
-            this.txt_acidUric = new System.Windows.Forms.TextBox();
+            this.txt_bachCau = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
             this.label42 = new System.Windows.Forms.Label();
-            this.txt_creati = new System.Windows.Forms.TextBox();
+            this.txt_MCV = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label41 = new System.Windows.Forms.Label();
-            this.txt_glu = new System.Windows.Forms.TextBox();
+            this.txt_pbHongCau = new System.Windows.Forms.TextBox();
             this.Urea = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
@@ -87,7 +87,7 @@
             this.label37 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label40 = new System.Windows.Forms.Label();
-            this.txt_ure = new System.Windows.Forms.TextBox();
+            this.txt_hongCau = new System.Windows.Forms.TextBox();
             this.left_panel_common.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
@@ -361,7 +361,7 @@
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
             this.tableLayoutPanel13.Controls.Add(this.label50, 1, 0);
-            this.tableLayoutPanel13.Controls.Add(this.txt_cholesLDL, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.txt_huyetSacTo, 0, 0);
             this.tableLayoutPanel13.Location = new System.Drawing.Point(165, 226);
             this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
@@ -381,13 +381,13 @@
             this.label50.TabIndex = 33;
             this.label50.Text = "cm";
             // 
-            // txt_cholesLDL
+            // txt_huyetSacTo
             // 
-            this.txt_cholesLDL.Location = new System.Drawing.Point(0, 0);
-            this.txt_cholesLDL.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_cholesLDL.Name = "txt_cholesLDL";
-            this.txt_cholesLDL.Size = new System.Drawing.Size(116, 27);
-            this.txt_cholesLDL.TabIndex = 34;
+            this.txt_huyetSacTo.Location = new System.Drawing.Point(0, 0);
+            this.txt_huyetSacTo.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_huyetSacTo.Name = "txt_huyetSacTo";
+            this.txt_huyetSacTo.Size = new System.Drawing.Size(116, 27);
+            this.txt_huyetSacTo.TabIndex = 34;
             // 
             // tableLayoutPanel12
             // 
@@ -395,7 +395,7 @@
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
             this.tableLayoutPanel12.Controls.Add(this.label49, 1, 0);
-            this.tableLayoutPanel12.Controls.Add(this.txt_cholesHDL, 0, 0);
+            this.tableLayoutPanel12.Controls.Add(this.txt_NhomMau, 0, 0);
             this.tableLayoutPanel12.Location = new System.Drawing.Point(2, 226);
             this.tableLayoutPanel12.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
@@ -415,13 +415,13 @@
             this.label49.TabIndex = 33;
             this.label49.Text = "cm";
             // 
-            // txt_cholesHDL
+            // txt_NhomMau
             // 
-            this.txt_cholesHDL.Location = new System.Drawing.Point(0, 0);
-            this.txt_cholesHDL.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_cholesHDL.Name = "txt_cholesHDL";
-            this.txt_cholesHDL.Size = new System.Drawing.Size(115, 27);
-            this.txt_cholesHDL.TabIndex = 34;
+            this.txt_NhomMau.Location = new System.Drawing.Point(0, 0);
+            this.txt_NhomMau.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_NhomMau.Name = "txt_NhomMau";
+            this.txt_NhomMau.Size = new System.Drawing.Size(115, 27);
+            this.txt_NhomMau.TabIndex = 34;
             // 
             // tableLayoutPanel11
             // 
@@ -429,7 +429,7 @@
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
             this.tableLayoutPanel11.Controls.Add(this.label48, 1, 0);
-            this.tableLayoutPanel11.Controls.Add(this.txt_GGT, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.txt_MCNC, 0, 0);
             this.tableLayoutPanel11.Location = new System.Drawing.Point(329, 162);
             this.tableLayoutPanel11.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
@@ -449,13 +449,13 @@
             this.label48.TabIndex = 33;
             this.label48.Text = "cm";
             // 
-            // txt_GGT
+            // txt_MCNC
             // 
-            this.txt_GGT.Location = new System.Drawing.Point(0, 0);
-            this.txt_GGT.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_GGT.Name = "txt_GGT";
-            this.txt_GGT.Size = new System.Drawing.Size(117, 27);
-            this.txt_GGT.TabIndex = 34;
+            this.txt_MCNC.Location = new System.Drawing.Point(0, 0);
+            this.txt_MCNC.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_MCNC.Name = "txt_MCNC";
+            this.txt_MCNC.Size = new System.Drawing.Size(117, 27);
+            this.txt_MCNC.TabIndex = 34;
             // 
             // tableLayoutPanel10
             // 
@@ -463,7 +463,7 @@
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
             this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
             this.tableLayoutPanel10.Controls.Add(this.label47, 1, 0);
-            this.tableLayoutPanel10.Controls.Add(this.txt_ALT, 0, 0);
+            this.tableLayoutPanel10.Controls.Add(this.txt_pbTieuCau, 0, 0);
             this.tableLayoutPanel10.Location = new System.Drawing.Point(165, 162);
             this.tableLayoutPanel10.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel10.Name = "tableLayoutPanel10";
@@ -483,13 +483,13 @@
             this.label47.TabIndex = 33;
             this.label47.Text = "cm";
             // 
-            // txt_ALT
+            // txt_pbTieuCau
             // 
-            this.txt_ALT.Location = new System.Drawing.Point(0, 0);
-            this.txt_ALT.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_ALT.Name = "txt_ALT";
-            this.txt_ALT.Size = new System.Drawing.Size(116, 27);
-            this.txt_ALT.TabIndex = 34;
+            this.txt_pbTieuCau.Location = new System.Drawing.Point(0, 0);
+            this.txt_pbTieuCau.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_pbTieuCau.Name = "txt_pbTieuCau";
+            this.txt_pbTieuCau.Size = new System.Drawing.Size(116, 27);
+            this.txt_pbTieuCau.TabIndex = 34;
             // 
             // tableLayoutPanel9
             // 
@@ -497,7 +497,7 @@
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
             this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
             this.tableLayoutPanel9.Controls.Add(this.label46, 1, 0);
-            this.tableLayoutPanel9.Controls.Add(this.txt_AST, 0, 0);
+            this.tableLayoutPanel9.Controls.Add(this.txt_TieuCau, 0, 0);
             this.tableLayoutPanel9.Location = new System.Drawing.Point(2, 162);
             this.tableLayoutPanel9.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel9.Name = "tableLayoutPanel9";
@@ -517,13 +517,13 @@
             this.label46.TabIndex = 33;
             this.label46.Text = "cm";
             // 
-            // txt_AST
+            // txt_TieuCau
             // 
-            this.txt_AST.Location = new System.Drawing.Point(0, 0);
-            this.txt_AST.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_AST.Name = "txt_AST";
-            this.txt_AST.Size = new System.Drawing.Size(115, 27);
-            this.txt_AST.TabIndex = 34;
+            this.txt_TieuCau.Location = new System.Drawing.Point(0, 0);
+            this.txt_TieuCau.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_TieuCau.Name = "txt_TieuCau";
+            this.txt_TieuCau.Size = new System.Drawing.Size(115, 27);
+            this.txt_TieuCau.TabIndex = 34;
             // 
             // tableLayoutPanel8
             // 
@@ -531,7 +531,7 @@
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
             this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
             this.tableLayoutPanel8.Controls.Add(this.label45, 1, 0);
-            this.tableLayoutPanel8.Controls.Add(this.txt_biliTT, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.txt_MCN, 0, 0);
             this.tableLayoutPanel8.Location = new System.Drawing.Point(329, 98);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel8.Name = "tableLayoutPanel8";
@@ -551,13 +551,13 @@
             this.label45.TabIndex = 33;
             this.label45.Text = "cm";
             // 
-            // txt_biliTT
+            // txt_MCN
             // 
-            this.txt_biliTT.Location = new System.Drawing.Point(0, 0);
-            this.txt_biliTT.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_biliTT.Name = "txt_biliTT";
-            this.txt_biliTT.Size = new System.Drawing.Size(117, 27);
-            this.txt_biliTT.TabIndex = 34;
+            this.txt_MCN.Location = new System.Drawing.Point(0, 0);
+            this.txt_MCN.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_MCN.Name = "txt_MCN";
+            this.txt_MCN.Size = new System.Drawing.Size(117, 27);
+            this.txt_MCN.TabIndex = 34;
             // 
             // tableLayoutPanel7
             // 
@@ -565,7 +565,7 @@
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
             this.tableLayoutPanel7.Controls.Add(this.label44, 1, 0);
-            this.tableLayoutPanel7.Controls.Add(this.txt_biliTP, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.txt_pbBachCau, 0, 0);
             this.tableLayoutPanel7.Location = new System.Drawing.Point(165, 98);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
@@ -585,13 +585,13 @@
             this.label44.TabIndex = 33;
             this.label44.Text = "cm";
             // 
-            // txt_biliTP
+            // txt_pbBachCau
             // 
-            this.txt_biliTP.Location = new System.Drawing.Point(0, 0);
-            this.txt_biliTP.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_biliTP.Name = "txt_biliTP";
-            this.txt_biliTP.Size = new System.Drawing.Size(116, 27);
-            this.txt_biliTP.TabIndex = 34;
+            this.txt_pbBachCau.Location = new System.Drawing.Point(0, 0);
+            this.txt_pbBachCau.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_pbBachCau.Name = "txt_pbBachCau";
+            this.txt_pbBachCau.Size = new System.Drawing.Size(116, 27);
+            this.txt_pbBachCau.TabIndex = 34;
             // 
             // tableLayoutPanel6
             // 
@@ -599,7 +599,7 @@
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
             this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
             this.tableLayoutPanel6.Controls.Add(this.label43, 1, 0);
-            this.tableLayoutPanel6.Controls.Add(this.txt_acidUric, 0, 0);
+            this.tableLayoutPanel6.Controls.Add(this.txt_bachCau, 0, 0);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(2, 98);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -619,13 +619,13 @@
             this.label43.TabIndex = 33;
             this.label43.Text = "cm";
             // 
-            // txt_acidUric
+            // txt_bachCau
             // 
-            this.txt_acidUric.Location = new System.Drawing.Point(0, 0);
-            this.txt_acidUric.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_acidUric.Name = "txt_acidUric";
-            this.txt_acidUric.Size = new System.Drawing.Size(115, 27);
-            this.txt_acidUric.TabIndex = 34;
+            this.txt_bachCau.Location = new System.Drawing.Point(0, 0);
+            this.txt_bachCau.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_bachCau.Name = "txt_bachCau";
+            this.txt_bachCau.Size = new System.Drawing.Size(115, 27);
+            this.txt_bachCau.TabIndex = 34;
             // 
             // tableLayoutPanel5
             // 
@@ -633,7 +633,7 @@
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
             this.tableLayoutPanel5.Controls.Add(this.label42, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.txt_creati, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.txt_MCV, 0, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(329, 34);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
@@ -653,13 +653,13 @@
             this.label42.TabIndex = 33;
             this.label42.Text = "cm";
             // 
-            // txt_creati
+            // txt_MCV
             // 
-            this.txt_creati.Location = new System.Drawing.Point(0, 0);
-            this.txt_creati.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_creati.Name = "txt_creati";
-            this.txt_creati.Size = new System.Drawing.Size(117, 27);
-            this.txt_creati.TabIndex = 34;
+            this.txt_MCV.Location = new System.Drawing.Point(0, 0);
+            this.txt_MCV.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_MCV.Name = "txt_MCV";
+            this.txt_MCV.Size = new System.Drawing.Size(117, 27);
+            this.txt_MCV.TabIndex = 34;
             // 
             // tableLayoutPanel4
             // 
@@ -667,7 +667,7 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
             this.tableLayoutPanel4.Controls.Add(this.label41, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.txt_glu, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.txt_pbHongCau, 0, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(165, 34);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -687,13 +687,13 @@
             this.label41.TabIndex = 33;
             this.label41.Text = "cm";
             // 
-            // txt_glu
+            // txt_pbHongCau
             // 
-            this.txt_glu.Location = new System.Drawing.Point(0, 0);
-            this.txt_glu.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_glu.Name = "txt_glu";
-            this.txt_glu.Size = new System.Drawing.Size(116, 27);
-            this.txt_glu.TabIndex = 34;
+            this.txt_pbHongCau.Location = new System.Drawing.Point(0, 0);
+            this.txt_pbHongCau.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_pbHongCau.Name = "txt_pbHongCau";
+            this.txt_pbHongCau.Size = new System.Drawing.Size(116, 27);
+            this.txt_pbHongCau.TabIndex = 34;
             // 
             // Urea
             // 
@@ -820,7 +820,7 @@
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
             this.tableLayoutPanel3.Controls.Add(this.label40, 1, 0);
-            this.tableLayoutPanel3.Controls.Add(this.txt_ure, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.txt_hongCau, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(2, 34);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -840,13 +840,13 @@
             this.label40.TabIndex = 33;
             this.label40.Text = "cm";
             // 
-            // txt_ure
+            // txt_hongCau
             // 
-            this.txt_ure.Location = new System.Drawing.Point(0, 0);
-            this.txt_ure.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_ure.Name = "txt_ure";
-            this.txt_ure.Size = new System.Drawing.Size(115, 27);
-            this.txt_ure.TabIndex = 34;
+            this.txt_hongCau.Location = new System.Drawing.Point(0, 0);
+            this.txt_hongCau.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_hongCau.Name = "txt_hongCau";
+            this.txt_hongCau.Size = new System.Drawing.Size(115, 27);
+            this.txt_hongCau.TabIndex = 34;
             // 
             // BloodTestWinform
             // 
@@ -912,34 +912,34 @@
         private TextBox txt_trigly;
         private TableLayoutPanel tableLayoutPanel13;
         private Label label50;
-        private TextBox txt_cholesLDL;
+        private TextBox txt_huyetSacTo;
         private TableLayoutPanel tableLayoutPanel12;
         private Label label49;
-        private TextBox txt_cholesHDL;
+        private TextBox txt_NhomMau;
         private TableLayoutPanel tableLayoutPanel11;
         private Label label48;
-        private TextBox txt_GGT;
+        private TextBox txt_MCNC;
         private TableLayoutPanel tableLayoutPanel10;
         private Label label47;
-        private TextBox txt_ALT;
+        private TextBox txt_pbTieuCau;
         private TableLayoutPanel tableLayoutPanel9;
         private Label label46;
-        private TextBox txt_AST;
+        private TextBox txt_TieuCau;
         private TableLayoutPanel tableLayoutPanel8;
         private Label label45;
-        private TextBox txt_biliTT;
+        private TextBox txt_MCN;
         private TableLayoutPanel tableLayoutPanel7;
         private Label label44;
-        private TextBox txt_biliTP;
+        private TextBox txt_pbBachCau;
         private TableLayoutPanel tableLayoutPanel6;
         private Label label43;
-        private TextBox txt_acidUric;
+        private TextBox txt_bachCau;
         private TableLayoutPanel tableLayoutPanel5;
         private Label label42;
-        private TextBox txt_creati;
+        private TextBox txt_MCV;
         private TableLayoutPanel tableLayoutPanel4;
         private Label label41;
-        private TextBox txt_glu;
+        private TextBox txt_pbHongCau;
         private Label Urea;
         private Label label25;
         private Label label26;
@@ -954,6 +954,6 @@
         private Label label37;
         private TableLayoutPanel tableLayoutPanel3;
         private Label label40;
-        private TextBox txt_ure;
+        private TextBox txt_hongCau;
     }
 }

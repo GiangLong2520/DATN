@@ -29,6 +29,7 @@ namespace HoTroBenhNhanThan
             loadData.Items.Add(RoleIDGV);
             loadData.Items.Add(RoleGV);
             LibCRUD.loadData("st_getRoles", dataGridView1, loadData);
+            LibMainClass.resetDisable(left_panel);
         }
         private void txt_role_TextChanged(object sender, EventArgs e)
         {
@@ -85,7 +86,7 @@ namespace HoTroBenhNhanThan
                     if (LibCRUD.data_insert_update_delete("st_deleteRole", ht) > 0)
                     {
                         LibMainClass.showMessage(txt_role.Text + " deleted successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.resetEnable(left_panel);
                         LoadRoles();
                     }
                 }
@@ -105,6 +106,7 @@ namespace HoTroBenhNhanThan
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 roleID = Convert.ToInt32(row.Cells["RoleIDGV"].Value.ToString());
                 txt_role.Text = row.Cells["RoleGV"].Value.ToString();
+                LibMainClass.DisableControl(left_panel);
             }
         }
 

@@ -89,5 +89,11 @@ namespace HoTroBenhNhanThan
             BloodTestWinform blood = new BloodTestWinform();
             LibMainClass.showWindow(blood, this, MDI.ActiveForm);
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            SymtomsWindow scr= new SymtomsWindow();
+            LibMainClass.showWindow(scr, this, MDI.ActiveForm);
+        }
     }
 }

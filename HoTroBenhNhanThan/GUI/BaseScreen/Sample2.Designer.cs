@@ -60,7 +60,6 @@ namespace HoTroBenhNhanThan
             // btnBack
             // 
             this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // right_panel
             // 
@@ -225,7 +224,6 @@ namespace HoTroBenhNhanThan
             this.left_panel.Name = "left_panel";
             this.left_panel.Size = new System.Drawing.Size(323, 627);
             this.left_panel.TabIndex = 1;
-            this.left_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowPanel_Paint);
             // 
             // groupBox1
             // 

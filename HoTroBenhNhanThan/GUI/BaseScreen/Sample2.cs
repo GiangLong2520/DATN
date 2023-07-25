@@ -45,14 +45,5 @@ namespace HoTroBenhNhanThan
 
         }
 
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void flowPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

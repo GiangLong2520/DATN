@@ -19,8 +19,8 @@ namespace HoTroBenhNhanThan.GUI
             ListBox loadData = new ListBox();
             loadData.Items.Add(MediIDGV);
             loadData.Items.Add(MedicineGV);
-            loadData.Items.Add(CompanyGV);
             loadData.Items.Add(TypeGV);
+            loadData.Items.Add(CompanyGV);
 
             LibCRUD.loadData("st_getMedicine", dataGridView1, loadData);
         }
@@ -77,7 +77,7 @@ namespace HoTroBenhNhanThan.GUI
                     if (LibCRUD.data_insert_update_delete("st_updateUsers", ht) > 0)
                     {
                         LibMainClass.showMessage(txt_medi.Text + " added successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.resetEnable(left_panel);
                         Loadmedicine();
                     }
                 }
@@ -97,7 +97,7 @@ namespace HoTroBenhNhanThan.GUI
                     if (LibCRUD.data_insert_update_delete("st_deleteUser", ht) > 0)
                     {
                         LibMainClass.showMessage(txt_company.Text + " deleted successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.resetEnable(left_panel);
                         Loadmedicine();
                     }
                 }
@@ -162,6 +162,7 @@ namespace HoTroBenhNhanThan.GUI
                 txt_medi.Text = row.Cells["MedicineGV"].Value.ToString(); ;
                 txt_company.Text = row.Cells["CompanyGV"].Value.ToString();
                 cb_Type.SelectedItem = row.Cells["TypeGV"].Value.ToString();
+                LibMainClass.DisableControl(left_panel);
             }
         }
     }

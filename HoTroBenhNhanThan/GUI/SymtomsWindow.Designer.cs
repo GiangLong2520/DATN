@@ -59,7 +59,7 @@
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
             // 
-            // flowPanel
+            // left_panel
             // 
             this.left_panel.Controls.Add(this.label7);
             this.left_panel.Controls.Add(this.txt_symptom);
@@ -73,7 +73,6 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Enabled = false;
             this.label7.Location = new System.Drawing.Point(10, 3);
             this.label7.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.label7.Name = "label7";
@@ -94,7 +93,6 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Enabled = false;
             this.label8.Location = new System.Drawing.Point(10, 59);
             this.label8.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.label8.Name = "label8";

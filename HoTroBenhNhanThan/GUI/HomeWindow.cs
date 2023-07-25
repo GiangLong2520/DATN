@@ -74,13 +74,20 @@ namespace HoTroBenhNhanThan
 
         private void button9_Click(object sender, EventArgs e)
         {
-            Sample01 sam = new Sample01();
+            UrineTestWinform sam = new UrineTestWinform();
+
             LibMainClass.showWindow(sam, this, MDI.ActiveForm);
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            BloodTestWinform blood = new BloodTestWinform();
+            LibMainClass.showWindow(blood, this, MDI.ActiveForm);
         }
     }
 }

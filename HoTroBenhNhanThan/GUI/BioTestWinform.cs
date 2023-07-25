@@ -37,28 +37,14 @@ namespace HoTroBenhNhanThan.GUI
         public static string patientName;
         private void btnCall_Click(object sender, EventArgs e)
         {
-            //Hashtable ht = new Hashtable();
-            //ht.Add("@day", picker_DateTime.Value.Day);
-            //ht.Add("@month", picker_DateTime.Value.Month);
-            //ht.Add("@year", picker_DateTime.Value.Year);
-            //ht.Add("@patID", Convert.ToInt64(cb_selectPatient.SelectedValue.ToString()));
-            //turnNo = LibCRUD.getTurnNumber("[st_getTurnNumberPatient]", ht);
-
             Hashtable ht = new Hashtable();
             ht.Add("@day", picker_DateTime.Value.Day);
             ht.Add("@month", picker_DateTime.Value.Month);
             ht.Add("@year", picker_DateTime.Value.Year);
-            LibCRUD.loadList("[st_getTodayPatient]", cb_selectPatient, "Patient ID", "Patient", ht);
-        }
+            ht.Add("@patID", Convert.ToInt64(cb_selectPatient.SelectedValue.ToString()));
+            turnNo = LibCRUD.getTurnNumber("[st_getTurnNumberPatient]", ht);
 
-        //private void picker_DateTime_ValueChanged(object sender, EventArgs e)
-        //{
-        //    Hashtable ht = new Hashtable();
-        //    ht.Add("@day", picker_DateTime.Value.Day);
-        //    ht.Add("@month", picker_DateTime.Value.Month);
-        //    ht.Add("@year", picker_DateTime.Value.Year);
-        //    LibCRUD.loadList("[st_getTodayPatient]", cb_selectPatient, "Patient ID", "Patient", ht);
-        //}
+        }
 
         private void label39_Click(object sender, EventArgs e)
         {
@@ -68,6 +54,26 @@ namespace HoTroBenhNhanThan.GUI
         private void label40_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cb_selectPatient_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Hashtable ht = new Hashtable();
+            ht.Add("@day", picker_DateTime.Value.Day);
+            ht.Add("@month", picker_DateTime.Value.Month);
+            ht.Add("@year", picker_DateTime.Value.Year);
+            LibCRUD.loadList("[st_getTodayPatient]", cb_selectPatient, "Patient ID", "Patient", ht);
+
+
+        }
+
+        private void dropdown(object sender, EventArgs e)
+        {
+            Hashtable ht = new Hashtable();
+            ht.Add("@day", picker_DateTime.Value.Day);
+            ht.Add("@month", picker_DateTime.Value.Month);
+            ht.Add("@year", picker_DateTime.Value.Year);
+            LibCRUD.loadList("[st_getTodayPatient]", cb_selectPatient, "Patient ID", "Patient", ht);
         }
     }
 }

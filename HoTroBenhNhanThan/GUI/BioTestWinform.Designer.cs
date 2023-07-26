@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.picker_LastApointmentDate = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txt_consultsTo = new System.Windows.Forms.TextBox();
+            this.t = new System.Windows.Forms.Label();
+            this.txt_phone = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txt_gluco = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -107,6 +107,27 @@
             this.label51 = new System.Windows.Forms.Label();
             this.txt_trigly = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BioIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apointDateGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UreaGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GlucoseGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CreatininGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AcidUricGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BilirubinTPGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BilirubinTtGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AstGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ALTGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GGTGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CholesHDLGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CholesLDLGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TriglyceridGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtage = new System.Windows.Forms.TextBox();
+            this.v = new System.Windows.Forms.Label();
             this.left_panel_common.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
@@ -114,6 +135,7 @@
             this.right_panel.SuspendLayout();
             this.RIGHTPANEL.SuspendLayout();
             this.left_panel.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
@@ -128,6 +150,7 @@
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel14.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // left_panel_common
@@ -150,10 +173,6 @@
             // 
             this.RIGHTPANEL.Size = new System.Drawing.Size(772, 953);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Size = new System.Drawing.Size(772, 882);
-            // 
             // left_panel
             // 
             this.left_panel.Controls.Add(this.label12);
@@ -162,15 +181,20 @@
             this.left_panel.Controls.Add(this.cb_selectPatient);
             this.left_panel.Controls.Add(this.btnCall);
             this.left_panel.Controls.Add(this.label7);
-            this.left_panel.Controls.Add(this.label9);
-            this.left_panel.Controls.Add(this.picker_LastApointmentDate);
-            this.left_panel.Controls.Add(this.label10);
-            this.left_panel.Controls.Add(this.txt_consultsTo);
+            this.left_panel.Controls.Add(this.t);
+            this.left_panel.Controls.Add(this.txt_phone);
+            this.left_panel.Controls.Add(this.v);
+            this.left_panel.Controls.Add(this.txtage);
             this.left_panel.Controls.Add(this.label55);
             this.left_panel.Controls.Add(this.tableLayoutPanel2);
             this.left_panel.ImeMode = System.Windows.Forms.ImeMode.On;
             this.left_panel.Size = new System.Drawing.Size(500, 820);
             this.left_panel.WrapContents = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Size = new System.Drawing.Size(772, 820);
             // 
             // label7
             // 
@@ -183,47 +207,25 @@
             this.label7.Text = "Patient History";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label9
+            // t
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(10, 232);
-            this.label9.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(154, 20);
-            this.label9.TabIndex = 29;
-            this.label9.Text = "Last Apointment Date";
+            this.t.AutoSize = true;
+            this.t.Location = new System.Drawing.Point(10, 232);
+            this.t.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.t.Name = "t";
+            this.t.Size = new System.Drawing.Size(50, 20);
+            this.t.TabIndex = 31;
+            this.t.Text = "Phone";
             // 
-            // picker_LastApointmentDate
+            // txt_phone
             // 
-            this.picker_LastApointmentDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.picker_LastApointmentDate.CustomFormat = "dd-MMM-yyyy";
-            this.picker_LastApointmentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.picker_LastApointmentDate.Location = new System.Drawing.Point(10, 258);
-            this.picker_LastApointmentDate.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.picker_LastApointmentDate.Name = "picker_LastApointmentDate";
-            this.picker_LastApointmentDate.Size = new System.Drawing.Size(303, 27);
-            this.picker_LastApointmentDate.TabIndex = 30;
-            this.picker_LastApointmentDate.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(10, 291);
-            this.label10.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(84, 20);
-            this.label10.TabIndex = 31;
-            this.label10.Text = "Consults To";
-            // 
-            // txt_consultsTo
-            // 
-            this.txt_consultsTo.Location = new System.Drawing.Point(10, 317);
-            this.txt_consultsTo.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.txt_consultsTo.MaxLength = 50;
-            this.txt_consultsTo.Name = "txt_consultsTo";
-            this.txt_consultsTo.Size = new System.Drawing.Size(303, 27);
-            this.txt_consultsTo.TabIndex = 32;
-            this.txt_consultsTo.TabStop = false;
+            this.txt_phone.Location = new System.Drawing.Point(10, 258);
+            this.txt_phone.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.txt_phone.MaxLength = 50;
+            this.txt_phone.Name = "txt_phone";
+            this.txt_phone.Size = new System.Drawing.Size(303, 27);
+            this.txt_phone.TabIndex = 32;
+            this.txt_phone.TabStop = false;
             // 
             // label11
             // 
@@ -468,7 +470,6 @@
             this.cb_selectPatient.Size = new System.Drawing.Size(303, 28);
             this.cb_selectPatient.TabIndex = 47;
             this.cb_selectPatient.DropDown += new System.EventHandler(this.dropdown);
-            this.cb_selectPatient.SelectedIndexChanged += new System.EventHandler(this.cb_selectPatient_SelectedIndexChanged);
             // 
             // btnCall
             // 
@@ -501,7 +502,6 @@
             this.label39.Size = new System.Drawing.Size(84, 20);
             this.label39.TabIndex = 35;
             this.label39.Text = "Consults To";
-            this.label39.Click += new System.EventHandler(this.label39_Click);
             // 
             // label55
             // 
@@ -539,7 +539,6 @@
             this.label40.Size = new System.Drawing.Size(29, 19);
             this.label40.TabIndex = 33;
             this.label40.Text = "cm";
-            this.label40.Click += new System.EventHandler(this.label40_Click);
             // 
             // txt_ure
             // 
@@ -1091,6 +1090,208 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(494, 263);
             this.tableLayoutPanel2.TabIndex = 49;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.snoGV,
+            this.BioIDGV,
+            this.apointDateGV,
+            this.patientGV,
+            this.PhoneGV,
+            this.ageGV,
+            this.UreaGV,
+            this.GlucoseGV,
+            this.CreatininGV,
+            this.AcidUricGV,
+            this.BilirubinTPGV,
+            this.BilirubinTtGV,
+            this.AstGV,
+            this.ALTGV,
+            this.GGTGV,
+            this.CholesHDLGV,
+            this.CholesLDLGV,
+            this.TriglyceridGV});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 23);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(766, 794);
+            this.dataGridView1.TabIndex = 2;
+            // 
+            // snoGV
+            // 
+            this.snoGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.snoGV.HeaderText = "#";
+            this.snoGV.MinimumWidth = 6;
+            this.snoGV.Name = "snoGV";
+            this.snoGV.ReadOnly = true;
+            this.snoGV.Width = 47;
+            // 
+            // BioIDGV
+            // 
+            this.BioIDGV.HeaderText = "ID";
+            this.BioIDGV.MinimumWidth = 6;
+            this.BioIDGV.Name = "BioIDGV";
+            this.BioIDGV.ReadOnly = true;
+            this.BioIDGV.Visible = false;
+            // 
+            // apointDateGV
+            // 
+            this.apointDateGV.HeaderText = "Apointment For";
+            this.apointDateGV.MinimumWidth = 40;
+            this.apointDateGV.Name = "apointDateGV";
+            this.apointDateGV.ReadOnly = true;
+            // 
+            // patientGV
+            // 
+            this.patientGV.HeaderText = "Patient";
+            this.patientGV.MinimumWidth = 6;
+            this.patientGV.Name = "patientGV";
+            this.patientGV.ReadOnly = true;
+            this.patientGV.Visible = false;
+            // 
+            // PhoneGV
+            // 
+            this.PhoneGV.HeaderText = "Phone";
+            this.PhoneGV.MinimumWidth = 6;
+            this.PhoneGV.Name = "PhoneGV";
+            this.PhoneGV.Visible = false;
+            // 
+            // ageGV
+            // 
+            this.ageGV.HeaderText = "Age";
+            this.ageGV.MinimumWidth = 6;
+            this.ageGV.Name = "ageGV";
+            this.ageGV.ReadOnly = true;
+            this.ageGV.Visible = false;
+            // 
+            // UreaGV
+            // 
+            this.UreaGV.HeaderText = "Urea";
+            this.UreaGV.MinimumWidth = 6;
+            this.UreaGV.Name = "UreaGV";
+            this.UreaGV.ReadOnly = true;
+            // 
+            // GlucoseGV
+            // 
+            this.GlucoseGV.HeaderText = "Glucose";
+            this.GlucoseGV.MinimumWidth = 6;
+            this.GlucoseGV.Name = "GlucoseGV";
+            this.GlucoseGV.ReadOnly = true;
+            // 
+            // CreatininGV
+            // 
+            this.CreatininGV.HeaderText = "Creatinin";
+            this.CreatininGV.MinimumWidth = 6;
+            this.CreatininGV.Name = "CreatininGV";
+            this.CreatininGV.ReadOnly = true;
+            // 
+            // AcidUricGV
+            // 
+            this.AcidUricGV.HeaderText = "Acid Uric";
+            this.AcidUricGV.MinimumWidth = 6;
+            this.AcidUricGV.Name = "AcidUricGV";
+            this.AcidUricGV.ReadOnly = true;
+            // 
+            // BilirubinTPGV
+            // 
+            this.BilirubinTPGV.HeaderText = "Bilirubin TP";
+            this.BilirubinTPGV.MinimumWidth = 6;
+            this.BilirubinTPGV.Name = "BilirubinTPGV";
+            this.BilirubinTPGV.ReadOnly = true;
+            // 
+            // BilirubinTtGV
+            // 
+            this.BilirubinTtGV.HeaderText = "BilirubinTT";
+            this.BilirubinTtGV.MinimumWidth = 6;
+            this.BilirubinTtGV.Name = "BilirubinTtGV";
+            this.BilirubinTtGV.ReadOnly = true;
+            // 
+            // AstGV
+            // 
+            this.AstGV.HeaderText = "AST";
+            this.AstGV.MinimumWidth = 6;
+            this.AstGV.Name = "AstGV";
+            this.AstGV.ReadOnly = true;
+            // 
+            // ALTGV
+            // 
+            this.ALTGV.HeaderText = "ALT";
+            this.ALTGV.MinimumWidth = 6;
+            this.ALTGV.Name = "ALTGV";
+            this.ALTGV.ReadOnly = true;
+            // 
+            // GGTGV
+            // 
+            this.GGTGV.HeaderText = "GGT";
+            this.GGTGV.MinimumWidth = 6;
+            this.GGTGV.Name = "GGTGV";
+            this.GGTGV.ReadOnly = true;
+            // 
+            // CholesHDLGV
+            // 
+            this.CholesHDLGV.HeaderText = "Choles HDL";
+            this.CholesHDLGV.MinimumWidth = 6;
+            this.CholesHDLGV.Name = "CholesHDLGV";
+            this.CholesHDLGV.ReadOnly = true;
+            // 
+            // CholesLDLGV
+            // 
+            this.CholesLDLGV.HeaderText = "Choles LDL";
+            this.CholesLDLGV.MinimumWidth = 6;
+            this.CholesLDLGV.Name = "CholesLDLGV";
+            this.CholesLDLGV.ReadOnly = true;
+            // 
+            // TriglyceridGV
+            // 
+            this.TriglyceridGV.HeaderText = "Triglycerid";
+            this.TriglyceridGV.MinimumWidth = 6;
+            this.TriglyceridGV.Name = "TriglyceridGV";
+            this.TriglyceridGV.ReadOnly = true;
+            // 
+            // txtage
+            // 
+            this.txtage.Location = new System.Drawing.Point(10, 317);
+            this.txtage.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.txtage.MaxLength = 50;
+            this.txtage.Name = "txtage";
+            this.txtage.Size = new System.Drawing.Size(303, 27);
+            this.txtage.TabIndex = 32;
+            this.txtage.TabStop = false;
+            // 
+            // v
+            // 
+            this.v.AutoSize = true;
+            this.v.Location = new System.Drawing.Point(10, 291);
+            this.v.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.v.Name = "v";
+            this.v.Size = new System.Drawing.Size(36, 20);
+            this.v.TabIndex = 31;
+            this.v.Text = "Age";
+            // 
             // BioTestWinform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -1107,6 +1308,7 @@
             this.RIGHTPANEL.ResumeLayout(false);
             this.left_panel.ResumeLayout(false);
             this.left_panel.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
@@ -1135,16 +1337,15 @@
             this.tableLayoutPanel14.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private Label label7;
-        private Label label9;
-        private DateTimePicker picker_LastApointmentDate;
-        private Label label10;
-        private TextBox txt_consultsTo;
+        private Label txtPhone;
+        private TextBox txt_phone;
         private Label label11;
         private TextBox txt_gluco;
         public TableLayoutPanel tableLayoutPanel1;
@@ -1220,5 +1421,27 @@
         private TableLayoutPanel tableLayoutPanel3;
         private Label label40;
         private TextBox txt_ure;
+        private DataGridView dataGridView1;
+        private TextBox txtage;
+        private Label v;
+        private DataGridViewTextBoxColumn snoGV;
+        private DataGridViewTextBoxColumn BioIDGV;
+        private DataGridViewTextBoxColumn apointDateGV;
+        private DataGridViewTextBoxColumn patientGV;
+        private DataGridViewTextBoxColumn PhoneGV;
+        private DataGridViewTextBoxColumn ageGV;
+        private DataGridViewTextBoxColumn UreaGV;
+        private DataGridViewTextBoxColumn GlucoseGV;
+        private DataGridViewTextBoxColumn CreatininGV;
+        private DataGridViewTextBoxColumn AcidUricGV;
+        private DataGridViewTextBoxColumn BilirubinTPGV;
+        private DataGridViewTextBoxColumn BilirubinTtGV;
+        private DataGridViewTextBoxColumn AstGV;
+        private DataGridViewTextBoxColumn ALTGV;
+        private DataGridViewTextBoxColumn GGTGV;
+        private DataGridViewTextBoxColumn CholesHDLGV;
+        private DataGridViewTextBoxColumn CholesLDLGV;
+        private DataGridViewTextBoxColumn TriglyceridGV;
+        private Label t;
     }
 }

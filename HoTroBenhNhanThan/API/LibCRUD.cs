@@ -97,6 +97,38 @@ namespace HoTroBenhNhanThan
 
             } 
         }
+        public static void loadData(string proc, DataGridView gv, ListBox lb, Hashtable ht)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand(proc, LibMainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                foreach (DictionaryEntry item in ht)
+                {
+                    cmd.Parameters.AddWithValue(item.Key.ToString(), item.Value);
+                }
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                for (int i = 0; i < lb.Items.Count; i++)
+                {
+                    string colName = ((DataGridViewColumn)lb.Items[i]).Name;
+                    //if (colName.Equals("NhomMauGV")) { }
+                    gv.Columns[colName].DataPropertyName = dt.Columns[i].ToString().TrimEnd().TrimStart();
+                }
+                gv.DataSource = dt;
+                int count = 0;
+                foreach (DataGridViewRow row in gv.Rows)
+                {
+                    count++;
+                    row.Cells[0].Value = count;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
         public static void getInforPatientReg(string proc,DateTimePicker date,TextBox text,  Hashtable ht)
         {

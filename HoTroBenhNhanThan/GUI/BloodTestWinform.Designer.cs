@@ -28,21 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label12 = new System.Windows.Forms.Label();
             this.picker_DateTime = new System.Windows.Forms.DateTimePicker();
             this.label24 = new System.Windows.Forms.Label();
             this.cb_selectPatient = new System.Windows.Forms.ComboBox();
             this.btnCall = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.picker_LastApointmentDate = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txt_consultsTo = new System.Windows.Forms.TextBox();
             this.label55 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            this.label51 = new System.Windows.Forms.Label();
-            this.txt_trigly = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
             this.label50 = new System.Windows.Forms.Label();
             this.txt_huyetSacTo = new System.Windows.Forms.TextBox();
@@ -88,6 +83,28 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label40 = new System.Windows.Forms.Label();
             this.txt_hongCau = new System.Windows.Forms.TextBox();
+            this.t = new System.Windows.Forms.Label();
+            this.txt_phone = new System.Windows.Forms.TextBox();
+            this.v = new System.Windows.Forms.Label();
+            this.txtage = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BioIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apointDateGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HongCauGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhanBoHongCauGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BachCauGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhanBoBachCauGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TieuCauGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhanBoTieuCauGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NhomMauGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HuyetSacToGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MCVGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MCNGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MCNCGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.left_panel_common.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
@@ -95,8 +112,8 @@
             this.right_panel.SuspendLayout();
             this.RIGHTPANEL.SuspendLayout();
             this.left_panel.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel14.SuspendLayout();
             this.tableLayoutPanel13.SuspendLayout();
             this.tableLayoutPanel12.SuspendLayout();
             this.tableLayoutPanel11.SuspendLayout();
@@ -108,6 +125,7 @@
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // left_panel_common
@@ -130,10 +148,6 @@
             // 
             this.RIGHTPANEL.Size = new System.Drawing.Size(772, 953);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Size = new System.Drawing.Size(772, 882);
-            // 
             // left_panel
             // 
             this.left_panel.Controls.Add(this.label12);
@@ -142,13 +156,18 @@
             this.left_panel.Controls.Add(this.cb_selectPatient);
             this.left_panel.Controls.Add(this.btnCall);
             this.left_panel.Controls.Add(this.label7);
-            this.left_panel.Controls.Add(this.label9);
-            this.left_panel.Controls.Add(this.picker_LastApointmentDate);
-            this.left_panel.Controls.Add(this.label10);
-            this.left_panel.Controls.Add(this.txt_consultsTo);
+            this.left_panel.Controls.Add(this.t);
+            this.left_panel.Controls.Add(this.txt_phone);
+            this.left_panel.Controls.Add(this.v);
+            this.left_panel.Controls.Add(this.txtage);
             this.left_panel.Controls.Add(this.label55);
             this.left_panel.Controls.Add(this.tableLayoutPanel2);
             this.left_panel.Size = new System.Drawing.Size(500, 820);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Size = new System.Drawing.Size(772, 820);
             // 
             // label12
             // 
@@ -220,48 +239,6 @@
             this.label7.Text = "Patient History";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(10, 232);
-            this.label9.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(154, 20);
-            this.label9.TabIndex = 66;
-            this.label9.Text = "Last Apointment Date";
-            // 
-            // picker_LastApointmentDate
-            // 
-            this.picker_LastApointmentDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.picker_LastApointmentDate.CustomFormat = "dd-MMM-yyyy";
-            this.picker_LastApointmentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.picker_LastApointmentDate.Location = new System.Drawing.Point(10, 258);
-            this.picker_LastApointmentDate.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.picker_LastApointmentDate.Name = "picker_LastApointmentDate";
-            this.picker_LastApointmentDate.Size = new System.Drawing.Size(303, 27);
-            this.picker_LastApointmentDate.TabIndex = 67;
-            this.picker_LastApointmentDate.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(10, 291);
-            this.label10.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(84, 20);
-            this.label10.TabIndex = 68;
-            this.label10.Text = "Consults To";
-            // 
-            // txt_consultsTo
-            // 
-            this.txt_consultsTo.Location = new System.Drawing.Point(10, 317);
-            this.txt_consultsTo.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.txt_consultsTo.MaxLength = 50;
-            this.txt_consultsTo.Name = "txt_consultsTo";
-            this.txt_consultsTo.Size = new System.Drawing.Size(303, 27);
-            this.txt_consultsTo.TabIndex = 69;
-            this.txt_consultsTo.TabStop = false;
-            // 
             // label55
             // 
             this.label55.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -280,7 +257,6 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33332F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334F));
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel14, 2, 7);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel13, 1, 7);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel12, 0, 7);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel11, 2, 5);
@@ -320,40 +296,6 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(494, 263);
             this.tableLayoutPanel2.TabIndex = 74;
-            // 
-            // tableLayoutPanel14
-            // 
-            this.tableLayoutPanel14.ColumnCount = 2;
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
-            this.tableLayoutPanel14.Controls.Add(this.label51, 1, 0);
-            this.tableLayoutPanel14.Controls.Add(this.txt_trigly, 0, 0);
-            this.tableLayoutPanel14.Location = new System.Drawing.Point(332, 226);
-            this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this.tableLayoutPanel14.Name = "tableLayoutPanel14";
-            this.tableLayoutPanel14.RowCount = 1;
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel14.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel14.Size = new System.Drawing.Size(160, 25);
-            this.tableLayoutPanel14.TabIndex = 45;
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(125, 3);
-            this.label51.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(29, 19);
-            this.label51.TabIndex = 33;
-            this.label51.Text = "cm";
-            // 
-            // txt_trigly
-            // 
-            this.txt_trigly.Location = new System.Drawing.Point(0, 0);
-            this.txt_trigly.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_trigly.Name = "txt_trigly";
-            this.txt_trigly.Size = new System.Drawing.Size(115, 27);
-            this.txt_trigly.TabIndex = 34;
             // 
             // tableLayoutPanel13
             // 
@@ -848,6 +790,220 @@
             this.txt_hongCau.Size = new System.Drawing.Size(115, 27);
             this.txt_hongCau.TabIndex = 34;
             // 
+            // t
+            // 
+            this.t.AutoSize = true;
+            this.t.Location = new System.Drawing.Point(10, 232);
+            this.t.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.t.Name = "t";
+            this.t.Size = new System.Drawing.Size(50, 20);
+            this.t.TabIndex = 77;
+            this.t.Text = "Phone";
+            // 
+            // txt_phone
+            // 
+            this.txt_phone.Location = new System.Drawing.Point(10, 258);
+            this.txt_phone.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.txt_phone.MaxLength = 50;
+            this.txt_phone.Name = "txt_phone";
+            this.txt_phone.Size = new System.Drawing.Size(303, 27);
+            this.txt_phone.TabIndex = 79;
+            this.txt_phone.TabStop = false;
+            // 
+            // v
+            // 
+            this.v.AutoSize = true;
+            this.v.Location = new System.Drawing.Point(10, 291);
+            this.v.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.v.Name = "v";
+            this.v.Size = new System.Drawing.Size(36, 20);
+            this.v.TabIndex = 78;
+            this.v.Text = "Age";
+            // 
+            // txtage
+            // 
+            this.txtage.Location = new System.Drawing.Point(10, 317);
+            this.txtage.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.txtage.MaxLength = 50;
+            this.txtage.Name = "txtage";
+            this.txtage.Size = new System.Drawing.Size(303, 27);
+            this.txtage.TabIndex = 80;
+            this.txtage.TabStop = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.snoGV,
+            this.BioIDGV,
+            this.apointDateGV,
+            this.patientGV,
+            this.PhoneGV,
+            this.ageGV,
+            this.HongCauGV,
+            this.PhanBoHongCauGV,
+            this.BachCauGV,
+            this.PhanBoBachCauGV,
+            this.TieuCauGV,
+            this.PhanBoTieuCauGV,
+            this.NhomMauGV,
+            this.HuyetSacToGV,
+            this.MCVGV,
+            this.MCNGV,
+            this.MCNCGV});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 23);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersVisible = false;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(766, 794);
+            this.dataGridView1.TabIndex = 3;
+            // 
+            // snoGV
+            // 
+            this.snoGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.snoGV.HeaderText = "#";
+            this.snoGV.MinimumWidth = 6;
+            this.snoGV.Name = "snoGV";
+            this.snoGV.ReadOnly = true;
+            this.snoGV.Width = 47;
+            // 
+            // BioIDGV
+            // 
+            this.BioIDGV.HeaderText = "ID";
+            this.BioIDGV.MinimumWidth = 6;
+            this.BioIDGV.Name = "BioIDGV";
+            this.BioIDGV.ReadOnly = true;
+            this.BioIDGV.Visible = false;
+            // 
+            // apointDateGV
+            // 
+            this.apointDateGV.HeaderText = "Apointment For";
+            this.apointDateGV.MinimumWidth = 40;
+            this.apointDateGV.Name = "apointDateGV";
+            this.apointDateGV.ReadOnly = true;
+            // 
+            // patientGV
+            // 
+            this.patientGV.HeaderText = "Patient";
+            this.patientGV.MinimumWidth = 6;
+            this.patientGV.Name = "patientGV";
+            this.patientGV.ReadOnly = true;
+            this.patientGV.Visible = false;
+            // 
+            // PhoneGV
+            // 
+            this.PhoneGV.HeaderText = "Phone";
+            this.PhoneGV.MinimumWidth = 6;
+            this.PhoneGV.Name = "PhoneGV";
+            this.PhoneGV.Visible = false;
+            // 
+            // ageGV
+            // 
+            this.ageGV.HeaderText = "Age";
+            this.ageGV.MinimumWidth = 6;
+            this.ageGV.Name = "ageGV";
+            this.ageGV.ReadOnly = true;
+            this.ageGV.Visible = false;
+            // 
+            // HongCauGV
+            // 
+            this.HongCauGV.HeaderText = "Hồng Cầu";
+            this.HongCauGV.MinimumWidth = 6;
+            this.HongCauGV.Name = "HongCauGV";
+            this.HongCauGV.ReadOnly = true;
+            // 
+            // PhanBoHongCauGV
+            // 
+            this.PhanBoHongCauGV.HeaderText = "Phân Bố Hồng Cầu";
+            this.PhanBoHongCauGV.MinimumWidth = 6;
+            this.PhanBoHongCauGV.Name = "PhanBoHongCauGV";
+            this.PhanBoHongCauGV.ReadOnly = true;
+            // 
+            // BachCauGV
+            // 
+            this.BachCauGV.HeaderText = "Bạch Cầu";
+            this.BachCauGV.MinimumWidth = 6;
+            this.BachCauGV.Name = "BachCauGV";
+            this.BachCauGV.ReadOnly = true;
+            // 
+            // PhanBoBachCauGV
+            // 
+            this.PhanBoBachCauGV.HeaderText = "Phân Bố Bạch Cầu";
+            this.PhanBoBachCauGV.MinimumWidth = 6;
+            this.PhanBoBachCauGV.Name = "PhanBoBachCauGV";
+            this.PhanBoBachCauGV.ReadOnly = true;
+            // 
+            // TieuCauGV
+            // 
+            this.TieuCauGV.HeaderText = "Tiểu Cầu";
+            this.TieuCauGV.MinimumWidth = 6;
+            this.TieuCauGV.Name = "TieuCauGV";
+            this.TieuCauGV.ReadOnly = true;
+            // 
+            // PhanBoTieuCauGV
+            // 
+            this.PhanBoTieuCauGV.HeaderText = "Phân Bố Tiểu Cầu";
+            this.PhanBoTieuCauGV.MinimumWidth = 6;
+            this.PhanBoTieuCauGV.Name = "PhanBoTieuCauGV";
+            this.PhanBoTieuCauGV.ReadOnly = true;
+            // 
+            // NhomMauGV
+            // 
+            this.NhomMauGV.HeaderText = "Nhóm Máu";
+            this.NhomMauGV.MinimumWidth = 6;
+            this.NhomMauGV.Name = "NhomMauGV";
+            this.NhomMauGV.ReadOnly = true;
+            // 
+            // HuyetSacToGV
+            // 
+            this.HuyetSacToGV.HeaderText = "Huyết Sắc Tố";
+            this.HuyetSacToGV.MinimumWidth = 6;
+            this.HuyetSacToGV.Name = "HuyetSacToGV";
+            this.HuyetSacToGV.ReadOnly = true;
+            // 
+            // MCVGV
+            // 
+            this.MCVGV.HeaderText = "MCV";
+            this.MCVGV.MinimumWidth = 6;
+            this.MCVGV.Name = "MCVGV";
+            this.MCVGV.ReadOnly = true;
+            // 
+            // MCNGV
+            // 
+            this.MCNGV.HeaderText = "MCN";
+            this.MCNGV.MinimumWidth = 6;
+            this.MCNGV.Name = "MCNGV";
+            this.MCNGV.ReadOnly = true;
+            // 
+            // MCNCGV
+            // 
+            this.MCNCGV.HeaderText = "MCNC";
+            this.MCNCGV.MinimumWidth = 6;
+            this.MCNCGV.Name = "MCNCGV";
+            this.MCNCGV.ReadOnly = true;
+            // 
             // BloodTestWinform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -863,10 +1019,9 @@
             this.RIGHTPANEL.ResumeLayout(false);
             this.left_panel.ResumeLayout(false);
             this.left_panel.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.tableLayoutPanel14.ResumeLayout(false);
-            this.tableLayoutPanel14.PerformLayout();
             this.tableLayoutPanel13.ResumeLayout(false);
             this.tableLayoutPanel13.PerformLayout();
             this.tableLayoutPanel12.ResumeLayout(false);
@@ -889,6 +1044,7 @@
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -901,15 +1057,8 @@
         private ComboBox cb_selectPatient;
         private Button btnCall;
         private Label label7;
-        private Label label9;
-        private DateTimePicker picker_LastApointmentDate;
-        private Label label10;
-        private TextBox txt_consultsTo;
         private Label label55;
         private TableLayoutPanel tableLayoutPanel2;
-        private TableLayoutPanel tableLayoutPanel14;
-        private Label label51;
-        private TextBox txt_trigly;
         private TableLayoutPanel tableLayoutPanel13;
         private Label label50;
         private TextBox txt_huyetSacTo;
@@ -955,5 +1104,27 @@
         private TableLayoutPanel tableLayoutPanel3;
         private Label label40;
         private TextBox txt_hongCau;
+        private Label t;
+        private TextBox txt_phone;
+        private Label v;
+        private TextBox txtage;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn snoGV;
+        private DataGridViewTextBoxColumn BioIDGV;
+        private DataGridViewTextBoxColumn apointDateGV;
+        private DataGridViewTextBoxColumn patientGV;
+        private DataGridViewTextBoxColumn PhoneGV;
+        private DataGridViewTextBoxColumn ageGV;
+        private DataGridViewTextBoxColumn HongCauGV;
+        private DataGridViewTextBoxColumn PhanBoHongCauGV;
+        private DataGridViewTextBoxColumn BachCauGV;
+        private DataGridViewTextBoxColumn PhanBoBachCauGV;
+        private DataGridViewTextBoxColumn TieuCauGV;
+        private DataGridViewTextBoxColumn PhanBoTieuCauGV;
+        private DataGridViewTextBoxColumn NhomMauGV;
+        private DataGridViewTextBoxColumn HuyetSacToGV;
+        private DataGridViewTextBoxColumn MCVGV;
+        private DataGridViewTextBoxColumn MCNGV;
+        private DataGridViewTextBoxColumn MCNCGV;
     }
 }

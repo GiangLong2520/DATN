@@ -68,7 +68,7 @@
             this.radio_LEUAmTinh = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BioIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apointDateGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PhoneGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -576,7 +576,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.snoGV,
-            this.BioIDGV,
+            this.IDGV,
             this.apointDateGV,
             this.patientGV,
             this.PhoneGV,
@@ -605,6 +605,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(766, 794);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // snoGV
             // 
@@ -615,13 +616,13 @@
             this.snoGV.ReadOnly = true;
             this.snoGV.Width = 47;
             // 
-            // BioIDGV
+            // IDGV
             // 
-            this.BioIDGV.HeaderText = "ID";
-            this.BioIDGV.MinimumWidth = 6;
-            this.BioIDGV.Name = "BioIDGV";
-            this.BioIDGV.ReadOnly = true;
-            this.BioIDGV.Visible = false;
+            this.IDGV.HeaderText = "ID";
+            this.IDGV.MinimumWidth = 6;
+            this.IDGV.Name = "IDGV";
+            this.IDGV.ReadOnly = true;
+            this.IDGV.Visible = false;
             // 
             // apointDateGV
             // 
@@ -747,6 +748,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1272, 953);
+            this.MdiChildrenMinimizedAnchorBottom = false;
             this.Name = "UrineTestWinform";
             this.Text = "UrineTestWinform";
             this.left_panel_common.ResumeLayout(false);
@@ -818,8 +820,12 @@
         private RadioButton radio_LeuDuongTinh;
         private RadioButton radio_LEUAmTinh;
         private DataGridView dataGridView1;
+        private Label t;
+        private TextBox txt_phone;
+        private Label v;
+        private TextBox txtage;
         private DataGridViewTextBoxColumn snoGV;
-        private DataGridViewTextBoxColumn BioIDGV;
+        private DataGridViewTextBoxColumn IDGV;
         private DataGridViewTextBoxColumn apointDateGV;
         private DataGridViewTextBoxColumn patientGV;
         private DataGridViewTextBoxColumn PhoneGV;
@@ -831,9 +837,5 @@
         private DataGridViewTextBoxColumn NitritGV;
         private DataGridViewTextBoxColumn KetoneGV;
         private DataGridViewTextBoxColumn UrobilinogenGV;
-        private Label t;
-        private TextBox txt_phone;
-        private Label v;
-        private TextBox txtage;
     }
 }

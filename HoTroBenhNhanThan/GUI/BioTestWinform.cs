@@ -24,24 +24,23 @@ namespace HoTroBenhNhanThan.GUI
         {
             ListBox loadData = new ListBox();
 
-            loadData.Items.Add(BioIDGV);
-            loadData.Items.Add(apointDateGV);
-            loadData.Items.Add(patientGV);
-            loadData.Items.Add(ageGV);
-            loadData.Items.Add(PhoneGV);
-
-            loadData.Items.Add(UreaGV);
-            loadData.Items.Add(GlucoseGV);
-            loadData.Items.Add(CreatininGV);
-            loadData.Items.Add(AcidUricGV);
-            loadData.Items.Add(BilirubinTPGV);
-            loadData.Items.Add(BilirubinTtGV);
-            loadData.Items.Add(AstGV);
-            loadData.Items.Add(ALTGV);
-            loadData.Items.Add(GGTGV);
-            loadData.Items.Add(CholesHDLGV);
-            loadData.Items.Add(CholesLDLGV);
-            loadData.Items.Add(TriglyceridGV);
+            loadData.Items.Add(BioIDGV          );
+            loadData.Items.Add(apointDateGV     );
+            loadData.Items.Add(patientGV        );
+            loadData.Items.Add(ageGV            );
+            loadData.Items.Add(PhoneGV          );
+            loadData.Items.Add(UreaGV           );
+            loadData.Items.Add(GlucoseGV        );
+            loadData.Items.Add(CreatininGV      );
+            loadData.Items.Add(AcidUricGV       );
+            loadData.Items.Add(BilirubinTPGV    );
+            loadData.Items.Add(BilirubinTtGV    );
+            loadData.Items.Add(AstGV            );
+            loadData.Items.Add(ALTGV            );
+            loadData.Items.Add(GGTGV            );
+            loadData.Items.Add(CholesHDLGV      );
+            loadData.Items.Add(CholesLDLGV      );
+            loadData.Items.Add(TriglyceridGV    );
 
             Hashtable ht = new Hashtable();
             ht.Add("@day", picker_DateTime.Value.Day);
@@ -73,6 +72,7 @@ namespace HoTroBenhNhanThan.GUI
         public static int turnNo;
         public static string patientName;
         public static long AppID;
+        public static long bioID;
         private void btnCall_Click(object sender, EventArgs e)
         {
             //Hashtable ht = new Hashtable();
@@ -101,14 +101,11 @@ namespace HoTroBenhNhanThan.GUI
                     if (selectedValue != null && selectedValue != DBNull.Value)
                     {
                         AppID = Convert.ToInt64(selectedValue);
-                        // Tiếp tục xử lý với patientApointmentID...
-                        // Ví dụ:
-                        // Thực hiện các thao tác cần thiết với patientApointmentID
                     }
 
                     ht.Add(@"AppID", AppID);
                     ht.Add("@urea", txt_ure.Text.ToString());
-                    ht.Add("@glucose", txt_gluco.Text.ToString());
+                    ht.Add("@glucose", txt_glu.Text.ToString());
                     ht.Add("@creatinin", txt_creati.Text.ToString());
                     ht.Add("@acidUric", txt_acidUric.Text.ToString());
                     ht.Add("@bilirubinTP", txt_biliTP.Text.ToString());
@@ -130,14 +127,26 @@ namespace HoTroBenhNhanThan.GUI
                 else if (edit == 1)
                 {
                     Hashtable ht = new Hashtable();
-                    //ht.Add("@roleId", roleID);
-                    //ht.Add("@newName", txt_role.Text);
-                    //if (LibCRUD.data_insert_update_delete("st_updateRole", ht) > 0)
-                    //{
-                    //    LibMainClass.showMessage(txt_role.Text + " added successfully..", "success");
-                    //    LibMainClass.resetEnable(LEFTPANEL);
-                    //    LoadBioTest();
-                    //}
+                    ht.Add(@"ID", bioID);
+                    ht.Add("@urea", txt_ure.Text.ToString());
+                    ht.Add("@glucose", txt_glu.Text.ToString());
+                    ht.Add("@creatinin", txt_creati.Text.ToString());
+                    ht.Add("@acidUric", txt_acidUric.Text.ToString());
+                    ht.Add("@bilirubinTP", txt_biliTP.Text.ToString());
+                    ht.Add("@bilirubinTT", txt_biliTT.Text.ToString());
+                    ht.Add("@AST", txt_AST.Text.ToString());
+                    ht.Add("@ALT", txt_ALT.Text.ToString());
+                    ht.Add("@GGT", txt_GGT.Text.ToString());
+                    ht.Add("@cholesterolHDL", txt_cholesHDL.Text.ToString());
+                    ht.Add("@cholesterolLDL", txt_cholesLDL.Text.ToString());
+                    ht.Add("@triglycerid", txt_trigly.Text.ToString());
+                    int ret = LibCRUD.data_insert_update_delete("[st_UpdateBioTestPatientAppointmentReg]", ht);
+                    if (ret > 0)
+                    {
+                        LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " added successfully..", "success");
+                        LibMainClass.resetEnable(left_panel);
+                        LoadBioTest();
+                    }
                 }
 
             }
@@ -151,8 +160,8 @@ namespace HoTroBenhNhanThan.GUI
                 if (dr == DialogResult.Yes)
                 {
                     Hashtable ht = new Hashtable();
-                    ht.Add("@AppID", AppID);
-                    if (LibCRUD.data_insert_update_delete("st_deleteRole", ht) > 0)
+                    ht.Add("@ID", bioID);
+                    if (LibCRUD.data_insert_update_delete("st_DeleteBioTestPatientAppointmentReg", ht) > 0)
                     {
                         LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " deleted successfully..", "success");
                         LibMainClass.resetEnable(left_panel);
@@ -166,19 +175,6 @@ namespace HoTroBenhNhanThan.GUI
             LoadBioTest();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //if (e.RowIndex != -1 && e.ColumnIndex != -1)
-            //{
-            //    edit = 1;
-            //    LibMainClass.DisableControl(LEFTPANEL);
-            //    DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-            //    roleID = Convert.ToInt32(row.Cells["RoleIDGV"].Value.ToString());
-            //    txt_role.Text = row.Cells["RoleGV"].Value.ToString();
-            //    LibMainClass.DisableControl(left_panel);
-            //}
-        }
-
         private void dropdown(object sender, EventArgs e)
         {
             Hashtable ht = new Hashtable();
@@ -186,6 +182,32 @@ namespace HoTroBenhNhanThan.GUI
             ht.Add("@month", picker_DateTime.Value.Month);
             ht.Add("@year", picker_DateTime.Value.Year);
             LibCRUD.loadList("[st_getTodayPatientApointment]", cb_selectPatient, "PatientApointment ID", "Patient", ht);
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1 && e.ColumnIndex != -1)
+            {
+                edit = 1;
+                LibMainClass.DisableControl(left_panel);
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                bioID = Convert.ToInt32(row.Cells["BioIDGV"].Value.ToString());
+
+                txt_ure.Text = row.Cells["UreaGV"].Value.ToString();
+                txt_glu.Text = row.Cells["GlucoseGV"].Value.ToString();
+                txt_creati.Text = row.Cells["CreatininGV"].Value.ToString();
+                txt_acidUric.Text = row.Cells["AcidUricGV"].Value.ToString();
+                txt_biliTP.Text = row.Cells["BilirubinTPGV"].Value.ToString();
+                txt_biliTT.Text = row.Cells["BilirubinTtGV"].Value.ToString();
+                txt_AST.Text = row.Cells["AstGV"].Value.ToString();
+                txt_ALT.Text = row.Cells["ALTGV"].Value.ToString();
+                txt_GGT.Text = row.Cells["GGTGV"].Value.ToString();
+                txt_cholesHDL.Text = row.Cells["CholesHDLGV"].Value.ToString();
+                txt_cholesLDL.Text = row.Cells["CholesLDLGV"].Value.ToString();
+                txt_trigly.Text = row.Cells["TriglyceridGV"].Value.ToString();
+
+                LibMainClass.DisableControl(left_panel);
+            }
         }
     }
 }

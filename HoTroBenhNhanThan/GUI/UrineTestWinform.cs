@@ -37,11 +37,11 @@ namespace HoTroBenhNhanThan.GUI
             ht.Add("@year", picker_DateTime.Value.Year);
             LibCRUD.loadList("[st_getTodayPatientApointment]", cb_selectPatient, "PatientApointment ID", "Patient", ht);
         }
-        private void LoadBioTest()
+        private void LoadUrineTest()
         {
             ListBox loadData = new ListBox();
 
-            loadData.Items.Add(BioIDGV);
+            loadData.Items.Add(IDGV);
             loadData.Items.Add(apointDateGV);
             loadData.Items.Add(patientGV);
             loadData.Items.Add(ageGV);
@@ -49,8 +49,8 @@ namespace HoTroBenhNhanThan.GUI
 
             loadData.Items.Add(SpecificGravityGV);
             loadData.Items.Add(PHGV);
-            loadData.Items.Add(LeukocytesGV);
             loadData.Items.Add(ASCGV);
+            loadData.Items.Add(LeukocytesGV);
             loadData.Items.Add(NitritGV);
             loadData.Items.Add(KetoneGV);
             loadData.Items.Add(UrobilinogenGV);
@@ -106,7 +106,7 @@ namespace HoTroBenhNhanThan.GUI
                     {
                         LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " added successfully..", "success");
                         LibMainClass.resetEnable(left_panel);
-                        LoadBioTest();
+                        LoadUrineTest();
                     }
                     txt_phone.Text = dataGridView1.Rows[0].Cells[PhoneGV.Name].Value.ToString();
                     txtage.Text = dataGridView1.Rows[0].Cells[ageGV.Name].Value.ToString();
@@ -114,14 +114,24 @@ namespace HoTroBenhNhanThan.GUI
                 else if (edit == 1)
                 {
                     Hashtable ht = new Hashtable();
-                    //ht.Add("@roleId", roleID);
-                    //ht.Add("@newName", txt_role.Text);
-                    //if (LibCRUD.data_insert_update_delete("st_updateRole", ht) > 0)
-                    //{
-                    //    LibMainClass.showMessage(txt_role.Text + " added successfully..", "success");
-                    //    LibMainClass.resetEnable(LEFTPANEL);
-                    //    LoadBioTest();
-                    //}
+                    ht.Add("@ID", urineID);
+                    ht.Add("@SG", Math.Round(float.Parse(txt_SG.Text.ToString()), 3));
+                    ht.Add("@PH", Math.Round(float.Parse(txt_PH.Text.ToString()), 3));
+                    ht.Add("@ASC", Math.Round(float.Parse(txt_ASC.Text.ToString()), 3));
+
+                    ht.Add("@Leukocytes", radio_LEUAmTinh.Checked ? true : false);
+                    ht.Add("@Nitrit", radioNitritAmtinh.Checked ? true : false);
+                    ht.Add("@Ketone", radioKetoneKhong.Checked ? true : false);
+                    ht.Add("@Urobilinogen", radioUrobilKhongCo.Checked ? true : false);
+
+
+                    int ret = LibCRUD.data_insert_update_delete("[st_UpdateUrineTestPatientAppointmentReg]", ht);
+                    if (ret > 0)
+                    {
+                        LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " Update successfully..", "success");
+                        LibMainClass.resetEnable(left_panel);
+                        LoadUrineTest();
+                    }
                 }
 
             }
@@ -135,34 +145,87 @@ namespace HoTroBenhNhanThan.GUI
                 if (dr == DialogResult.Yes)
                 {
                     Hashtable ht = new Hashtable();
-                    ht.Add("@AppID", AppID);
-                    if (LibCRUD.data_insert_update_delete("st_deleteRole", ht) > 0)
+                    ht.Add("@ID", urineID);
+                    if (LibCRUD.data_insert_update_delete("st_DeleteUrineTestPatientAppointmentReg", ht) > 0)
                     {
                         LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " deleted successfully..", "success");
                         LibMainClass.resetEnable(left_panel);
-                        LoadBioTest();
+                        LoadUrineTest();
                     }
                 }
             }
         }
         public override void btn_View_Click(object sender, EventArgs e)         // view click
         {
-            LoadBioTest();
+            LoadUrineTest();
         }
+        public static long urineID;
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex != -1 && e.ColumnIndex != -1)
-            //{
-            //    edit = 1;
-            //    LibMainClass.DisableControl(LEFTPANEL);
-            //    DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-            //    roleID = Convert.ToInt32(row.Cells["RoleIDGV"].Value.ToString());
-            //    txt_role.Text = row.Cells["RoleGV"].Value.ToString();
-            //    LibMainClass.DisableControl(left_panel);
-            //}
+            if (e.RowIndex != -1 && e.ColumnIndex != -1)
+            {
+                edit = 1;
+                LibMainClass.DisableControl(left_panel);
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                urineID = Convert.ToInt32(row.Cells["IDGV"].Value.ToString());
+                //txt_role.Text = row.Cells["RoleGV"].Value.ToString(); 
+                // SpecificGravityGV);
+                // PHGV);
+                // ASCGV);
+                // LeukocytesGV);
+                // NitritGV);
+                // KetoneGV);
+                // UrobilinogenGV);
+                // txt_SG.Text = row.Cells[""].Value.ToString();
+                txt_SG.Text = row.Cells["SpecificGravityGV"].Value.ToString();
+                txt_PH.Text = row.Cells["PHGV"].Value.ToString();
+                txt_ASC.Text = row.Cells["ASCGV"].Value.ToString();
+
+                string tmp;
+                tmp = row.Cells["LeukocytesGV"].Value.ToString();
+                if(tmp.Equals("Âm Tính"))
+                {
+                    radio_LEUAmTinh.Checked = true;
+                }
+                else
+                {
+                    radio_LeuDuongTinh.Checked = true;
+                }
+
+                tmp = row.Cells["NitritGV"].Value.ToString();
+                if (tmp.Equals("Âm Tính"))
+                {
+                    radioNitritAmtinh.Checked = true;
+                }
+                else
+                {
+                    radioNitritDuongTinh.Checked = true;
+                }
+
+                tmp = row.Cells["KetoneGV"].Value.ToString();
+                if (tmp.Equals("< 0.5 mmol/L"))
+                {
+                    radioKetoneKhong.Checked = true;
+                }
+                else
+                {
+                    radioKetoneCoNhieu.Checked = true;
+                }
+
+                tmp = row.Cells["UrobilinogenGV"].Value.ToString();
+                if (tmp.Equals("Không Có"))
+                {
+                    radioUrobilKhongCo.Checked = true;
+                }
+                else
+                {
+                    radioUrobilCo.Checked = true;
+                }
+
+
+                LibMainClass.DisableControl(left_panel);
+            }
         }
-
-
     }
 }

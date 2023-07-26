@@ -70,5 +70,28 @@ namespace HoTroBenhNhanThan
         {
 
         }
+
+        private void btn_Login_Click_1(object sender, EventArgs e)
+        {
+            if (LibMainClass.checkControls(left_panel_common).Count > 0)
+            {
+                LibMainClass.showMessage("Fields with RED are madatory", "error");
+            }
+            else
+            {
+                Hashtable ht = new Hashtable();
+                ht.Add(@"username", txt_user.Text);
+                ht.Add(@"Password", txt_password.Text);
+                if (/*Login.getLoginDetails("[st_getAuthentication]", ht)*/ true)
+                {
+                    HomeWindow hw = new HomeWindow();
+                    LibMainClass.showWindow(hw, this, MDI.ActiveForm);
+                }
+                else
+                {
+
+                }
+            }
+        }
     }
 }

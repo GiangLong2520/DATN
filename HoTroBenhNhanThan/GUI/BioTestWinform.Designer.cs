@@ -34,7 +34,6 @@
             this.t = new System.Windows.Forms.Label();
             this.txt_phone = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txt_gluco = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -236,16 +235,7 @@
             this.label11.Size = new System.Drawing.Size(32, 20);
             this.label11.TabIndex = 33;
             this.label11.Text = "Ure";
-            // 
-            // txt_gluco
-            // 
-            this.txt_gluco.Location = new System.Drawing.Point(176, 36);
-            this.txt_gluco.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.txt_gluco.MaxLength = 50;
-            this.txt_gluco.Name = "txt_gluco";
-            this.txt_gluco.Size = new System.Drawing.Size(149, 27);
-            this.txt_gluco.TabIndex = 36;
-            // 
+
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;
@@ -1140,6 +1130,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(766, 794);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // snoGV
             // 
@@ -1347,7 +1338,6 @@
         private Label txtPhone;
         private TextBox txt_phone;
         private Label label11;
-        private TextBox txt_gluco;
         public TableLayoutPanel tableLayoutPanel1;
         private Label label4;
         private Label label2;

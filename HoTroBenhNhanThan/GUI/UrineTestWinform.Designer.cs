@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label12 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.cb_selectPatient = new System.Windows.Forms.ComboBox();
@@ -38,12 +38,21 @@
             this.label55 = new System.Windows.Forms.Label();
             this.picker_DateTime = new System.Windows.Forms.DateTimePicker();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.radioUrobilCo = new System.Windows.Forms.RadioButton();
+            this.radioUrobilKhongCo = new System.Windows.Forms.RadioButton();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.radioKetoneCoNhieu = new System.Windows.Forms.RadioButton();
+            this.radioKetoneKhong = new System.Windows.Forms.RadioButton();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.radioNitritDuongTinh = new System.Windows.Forms.RadioButton();
+            this.radioNitritAmtinh = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
-            this.txt_MCV = new System.Windows.Forms.TextBox();
+            this.txt_ASC = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_pbHongCau = new System.Windows.Forms.TextBox();
+            this.txt_PH = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -53,19 +62,10 @@
             this.label35 = new System.Windows.Forms.Label();
             this.tableLayoutPanel17 = new System.Windows.Forms.TableLayoutPanel();
             this.label11 = new System.Windows.Forms.Label();
-            this.txt_hongCau = new System.Windows.Forms.TextBox();
+            this.txt_SG = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.radioButton8 = new System.Windows.Forms.RadioButton();
-            this.radioButton9 = new System.Windows.Forms.RadioButton();
+            this.radio_LeuDuongTinh = new System.Windows.Forms.RadioButton();
+            this.radio_LEUAmTinh = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BioIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -93,13 +93,13 @@
             this.left_panel.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel6.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.tableLayoutPanel15.SuspendLayout();
             this.tableLayoutPanel16.SuspendLayout();
             this.tableLayoutPanel17.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -182,8 +182,7 @@
             this.cb_selectPatient.Name = "cb_selectPatient";
             this.cb_selectPatient.Size = new System.Drawing.Size(303, 28);
             this.cb_selectPatient.TabIndex = 59;
-            this.cb_selectPatient.DropDown += new System.EventHandler(this.cb_selectPatient_SelectedIndexChanged);
-            this.cb_selectPatient.SelectedIndexChanged += new System.EventHandler(this.cb_selectPatient_SelectedIndexChanged);
+            this.cb_selectPatient.DropDown += new System.EventHandler(this.dropdown);
             // 
             // btnCall
             // 
@@ -265,13 +264,106 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(494, 363);
             this.tableLayoutPanel6.TabIndex = 75;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.radioUrobilCo);
+            this.panel6.Controls.Add(this.radioUrobilKhongCo);
+            this.panel6.Location = new System.Drawing.Point(5, 261);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(155, 97);
+            this.panel6.TabIndex = 40;
+            // 
+            // radioUrobilCo
+            // 
+            this.radioUrobilCo.AutoSize = true;
+            this.radioUrobilCo.Location = new System.Drawing.Point(7, 47);
+            this.radioUrobilCo.Name = "radioUrobilCo";
+            this.radioUrobilCo.Size = new System.Drawing.Size(48, 24);
+            this.radioUrobilCo.TabIndex = 1;
+            this.radioUrobilCo.TabStop = true;
+            this.radioUrobilCo.Text = "Có";
+            this.radioUrobilCo.UseVisualStyleBackColor = true;
+            // 
+            // radioUrobilKhongCo
+            // 
+            this.radioUrobilKhongCo.AutoSize = true;
+            this.radioUrobilKhongCo.Location = new System.Drawing.Point(7, 17);
+            this.radioUrobilKhongCo.Name = "radioUrobilKhongCo";
+            this.radioUrobilKhongCo.Size = new System.Drawing.Size(95, 24);
+            this.radioUrobilKhongCo.TabIndex = 0;
+            this.radioUrobilKhongCo.TabStop = true;
+            this.radioUrobilKhongCo.Text = "Không Có";
+            this.radioUrobilKhongCo.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.radioKetoneCoNhieu);
+            this.panel5.Controls.Add(this.radioKetoneKhong);
+            this.panel5.Location = new System.Drawing.Point(332, 113);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(155, 108);
+            this.panel5.TabIndex = 39;
+            // 
+            // radioKetoneCoNhieu
+            // 
+            this.radioKetoneCoNhieu.AutoSize = true;
+            this.radioKetoneCoNhieu.Location = new System.Drawing.Point(7, 47);
+            this.radioKetoneCoNhieu.Name = "radioKetoneCoNhieu";
+            this.radioKetoneCoNhieu.Size = new System.Drawing.Size(125, 24);
+            this.radioKetoneCoNhieu.TabIndex = 1;
+            this.radioKetoneCoNhieu.TabStop = true;
+            this.radioKetoneCoNhieu.Text = ">=0.5 mmol/L";
+            this.radioKetoneCoNhieu.UseVisualStyleBackColor = true;
+            // 
+            // radioKetoneKhong
+            // 
+            this.radioKetoneKhong.AutoSize = true;
+            this.radioKetoneKhong.Location = new System.Drawing.Point(7, 17);
+            this.radioKetoneKhong.Name = "radioKetoneKhong";
+            this.radioKetoneKhong.Size = new System.Drawing.Size(115, 24);
+            this.radioKetoneKhong.TabIndex = 0;
+            this.radioKetoneKhong.TabStop = true;
+            this.radioKetoneKhong.Text = "<0.5 mmol/L";
+            this.radioKetoneKhong.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.radioNitritDuongTinh);
+            this.panel4.Controls.Add(this.radioNitritAmtinh);
+            this.panel4.Location = new System.Drawing.Point(168, 113);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(155, 108);
+            this.panel4.TabIndex = 38;
+            // 
+            // radioNitritDuongTinh
+            // 
+            this.radioNitritDuongTinh.AutoSize = true;
+            this.radioNitritDuongTinh.Location = new System.Drawing.Point(7, 47);
+            this.radioNitritDuongTinh.Name = "radioNitritDuongTinh";
+            this.radioNitritDuongTinh.Size = new System.Drawing.Size(108, 24);
+            this.radioNitritDuongTinh.TabIndex = 1;
+            this.radioNitritDuongTinh.TabStop = true;
+            this.radioNitritDuongTinh.Text = "Dương Tính";
+            this.radioNitritDuongTinh.UseVisualStyleBackColor = true;
+            // 
+            // radioNitritAmtinh
+            // 
+            this.radioNitritAmtinh.AutoSize = true;
+            this.radioNitritAmtinh.Location = new System.Drawing.Point(7, 17);
+            this.radioNitritAmtinh.Name = "radioNitritAmtinh";
+            this.radioNitritAmtinh.Size = new System.Drawing.Size(82, 24);
+            this.radioNitritAmtinh.TabIndex = 0;
+            this.radioNitritAmtinh.TabStop = true;
+            this.radioNitritAmtinh.Text = "Âm tính";
+            this.radioNitritAmtinh.UseVisualStyleBackColor = true;
+            // 
             // tableLayoutPanel15
             // 
             this.tableLayoutPanel15.ColumnCount = 2;
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
             this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
             this.tableLayoutPanel15.Controls.Add(this.label2, 1, 0);
-            this.tableLayoutPanel15.Controls.Add(this.txt_MCV, 0, 0);
+            this.tableLayoutPanel15.Controls.Add(this.txt_ASC, 0, 0);
             this.tableLayoutPanel15.Location = new System.Drawing.Point(329, 38);
             this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel15.Name = "tableLayoutPanel15";
@@ -291,13 +383,13 @@
             this.label2.TabIndex = 33;
             this.label2.Text = "cm";
             // 
-            // txt_MCV
+            // txt_ASC
             // 
-            this.txt_MCV.Location = new System.Drawing.Point(0, 0);
-            this.txt_MCV.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_MCV.Name = "txt_MCV";
-            this.txt_MCV.Size = new System.Drawing.Size(117, 27);
-            this.txt_MCV.TabIndex = 34;
+            this.txt_ASC.Location = new System.Drawing.Point(0, 0);
+            this.txt_ASC.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_ASC.Name = "txt_ASC";
+            this.txt_ASC.Size = new System.Drawing.Size(117, 27);
+            this.txt_ASC.TabIndex = 34;
             // 
             // tableLayoutPanel16
             // 
@@ -305,7 +397,7 @@
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
             this.tableLayoutPanel16.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
             this.tableLayoutPanel16.Controls.Add(this.label4, 1, 0);
-            this.tableLayoutPanel16.Controls.Add(this.txt_pbHongCau, 0, 0);
+            this.tableLayoutPanel16.Controls.Add(this.txt_PH, 0, 0);
             this.tableLayoutPanel16.Location = new System.Drawing.Point(165, 38);
             this.tableLayoutPanel16.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel16.Name = "tableLayoutPanel16";
@@ -325,13 +417,13 @@
             this.label4.TabIndex = 33;
             this.label4.Text = "cm";
             // 
-            // txt_pbHongCau
+            // txt_PH
             // 
-            this.txt_pbHongCau.Location = new System.Drawing.Point(0, 0);
-            this.txt_pbHongCau.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_pbHongCau.Name = "txt_pbHongCau";
-            this.txt_pbHongCau.Size = new System.Drawing.Size(116, 27);
-            this.txt_pbHongCau.TabIndex = 34;
+            this.txt_PH.Location = new System.Drawing.Point(0, 0);
+            this.txt_PH.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_PH.Name = "txt_PH";
+            this.txt_PH.Size = new System.Drawing.Size(116, 27);
+            this.txt_PH.TabIndex = 34;
             // 
             // label5
             // 
@@ -409,7 +501,7 @@
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
             this.tableLayoutPanel17.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
             this.tableLayoutPanel17.Controls.Add(this.label11, 1, 0);
-            this.tableLayoutPanel17.Controls.Add(this.txt_hongCau, 0, 0);
+            this.tableLayoutPanel17.Controls.Add(this.txt_SG, 0, 0);
             this.tableLayoutPanel17.Location = new System.Drawing.Point(2, 38);
             this.tableLayoutPanel17.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel17.Name = "tableLayoutPanel17";
@@ -429,151 +521,58 @@
             this.label11.TabIndex = 33;
             this.label11.Text = "cm";
             // 
-            // txt_hongCau
+            // txt_SG
             // 
-            this.txt_hongCau.Location = new System.Drawing.Point(0, 0);
-            this.txt_hongCau.Margin = new System.Windows.Forms.Padding(0);
-            this.txt_hongCau.Name = "txt_hongCau";
-            this.txt_hongCau.Size = new System.Drawing.Size(115, 27);
-            this.txt_hongCau.TabIndex = 34;
+            this.txt_SG.Location = new System.Drawing.Point(0, 0);
+            this.txt_SG.Margin = new System.Windows.Forms.Padding(0);
+            this.txt_SG.Name = "txt_SG";
+            this.txt_SG.Size = new System.Drawing.Size(115, 27);
+            this.txt_SG.TabIndex = 34;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.radioButton3);
-            this.panel3.Controls.Add(this.radioButton2);
+            this.panel3.Controls.Add(this.radio_LeuDuongTinh);
+            this.panel3.Controls.Add(this.radio_LEUAmTinh);
             this.panel3.Location = new System.Drawing.Point(5, 113);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(155, 108);
             this.panel3.TabIndex = 37;
             // 
-            // radioButton2
+            // radio_LeuDuongTinh
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(7, 17);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(86, 24);
-            this.radioButton2.TabIndex = 0;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = " Âm tính";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radio_LeuDuongTinh.AutoSize = true;
+            this.radio_LeuDuongTinh.Location = new System.Drawing.Point(7, 47);
+            this.radio_LeuDuongTinh.Name = "radio_LeuDuongTinh";
+            this.radio_LeuDuongTinh.Size = new System.Drawing.Size(108, 24);
+            this.radio_LeuDuongTinh.TabIndex = 1;
+            this.radio_LeuDuongTinh.TabStop = true;
+            this.radio_LeuDuongTinh.Text = "Dương Tính";
+            this.radio_LeuDuongTinh.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // radio_LEUAmTinh
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(7, 47);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(108, 24);
-            this.radioButton3.TabIndex = 1;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Dương Tính";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.radioButton4);
-            this.panel4.Controls.Add(this.radioButton5);
-            this.panel4.Location = new System.Drawing.Point(168, 113);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(155, 108);
-            this.panel4.TabIndex = 38;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(7, 47);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(108, 24);
-            this.radioButton4.TabIndex = 1;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Dương Tính";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(7, 17);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(82, 24);
-            this.radioButton5.TabIndex = 0;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Âm tính";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.radioButton6);
-            this.panel5.Controls.Add(this.radioButton7);
-            this.panel5.Location = new System.Drawing.Point(332, 113);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(155, 108);
-            this.panel5.TabIndex = 39;
-            // 
-            // radioButton6
-            // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(7, 47);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(125, 24);
-            this.radioButton6.TabIndex = 1;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = ">=0.5 mmol/L";
-            this.radioButton6.UseVisualStyleBackColor = true;
-            // 
-            // radioButton7
-            // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(7, 17);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(115, 24);
-            this.radioButton7.TabIndex = 0;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "<0.5 mmol/L";
-            this.radioButton7.UseVisualStyleBackColor = true;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.radioButton8);
-            this.panel6.Controls.Add(this.radioButton9);
-            this.panel6.Location = new System.Drawing.Point(5, 261);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(155, 97);
-            this.panel6.TabIndex = 40;
-            // 
-            // radioButton8
-            // 
-            this.radioButton8.AutoSize = true;
-            this.radioButton8.Location = new System.Drawing.Point(7, 47);
-            this.radioButton8.Name = "radioButton8";
-            this.radioButton8.Size = new System.Drawing.Size(48, 24);
-            this.radioButton8.TabIndex = 1;
-            this.radioButton8.TabStop = true;
-            this.radioButton8.Text = "Có";
-            this.radioButton8.UseVisualStyleBackColor = true;
-            // 
-            // radioButton9
-            // 
-            this.radioButton9.AutoSize = true;
-            this.radioButton9.Location = new System.Drawing.Point(7, 17);
-            this.radioButton9.Name = "radioButton9";
-            this.radioButton9.Size = new System.Drawing.Size(95, 24);
-            this.radioButton9.TabIndex = 0;
-            this.radioButton9.TabStop = true;
-            this.radioButton9.Text = "Không Có";
-            this.radioButton9.UseVisualStyleBackColor = true;
+            this.radio_LEUAmTinh.AutoSize = true;
+            this.radio_LEUAmTinh.Location = new System.Drawing.Point(7, 17);
+            this.radio_LEUAmTinh.Name = "radio_LEUAmTinh";
+            this.radio_LEUAmTinh.Size = new System.Drawing.Size(86, 24);
+            this.radio_LEUAmTinh.TabIndex = 0;
+            this.radio_LEUAmTinh.TabStop = true;
+            this.radio_LEUAmTinh.Text = " Âm tính";
+            this.radio_LEUAmTinh.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.snoGV,
@@ -589,14 +588,14 @@
             this.NitritGV,
             this.KetoneGV,
             this.UrobilinogenGV});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 23);
             this.dataGridView1.Name = "dataGridView1";
@@ -761,6 +760,12 @@
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel6.ResumeLayout(false);
             this.tableLayoutPanel6.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.tableLayoutPanel15.ResumeLayout(false);
             this.tableLayoutPanel15.PerformLayout();
             this.tableLayoutPanel16.ResumeLayout(false);
@@ -769,12 +774,6 @@
             this.tableLayoutPanel17.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -792,10 +791,10 @@
         private TableLayoutPanel tableLayoutPanel6;
         private TableLayoutPanel tableLayoutPanel15;
         private Label label2;
-        private TextBox txt_MCV;
+        private TextBox txt_ASC;
         private TableLayoutPanel tableLayoutPanel16;
         private Label label4;
-        private TextBox txt_pbHongCau;
+        private TextBox txt_PH;
         private Label label5;
         private Label label6;
         private Label label8;
@@ -805,19 +804,19 @@
         private Label label35;
         private TableLayoutPanel tableLayoutPanel17;
         private Label label11;
-        private TextBox txt_hongCau;
+        private TextBox txt_SG;
         private Panel panel6;
-        private RadioButton radioButton8;
-        private RadioButton radioButton9;
+        private RadioButton radioUrobilCo;
+        private RadioButton radioUrobilKhongCo;
         private Panel panel5;
-        private RadioButton radioButton6;
-        private RadioButton radioButton7;
+        private RadioButton radioKetoneCoNhieu;
+        private RadioButton radioKetoneKhong;
         private Panel panel4;
-        private RadioButton radioButton4;
-        private RadioButton radioButton5;
+        private RadioButton radioNitritDuongTinh;
+        private RadioButton radioNitritAmtinh;
         private Panel panel3;
-        private RadioButton radioButton3;
-        private RadioButton radioButton2;
+        private RadioButton radio_LeuDuongTinh;
+        private RadioButton radio_LEUAmTinh;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn snoGV;
         private DataGridViewTextBoxColumn BioIDGV;

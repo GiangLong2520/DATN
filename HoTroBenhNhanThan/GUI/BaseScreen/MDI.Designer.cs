@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDI));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,7 +62,7 @@
             // 
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
             this.settingToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.settingToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.settingToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.settingToolStripMenuItem.Text = "Setting";
             this.settingToolStripMenuItem.Click += new System.EventHandler(this.settingToolStripMenuItem_Click);
             // 
@@ -69,14 +70,14 @@
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.logoutToolStripMenuItem.Text = "Logout";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.F4)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // MDI
@@ -85,6 +86,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1283, 750);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MDI";

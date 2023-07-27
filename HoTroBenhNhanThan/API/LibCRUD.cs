@@ -53,11 +53,18 @@ namespace HoTroBenhNhanThan
                 SqlDataAdapter da =  new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                for(int i = 0; i<lb.Items.Count; i++)
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    for (int i = 0; i < dt.Columns.Count; i++)
+                    {
+                        row[i] = row[i].ToString().Trim();
+                    }
+                }
+                for (int i = 0; i<lb.Items.Count; i++)
                 {
                     string colName = ((DataGridViewColumn)lb.Items[i]).Name;
-                    gv.Columns[colName].DataPropertyName = dt.Columns[i].ToString().TrimEnd().TrimStart();
-
+                    gv.Columns[colName].DataPropertyName = dt.Columns[i].ToString();
 
                 }
                 gv.DataSource= dt;
@@ -97,6 +104,30 @@ namespace HoTroBenhNhanThan
 
             } 
         }
+
+        public static void loadRole( ComboBox cb)
+        {
+            string proc = "st_getAllRole";
+            try
+            {
+                // cb.Items.Clear();
+                SqlCommand cmd = new SqlCommand(proc, LibMainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cb.DisplayMember = "Name";
+                cb.ValueMember = "ID";
+                cb.DataSource = dt;
+                cb.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                LibMainClass.showMessage(ex.Message, "error");
+
+            }
+        }
+
         public static void loadData(string proc, DataGridView gv, ListBox lb, Hashtable ht)
         {
             try

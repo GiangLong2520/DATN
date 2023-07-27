@@ -28,7 +28,7 @@ namespace HoTroBenhNhanThan.GUI
         int MedID;
         public override void button3_Click(object sender, EventArgs e)          //save btn
         {
-            if (LibMainClass.checkControls(LEFTPANEL).Count > 0)
+            if (LibMainClass.checkControls(left_panel).Count > 0)
             {
                 LibMainClass.showMessage("Field with RED are mandatory.", "error");
 
@@ -54,7 +54,7 @@ namespace HoTroBenhNhanThan.GUI
                     if (ret > 0)
                     {
                         LibMainClass.showMessage(txt_medi.Text + " added successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.resetEnable(left_panel);
                         Loadmedicine();
                     }
                 }
@@ -113,7 +113,7 @@ namespace HoTroBenhNhanThan.GUI
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
             {
                 edit = 1;
-                LibMainClass.DisableControl(LEFTPANEL);
+                LibMainClass.DisableControl(left_panel);
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 MedID = Convert.ToInt32(row.Cells["MediIDGV"].Value.ToString());
                 txt_medi.Text = row.Cells["MedicineGV"].Value.ToString(); ;

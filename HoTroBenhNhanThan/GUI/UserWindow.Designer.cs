@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label3 = new System.Windows.Forms.Label();
@@ -72,7 +70,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView2);
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // left_panel
             // 
@@ -110,7 +107,6 @@
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(303, 27);
             this.txt_Name.TabIndex = 3;
-            this.txt_Name.TextChanged += new System.EventHandler(this.txt_Name_TextChanged);
             // 
             // label4
             // 
@@ -129,7 +125,6 @@
             this.txt_usename.Name = "txt_usename";
             this.txt_usename.Size = new System.Drawing.Size(303, 27);
             this.txt_usename.TabIndex = 5;
-            this.txt_usename.TextChanged += new System.EventHandler(this.txt_usename_TextChanged);
             // 
             // label5
             // 
@@ -148,7 +143,6 @@
             this.txt_Pass.Name = "txt_Pass";
             this.txt_Pass.Size = new System.Drawing.Size(303, 27);
             this.txt_Pass.TabIndex = 7;
-            this.txt_Pass.TextChanged += new System.EventHandler(this.txt_Pass_TextChanged);
             // 
             // label6
             // 
@@ -168,8 +162,6 @@
             this.txt_Phone.Name = "txt_Phone";
             this.txt_Phone.Size = new System.Drawing.Size(303, 27);
             this.txt_Phone.TabIndex = 9;
-            this.txt_Phone.UseSystemPasswordChar = true;
-            this.txt_Phone.TextChanged += new System.EventHandler(this.txt_Phone_TextChanged);
             // 
             // label7
             // 
@@ -188,7 +180,6 @@
             this.txt_Address.Name = "txt_Address";
             this.txt_Address.Size = new System.Drawing.Size(303, 27);
             this.txt_Address.TabIndex = 11;
-            this.txt_Address.TextChanged += new System.EventHandler(this.txt_Address_TextChanged);
             // 
             // label8
             // 
@@ -208,27 +199,6 @@
             this.cb_Roles.Name = "cb_Roles";
             this.cb_Roles.Size = new System.Drawing.Size(303, 28);
             this.cb_Roles.TabIndex = 14;
-            this.cb_Roles.SelectedIndexChanged += new System.EventHandler(this.cb_Roles_SelectedIndexChanged);
-            // 
-            // dataGridView1
-            // 
-
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-
             // 
             // dataGridView2
             // 
@@ -272,8 +242,8 @@
             this.dataGridView2.RowTemplate.Height = 29;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(943, 601);
-            this.dataGridView2.TabIndex = 2;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.dataGridView2.TabIndex = 3;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick_1);
             // 
             // snoGV
             // 
@@ -359,6 +329,7 @@
             this.BtnBackPanel.ResumeLayout(false);
             this.RIGHTPANEL.ResumeLayout(false);
             this.UserPanel.ResumeLayout(false);
+            this.right_panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 

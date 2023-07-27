@@ -30,14 +30,14 @@ namespace HoTroBenhNhanThan
                 Hashtable ht= new Hashtable();
                 ht.Add(@"username", txt_user.Text);
                 ht.Add(@"Password", txt_password.Text);
-                if (/*Login.getLoginDetails("[st_getAuthentication]", ht)*/ true)
+                if (Login.getLoginDetails("[st_getAuthentication]", ht))
                 {
                     HomeWindow hw = new HomeWindow();
                     LibMainClass.showWindow(hw, this, MDI.ActiveForm);
                 }
                 else
                 {
-
+                    LibMainClass.showMessage("UseName or Password not correct.", "error");
                 }
             }
         }
@@ -82,7 +82,7 @@ namespace HoTroBenhNhanThan
                 Hashtable ht = new Hashtable();
                 ht.Add(@"username", txt_user.Text);
                 ht.Add(@"Password", txt_password.Text);
-                if (/*Login.getLoginDetails("[st_getAuthentication]", ht)*/ true)
+                if (Login.getLoginDetails("[st_getAuthentication]", ht))
                 {
                     HomeWindow hw = new HomeWindow();
                     LibMainClass.showWindow(hw, this, MDI.ActiveForm);

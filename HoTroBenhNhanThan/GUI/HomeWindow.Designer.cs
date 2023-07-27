@@ -163,12 +163,15 @@
             this.button7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button7.FlatAppearance.BorderSize = 2;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button7.ForeColor = System.Drawing.Color.DarkGreen;
+            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
             this.button7.Location = new System.Drawing.Point(714, 175);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(232, 166);
             this.button7.TabIndex = 7;
-            this.button7.Text = "Roles";
+            this.button7.Text = "Analysis\r\nChart";
+            this.button7.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -228,12 +231,15 @@
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button3.FlatAppearance.BorderSize = 2;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button3.ForeColor = System.Drawing.Color.DarkGreen;
+            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.Location = new System.Drawing.Point(714, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(232, 166);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Roles";
+            this.button3.Text = "Nurse";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -242,14 +248,14 @@
             this.btn_benhAn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_benhAn.FlatAppearance.BorderSize = 2;
             this.btn_benhAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_benhAn.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_benhAn.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_benhAn.ForeColor = System.Drawing.Color.DarkGreen;
             this.btn_benhAn.Image = ((System.Drawing.Image)(resources.GetObject("btn_benhAn.Image")));
             this.btn_benhAn.Location = new System.Drawing.Point(477, 3);
             this.btn_benhAn.Name = "btn_benhAn";
             this.btn_benhAn.Size = new System.Drawing.Size(231, 166);
             this.btn_benhAn.TabIndex = 2;
-            this.btn_benhAn.Text = "BENHAN";
+            this.btn_benhAn.Text = "Doctor";
             this.btn_benhAn.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btn_benhAn.UseVisualStyleBackColor = true;
             this.btn_benhAn.Click += new System.EventHandler(this.btn_benhAn_Click);
@@ -266,7 +272,7 @@
             this.btn_staff.Name = "btn_staff";
             this.btn_staff.Size = new System.Drawing.Size(231, 166);
             this.btn_staff.TabIndex = 1;
-            this.btn_staff.Text = "STAFF";
+            this.btn_staff.Text = "Staff";
             this.btn_staff.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btn_staff.UseVisualStyleBackColor = true;
             this.btn_staff.Click += new System.EventHandler(this.btn_staffs_Click);
@@ -283,7 +289,7 @@
             this.btn_Roles.Name = "btn_Roles";
             this.btn_Roles.Size = new System.Drawing.Size(231, 166);
             this.btn_Roles.TabIndex = 0;
-            this.btn_Roles.Text = "ROLLS";
+            this.btn_Roles.Text = "Role";
             this.btn_Roles.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btn_Roles.UseVisualStyleBackColor = true;
             this.btn_Roles.Click += new System.EventHandler(this.btn_Roles_Click);

@@ -121,13 +121,16 @@
   <data name="benhan2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\benhan2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="khoa-than-tiet-nieu-benh-vien-bach-mai-ha-noi-722680" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\khoa-than-tiet-nieu-benh-vien-bach-mai-ha-noi-722680.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="staff" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\staff.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bachmaihospital" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bachmaihospital.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="khoa-than-tiet-nieu-benh-vien-bach-mai-ha-noi-722680" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\khoa-than-tiet-nieu-benh-vien-bach-mai-ha-noi-722680.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="medicine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\medicine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

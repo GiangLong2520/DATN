@@ -32,8 +32,8 @@ namespace HoTroBenhNhanThan
 
         private void btn_staffs_Click(object sender, EventArgs e)
         {
-            StaffWindow staff = new StaffWindow();
-            LibMainClass.showWindow(staff, this, MDI.ActiveForm);
+            UserWindow userform = new UserWindow();
+            LibMainClass.showWindow(userform, this, MDI.ActiveForm);
         }
 
         private void btn_benhAn_Click(object sender, EventArgs e)
@@ -44,8 +44,8 @@ namespace HoTroBenhNhanThan
 
         private void button3_Click(object sender, EventArgs e)
         {
-            UserWindow userform = new UserWindow();
-            LibMainClass.showWindow(userform, this, MDI.ActiveForm);
+            //UserWindow userform = new UserWindow();
+            //LibMainClass.showWindow(userform, this, MDI.ActiveForm);
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -68,8 +68,8 @@ namespace HoTroBenhNhanThan
 
         private void button5_Click(object sender, EventArgs e)
         {
-            TurnWindow turnWin = new TurnWindow();
-            LibMainClass.showWindow(turnWin, this, MDI.ActiveForm);
+            SymtomsWindow scr = new SymtomsWindow();
+            LibMainClass.showWindow(scr, this, MDI.ActiveForm);
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -92,8 +92,8 @@ namespace HoTroBenhNhanThan
 
         private void button7_Click(object sender, EventArgs e)
         {
-            SymtomsWindow scr= new SymtomsWindow();
-            LibMainClass.showWindow(scr, this, MDI.ActiveForm);
+            TurnWindow turnWin = new TurnWindow();
+            LibMainClass.showWindow(turnWin, this, MDI.ActiveForm);
         }
     }
 }

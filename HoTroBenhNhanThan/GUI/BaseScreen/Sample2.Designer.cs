@@ -29,6 +29,7 @@ namespace HoTroBenhNhanThan
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sample2));
             this.button6 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -60,6 +61,7 @@ namespace HoTroBenhNhanThan
             // btnBack
             // 
             this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             // 
             // right_panel
             // 

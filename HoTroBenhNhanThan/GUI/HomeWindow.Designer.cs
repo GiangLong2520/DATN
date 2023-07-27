@@ -53,6 +53,7 @@
             // btnBack
             // 
             this.btnBack.FlatAppearance.BorderSize = 0;
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // right_panel
@@ -95,12 +96,15 @@
             this.button11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button11.FlatAppearance.BorderSize = 2;
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button11.ForeColor = System.Drawing.Color.DarkGreen;
+            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
             this.button11.Location = new System.Drawing.Point(714, 347);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(232, 166);
             this.button11.TabIndex = 11;
-            this.button11.Text = "Roles";
+            this.button11.Text = "Result\r\nTest";
+            this.button11.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.button11.UseVisualStyleBackColor = true;
             // 
             // button10
@@ -108,12 +112,15 @@
             this.button10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button10.FlatAppearance.BorderSize = 2;
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button10.ForeColor = System.Drawing.Color.DarkGreen;
+            this.button10.Image = ((System.Drawing.Image)(resources.GetObject("button10.Image")));
             this.button10.Location = new System.Drawing.Point(477, 347);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(231, 166);
             this.button10.TabIndex = 10;
-            this.button10.Text = "Roles";
+            this.button10.Text = "Blood\r\nTest";
+            this.button10.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
@@ -122,12 +129,15 @@
             this.button9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button9.FlatAppearance.BorderSize = 2;
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button9.ForeColor = System.Drawing.Color.DarkGreen;
+            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
             this.button9.Location = new System.Drawing.Point(240, 347);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(231, 166);
             this.button9.TabIndex = 9;
-            this.button9.Text = "Roles";
+            this.button9.Text = "Urine\r\nTest";
+            this.button9.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
@@ -136,12 +146,15 @@
             this.button8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button8.FlatAppearance.BorderSize = 2;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button8.ForeColor = System.Drawing.Color.DarkGreen;
+            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
             this.button8.Location = new System.Drawing.Point(3, 347);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(231, 166);
             this.button8.TabIndex = 8;
-            this.button8.Text = "Roles";
+            this.button8.Text = "Biochemistry\r\nTest";
+            this.button8.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -164,12 +177,15 @@
             this.button6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button6.FlatAppearance.BorderSize = 2;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button6.ForeColor = System.Drawing.Color.DarkGreen;
+            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.Location = new System.Drawing.Point(477, 175);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(231, 166);
             this.button6.TabIndex = 6;
-            this.button6.Text = "Roles";
+            this.button6.Text = "Patient\r\nRegister";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -178,12 +194,15 @@
             this.button5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button5.FlatAppearance.BorderSize = 2;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button5.ForeColor = System.Drawing.Color.DarkGreen;
+            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.Location = new System.Drawing.Point(240, 175);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(231, 166);
             this.button5.TabIndex = 5;
-            this.button5.Text = "Roles";
+            this.button5.Text = "Symptom";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -192,12 +211,15 @@
             this.button4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button4.FlatAppearance.BorderSize = 2;
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button4.ForeColor = System.Drawing.Color.DarkGreen;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.Location = new System.Drawing.Point(3, 175);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(231, 166);
             this.button4.TabIndex = 4;
-            this.button4.Text = "Roles";
+            this.button4.Text = "Medicine";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -237,7 +259,7 @@
             this.btn_staff.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_staff.FlatAppearance.BorderSize = 2;
             this.btn_staff.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_staff.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_staff.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_staff.ForeColor = System.Drawing.Color.DarkGreen;
             this.btn_staff.Image = ((System.Drawing.Image)(resources.GetObject("btn_staff.Image")));
             this.btn_staff.Location = new System.Drawing.Point(240, 3);
@@ -254,7 +276,7 @@
             this.btn_Roles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn_Roles.FlatAppearance.BorderSize = 2;
             this.btn_Roles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Roles.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_Roles.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btn_Roles.ForeColor = System.Drawing.Color.DarkGreen;
             this.btn_Roles.Image = ((System.Drawing.Image)(resources.GetObject("btn_Roles.Image")));
             this.btn_Roles.Location = new System.Drawing.Point(3, 3);

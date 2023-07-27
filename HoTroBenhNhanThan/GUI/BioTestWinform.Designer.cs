@@ -235,7 +235,7 @@
             this.label11.Size = new System.Drawing.Size(32, 20);
             this.label11.TabIndex = 33;
             this.label11.Text = "Ure";
-
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 3;

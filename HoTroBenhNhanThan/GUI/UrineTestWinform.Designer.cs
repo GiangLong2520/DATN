@@ -748,7 +748,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1272, 953);
-            this.MdiChildrenMinimizedAnchorBottom = false;
             this.Name = "UrineTestWinform";
             this.Text = "UrineTestWinform";
             this.left_panel_common.ResumeLayout(false);

@@ -93,17 +93,17 @@ namespace HoTroBenhNhanThan
 
         private void LoadUsers()
         {
-            //ListBox loadData = new ListBox();
-            //loadData.Items.Add(userIDGV);
-            //loadData.Items.Add(nameGV);
-            //loadData.Items.Add(UserNameGV);
-            //loadData.Items.Add(PasswordGV);
-            //loadData.Items.Add(PhoneGV);
-            //loadData.Items.Add(AddressGV);
-            //loadData.Items.Add(RoleIDGV);
-            //loadData.Items.Add(RoleGV);
+            ListBox loadData = new ListBox();
+            loadData.Items.Add(IDGV);
+            loadData.Items.Add(NameGV);
+            loadData.Items.Add(UserNameGV);
+            loadData.Items.Add(PasswordGV);
+            loadData.Items.Add(PhoneGV);
+            loadData.Items.Add(AddressGV);
+            loadData.Items.Add(RoleIDGV);
+            loadData.Items.Add(RoleGV);
 
-            dataGridView1.DataSource = LibCRUD.LoadDataTable("st_getUsers");
+            LibCRUD.loadData("st_getUsers", dataGridView2, loadData);
         }
 
         public override void button3_Click(object sender, EventArgs e)          //save btn
@@ -184,7 +184,7 @@ namespace HoTroBenhNhanThan
             {
                 edit = 1;
                 LibMainClass.DisableControl(LEFTPANEL);
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
                 UserID = Convert.ToInt32(row.Cells["UserIDGV"].Value.ToString());
                 txt_Name.Text = row.Cells["NameGV"].Value.ToString(); ;
                 txt_usename.Text = row.Cells["UserNameGV"].Value.ToString();
@@ -200,6 +200,11 @@ namespace HoTroBenhNhanThan
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

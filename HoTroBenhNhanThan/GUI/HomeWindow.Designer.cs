@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeWindow));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button1 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -67,6 +68,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.button11, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.button10, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.button9, 1, 2);
@@ -91,6 +93,22 @@
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.FlatAppearance.BorderSize = 2;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button1.ForeColor = System.Drawing.Color.DarkGreen;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(3, 519);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(231, 167);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Analysis\r\nChart";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // button11
             // 
             this.button11.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -106,6 +124,7 @@
             this.button11.Text = "Result\r\nTest";
             this.button11.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button10
             // 
@@ -170,7 +189,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(232, 166);
             this.button7.TabIndex = 7;
-            this.button7.Text = "Analysis\r\nChart";
+            this.button7.Text = "Disease";
             this.button7.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
@@ -326,5 +345,6 @@
         private Button btn_benhAn;
         private Button btn_staff;
         private Button btn_Roles;
+        private Button button1;
     }
 }

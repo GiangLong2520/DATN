@@ -128,6 +128,29 @@ namespace HoTroBenhNhanThan
             }
         }
 
+        public static void loadDisease(ComboBox cb)
+        {
+            string proc = "st_getAllDisease";
+            try
+            {
+                // cb.Items.Clear();
+                SqlCommand cmd = new SqlCommand(proc, LibMainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cb.DisplayMember = "Name";
+                cb.ValueMember = "ID";
+                cb.DataSource = dt;
+                cb.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                LibMainClass.showMessage(ex.Message, "error");
+
+            }
+        }
+
         public static void loadData(string proc, DataGridView gv, ListBox lb, Hashtable ht)
         {
             try

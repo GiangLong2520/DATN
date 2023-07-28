@@ -36,8 +36,8 @@
             this.cb_disease = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.symptomGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.symptomIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.symptomGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diseaseIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiseaseGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
@@ -128,8 +128,8 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.snoGV,
-            this.symptomGV,
             this.symptomIDGV,
+            this.symptomGV,
             this.diseaseIDGV,
             this.DiseaseGV});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -147,8 +147,10 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(943, 601);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             // 
             // snoGV
             // 
@@ -159,20 +161,20 @@
             this.snoGV.ReadOnly = true;
             this.snoGV.Width = 47;
             // 
+            // symptomIDGV
+            // 
+            this.symptomIDGV.HeaderText = "SymptomID";
+            this.symptomIDGV.MinimumWidth = 6;
+            this.symptomIDGV.Name = "symptomIDGV";
+            this.symptomIDGV.ReadOnly = true;
+            this.symptomIDGV.Visible = false;
+            // 
             // symptomGV
             // 
             this.symptomGV.HeaderText = "Symptom";
             this.symptomGV.MinimumWidth = 6;
             this.symptomGV.Name = "symptomGV";
             this.symptomGV.ReadOnly = true;
-            // 
-            // symptomIDGV
-            // 
-            this.symptomIDGV.HeaderText = "SymptomIDGV";
-            this.symptomIDGV.MinimumWidth = 6;
-            this.symptomIDGV.Name = "symptomIDGV";
-            this.symptomIDGV.ReadOnly = true;
-            this.symptomIDGV.Visible = false;
             // 
             // diseaseIDGV
             // 
@@ -219,8 +221,8 @@
         private ComboBox cb_disease;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn snoGV;
-        private DataGridViewTextBoxColumn symptomGV;
         private DataGridViewTextBoxColumn symptomIDGV;
+        private DataGridViewTextBoxColumn symptomGV;
         private DataGridViewTextBoxColumn diseaseIDGV;
         private DataGridViewTextBoxColumn DiseaseGV;
     }

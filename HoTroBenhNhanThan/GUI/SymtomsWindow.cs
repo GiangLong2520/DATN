@@ -22,14 +22,14 @@ namespace HoTroBenhNhanThan.GUI
 
         private void SymtomsWindow_Load(object sender, EventArgs e)
         {
-            Hashtable ht = new Hashtable();
-            LibCRUD.loadList("st_getDisease", cb_disease,"ID","Disease", ht);
+            LibCRUD.loadDisease(cb_disease);
         }
 
 
         //--------------------------------------------------------------//
 
         int symptomID;
+        int diseaseID;
         private void LoadSymptom()
         {
             ListBox loadData = new ListBox();
@@ -43,7 +43,7 @@ namespace HoTroBenhNhanThan.GUI
 
         public override void button3_Click(object sender, EventArgs e)          //save btn
         {
-            if (LibMainClass.checkControls(LEFTPANEL).Count > 0)
+            if (LibMainClass.checkControls(left_panel).Count > 0)
             {
                 LibMainClass.showMessage("Field with RED are mandatory.", "error");
 
@@ -60,7 +60,7 @@ namespace HoTroBenhNhanThan.GUI
                     if (ret > 0)
                     {
                         LibMainClass.showMessage(txt_symptom.Text + " added successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.resetDisable(left_panel);
                         LoadSymptom();
                     }
                 }
@@ -73,8 +73,8 @@ namespace HoTroBenhNhanThan.GUI
 
                     if (LibCRUD.data_insert_update_delete("st_updateSymptom", ht) > 0)
                     {
-                        LibMainClass.showMessage(txt_symptom.Text + " added successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.showMessage(txt_symptom.Text + " update successfully..", "success");
+                        LibMainClass.resetDisable(left_panel);
                         LoadSymptom();
                     }
                 }
@@ -94,7 +94,7 @@ namespace HoTroBenhNhanThan.GUI
                     if (LibCRUD.data_insert_update_delete("st_deleteSymptom", ht) > 0)
                     {
                         LibMainClass.showMessage(txt_symptom.Text + " deleted successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.resetDisable(left_panel);
                         LoadSymptom();
                     }
                 }
@@ -105,19 +105,38 @@ namespace HoTroBenhNhanThan.GUI
             LoadSymptom();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
             {
                 edit = 1;
-                LibMainClass.DisableControl(LEFTPANEL);
+                LibMainClass.DisableControl(left_panel);
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 symptomID = Convert.ToInt32(row.Cells["symptomIDGV"].Value.ToString());
+                diseaseID = Convert.ToInt32(row.Cells["diseaseIDGV"].Value.ToString());
                 txt_symptom.Text = row.Cells["symptomGV"].Value.ToString();
 
                 cb_disease.SelectedValue = row.Cells["diseaseIDGV"].Value;
+
+
+                int index = -1;
+                for (int i = 0; i < cb_disease.Items.Count; i++)
+                {
+                    DataRowView drv = (DataRowView)cb_disease.Items[i];
+                    int currentValue = Convert.ToInt32(drv[cb_disease.ValueMember]);
+                    if (currentValue == diseaseID)
+                    {
+                        index = i;
+                        break;
+                    }
+                }
+
+                // Chọn lựa chọn tại vị trí tìm thấy (nếu tìm thấy)
+                if (index >= 0)
+                {
+                    cb_disease.SelectedIndex = index;
+                }
             }
         }
-
     }
 }

@@ -92,8 +92,14 @@ namespace HoTroBenhNhanThan
 
         private void button7_Click(object sender, EventArgs e)
         {
-            TurnWindow turnWin = new TurnWindow();
-            LibMainClass.showWindow(turnWin, this, MDI.ActiveForm);
+            DiseaseWindow des = new DiseaseWindow();
+            LibMainClass.showWindow(des, this, MDI.ActiveForm);
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            HealthCheckWindow screen = new HealthCheckWindow();
+            LibMainClass.showWindow(screen, this, MDI.ActiveForm);
         }
     }
 }

@@ -36,7 +36,6 @@
             this.txt_age = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_Father = new System.Windows.Forms.TextBox();
-            this.Picker_ApointmentDate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.cb_ApointmentFor = new System.Windows.Forms.ComboBox();
@@ -62,6 +61,7 @@
             this.DoctorIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.appIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Picker_ApointmentDate = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.left_panel.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
@@ -164,18 +164,6 @@
             this.txt_Father.Name = "txt_Father";
             this.txt_Father.Size = new System.Drawing.Size(303, 27);
             this.txt_Father.TabIndex = 8;
-            // 
-            // Picker_ApointmentDate
-            // 
-            this.Picker_ApointmentDate.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.Picker_ApointmentDate.CustomFormat = "dd-MMM-yyyy hh:mm";
-            this.Picker_ApointmentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.Picker_ApointmentDate.Location = new System.Drawing.Point(10, 265);
-            this.Picker_ApointmentDate.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.Picker_ApointmentDate.Name = "Picker_ApointmentDate";
-            this.Picker_ApointmentDate.ShowUpDown = true;
-            this.Picker_ApointmentDate.Size = new System.Drawing.Size(303, 27);
-            this.Picker_ApointmentDate.TabIndex = 9;
             // 
             // label6
             // 
@@ -433,6 +421,18 @@
             this.statusGV.Name = "statusGV";
             this.statusGV.ReadOnly = true;
             // 
+            // Picker_ApointmentDate
+            // 
+            this.Picker_ApointmentDate.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.Picker_ApointmentDate.CustomFormat = "dd-MMM-yyyy hh:mm";
+            this.Picker_ApointmentDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.Picker_ApointmentDate.Location = new System.Drawing.Point(10, 265);
+            this.Picker_ApointmentDate.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.Picker_ApointmentDate.Name = "Picker_ApointmentDate";
+            this.Picker_ApointmentDate.ShowUpDown = true;
+            this.Picker_ApointmentDate.Size = new System.Drawing.Size(303, 27);
+            this.Picker_ApointmentDate.TabIndex = 9;
+            // 
             // PatienRegisterWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -464,7 +464,6 @@
         private Label label5;
         private TextBox txt_Father;
         private Label label6;
-        private DateTimePicker Picker_ApointmentDate;
         private Label label8;
         private ComboBox cb_ApointmentFor;
         private Label label7;
@@ -489,5 +488,6 @@
         private DataGridViewTextBoxColumn appIDGV;
         private DataGridViewTextBoxColumn statusGV;
         private DataGridViewTextBoxColumn TurnGV;
+        private DateTimePicker Picker_ApointmentDate;
     }
 }

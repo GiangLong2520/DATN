@@ -61,7 +61,7 @@
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
             // 
-            // flowPanel
+            // left_panel
             // 
             this.left_panel.Controls.Add(this.label2);
             this.left_panel.Controls.Add(this.txt_medi);
@@ -175,6 +175,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(943, 601);
             this.dataGridView1.TabIndex = 3;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
@@ -247,11 +248,11 @@
         private TextBox txt_company;
         private Label label8;
         private DataGridView dataGridView1;
+        private ComboBox cb_Type;
         private DataGridViewTextBoxColumn snoGV;
         private DataGridViewTextBoxColumn MediIDGV;
         private DataGridViewTextBoxColumn MedicineGV;
         private DataGridViewTextBoxColumn CompanyGV;
         private DataGridViewTextBoxColumn TypeGV;
-        private ComboBox cb_Type;
     }
 }

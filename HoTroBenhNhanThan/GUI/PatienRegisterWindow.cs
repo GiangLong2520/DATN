@@ -143,7 +143,7 @@ namespace HoTroBenhNhanThan.GUI
                                 {
 
                                     LibMainClass.showMessage(txt_Patient.Text + " added successfully..", "success");
-                                    LibMainClass.resetDisable(LEFTPANEL);
+                                    LibMainClass.resetDisable(left_panel);
                                     LoadPatient();
                                 }
                             }
@@ -177,7 +177,7 @@ namespace HoTroBenhNhanThan.GUI
                                 {
 
                                     LibMainClass.showMessage(txt_Patient.Text + " added successfully..", "success");
-                                    LibMainClass.resetDisable(LEFTPANEL);
+                                    LibMainClass.resetDisable(left_panel);
                                     LoadPatient();
                                 }
                             }
@@ -211,7 +211,7 @@ namespace HoTroBenhNhanThan.GUI
                             {
 
                                 LibMainClass.showMessage(txt_Patient.Text + " update successfully..", "success");
-                                LibMainClass.resetEnable(LEFTPANEL);
+                                LibMainClass.resetEnable(left_panel);
                                 LoadPatient();
                             }
                         }

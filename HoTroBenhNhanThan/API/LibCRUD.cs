@@ -53,11 +53,18 @@ namespace HoTroBenhNhanThan
                 SqlDataAdapter da =  new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-                for(int i = 0; i<lb.Items.Count; i++)
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    for (int i = 0; i < dt.Columns.Count; i++)
+                    {
+                        row[i] = row[i].ToString().Trim();
+                    }
+                }
+                for (int i = 0; i<lb.Items.Count; i++)
                 {
                     string colName = ((DataGridViewColumn)lb.Items[i]).Name;
-                    gv.Columns[colName].DataPropertyName = dt.Columns[i].ToString().TrimEnd().TrimStart();
-
+                    gv.Columns[colName].DataPropertyName = dt.Columns[i].ToString();
 
                 }
                 gv.DataSource= dt;
@@ -98,7 +105,53 @@ namespace HoTroBenhNhanThan
             } 
         }
 
-        public static void getInforPatientReg(string proc,DateTimePicker date,TextBox text,  Hashtable ht)
+        public static void loadRole( ComboBox cb)
+        {
+            string proc = "st_getAllRole";
+            try
+            {
+                // cb.Items.Clear();
+                SqlCommand cmd = new SqlCommand(proc, LibMainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cb.DisplayMember = "Name";
+                cb.ValueMember = "ID";
+                cb.DataSource = dt;
+                cb.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                LibMainClass.showMessage(ex.Message, "error");
+
+            }
+        }
+
+        public static void loadDisease(ComboBox cb)
+        {
+            string proc = "st_getAllDisease";
+            try
+            {
+                // cb.Items.Clear();
+                SqlCommand cmd = new SqlCommand(proc, LibMainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                cb.DisplayMember = "Name";
+                cb.ValueMember = "ID";
+                cb.DataSource = dt;
+                cb.SelectedIndex = -1;
+            }
+            catch (Exception ex)
+            {
+                LibMainClass.showMessage(ex.Message, "error");
+
+            }
+        }
+
+        public static void loadData(string proc, DataGridView gv, ListBox lb, Hashtable ht)
         {
             try
             {
@@ -108,19 +161,30 @@ namespace HoTroBenhNhanThan
                 {
                     cmd.Parameters.AddWithValue(item.Key.ToString(), item.Value);
                 }
-
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
-
-
+                for (int i = 0; i < lb.Items.Count; i++)
+                {
+                    string colName = ((DataGridViewColumn)lb.Items[i]).Name;
+                    //if (colName.Equals("NhomMauGV")) { }
+                    gv.Columns[colName].DataPropertyName = dt.Columns[i].ToString().TrimEnd().TrimStart();
+                }
+                gv.DataSource = dt;
+                int count = 0;
+                foreach (DataGridViewRow row in gv.Rows)
+                {
+                    count++;
+                    row.Cells[0].Value = count;
+                }
             }
             catch (Exception ex)
             {
-                LibMainClass.showMessage(ex.Message, "error");
-
+                MessageBox.Show(ex.Message);
             }
         }
+
+    
         public static int getTurnNumber(string proc, Hashtable ht)
         {
 
@@ -163,6 +227,31 @@ namespace HoTroBenhNhanThan
 
             }      
             return o;
+        }
+
+        // health check function
+        public static void getInforPatientReg(string proc, DateTimePicker date, TextBox text, Hashtable ht)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand(proc, LibMainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                foreach (DictionaryEntry item in ht)
+                {
+                    cmd.Parameters.AddWithValue(item.Key.ToString(), item.Value);
+                }
+
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+
+            }
+            catch (Exception ex)
+            {
+                LibMainClass.showMessage(ex.Message, "error");
+
+            }
         }
     }
 }

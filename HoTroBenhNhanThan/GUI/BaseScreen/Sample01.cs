@@ -23,16 +23,31 @@ namespace HoTroBenhNhanThan.GUI.BaseScreen
             LibMainClass.showWindow(homeWindow, this, MDI.ActiveForm);
         }
 
-        private void btn_Add_Click(object sender, EventArgs e)
+        private void btn_Add_Click(object sender, EventArgs e)               // add
         {
             LibMainClass.resetEnable(left_panel);
             edit = 0;
         }
 
-        private void btn_Edit_Click(object sender, EventArgs e)
+        private void btn_Edit_Click(object sender, EventArgs e)              // edit
         {
             edit = 1;
             LibMainClass.EnableControl(left_panel);
+        }
+
+        public virtual void btn_Save_Click(object sender, EventArgs e)               //save
+        {
+
+        }
+
+        public virtual void btn_Delete_Click(object sender, EventArgs e)           // delete
+        {
+
+        }
+
+        public virtual void btn_View_Click(object sender, EventArgs e)             // view
+        {
+
         }
     }
 }

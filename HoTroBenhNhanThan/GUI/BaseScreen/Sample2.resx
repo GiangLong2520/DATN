@@ -57,4 +57,27 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnBack.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAYAAAA6/NlyAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        cwAAEnMBjCK5BwAAA9hJREFUaEPlm0tv00AURr1lyas7yoqXuqKsKHQHa/4R2VOEANFKCKRKCAQSXcKG
+        7tjwW3goSZMmapqQi8+UcRx3XI/tcTyRP+mr0mQ8c4/nkTuTJJAKNZ5MZHh0JP3BULr9Q2kf9ORP92DO
+        PMdrlKHseDz5f3U1cgo8nU5V0O1eX362O/ILd7ry29KU5RqupQ7qok6XcgJMT3b7GnIGkOxNW0c3IKyL
+        OqmbNlyoFDBBMCQJqixkmnW9qtfDtsqCFwZm3mlQU6BVWIPTdlHlBh4dH6t5pu+8KbAqrdslBmLJq1zA
+        vcPBwns1zcRALMSUR9bAzB/uqqnxOk1MxGYrK2Aq9qFX06xjs1EmcLxCn20LfSYwQ2UZYLWJNWt4pwL3
+        BgMv52yWiZnY02QEZrn3ZTXOa2Im9rS3LCMwd2kZYbWJHQaTTgGTxbiGHY5GyqbXqjIMpoxsDng8+auG
+        g6mCokYv3ryXZ6/fyTAcZqYyVRkWmOKaA3a9KqPW1rZcuL4hwcqaTGRqLFeVYUmu2hEwG2+XvYuAvXxr
+        U85fuyt7X/ZlsOBhjU96ebbDioA7DucuisN+DmHZxpvKVu3kXFbABMOdcAGMZrAbtcJimGDT5yYKmKMU
+        ThdMF+Qxam3teNGzccMGI1LAnB+V7V3UeuLHME4aNhiRAi47nNH8nP3mDSzWwxoFrM5lcmY0B/vVn56N
+        G0ZYAzV/C/bussBiGGENOAAvMpxPwXo0Z02GEdagSO68bLAYRliDvOmkgn16AkvKuBcOY2Qq65NhhDXQ
+        /yQLmIxaT3ZkJYS9uv5Q9r//UM+Np9PabLsL04yBLSwVv3z7QS7euCdrm4+UV28/kEs379fmc6t3ZHv3
+        Uy7o5Qa+si6vdj/mA9YPki+ajEgdl3pIN27RatzbkrvEw6/8OWkYVeLRuNTS+ebB0+EdbR4IuFHbQ/40
+        7gBAzeMmHfEQVNlhrY1mw9ufQzwtBYyqPaatb07DBJtWBMxhNXfCdFERozi0dwfxKG+amWX0OFzIoo9a
+        wtzXVK4qwwJTXHPAVX2Y9tzXD9NQkdw6y+xobHc1rgwDLEmdAkZkJa6hF2lih8EkI3DjvvKAeuHOokyO
+        XZeJOfeXWrRY4YrupOowvZtclZM6ExjpipKV+2YdY5YygREV+dzTtrDIChi1D/pezmliyhrGcVkDIxYD
+        X1ZvYiCWyr4+rMVyz12lwTrAdbvEkPbWc5ZyA2uRxSy6t2mLNk0ZlK0KA6NG/cgjLoLQPc7pQll4fT11
+        6R4tC6rlBDhSuMvnKKXTc/dDLQm3lC7lFjghemV4NPLop3gi/wAByrI0I6sTqgAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

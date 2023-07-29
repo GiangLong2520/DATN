@@ -19,91 +19,92 @@ namespace HoTroBenhNhanThan
         }
 
         int UserID;
-        private void txt_Name_TextChanged(object sender, EventArgs e)
-        {
-                if (txt_Name.Text == "")
-            {
-                txt_Name.BackColor = Color.Firebrick;
-            }
-            else
-            {
-                txt_Name.BackColor = Color.White;
-            }
-        }
+        int roleID;
+        //private void txt_Name_TextChanged(object sender, EventArgs e)
+        //{
+        //        if (txt_Name.Text == "")
+        //    {
+        //        txt_Name.BackColor = Color.Firebrick;
+        //    }
+        //    else
+        //    {
+        //        txt_Name.BackColor = Color.White;
+        //    }
+        //}
 
-        private void txt_usename_TextChanged(object sender, EventArgs e)
-        {
-            if (txt_usename.Text == "")
-            {
-                txt_usename.BackColor = Color.Firebrick;
-            }
-            else
-            {
-                txt_usename.BackColor = Color.White;
-            }
-        }
+        //private void txt_usename_TextChanged(object sender, EventArgs e)
+        //{
+        //    if (txt_usename.Text == "")
+        //    {
+        //        txt_usename.BackColor = Color.Firebrick;
+        //    }
+        //    else
+        //    {
+        //        txt_usename.BackColor = Color.White;
+        //    }
+        //}
 
-        private void txt_Pass_TextChanged(object sender, EventArgs e)
-        {
-            if (txt_Pass.Text == "")
-            {
-                txt_Pass.BackColor = Color.Firebrick;
-            }
-            else
-            {
-                txt_Pass.BackColor = Color.White;
-            }
-        }
+        //private void txt_Pass_TextChanged(object sender, EventArgs e)
+        //{
+        //    if (txt_Pass.Text == "")
+        //    {
+        //        txt_Pass.BackColor = Color.Firebrick;
+        //    }
+        //    else
+        //    {
+        //        txt_Pass.BackColor = Color.White;
+        //    }
+        //}
 
-        private void txt_Phone_TextChanged(object sender, EventArgs e)
-        {
-            if (txt_Phone.Text == "")
-            {
-                txt_Phone.BackColor = Color.Firebrick;
-            }
-            else
-            {
-                txt_Phone.BackColor = Color.White;
-            }
-        }
+        //private void txt_Phone_TextChanged(object sender, EventArgs e)
+        //{
+        //    if (txt_Phone.Text == "")
+        //    {
+        //        txt_Phone.BackColor = Color.Firebrick;
+        //    }
+        //    else
+        //    {
+        //        txt_Phone.BackColor = Color.White;
+        //    }
+        //}
 
-        private void txt_Address_TextChanged(object sender, EventArgs e)
-        {
-            if (txt_Address.Text == "")
-            {
-                txt_Address.BackColor = Color.Firebrick;
-            }
-            else
-            {
-                txt_Address.BackColor = Color.White;
-            }
-        }
+        //private void txt_Address_TextChanged(object sender, EventArgs e)
+        //{
+        //    if (txt_Address.Text == "")
+        //    {
+        //        txt_Address.BackColor = Color.Firebrick;
+        //    }
+        //    else
+        //    {
+        //        txt_Address.BackColor = Color.White;
+        //    }
+        //}
 
-        private void cb_Roles_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           if (cb_Roles.SelectedIndex == -1)
-            {
-                txt_usename .BackColor = Color.Firebrick;
-            }
-            else
-            {
-                txt_usename.BackColor = Color.White;
-            }
-        }
+        //private void cb_Roles_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //   if (cb_Roles.SelectedIndex == -1)
+        //    {
+        //        txt_usename .BackColor = Color.Firebrick;
+        //    }
+        //    else
+        //    {
+        //        txt_usename.BackColor = Color.White;
+        //    }
+        //}
 
         private void LoadUsers()
         {
-            //ListBox loadData = new ListBox();
-            //loadData.Items.Add(userIDGV);
-            //loadData.Items.Add(nameGV);
-            //loadData.Items.Add(UserNameGV);
-            //loadData.Items.Add(PasswordGV);
-            //loadData.Items.Add(PhoneGV);
-            //loadData.Items.Add(AddressGV);
-            //loadData.Items.Add(RoleIDGV);
-            //loadData.Items.Add(RoleGV);
+            ListBox loadData = new ListBox();
+            loadData.Items.Add(IDGV             );
+            loadData.Items.Add(NameGV           );
+            loadData.Items.Add(UserNameGV       );
+            loadData.Items.Add(PasswordGV       );
+            loadData.Items.Add(PhoneGV          );
+            loadData.Items.Add(AddressGV        );
+            loadData.Items.Add(RoleIDGV         );
+            loadData.Items.Add(RoleGV           );
 
-            dataGridView1.DataSource = LibCRUD.LoadDataTable("st_getUsers");
+            LibCRUD.loadData("st_getUsers", dataGridView2, loadData);
         }
 
         public override void button3_Click(object sender, EventArgs e)          //save btn
@@ -125,7 +126,7 @@ namespace HoTroBenhNhanThan
                     ht.Add(@"address",  txt_Address.Text);
                     ht.Add(@"roleId", Convert.ToInt32(cb_Roles.SelectedValue.ToString()));                           
 
-                    int ret = LibCRUD.data_insert_update_delete("st_insertUser", ht);
+                    int ret = LibCRUD.data_insert_update_delete("st_insertUsers", ht);
                     if (ret > 0)
                     {
                         LibMainClass.showMessage(txt_Name.Text + " added successfully..", "success");
@@ -146,7 +147,7 @@ namespace HoTroBenhNhanThan
 
                     if (LibCRUD.data_insert_update_delete("st_updateUsers", ht) > 0)
                     {
-                        LibMainClass.showMessage(txt_Name.Text + " added successfully..", "success");
+                        LibMainClass.showMessage(txt_Name.Text + " update successfully..", "success");
                         LibMainClass.resetEnable(LEFTPANEL);
                         LoadUsers();
                     }
@@ -167,7 +168,7 @@ namespace HoTroBenhNhanThan
                     if (LibCRUD.data_insert_update_delete("st_deleteUser", ht) > 0)
                     {
                         LibMainClass.showMessage(txt_usename.Text + " deleted successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.resetEnable(left_panel);
                         LoadUsers();
                     }
                 }
@@ -183,8 +184,8 @@ namespace HoTroBenhNhanThan
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
             {
                 edit = 1;
-                LibMainClass.DisableControl(LEFTPANEL);
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                LibMainClass.DisableControl(left_panel);
+                DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
                 UserID = Convert.ToInt32(row.Cells["UserIDGV"].Value.ToString());
                 txt_Name.Text = row.Cells["NameGV"].Value.ToString(); ;
                 txt_usename.Text = row.Cells["UserNameGV"].Value.ToString();
@@ -197,11 +198,53 @@ namespace HoTroBenhNhanThan
         private void UserWindow_Load(object sender, EventArgs e)
         {
             LoadUsers();
+            LibCRUD.loadRole(cb_Roles);
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void dataGridView2_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex != -1 && e.ColumnIndex != -1)
+            {
+                edit = 1;
+                LibMainClass.DisableControl(left_panel);
+                DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
 
+                //IDGV
+                //NameGV
+                //UserNameGV
+                //PasswordGV
+                //PhoneGV
+                //AddressGV
+                //RoleIDGV
+                //RoleGV
+
+                UserID = Convert.ToInt32(row.Cells["IDGV"].Value.ToString());
+                roleID = Convert.ToInt32(row.Cells["RoleIDGV"].Value.ToString());
+                txt_Name.Text =         row.Cells["NameGV"].Value.ToString(); ;
+                txt_usename.Text =      row.Cells["UserNameGV"].Value.ToString();
+                txt_Pass.Text =         row.Cells["PasswordGV"].Value.ToString();
+                txt_Phone.Text =        row.Cells["PhoneGV"].Value.ToString();
+                txt_Address.Text =      row.Cells["AddressGV"].Value.ToString();
+
+                int index = -1;
+                for (int i = 0; i < cb_Roles.Items.Count; i++)
+                {
+                    DataRowView drv = (DataRowView)cb_Roles.Items[i];
+                    int currentValue = Convert.ToInt32(drv[cb_Roles.ValueMember]);
+                    if (currentValue == roleID)
+                    {
+                        index = i;
+                        break;
+                    }
+                }
+
+                // Chọn lựa chọn tại vị trí tìm thấy (nếu tìm thấy)
+                if (index >= 0)
+                {
+                    cb_Roles.SelectedIndex = index;
+                }
+
+            }
         }
     }
 }

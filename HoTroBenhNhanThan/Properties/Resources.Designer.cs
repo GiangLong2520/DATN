@@ -63,9 +63,39 @@ namespace HoTroBenhNhanThan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bachmaihospital {
+            get {
+                object obj = ResourceManager.GetObject("bachmaihospital", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap benhan2 {
             get {
                 object obj = ResourceManager.GetObject("benhan2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap khoa_than_tiet_nieu_benh_vien_bach_mai_ha_noi_722680 {
+            get {
+                object obj = ResourceManager.GetObject("khoa-than-tiet-nieu-benh-vien-bach-mai-ha-noi-722680", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap medicine {
+            get {
+                object obj = ResourceManager.GetObject("medicine", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sample01));
             this.left_panel_common = new System.Windows.Forms.Panel();
+            this.left_panel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.LEFTPANEL = new System.Windows.Forms.Panel();
             this.BtnBackPanel = new System.Windows.Forms.Panel();
@@ -37,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.RIGHTPANEL = new System.Windows.Forms.Panel();
             this.right_panel = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_Delete = new System.Windows.Forms.Button();
@@ -46,10 +48,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btn_View = new System.Windows.Forms.Button();
             this.txt_search = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.UserPanel = new System.Windows.Forms.Panel();
             this.User = new System.Windows.Forms.Label();
-            this.left_panel = new System.Windows.Forms.FlowLayoutPanel();
             this.left_panel_common.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
@@ -69,6 +69,15 @@
             this.left_panel_common.Name = "left_panel_common";
             this.left_panel_common.Size = new System.Drawing.Size(500, 689);
             this.left_panel_common.TabIndex = 0;
+            // 
+            // left_panel
+            // 
+            this.left_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.left_panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.left_panel.Location = new System.Drawing.Point(0, 62);
+            this.left_panel.Name = "left_panel";
+            this.left_panel.Size = new System.Drawing.Size(500, 627);
+            this.left_panel.TabIndex = 4;
             // 
             // panel2
             // 
@@ -108,6 +117,7 @@
             this.btnBack.ForeColor = System.Drawing.Color.White;
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.Location = new System.Drawing.Point(0, 0);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(94, 71);
             this.btnBack.TabIndex = 1;
@@ -137,13 +147,25 @@
             // 
             // right_panel
             // 
-            this.right_panel.Controls.Add(this.panel1);
             this.right_panel.Controls.Add(this.groupBox1);
+            this.right_panel.Controls.Add(this.panel1);
             this.right_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.right_panel.Location = new System.Drawing.Point(0, 71);
             this.right_panel.Name = "right_panel";
             this.right_panel.Size = new System.Drawing.Size(772, 689);
             this.right_panel.TabIndex = 2;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.groupBox1.ForeColor = System.Drawing.Color.DarkGreen;
+            this.groupBox1.Location = new System.Drawing.Point(0, 62);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(772, 627);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Details";
             // 
             // panel1
             // 
@@ -193,6 +215,7 @@
             this.btn_Delete.TabIndex = 3;
             this.btn_Delete.Text = "DELETE";
             this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
             // btn_Edit
             // 
@@ -237,6 +260,7 @@
             this.btn_Save.TabIndex = 2;
             this.btn_Save.Text = "&SAVE";
             this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // label3
             // 
@@ -263,6 +287,7 @@
             this.btn_View.TabIndex = 4;
             this.btn_View.Text = "VIEW";
             this.btn_View.UseVisualStyleBackColor = true;
+            this.btn_View.Click += new System.EventHandler(this.btn_View_Click);
             // 
             // txt_search
             // 
@@ -271,18 +296,6 @@
             this.txt_search.Name = "txt_search";
             this.txt_search.Size = new System.Drawing.Size(126, 27);
             this.txt_search.TabIndex = 9;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.ForeColor = System.Drawing.Color.DarkGreen;
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(772, 689);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Details";
             // 
             // UserPanel
             // 
@@ -304,15 +317,6 @@
             this.User.TabIndex = 0;
             this.User.Text = "User";
             this.User.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // left_panel
-            // 
-            this.left_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.left_panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.left_panel.Location = new System.Drawing.Point(0, 62);
-            this.left_panel.Name = "left_panel";
-            this.left_panel.Size = new System.Drawing.Size(500, 627);
-            this.left_panel.TabIndex = 4;
             // 
             // Sample01
             // 
@@ -349,7 +353,6 @@
         protected Label User;
         protected Panel right_panel;
         protected Panel RIGHTPANEL;
-        protected GroupBox groupBox1;
         protected Panel panel1;
         protected TableLayoutPanel tableLayoutPanel1;
         protected Button btn_Delete;
@@ -361,5 +364,6 @@
         private TextBox txt_search;
         protected Panel panel2;
         protected FlowLayoutPanel left_panel;
+        protected GroupBox groupBox1;
     }
 }

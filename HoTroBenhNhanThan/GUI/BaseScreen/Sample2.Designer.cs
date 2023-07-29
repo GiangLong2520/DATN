@@ -29,6 +29,7 @@ namespace HoTroBenhNhanThan
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sample2));
             this.button6 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
@@ -60,7 +61,7 @@ namespace HoTroBenhNhanThan
             // btnBack
             // 
             this.btnBack.FlatAppearance.BorderSize = 0;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             // 
             // right_panel
             // 
@@ -225,7 +226,6 @@ namespace HoTroBenhNhanThan
             this.left_panel.Name = "left_panel";
             this.left_panel.Size = new System.Drawing.Size(323, 627);
             this.left_panel.TabIndex = 1;
-            this.left_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.flowPanel_Paint);
             // 
             // groupBox1
             // 

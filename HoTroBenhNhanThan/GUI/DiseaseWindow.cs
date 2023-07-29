@@ -28,9 +28,9 @@ namespace HoTroBenhNhanThan.GUI
         private void LoadDisease()
         {
             ListBox loadData = new ListBox();
-            loadData.Items.Add(diseaseIDGV);
+            loadData.Items.Add(IDGV);
             loadData.Items.Add(diseaseGV);
-            LibCRUD.loadData("st_getDisease", dataGridView1, loadData);
+            LibCRUD.loadData("st_getDisease", dataGridView2, loadData);
         }
 
             //--------------------------------------------------------//
@@ -52,19 +52,19 @@ namespace HoTroBenhNhanThan.GUI
                     if (ret > 0)
                     {
                         LibMainClass.showMessage(txt_disease.Text + " added successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.resetEnable(left_panel);
                         LoadDisease();
                     }
                 }
                 else if (edit == 1)
                 {
                     Hashtable ht = new Hashtable();
-                    ht.Add(@"name", txt_disease.Text);
-                    ht.Add(@"id", diseaseID);
-                    if (LibCRUD.data_insert_update_delete("st_updateRoles", ht) > 0)
+                    ht.Add("@disease", txt_disease.Text);
+                    ht.Add("@did", diseaseID);
+                    if (LibCRUD.data_insert_update_delete("st_updateDisease", ht) > 0)
                     {
-                        LibMainClass.showMessage(txt_disease.Text + " added successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.showMessage(txt_disease.Text + " update successfully..", "success");
+                        LibMainClass.resetEnable(left_panel);
                         LoadDisease();
                     }
                 }
@@ -80,8 +80,8 @@ namespace HoTroBenhNhanThan.GUI
                 if (dr == DialogResult.Yes)
                 {
                     Hashtable ht = new Hashtable();
-                    ht.Add(@"id", diseaseID);
-                    if (LibCRUD.data_insert_update_delete("st_deleteRoles", ht) > 0)
+                    ht.Add(@"did", diseaseID);
+                    if (LibCRUD.data_insert_update_delete("st_deleteDisease", ht) > 0)
                     {
                         LibMainClass.showMessage(txt_disease.Text + " deleted successfully..", "success");
                         LibMainClass.resetEnable(LEFTPANEL);
@@ -95,14 +95,15 @@ namespace HoTroBenhNhanThan.GUI
             LoadDisease();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
             {
                 edit = 1;
-                LibMainClass.DisableControl(LEFTPANEL);
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                diseaseID = Convert.ToInt32(row.Cells["DiseaseIDGV"].Value.ToString());
+                LibMainClass.DisableControl(left_panel);
+                DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
+                diseaseID = Convert.ToInt32(row.Cells["IDGV"].Value.ToString());
                 txt_disease.Text = row.Cells["DiseaseGV"].Value.ToString();
             }
         }

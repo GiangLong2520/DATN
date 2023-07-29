@@ -46,29 +46,31 @@
             this.listBox9 = new System.Windows.Forms.ListBox();
             this.groupBox11 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.listBox8 = new System.Windows.Forms.ListBox();
+            this.btn_symtomAdd = new System.Windows.Forms.Button();
+            this.btn_symptomRemove = new System.Windows.Forms.Button();
+            this.cb_symptom = new System.Windows.Forms.ComboBox();
+            this.lb_symptomList = new System.Windows.Forms.ListBox();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.listBox7 = new System.Windows.Forms.ListBox();
+            this.btn_DesExteralAdd = new System.Windows.Forms.Button();
+            this.btn_DesExternalRemove = new System.Windows.Forms.Button();
+            this.cb_DescripExternal = new System.Windows.Forms.ComboBox();
+            this.lb_desExternal = new System.Windows.Forms.ListBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel11 = new System.Windows.Forms.TableLayoutPanel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.listBox6 = new System.Windows.Forms.ListBox();
+            this.btn_DesInternalAdd = new System.Windows.Forms.Button();
+            this.btn_DesInternalRemove = new System.Windows.Forms.Button();
+            this.cb_DescripInternal = new System.Windows.Forms.ComboBox();
+            this.lb_desInternal = new System.Windows.Forms.ListBox();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.radioExBS = new System.Windows.Forms.RadioButton();
-            this.radioExAE = new System.Windows.Forms.RadioButton();
-            this.radioExBE = new System.Windows.Forms.RadioButton();
-            this.radioExMEN = new System.Windows.Forms.RadioButton();
-            this.radioExME = new System.Windows.Forms.RadioButton();
-            this.radioExM = new System.Windows.Forms.RadioButton();
+            this.txt_ExternalOther = new System.Windows.Forms.TextBox();
+            this.radio6EXother = new System.Windows.Forms.RadioButton();
+            this.radio5ExBS = new System.Windows.Forms.RadioButton();
+            this.radio4ExAE = new System.Windows.Forms.RadioButton();
+            this.radio3ExBE = new System.Windows.Forms.RadioButton();
+            this.radio2ExMEN = new System.Windows.Forms.RadioButton();
+            this.radio1ExME = new System.Windows.Forms.RadioButton();
+            this.radio0ExM = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.btn_disease_add = new System.Windows.Forms.Button();
@@ -76,12 +78,14 @@
             this.cb_disease_name = new System.Windows.Forms.ComboBox();
             this.lb_diseasesList = new System.Windows.Forms.ListBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.radioInBS = new System.Windows.Forms.RadioButton();
-            this.radioInAE = new System.Windows.Forms.RadioButton();
-            this.radioInBE = new System.Windows.Forms.RadioButton();
-            this.radioInMEN = new System.Windows.Forms.RadioButton();
-            this.radio_InME = new System.Windows.Forms.RadioButton();
-            this.radio_InM = new System.Windows.Forms.RadioButton();
+            this.txt_otherInternal = new System.Windows.Forms.TextBox();
+            this.radio_6internalOther = new System.Windows.Forms.RadioButton();
+            this.radioIn_5BS = new System.Windows.Forms.RadioButton();
+            this.radioIn_4AE = new System.Windows.Forms.RadioButton();
+            this.radio_3InBE = new System.Windows.Forms.RadioButton();
+            this.radio_2InMEN = new System.Windows.Forms.RadioButton();
+            this.radio_1InME = new System.Windows.Forms.RadioButton();
+            this.radio_0InM = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.button1 = new System.Windows.Forms.Button();
@@ -392,19 +396,19 @@
             // 
             // listBox9
             // 
-            this.listBox9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox9.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.listBox9.FormattingEnabled = true;
             this.listBox9.ItemHeight = 20;
-            this.listBox9.Location = new System.Drawing.Point(7, 27);
+            this.listBox9.Location = new System.Drawing.Point(7, 105);
             this.listBox9.Name = "listBox9";
-            this.listBox9.Size = new System.Drawing.Size(235, 242);
+            this.listBox9.Size = new System.Drawing.Size(235, 164);
             this.listBox9.TabIndex = 0;
             // 
             // groupBox11
             // 
             this.groupBox11.Controls.Add(this.tableLayoutPanel13);
-            this.groupBox11.Controls.Add(this.comboBox3);
-            this.groupBox11.Controls.Add(this.listBox8);
+            this.groupBox11.Controls.Add(this.cb_symptom);
+            this.groupBox11.Controls.Add(this.lb_symptomList);
             this.groupBox11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox11.Location = new System.Drawing.Point(3, 284);
@@ -420,8 +424,8 @@
             this.tableLayoutPanel13.ColumnCount = 2;
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel13.Controls.Add(this.button13, 0, 0);
-            this.tableLayoutPanel13.Controls.Add(this.button14, 1, 0);
+            this.tableLayoutPanel13.Controls.Add(this.btn_symtomAdd, 0, 0);
+            this.tableLayoutPanel13.Controls.Add(this.btn_symptomRemove, 1, 0);
             this.tableLayoutPanel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel13.Location = new System.Drawing.Point(7, 55);
             this.tableLayoutPanel13.Name = "tableLayoutPanel13";
@@ -430,52 +434,54 @@
             this.tableLayoutPanel13.Size = new System.Drawing.Size(235, 39);
             this.tableLayoutPanel13.TabIndex = 1;
             // 
-            // button13
+            // btn_symtomAdd
             // 
-            this.button13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Location = new System.Drawing.Point(3, 3);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(111, 33);
-            this.button13.TabIndex = 0;
-            this.button13.Text = "ADD";
-            this.button13.UseVisualStyleBackColor = true;
+            this.btn_symtomAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_symtomAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_symtomAdd.Location = new System.Drawing.Point(3, 3);
+            this.btn_symtomAdd.Name = "btn_symtomAdd";
+            this.btn_symtomAdd.Size = new System.Drawing.Size(111, 33);
+            this.btn_symtomAdd.TabIndex = 0;
+            this.btn_symtomAdd.Text = "ADD";
+            this.btn_symtomAdd.UseVisualStyleBackColor = true;
+            this.btn_symtomAdd.Click += new System.EventHandler(this.btn_symtomAdd_Click);
             // 
-            // button14
+            // btn_symptomRemove
             // 
-            this.button14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Location = new System.Drawing.Point(120, 3);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(112, 33);
-            this.button14.TabIndex = 0;
-            this.button14.Text = "REMOVE";
-            this.button14.UseVisualStyleBackColor = true;
+            this.btn_symptomRemove.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_symptomRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_symptomRemove.Location = new System.Drawing.Point(120, 3);
+            this.btn_symptomRemove.Name = "btn_symptomRemove";
+            this.btn_symptomRemove.Size = new System.Drawing.Size(112, 33);
+            this.btn_symptomRemove.TabIndex = 0;
+            this.btn_symptomRemove.Text = "REMOVE";
+            this.btn_symptomRemove.UseVisualStyleBackColor = true;
+            this.btn_symptomRemove.Click += new System.EventHandler(this.btn_symptomRemove_Click);
             // 
-            // comboBox3
+            // cb_symptom
             // 
-            this.comboBox3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(7, 27);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(235, 28);
-            this.comboBox3.TabIndex = 0;
+            this.cb_symptom.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cb_symptom.FormattingEnabled = true;
+            this.cb_symptom.Location = new System.Drawing.Point(7, 27);
+            this.cb_symptom.Name = "cb_symptom";
+            this.cb_symptom.Size = new System.Drawing.Size(235, 28);
+            this.cb_symptom.TabIndex = 0;
             // 
-            // listBox8
+            // lb_symptomList
             // 
-            this.listBox8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox8.FormattingEnabled = true;
-            this.listBox8.ItemHeight = 20;
-            this.listBox8.Location = new System.Drawing.Point(7, 27);
-            this.listBox8.Name = "listBox8";
-            this.listBox8.Size = new System.Drawing.Size(235, 241);
-            this.listBox8.TabIndex = 0;
+            this.lb_symptomList.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lb_symptomList.FormattingEnabled = true;
+            this.lb_symptomList.ItemHeight = 20;
+            this.lb_symptomList.Location = new System.Drawing.Point(7, 104);
+            this.lb_symptomList.Name = "lb_symptomList";
+            this.lb_symptomList.Size = new System.Drawing.Size(235, 164);
+            this.lb_symptomList.TabIndex = 0;
             // 
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.tableLayoutPanel12);
-            this.groupBox10.Controls.Add(this.comboBox2);
-            this.groupBox10.Controls.Add(this.listBox7);
+            this.groupBox10.Controls.Add(this.cb_DescripExternal);
+            this.groupBox10.Controls.Add(this.lb_desExternal);
             this.groupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox10.Location = new System.Drawing.Point(258, 284);
@@ -491,8 +497,8 @@
             this.tableLayoutPanel12.ColumnCount = 2;
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel12.Controls.Add(this.button11, 0, 0);
-            this.tableLayoutPanel12.Controls.Add(this.button12, 1, 0);
+            this.tableLayoutPanel12.Controls.Add(this.btn_DesExteralAdd, 0, 0);
+            this.tableLayoutPanel12.Controls.Add(this.btn_DesExternalRemove, 1, 0);
             this.tableLayoutPanel12.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel12.Location = new System.Drawing.Point(7, 55);
             this.tableLayoutPanel12.Name = "tableLayoutPanel12";
@@ -501,52 +507,54 @@
             this.tableLayoutPanel12.Size = new System.Drawing.Size(235, 39);
             this.tableLayoutPanel12.TabIndex = 1;
             // 
-            // button11
+            // btn_DesExteralAdd
             // 
-            this.button11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Location = new System.Drawing.Point(3, 3);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(111, 33);
-            this.button11.TabIndex = 0;
-            this.button11.Text = "ADD";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btn_DesExteralAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_DesExteralAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DesExteralAdd.Location = new System.Drawing.Point(3, 3);
+            this.btn_DesExteralAdd.Name = "btn_DesExteralAdd";
+            this.btn_DesExteralAdd.Size = new System.Drawing.Size(111, 33);
+            this.btn_DesExteralAdd.TabIndex = 0;
+            this.btn_DesExteralAdd.Text = "ADD";
+            this.btn_DesExteralAdd.UseVisualStyleBackColor = true;
+            this.btn_DesExteralAdd.Click += new System.EventHandler(this.btn_DesExteralAdd_Click);
             // 
-            // button12
+            // btn_DesExternalRemove
             // 
-            this.button12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Location = new System.Drawing.Point(120, 3);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(112, 33);
-            this.button12.TabIndex = 0;
-            this.button12.Text = "REMOVE";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btn_DesExternalRemove.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_DesExternalRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DesExternalRemove.Location = new System.Drawing.Point(120, 3);
+            this.btn_DesExternalRemove.Name = "btn_DesExternalRemove";
+            this.btn_DesExternalRemove.Size = new System.Drawing.Size(112, 33);
+            this.btn_DesExternalRemove.TabIndex = 0;
+            this.btn_DesExternalRemove.Text = "REMOVE";
+            this.btn_DesExternalRemove.UseVisualStyleBackColor = true;
+            this.btn_DesExternalRemove.Click += new System.EventHandler(this.btn_DesExternalRemove_Click);
             // 
-            // comboBox2
+            // cb_DescripExternal
             // 
-            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(7, 27);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(235, 28);
-            this.comboBox2.TabIndex = 0;
+            this.cb_DescripExternal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cb_DescripExternal.FormattingEnabled = true;
+            this.cb_DescripExternal.Location = new System.Drawing.Point(7, 27);
+            this.cb_DescripExternal.Name = "cb_DescripExternal";
+            this.cb_DescripExternal.Size = new System.Drawing.Size(235, 28);
+            this.cb_DescripExternal.TabIndex = 0;
             // 
-            // listBox7
+            // lb_desExternal
             // 
-            this.listBox7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox7.FormattingEnabled = true;
-            this.listBox7.ItemHeight = 20;
-            this.listBox7.Location = new System.Drawing.Point(7, 27);
-            this.listBox7.Name = "listBox7";
-            this.listBox7.Size = new System.Drawing.Size(235, 241);
-            this.listBox7.TabIndex = 0;
+            this.lb_desExternal.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lb_desExternal.FormattingEnabled = true;
+            this.lb_desExternal.ItemHeight = 20;
+            this.lb_desExternal.Location = new System.Drawing.Point(7, 104);
+            this.lb_desExternal.Name = "lb_desExternal";
+            this.lb_desExternal.Size = new System.Drawing.Size(235, 164);
+            this.lb_desExternal.TabIndex = 0;
             // 
             // groupBox8
             // 
             this.groupBox8.Controls.Add(this.tableLayoutPanel11);
-            this.groupBox8.Controls.Add(this.comboBox1);
-            this.groupBox8.Controls.Add(this.listBox6);
+            this.groupBox8.Controls.Add(this.cb_DescripInternal);
+            this.groupBox8.Controls.Add(this.lb_desInternal);
             this.groupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.groupBox8.Location = new System.Drawing.Point(258, 3);
@@ -562,8 +570,8 @@
             this.tableLayoutPanel11.ColumnCount = 2;
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel11.Controls.Add(this.button9, 0, 0);
-            this.tableLayoutPanel11.Controls.Add(this.button10, 1, 0);
+            this.tableLayoutPanel11.Controls.Add(this.btn_DesInternalAdd, 0, 0);
+            this.tableLayoutPanel11.Controls.Add(this.btn_DesInternalRemove, 1, 0);
             this.tableLayoutPanel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.tableLayoutPanel11.Location = new System.Drawing.Point(7, 55);
             this.tableLayoutPanel11.Name = "tableLayoutPanel11";
@@ -572,55 +580,59 @@
             this.tableLayoutPanel11.Size = new System.Drawing.Size(235, 39);
             this.tableLayoutPanel11.TabIndex = 1;
             // 
-            // button9
+            // btn_DesInternalAdd
             // 
-            this.button9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Location = new System.Drawing.Point(3, 3);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(111, 33);
-            this.button9.TabIndex = 0;
-            this.button9.Text = "ADD";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btn_DesInternalAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_DesInternalAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DesInternalAdd.Location = new System.Drawing.Point(3, 3);
+            this.btn_DesInternalAdd.Name = "btn_DesInternalAdd";
+            this.btn_DesInternalAdd.Size = new System.Drawing.Size(111, 33);
+            this.btn_DesInternalAdd.TabIndex = 0;
+            this.btn_DesInternalAdd.Text = "ADD";
+            this.btn_DesInternalAdd.UseVisualStyleBackColor = true;
+            this.btn_DesInternalAdd.Click += new System.EventHandler(this.btn_DesInternalAdd_Click);
             // 
-            // button10
+            // btn_DesInternalRemove
             // 
-            this.button10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Location = new System.Drawing.Point(120, 3);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(112, 33);
-            this.button10.TabIndex = 0;
-            this.button10.Text = "REMOVE";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btn_DesInternalRemove.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btn_DesInternalRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DesInternalRemove.Location = new System.Drawing.Point(120, 3);
+            this.btn_DesInternalRemove.Name = "btn_DesInternalRemove";
+            this.btn_DesInternalRemove.Size = new System.Drawing.Size(112, 33);
+            this.btn_DesInternalRemove.TabIndex = 0;
+            this.btn_DesInternalRemove.Text = "REMOVE";
+            this.btn_DesInternalRemove.UseVisualStyleBackColor = true;
+            this.btn_DesInternalRemove.Click += new System.EventHandler(this.btn_DesInternalRemove_Click);
             // 
-            // comboBox1
+            // cb_DescripInternal
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(7, 27);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(235, 28);
-            this.comboBox1.TabIndex = 0;
+            this.cb_DescripInternal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cb_DescripInternal.FormattingEnabled = true;
+            this.cb_DescripInternal.Location = new System.Drawing.Point(7, 27);
+            this.cb_DescripInternal.Name = "cb_DescripInternal";
+            this.cb_DescripInternal.Size = new System.Drawing.Size(235, 28);
+            this.cb_DescripInternal.TabIndex = 0;
             // 
-            // listBox6
+            // lb_desInternal
             // 
-            this.listBox6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox6.FormattingEnabled = true;
-            this.listBox6.ItemHeight = 20;
-            this.listBox6.Location = new System.Drawing.Point(7, 27);
-            this.listBox6.Name = "listBox6";
-            this.listBox6.Size = new System.Drawing.Size(235, 241);
-            this.listBox6.TabIndex = 0;
+            this.lb_desInternal.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.lb_desInternal.FormattingEnabled = true;
+            this.lb_desInternal.ItemHeight = 20;
+            this.lb_desInternal.Location = new System.Drawing.Point(7, 104);
+            this.lb_desInternal.Name = "lb_desInternal";
+            this.lb_desInternal.Size = new System.Drawing.Size(235, 164);
+            this.lb_desInternal.TabIndex = 0;
             // 
             // groupBox9
             // 
-            this.groupBox9.Controls.Add(this.radioExBS);
-            this.groupBox9.Controls.Add(this.radioExAE);
-            this.groupBox9.Controls.Add(this.radioExBE);
-            this.groupBox9.Controls.Add(this.radioExMEN);
-            this.groupBox9.Controls.Add(this.radioExME);
-            this.groupBox9.Controls.Add(this.radioExM);
+            this.groupBox9.Controls.Add(this.txt_ExternalOther);
+            this.groupBox9.Controls.Add(this.radio6EXother);
+            this.groupBox9.Controls.Add(this.radio5ExBS);
+            this.groupBox9.Controls.Add(this.radio4ExAE);
+            this.groupBox9.Controls.Add(this.radio3ExBE);
+            this.groupBox9.Controls.Add(this.radio2ExMEN);
+            this.groupBox9.Controls.Add(this.radio1ExME);
+            this.groupBox9.Controls.Add(this.radio0ExM);
             this.groupBox9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox9.Location = new System.Drawing.Point(513, 284);
             this.groupBox9.Name = "groupBox9";
@@ -630,77 +642,97 @@
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Dosage";
             // 
-            // radioExBS
+            // txt_ExternalOther
             // 
-            this.radioExBS.AutoSize = true;
-            this.radioExBS.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioExBS.Location = new System.Drawing.Point(7, 147);
-            this.radioExBS.Name = "radioExBS";
-            this.radioExBS.Size = new System.Drawing.Size(236, 24);
-            this.radioExBS.TabIndex = 6;
-            this.radioExBS.TabStop = true;
-            this.radioExBS.Text = "Before Sleep";
-            this.radioExBS.UseVisualStyleBackColor = true;
+            this.txt_ExternalOther.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txt_ExternalOther.Location = new System.Drawing.Point(7, 195);
+            this.txt_ExternalOther.Name = "txt_ExternalOther";
+            this.txt_ExternalOther.Size = new System.Drawing.Size(236, 27);
+            this.txt_ExternalOther.TabIndex = 11;
             // 
-            // radioExAE
+            // radio6EXother
             // 
-            this.radioExAE.AutoSize = true;
-            this.radioExAE.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioExAE.Location = new System.Drawing.Point(7, 123);
-            this.radioExAE.Name = "radioExAE";
-            this.radioExAE.Size = new System.Drawing.Size(236, 24);
-            this.radioExAE.TabIndex = 5;
-            this.radioExAE.TabStop = true;
-            this.radioExAE.Text = "After Eat";
-            this.radioExAE.UseVisualStyleBackColor = true;
+            this.radio6EXother.AutoSize = true;
+            this.radio6EXother.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radio6EXother.Location = new System.Drawing.Point(7, 171);
+            this.radio6EXother.Name = "radio6EXother";
+            this.radio6EXother.Size = new System.Drawing.Size(236, 24);
+            this.radio6EXother.TabIndex = 10;
+            this.radio6EXother.TabStop = true;
+            this.radio6EXother.Text = "Other";
+            this.radio6EXother.UseVisualStyleBackColor = true;
             // 
-            // radioExBE
+            // radio5ExBS
             // 
-            this.radioExBE.AutoSize = true;
-            this.radioExBE.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioExBE.Location = new System.Drawing.Point(7, 99);
-            this.radioExBE.Name = "radioExBE";
-            this.radioExBE.Size = new System.Drawing.Size(236, 24);
-            this.radioExBE.TabIndex = 4;
-            this.radioExBE.TabStop = true;
-            this.radioExBE.Text = "Before Eat";
-            this.radioExBE.UseVisualStyleBackColor = true;
+            this.radio5ExBS.AutoSize = true;
+            this.radio5ExBS.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radio5ExBS.Location = new System.Drawing.Point(7, 147);
+            this.radio5ExBS.Name = "radio5ExBS";
+            this.radio5ExBS.Size = new System.Drawing.Size(236, 24);
+            this.radio5ExBS.TabIndex = 6;
+            this.radio5ExBS.TabStop = true;
+            this.radio5ExBS.Text = "Before Sleep";
+            this.radio5ExBS.UseVisualStyleBackColor = true;
             // 
-            // radioExMEN
+            // radio4ExAE
             // 
-            this.radioExMEN.AutoSize = true;
-            this.radioExMEN.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioExMEN.Location = new System.Drawing.Point(7, 75);
-            this.radioExMEN.Name = "radioExMEN";
-            this.radioExMEN.Size = new System.Drawing.Size(236, 24);
-            this.radioExMEN.TabIndex = 3;
-            this.radioExMEN.TabStop = true;
-            this.radioExMEN.Text = "Morning + Evening + Night";
-            this.radioExMEN.UseVisualStyleBackColor = true;
+            this.radio4ExAE.AutoSize = true;
+            this.radio4ExAE.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radio4ExAE.Location = new System.Drawing.Point(7, 123);
+            this.radio4ExAE.Name = "radio4ExAE";
+            this.radio4ExAE.Size = new System.Drawing.Size(236, 24);
+            this.radio4ExAE.TabIndex = 5;
+            this.radio4ExAE.TabStop = true;
+            this.radio4ExAE.Text = "After Eat";
+            this.radio4ExAE.UseVisualStyleBackColor = true;
             // 
-            // radioExME
+            // radio3ExBE
             // 
-            this.radioExME.AutoSize = true;
-            this.radioExME.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioExME.Location = new System.Drawing.Point(7, 51);
-            this.radioExME.Name = "radioExME";
-            this.radioExME.Size = new System.Drawing.Size(236, 24);
-            this.radioExME.TabIndex = 2;
-            this.radioExME.TabStop = true;
-            this.radioExME.Text = "Morning + Evening";
-            this.radioExME.UseVisualStyleBackColor = true;
+            this.radio3ExBE.AutoSize = true;
+            this.radio3ExBE.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radio3ExBE.Location = new System.Drawing.Point(7, 99);
+            this.radio3ExBE.Name = "radio3ExBE";
+            this.radio3ExBE.Size = new System.Drawing.Size(236, 24);
+            this.radio3ExBE.TabIndex = 4;
+            this.radio3ExBE.TabStop = true;
+            this.radio3ExBE.Text = "Before Eat";
+            this.radio3ExBE.UseVisualStyleBackColor = true;
             // 
-            // radioExM
+            // radio2ExMEN
             // 
-            this.radioExM.AutoSize = true;
-            this.radioExM.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioExM.Location = new System.Drawing.Point(7, 27);
-            this.radioExM.Name = "radioExM";
-            this.radioExM.Size = new System.Drawing.Size(236, 24);
-            this.radioExM.TabIndex = 1;
-            this.radioExM.TabStop = true;
-            this.radioExM.Text = "Morning";
-            this.radioExM.UseVisualStyleBackColor = true;
+            this.radio2ExMEN.AutoSize = true;
+            this.radio2ExMEN.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radio2ExMEN.Location = new System.Drawing.Point(7, 75);
+            this.radio2ExMEN.Name = "radio2ExMEN";
+            this.radio2ExMEN.Size = new System.Drawing.Size(236, 24);
+            this.radio2ExMEN.TabIndex = 3;
+            this.radio2ExMEN.TabStop = true;
+            this.radio2ExMEN.Text = "Morning+Evening+Night";
+            this.radio2ExMEN.UseVisualStyleBackColor = true;
+            // 
+            // radio1ExME
+            // 
+            this.radio1ExME.AutoSize = true;
+            this.radio1ExME.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radio1ExME.Location = new System.Drawing.Point(7, 51);
+            this.radio1ExME.Name = "radio1ExME";
+            this.radio1ExME.Size = new System.Drawing.Size(236, 24);
+            this.radio1ExME.TabIndex = 2;
+            this.radio1ExME.TabStop = true;
+            this.radio1ExME.Text = "Morning+Evening";
+            this.radio1ExME.UseVisualStyleBackColor = true;
+            // 
+            // radio0ExM
+            // 
+            this.radio0ExM.AutoSize = true;
+            this.radio0ExM.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radio0ExM.Location = new System.Drawing.Point(7, 27);
+            this.radio0ExM.Name = "radio0ExM";
+            this.radio0ExM.Size = new System.Drawing.Size(236, 24);
+            this.radio0ExM.TabIndex = 1;
+            this.radio0ExM.TabStop = true;
+            this.radio0ExM.Text = "Morning";
+            this.radio0ExM.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -742,6 +774,7 @@
             this.btn_disease_add.TabIndex = 0;
             this.btn_disease_add.Text = "ADD";
             this.btn_disease_add.UseVisualStyleBackColor = true;
+            this.btn_disease_add.Click += new System.EventHandler(this.btn_disease_add_Click);
             // 
             // btn_disease_remove
             // 
@@ -753,6 +786,7 @@
             this.btn_disease_remove.TabIndex = 0;
             this.btn_disease_remove.Text = "REMOVE";
             this.btn_disease_remove.UseVisualStyleBackColor = true;
+            this.btn_disease_remove.Click += new System.EventHandler(this.btn_disease_remove_Click);
             // 
             // cb_disease_name
             // 
@@ -765,22 +799,24 @@
             // 
             // lb_diseasesList
             // 
-            this.lb_diseasesList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb_diseasesList.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lb_diseasesList.FormattingEnabled = true;
             this.lb_diseasesList.ItemHeight = 20;
-            this.lb_diseasesList.Location = new System.Drawing.Point(7, 27);
+            this.lb_diseasesList.Location = new System.Drawing.Point(7, 104);
             this.lb_diseasesList.Name = "lb_diseasesList";
-            this.lb_diseasesList.Size = new System.Drawing.Size(235, 241);
+            this.lb_diseasesList.Size = new System.Drawing.Size(235, 164);
             this.lb_diseasesList.TabIndex = 0;
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.radioInBS);
-            this.groupBox5.Controls.Add(this.radioInAE);
-            this.groupBox5.Controls.Add(this.radioInBE);
-            this.groupBox5.Controls.Add(this.radioInMEN);
-            this.groupBox5.Controls.Add(this.radio_InME);
-            this.groupBox5.Controls.Add(this.radio_InM);
+            this.groupBox5.Controls.Add(this.txt_otherInternal);
+            this.groupBox5.Controls.Add(this.radio_6internalOther);
+            this.groupBox5.Controls.Add(this.radioIn_5BS);
+            this.groupBox5.Controls.Add(this.radioIn_4AE);
+            this.groupBox5.Controls.Add(this.radio_3InBE);
+            this.groupBox5.Controls.Add(this.radio_2InMEN);
+            this.groupBox5.Controls.Add(this.radio_1InME);
+            this.groupBox5.Controls.Add(this.radio_0InM);
             this.groupBox5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox5.Location = new System.Drawing.Point(513, 3);
             this.groupBox5.Name = "groupBox5";
@@ -790,77 +826,97 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Dosage";
             // 
-            // radioInBS
+            // txt_otherInternal
             // 
-            this.radioInBS.AutoSize = true;
-            this.radioInBS.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioInBS.Location = new System.Drawing.Point(7, 147);
-            this.radioInBS.Name = "radioInBS";
-            this.radioInBS.Size = new System.Drawing.Size(236, 24);
-            this.radioInBS.TabIndex = 6;
-            this.radioInBS.TabStop = true;
-            this.radioInBS.Text = "Before Sleep";
-            this.radioInBS.UseVisualStyleBackColor = true;
+            this.txt_otherInternal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.txt_otherInternal.Location = new System.Drawing.Point(7, 195);
+            this.txt_otherInternal.Name = "txt_otherInternal";
+            this.txt_otherInternal.Size = new System.Drawing.Size(236, 27);
+            this.txt_otherInternal.TabIndex = 8;
             // 
-            // radioInAE
+            // radio_6internalOther
             // 
-            this.radioInAE.AutoSize = true;
-            this.radioInAE.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioInAE.Location = new System.Drawing.Point(7, 123);
-            this.radioInAE.Name = "radioInAE";
-            this.radioInAE.Size = new System.Drawing.Size(236, 24);
-            this.radioInAE.TabIndex = 5;
-            this.radioInAE.TabStop = true;
-            this.radioInAE.Text = "After Eat";
-            this.radioInAE.UseVisualStyleBackColor = true;
+            this.radio_6internalOther.AutoSize = true;
+            this.radio_6internalOther.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radio_6internalOther.Location = new System.Drawing.Point(7, 171);
+            this.radio_6internalOther.Name = "radio_6internalOther";
+            this.radio_6internalOther.Size = new System.Drawing.Size(236, 24);
+            this.radio_6internalOther.TabIndex = 7;
+            this.radio_6internalOther.TabStop = true;
+            this.radio_6internalOther.Text = "Other";
+            this.radio_6internalOther.UseVisualStyleBackColor = true;
             // 
-            // radioInBE
+            // radioIn_5BS
             // 
-            this.radioInBE.AutoSize = true;
-            this.radioInBE.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioInBE.Location = new System.Drawing.Point(7, 99);
-            this.radioInBE.Name = "radioInBE";
-            this.radioInBE.Size = new System.Drawing.Size(236, 24);
-            this.radioInBE.TabIndex = 4;
-            this.radioInBE.TabStop = true;
-            this.radioInBE.Text = "Before Eat";
-            this.radioInBE.UseVisualStyleBackColor = true;
+            this.radioIn_5BS.AutoSize = true;
+            this.radioIn_5BS.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radioIn_5BS.Location = new System.Drawing.Point(7, 147);
+            this.radioIn_5BS.Name = "radioIn_5BS";
+            this.radioIn_5BS.Size = new System.Drawing.Size(236, 24);
+            this.radioIn_5BS.TabIndex = 6;
+            this.radioIn_5BS.TabStop = true;
+            this.radioIn_5BS.Text = "Before Sleep";
+            this.radioIn_5BS.UseVisualStyleBackColor = true;
             // 
-            // radioInMEN
+            // radioIn_4AE
             // 
-            this.radioInMEN.AutoSize = true;
-            this.radioInMEN.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radioInMEN.Location = new System.Drawing.Point(7, 75);
-            this.radioInMEN.Name = "radioInMEN";
-            this.radioInMEN.Size = new System.Drawing.Size(236, 24);
-            this.radioInMEN.TabIndex = 3;
-            this.radioInMEN.TabStop = true;
-            this.radioInMEN.Text = "Morning + Evening + Night";
-            this.radioInMEN.UseVisualStyleBackColor = true;
+            this.radioIn_4AE.AutoSize = true;
+            this.radioIn_4AE.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radioIn_4AE.Location = new System.Drawing.Point(7, 123);
+            this.radioIn_4AE.Name = "radioIn_4AE";
+            this.radioIn_4AE.Size = new System.Drawing.Size(236, 24);
+            this.radioIn_4AE.TabIndex = 5;
+            this.radioIn_4AE.TabStop = true;
+            this.radioIn_4AE.Text = "After Eat";
+            this.radioIn_4AE.UseVisualStyleBackColor = true;
             // 
-            // radio_InME
+            // radio_3InBE
             // 
-            this.radio_InME.AutoSize = true;
-            this.radio_InME.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radio_InME.Location = new System.Drawing.Point(7, 51);
-            this.radio_InME.Name = "radio_InME";
-            this.radio_InME.Size = new System.Drawing.Size(236, 24);
-            this.radio_InME.TabIndex = 2;
-            this.radio_InME.TabStop = true;
-            this.radio_InME.Text = "Morning + Evening";
-            this.radio_InME.UseVisualStyleBackColor = true;
+            this.radio_3InBE.AutoSize = true;
+            this.radio_3InBE.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radio_3InBE.Location = new System.Drawing.Point(7, 99);
+            this.radio_3InBE.Name = "radio_3InBE";
+            this.radio_3InBE.Size = new System.Drawing.Size(236, 24);
+            this.radio_3InBE.TabIndex = 4;
+            this.radio_3InBE.TabStop = true;
+            this.radio_3InBE.Text = "Before Eat";
+            this.radio_3InBE.UseVisualStyleBackColor = true;
             // 
-            // radio_InM
+            // radio_2InMEN
             // 
-            this.radio_InM.AutoSize = true;
-            this.radio_InM.Dock = System.Windows.Forms.DockStyle.Top;
-            this.radio_InM.Location = new System.Drawing.Point(7, 27);
-            this.radio_InM.Name = "radio_InM";
-            this.radio_InM.Size = new System.Drawing.Size(236, 24);
-            this.radio_InM.TabIndex = 1;
-            this.radio_InM.TabStop = true;
-            this.radio_InM.Text = "Morning";
-            this.radio_InM.UseVisualStyleBackColor = true;
+            this.radio_2InMEN.AutoSize = true;
+            this.radio_2InMEN.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radio_2InMEN.Location = new System.Drawing.Point(7, 75);
+            this.radio_2InMEN.Name = "radio_2InMEN";
+            this.radio_2InMEN.Size = new System.Drawing.Size(236, 24);
+            this.radio_2InMEN.TabIndex = 3;
+            this.radio_2InMEN.TabStop = true;
+            this.radio_2InMEN.Text = "Morning+Evening+Night";
+            this.radio_2InMEN.UseVisualStyleBackColor = true;
+            // 
+            // radio_1InME
+            // 
+            this.radio_1InME.AutoSize = true;
+            this.radio_1InME.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radio_1InME.Location = new System.Drawing.Point(7, 51);
+            this.radio_1InME.Name = "radio_1InME";
+            this.radio_1InME.Size = new System.Drawing.Size(236, 24);
+            this.radio_1InME.TabIndex = 2;
+            this.radio_1InME.TabStop = true;
+            this.radio_1InME.Text = "Morning+Evening";
+            this.radio_1InME.UseVisualStyleBackColor = true;
+            // 
+            // radio_0InM
+            // 
+            this.radio_0InM.AutoSize = true;
+            this.radio_0InM.Dock = System.Windows.Forms.DockStyle.Top;
+            this.radio_0InM.Location = new System.Drawing.Point(7, 27);
+            this.radio_0InM.Name = "radio_0InM";
+            this.radio_0InM.Size = new System.Drawing.Size(236, 24);
+            this.radio_0InM.TabIndex = 1;
+            this.radio_0InM.TabStop = true;
+            this.radio_0InM.Text = "Morning";
+            this.radio_0InM.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -1471,18 +1527,18 @@
         private Button button3;
         private Button button4;
         private GroupBox groupBox9;
-        private RadioButton radioExBS;
-        private RadioButton radioExAE;
-        private RadioButton radioExBE;
-        private RadioButton radioExMEN;
-        private RadioButton radioExME;
-        private RadioButton radioExM;
-        private RadioButton radioInBS;
-        private RadioButton radioInAE;
-        private RadioButton radioInBE;
-        private RadioButton radioInMEN;
-        private RadioButton radio_InME;
-        private RadioButton radio_InM;
+        private RadioButton radio5ExBS;
+        private RadioButton radio4ExAE;
+        private RadioButton radio3ExBE;
+        private RadioButton radio2ExMEN;
+        private RadioButton radio1ExME;
+        private RadioButton radio0ExM;
+        private RadioButton radioIn_5BS;
+        private RadioButton radioIn_4AE;
+        private RadioButton radio_3InBE;
+        private RadioButton radio_2InMEN;
+        private RadioButton radio_1InME;
+        private RadioButton radio_0InM;
         private TableLayoutPanel tableLayoutPanel6;
         private Panel panel9;
         private Label label15;
@@ -1515,21 +1571,21 @@
         private ListBox listBox9;
         private GroupBox groupBox11;
         private TableLayoutPanel tableLayoutPanel13;
-        private Button button13;
-        private Button button14;
-        private ComboBox comboBox3;
+        private Button btn_symtomAdd;
+        private Button btn_symptomRemove;
+        private ComboBox cb_symptom;
         private ListBox listBox8;
         private GroupBox groupBox10;
         private TableLayoutPanel tableLayoutPanel12;
-        private Button button11;
-        private Button button12;
-        private ComboBox comboBox2;
+        private Button btn_DesExteralAdd;
+        private Button btn_DesExternalRemove;
+        private ComboBox cb_DescripExternal;
         private ListBox listBox7;
         private GroupBox groupBox8;
         private TableLayoutPanel tableLayoutPanel11;
-        private Button button9;
-        private Button button10;
-        private ComboBox comboBox1;
+        private Button btn_DesInternalAdd;
+        private Button btn_DesInternalRemove;
+        private ComboBox cb_DescripInternal;
         private ListBox listBox6;
         private GroupBox groupBox7;
         private TableLayoutPanel tableLayoutPanel10;
@@ -1547,5 +1603,12 @@
         private TableLayoutPanel tableLayoutPanel15;
         private Button button17;
         private Button button18;
+        private ListBox lb_symptomList;
+        private ListBox lb_desExternal;
+        private ListBox lb_desInternal;
+        private RadioButton radio6EXother;
+        private TextBox txt_otherInternal;
+        private RadioButton radio_6internalOther;
+        private TextBox txt_ExternalOther;
     }
 }

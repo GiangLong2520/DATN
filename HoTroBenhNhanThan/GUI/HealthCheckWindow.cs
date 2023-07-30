@@ -7,8 +7,10 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 
 namespace HoTroBenhNhanThan.GUI
@@ -16,8 +18,8 @@ namespace HoTroBenhNhanThan.GUI
     public partial class HealthCheckWindow : Sample01
     {
 
-        long AppID;
-        long PatientID;
+        long AppID = -1;
+        long PatientID = -1;
 
         public HealthCheckWindow()
         {
@@ -47,8 +49,15 @@ namespace HoTroBenhNhanThan.GUI
             Hashtable ht2 = new Hashtable();
             ht2.Add("@type", 1);
             LibCRUD.loadList("st_getMedicineType", cb_DescripExternal, "ID", "Medicine", ht2);
-        }
 
+           
+        }
+        void setTestResult(int bioTest, int uretest, int bloodTest)
+        {
+            txt_testResults.Text += "Bio Test: " + ((bioTest == -1) ? "UnKnow" : ((bioTest==1) ? "Consulted" : "Not Consult"));
+            txt_testResults.Text += "\nUrine Test: " + ((uretest == -1) ? "UnKnow" : ((uretest == 1) ? "Consulted" : "Not Consult"));
+            txt_testResults.Text += "\nBlood Test: " + ((bloodTest == -1) ? "UnKnow" : ((bloodTest == 1) ? "Consulted" : "Not Consult"));
+        }
         public static int turnNo;
         public static string patentName;
         private void btnCall_Click(object sender, EventArgs e)
@@ -77,35 +86,194 @@ namespace HoTroBenhNhanThan.GUI
             }
             else
             {
+                if(AppID== -1) {
+                    LibMainClass.showMessage("Please select the patient", "warning");
+                    return;
+                }
                 if (edit == 0)
                 {
-                    //Hashtable ht = new Hashtable();
-                    //object selectedValue = cb_selectPatient.SelectedValue;
-                    //if (selectedValue != null && selectedValue != DBNull.Value)
-                    //{
-                    //    AppID = Convert.ToInt64(selectedValue);
-                    //}
+                    using(TransactionScope sc = new TransactionScope() )
+                    {
+                        // disease data               //
+                        foreach (string item in lb_diseasesList.Items)
+                        {
+                            Hashtable h = new Hashtable();
+                            h.Add("@disease", item);
+                            if(!CheckExistance("st_checkExistDisease", h))
+                            {
+                                LibCRUD.data_insert_update_delete("st_insertDisease", h);
+                            }
 
-                    //ht.Add("@AppID", AppID);
-                    //ht.Add("@SG", Math.Round(float.Parse(txt_SG.Text.ToString()), 3));
-                    //ht.Add("@PH", Math.Round(float.Parse(txt_PH.Text.ToString()), 3));
-                    //ht.Add("@ASC", Math.Round(float.Parse(txt_ASC.Text.ToString()), 3));
+                            int diseaseID = getDiseaseIDFromName(item);
 
-                    //ht.Add("@Leukocytes", radio_LEUAmTinh.Checked ? true : false);
-                    //ht.Add("@Nitrit", radioNitritAmtinh.Checked ? true : false);
-                    //ht.Add("@Ketone", radioKetoneKhong.Checked ? true : false);
-                    //ht.Add("@Urobilinogen", radioUrobilKhongCo.Checked ? true : false);
+                            Hashtable htpatientDisease    = new Hashtable();
+                            object selectedValue = cb_selectPatient.SelectedValue;
+                            if (selectedValue != null && selectedValue != DBNull.Value)
+                            {
+                                AppID = Convert.ToInt64(selectedValue);
+                            }
+                            htpatientDisease.Add("@appID", AppID);
+                            htpatientDisease.Add("@diseaseID", diseaseID);
+                            LibCRUD.data_insert_update_delete("[st_insertPatientDisease]", htpatientDisease);
+                        }
+
+                        // symptom data            //
+                        foreach (string item in lb_symptomList.Items)
+                        {
+                            Hashtable h = new Hashtable();
+                            h.Add("@symptom", item);
+                            if (!CheckExistance("st_checkExistSymptom", h))
+                            {
+                                LibCRUD.data_insert_update_delete("st_insertSymptom", h);
+                            }
+
+                            int symptomID = getsymptomIDFromName(item);
+
+                            Hashtable htpatientDisease = new Hashtable();
+                            object selectedValue = cb_selectPatient.SelectedValue;
+                            if (selectedValue != null && selectedValue != DBNull.Value)
+                            {
+                                AppID = Convert.ToInt64(selectedValue);
+                            }
+                            htpatientDisease.Add("@appID", AppID);
+                            htpatientDisease.Add("@symptomID", symptomID);
+                            LibCRUD.data_insert_update_delete("[st_insertPatientSymptom]", htpatientDisease);
+                        }
 
 
-                    //int ret = LibCRUD.data_insert_update_delete("[st_InsertUrineTestPatientAppointmentReg]", ht);
-                    //if (ret > 0)
-                    //{
-                    //    LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " added successfully..", "success");
-                    //    LibMainClass.resetEnable(left_panel);
-                    //    LoadUrineTest();
-                    //}
-                    //txt_phone.Text = dataGridView1.Rows[0].Cells[PhoneGV.Name].Value.ToString();
-                    //txtage.Text = dataGridView1.Rows[0].Cells[ageGV.Name].Value.ToString();
+                        // decription internal data   //
+                        foreach (string item in lb_desInternal.Items)
+                        {
+                            string[] arr = item.Split('|');
+
+                            Hashtable h = new Hashtable();
+                            h.Add("@name", arr[0]);
+                            h.Add("@type", 0);
+                            if (!CheckExistance("st_checkExistMedicine", h))
+                            {
+                                LibCRUD.data_insert_update_delete("st_insertMedicineOnlyName", h);
+                            }
+
+                            int descriptionID = getMedicineIDFromName(arr[0]);
+
+                            Hashtable ht = new Hashtable();
+                            object selectedValue = cb_selectPatient.SelectedValue;
+                            if (selectedValue != null && selectedValue != DBNull.Value)
+                            {
+                                AppID = Convert.ToInt64(selectedValue);
+                            }
+                            ht.Add("@appID", AppID);
+                            ht.Add("@descriptionID", descriptionID);
+
+
+                            int dosage=0;
+                            if (htInternal.ContainsKey(arr[0]))
+                            {
+                                if (htInternal[arr[0]] is int value)
+                                {
+                                   dosage = Convert.ToInt32(value);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Giá trị không phải kiểu int.");
+                                }
+                            }
+                            else
+                            {
+                                // Xử lý khi không tìm thấy key trong Hashtable
+                                Console.WriteLine("Không tìm thấy key trong Hashtable.");
+                            }
+                            if (dosage == 6)
+                            {
+                                ht.Add("@other", txt_otherInternal.Text);
+                                LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
+                            }
+                            else
+                            {
+                                LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
+                            }
+                        }
+
+                                                       
+                        // decription external data    //
+                        foreach (string item in lb_desExternal.Items)
+                        {
+                            string[] arr = item.Split('|');
+
+                            Hashtable h = new Hashtable();
+                            h.Add("@name", arr[0]);
+                            h.Add("@type", 0);
+                            if (!CheckExistance("st_checkExistMedicine", h))
+                            {
+                                LibCRUD.data_insert_update_delete("st_insertMedicineOnlyName", h);
+                            }
+
+                            int descriptionID = getMedicineIDFromName(arr[0]);
+
+                            Hashtable ht = new Hashtable();
+                            object selectedValue = cb_selectPatient.SelectedValue;
+                            if (selectedValue != null && selectedValue != DBNull.Value)
+                            {
+                                AppID = Convert.ToInt64(selectedValue);
+                            }
+                            ht.Add("@appID", AppID);
+                            ht.Add("@descriptionID", descriptionID);
+
+
+                            int dosage = 0;
+                            if (htExternal.ContainsKey(arr[0]))
+                            {
+                                if (htExternal[arr[0]] is int value)
+                                {
+                                    dosage = Convert.ToInt32(value);
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Giá trị không phải kiểu int.");
+                                }
+                            }
+                            else
+                            {
+                                // Xử lý khi không tìm thấy key trong Hashtable
+                                Console.WriteLine("Không tìm thấy key trong Hashtable.");
+                            }
+
+                            ht.Add("@dosage", dosage);
+                            if (dosage == 6)
+                            {
+                                ht.Add("@other", txt_ExternalOther.Text);
+                                LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
+                            }
+                            else
+                            {
+                                LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
+                            }
+                        }
+
+
+
+                        // Remark and fees
+                        Hashtable htRemFee= new Hashtable();
+                        htRemFee.Add("@appID", AppID);
+                        htRemFee.Add("@remark", txt_rem.Text);
+                        htRemFee.Add("@fees", txt_fees.Text);
+                        LibCRUD.data_insert_update_delete("st_insertpatientHealthCheckup", htRemFee);
+
+
+
+                        // Update apointment done
+                        Hashtable htAppStaus = new Hashtable();
+                        htAppStaus.Add("@appID", AppID);
+                        htAppStaus.Add("@status", 1);
+                        LibCRUD.data_insert_update_delete("st_updateAppointmentStatus", htRemFee);
+
+                        LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " Health checkup successfully..", "success");
+
+                        sc.Complete();
+                    }
+
+
+
                 }
                 else if (edit == 1)
                 {
@@ -160,6 +328,7 @@ namespace HoTroBenhNhanThan.GUI
             //LibCRUD.loadList("[st_getTodayPatientApointment]", cb_selectPatient, "PatientApointment ID", "Patient", ht);
 
             getInforPatientReg();
+            setTestResult(-1, -1, -1);
         }
 
 
@@ -172,7 +341,7 @@ namespace HoTroBenhNhanThan.GUI
         {
             if(cb_DescripInternal.Text == null)
             {
-                LibMainClass.showMessage("Please select medicine", "error");
+                LibMainClass.showMessage("Please select medicine", "warning");
             }   
             else
             {                                              
@@ -180,7 +349,7 @@ namespace HoTroBenhNhanThan.GUI
                 {
                     if(!radio_0InM.Checked && !radio_1InME.Checked && !radio_2InMEN.Checked && !radio_3InBE.Checked && !radioIn_4AE.Checked && !radioIn_5BS.Checked && !radio_6internalOther.Checked)
                     {
-                        LibMainClass.showMessage("Please sellect dosage for the medicine", "error");
+                        LibMainClass.showMessage("Please sellect dosage for the medicine", "warning");
                     }
                     else
                     {
@@ -218,7 +387,7 @@ namespace HoTroBenhNhanThan.GUI
                         {
                             if (txt_otherInternal.Text == "")
                             {
-                                LibMainClass.showMessage("Plese Input other dosage", "error");
+                                LibMainClass.showMessage("Plese Input other dosage", "warning");
                             }
                             else
                             {
@@ -235,7 +404,7 @@ namespace HoTroBenhNhanThan.GUI
                         radioIn_5BS.Checked = false;
                         radio_6internalOther.Checked = false;
                         txt_otherInternal.Text = "";
-
+                        cb_DescripInternal.SelectedIndex = -1;
                     }
                 }
             }
@@ -245,9 +414,9 @@ namespace HoTroBenhNhanThan.GUI
         {
             if (lb_desInternal.Items.Count > 0)
             {
-                string[] arr = lb_desInternal.SelectedItems.ToString().Split('|');
+                string[] arr = lb_desInternal.SelectedItems[0].ToString().Split('|');
                 htInternal.Remove(arr[0]);
-                lb_desInternal.Items.Remove(lb_desInternal.SelectedItems);
+                lb_desInternal.Items.Remove(lb_desInternal.SelectedItems[0]);
             }
         }
 
@@ -255,17 +424,17 @@ namespace HoTroBenhNhanThan.GUI
         // External description
         private void btn_DesExteralAdd_Click(object sender, EventArgs e)
         {
-            if (cb_DescripExternal.Text == null)                           
+            if (cb_DescripExternal.SelectedIndex == -1)                           
             {
-                LibMainClass.showMessage("Please select medicine", "error");
+                LibMainClass.showMessage("Please select medicine", "warning");
             }
             else
             {
                 if (!lb_desExternal.Items.Contains(cb_DescripExternal.Text))
                 {
-                    if (!radio0ExM.Checked && !radio1ExME.Checked && radio2ExMEN.Checked && radio3ExBE.Checked && radio4ExAE.Checked && radio5ExBS.Checked && !radio6EXother.Checked)
+                    if (!radio0ExM.Checked && !radio1ExME.Checked && !radio2ExMEN.Checked && !radio3ExBE.Checked && !radio4ExAE.Checked && !radio5ExBS.Checked && !radio6EXother.Checked)
                     {
-                        LibMainClass.showMessage("Please sellect dosage for the medicine", "error");
+                        LibMainClass.showMessage("Please sellect dosage for the medicine", "warning");
                     }
                     else
                     {
@@ -303,7 +472,7 @@ namespace HoTroBenhNhanThan.GUI
                         {
                             if (txt_ExternalOther.Text == "")
                             {
-                                LibMainClass.showMessage("Plese Input other dosage", "error");
+                                LibMainClass.showMessage("Plese Input other dosage", "warning");
                             }
                             else
                             {
@@ -320,6 +489,7 @@ namespace HoTroBenhNhanThan.GUI
                         radio5ExBS.Checked = false;
                         radio6EXother.Checked = false;
                         txt_ExternalOther.Text = "";
+                        cb_DescripExternal.SelectedIndex = -1;
 
                     }
                 }
@@ -330,9 +500,10 @@ namespace HoTroBenhNhanThan.GUI
         {
             if (lb_desExternal.Items.Count > 0)
             {
-                string[] arr = lb_desExternal.SelectedItems.ToString().Split('|');
+                char[] c = { '|' };
+                string[] arr = lb_desExternal.SelectedItems[0].ToString().Split(c);
                 htExternal.Remove(arr[0]);
-                lb_desExternal.Items.Remove(lb_desExternal.SelectedItems);
+                lb_desExternal.Items.Remove(lb_desExternal.SelectedItems[0]);
             }
         }
 
@@ -354,9 +525,11 @@ namespace HoTroBenhNhanThan.GUI
             if (lb_diseasesList.Items.Contains(cb_disease_name.Text))
             {
                 lb_diseasesList.Items.Remove(cb_disease_name.Text);
+
             }
         }
 
+  
 
         // symptom
         private void btn_symtomAdd_Click(object sender, EventArgs e)
@@ -427,6 +600,97 @@ namespace HoTroBenhNhanThan.GUI
             }
         }
 
+        private int getDiseaseIDFromName(string name)
+        {
+            int did = 0;
+            try
+            {
+                SqlCommand cmd = new SqlCommand("st_getDiseaseIDFromName", LibMainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@name", name);
+                LibMainClass.con.Open();
+                did = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+                LibMainClass.con.Close();
+            }   catch(Exception ex)
+            {
+                LibMainClass.con.Close();
+            }
+            return did;
+        }
+
+        private int getsymptomIDFromName(string name)
+        {
+            int did = 0;
+            try
+            {
+                SqlCommand cmd = new SqlCommand("st_getsymptomIDIDFromName", LibMainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@name", name);
+                LibMainClass.con.Open();
+                did = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+                LibMainClass.con.Close();
+            }
+            catch (Exception ex)
+            {
+                LibMainClass.con.Close();
+            }
+            return did;
+        }
+        private int getMedicineIDFromName(string name)
+        {
+            int did = 0;
+            try
+            {
+                SqlCommand cmd = new SqlCommand("st_getMedicineIDFromName", LibMainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@name", name);
+                LibMainClass.con.Open();
+                did = Convert.ToInt32(cmd.ExecuteScalar().ToString());
+                LibMainClass.con.Close();
+            }
+            catch (Exception ex)
+            {
+                LibMainClass.con.Close();
+            }
+            return did;
+        }
+
+
+
+        private bool CheckExistance(string proc, Hashtable ht)
+        {
+            bool check = false;
+            try
+            {
+                SqlCommand cmd = new SqlCommand(proc, LibMainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                foreach (DictionaryEntry item in ht)
+                {
+                    cmd.Parameters.AddWithValue(item.Key.ToString(), item.Value.ToString());
+                }
+                LibMainClass.con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    check = true;
+                }
+                else
+                {
+                    check = false;
+                }
+                LibMainClass.con.Close();
+            }
+            catch (Exception ex)
+            {
+                LibMainClass.con.Close();
+            }
+            return check;
+        }
+
+        private void groupBox14_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
                                 

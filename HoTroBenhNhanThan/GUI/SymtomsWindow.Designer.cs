@@ -32,14 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_symptom = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cb_disease = new System.Windows.Forms.ComboBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.symptomIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.symptomGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diseaseIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiseaseGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.left_panel.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
@@ -63,8 +59,6 @@
             // 
             this.left_panel.Controls.Add(this.label7);
             this.left_panel.Controls.Add(this.txt_symptom);
-            this.left_panel.Controls.Add(this.label8);
-            this.left_panel.Controls.Add(this.cb_disease);
             // 
             // btnBack
             // 
@@ -90,27 +84,6 @@
             this.txt_symptom.Size = new System.Drawing.Size(303, 27);
             this.txt_symptom.TabIndex = 14;
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(10, 59);
-            this.label8.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(60, 20);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "Disease";
-            // 
-            // cb_disease
-            // 
-            this.cb_disease.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_disease.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cb_disease.FormattingEnabled = true;
-            this.cb_disease.Location = new System.Drawing.Point(10, 82);
-            this.cb_disease.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.cb_disease.Name = "cb_disease";
-            this.cb_disease.Size = new System.Drawing.Size(303, 28);
-            this.cb_disease.TabIndex = 16;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -129,9 +102,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.snoGV,
             this.symptomIDGV,
-            this.symptomGV,
-            this.diseaseIDGV,
-            this.DiseaseGV});
+            this.symptomGV});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -176,21 +147,6 @@
             this.symptomGV.Name = "symptomGV";
             this.symptomGV.ReadOnly = true;
             // 
-            // diseaseIDGV
-            // 
-            this.diseaseIDGV.HeaderText = "DiseaseID";
-            this.diseaseIDGV.MinimumWidth = 6;
-            this.diseaseIDGV.Name = "diseaseIDGV";
-            this.diseaseIDGV.ReadOnly = true;
-            this.diseaseIDGV.Visible = false;
-            // 
-            // DiseaseGV
-            // 
-            this.DiseaseGV.HeaderText = "Disease";
-            this.DiseaseGV.MinimumWidth = 6;
-            this.DiseaseGV.Name = "DiseaseGV";
-            this.DiseaseGV.ReadOnly = true;
-            // 
             // SymtomsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -217,13 +173,9 @@
 
         private Label label7;
         private TextBox txt_symptom;
-        private Label label8;
-        private ComboBox cb_disease;
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn snoGV;
         private DataGridViewTextBoxColumn symptomIDGV;
         private DataGridViewTextBoxColumn symptomGV;
-        private DataGridViewTextBoxColumn diseaseIDGV;
-        private DataGridViewTextBoxColumn DiseaseGV;
     }
 }

@@ -101,5 +101,11 @@ namespace HoTroBenhNhanThan
             HealthCheckWindow screen = new HealthCheckWindow();
             LibMainClass.showWindow(screen, this, MDI.ActiveForm);
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReportWindow screen = new ReportWindow();
+            LibMainClass.showWindow(screen, this, MDI.ActiveForm);
+        }
     }
 }

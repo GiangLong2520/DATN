@@ -132,13 +132,13 @@ namespace HoTroBenhNhanThan.GUI
                             {
                                // Int64 patientID = Convert.ToInt64(LibCRUD.getLastID("st_getlastPatientID")); 
                                 Hashtable htt = new Hashtable();
-                                htt.Add("@date", picker_LastApointmentDate.Value);
+                                htt.Add("@date", Picker_ApointmentDate.Value);
                                 htt.Add("@doctorID", Convert.ToInt32(cb_ApointmentFor.SelectedValue.ToString()));
                                 htt.Add("@patientID", partID);
                                 htt.Add("@status", 0);
-                                htt.Add("@day", Picker_ApointmentDate.Value.Day);
-                                htt.Add("@month", Picker_ApointmentDate.Value.Month);
-                                htt.Add("@year", Picker_ApointmentDate.Value.Year);
+                                htt.Add("@day", picker_LastApointmentDate.Value.Day);
+                                htt.Add("@month", picker_LastApointmentDate.Value.Month);
+                                htt.Add("@year", picker_LastApointmentDate.Value.Year);
                                 if (LibCRUD.data_insert_update_delete("st_insertAppointment", htt) > 0)
                                 {
 

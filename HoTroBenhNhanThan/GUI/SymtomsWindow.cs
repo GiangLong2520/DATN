@@ -22,7 +22,7 @@ namespace HoTroBenhNhanThan.GUI
 
         private void SymtomsWindow_Load(object sender, EventArgs e)
         {
-            LibCRUD.loadDisease(cb_disease);
+            LoadSymptom();
         }
 
 
@@ -35,9 +35,6 @@ namespace HoTroBenhNhanThan.GUI
             ListBox loadData = new ListBox();
             loadData.Items.Add(symptomIDGV);
             loadData.Items.Add(symptomGV);
-            loadData.Items.Add(diseaseIDGV);
-            loadData.Items.Add(DiseaseGV);
-
             LibCRUD.loadData("st_getSymptoms", dataGridView1, loadData);
         }
 
@@ -54,8 +51,6 @@ namespace HoTroBenhNhanThan.GUI
                 {
                     Hashtable ht = new Hashtable();
                     ht.Add(@"symptom", txt_symptom.Text);
-                    ht.Add(@"did", Convert.ToInt32(cb_disease.SelectedValue.ToString()));
-
                     int ret = LibCRUD.data_insert_update_delete("st_insertSymptom", ht);
                     if (ret > 0)
                     {
@@ -68,7 +63,6 @@ namespace HoTroBenhNhanThan.GUI
                 {
                     Hashtable ht = new Hashtable();
                     ht.Add(@"symptom", txt_symptom.Text);
-                    ht.Add(@"did", Convert.ToInt32(cb_disease.SelectedValue.ToString()));
                     ht.Add(@"sid", symptomID);
 
                     if (LibCRUD.data_insert_update_delete("st_updateSymptom", ht) > 0)
@@ -113,29 +107,8 @@ namespace HoTroBenhNhanThan.GUI
                 LibMainClass.DisableControl(left_panel);
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 symptomID = Convert.ToInt32(row.Cells["symptomIDGV"].Value.ToString());
-                diseaseID = Convert.ToInt32(row.Cells["diseaseIDGV"].Value.ToString());
                 txt_symptom.Text = row.Cells["symptomGV"].Value.ToString();
 
-                cb_disease.SelectedValue = row.Cells["diseaseIDGV"].Value;
-
-
-                int index = -1;
-                for (int i = 0; i < cb_disease.Items.Count; i++)
-                {
-                    DataRowView drv = (DataRowView)cb_disease.Items[i];
-                    int currentValue = Convert.ToInt32(drv[cb_disease.ValueMember]);
-                    if (currentValue == diseaseID)
-                    {
-                        index = i;
-                        break;
-                    }
-                }
-
-                // Chọn lựa chọn tại vị trí tìm thấy (nếu tìm thấy)
-                if (index >= 0)
-                {
-                    cb_disease.SelectedIndex = index;
-                }
             }
         }
     }

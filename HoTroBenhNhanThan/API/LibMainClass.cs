@@ -62,6 +62,11 @@ namespace HoTroBenhNhanThan
             {
                 MessageBox.Show(msg, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if( type == "warning")
+            {
+
+                MessageBox.Show(msg, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
         public static void resetEnable(Panel p)
         {

@@ -139,6 +139,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.txt_testResults = new System.Windows.Forms.TextBox();
+            this.x = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label28 = new System.Windows.Forms.Label();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -146,8 +148,6 @@
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.x = new System.Windows.Forms.Label();
-            this.txt_testResults = new System.Windows.Forms.TextBox();
             this.left_panel_common.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
@@ -1489,6 +1489,26 @@
             this.panel11.Size = new System.Drawing.Size(233, 130);
             this.panel11.TabIndex = 42;
             // 
+            // txt_testResults
+            // 
+            this.txt_testResults.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_testResults.Location = new System.Drawing.Point(0, 47);
+            this.txt_testResults.Multiline = true;
+            this.txt_testResults.Name = "txt_testResults";
+            this.txt_testResults.Size = new System.Drawing.Size(233, 83);
+            this.txt_testResults.TabIndex = 12;
+            // 
+            // x
+            // 
+            this.x.AutoSize = true;
+            this.x.Dock = System.Windows.Forms.DockStyle.Top;
+            this.x.Location = new System.Drawing.Point(0, 27);
+            this.x.Margin = new System.Windows.Forms.Padding(3);
+            this.x.Name = "x";
+            this.x.Size = new System.Drawing.Size(85, 20);
+            this.x.TabIndex = 11;
+            this.x.Text = "Test Results";
+            // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -1582,26 +1602,6 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(485, 526);
             this.tableLayoutPanel8.TabIndex = 92;
-            // 
-            // x
-            // 
-            this.x.AutoSize = true;
-            this.x.Dock = System.Windows.Forms.DockStyle.Top;
-            this.x.Location = new System.Drawing.Point(0, 27);
-            this.x.Margin = new System.Windows.Forms.Padding(3);
-            this.x.Name = "x";
-            this.x.Size = new System.Drawing.Size(85, 20);
-            this.x.TabIndex = 11;
-            this.x.Text = "Test Results";
-            // 
-            // txt_testResults
-            // 
-            this.txt_testResults.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_testResults.Location = new System.Drawing.Point(0, 47);
-            this.txt_testResults.Multiline = true;
-            this.txt_testResults.Name = "txt_testResults";
-            this.txt_testResults.Size = new System.Drawing.Size(233, 83);
-            this.txt_testResults.TabIndex = 12;
             // 
             // HealthCheckWindow
             // 

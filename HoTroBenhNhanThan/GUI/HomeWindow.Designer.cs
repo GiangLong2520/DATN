@@ -43,6 +43,7 @@
             this.btn_benhAn = new System.Windows.Forms.Button();
             this.btn_staff = new System.Windows.Forms.Button();
             this.btn_Roles = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.LEFTPANEL.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
             this.RIGHTPANEL.SuspendLayout();
@@ -68,6 +69,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.button1, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.button11, 3, 2);
             this.tableLayoutPanel1.Controls.Add(this.button10, 2, 2);
@@ -101,13 +103,14 @@
             this.button1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button1.ForeColor = System.Drawing.Color.DarkGreen;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(3, 519);
+            this.button1.Location = new System.Drawing.Point(240, 519);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(231, 167);
             this.button1.TabIndex = 12;
             this.button1.Text = "Analysis\r\nChart";
             this.button1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button11
             // 
@@ -313,6 +316,22 @@
             this.btn_Roles.UseVisualStyleBackColor = true;
             this.btn_Roles.Click += new System.EventHandler(this.btn_Roles_Click);
             // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.FlatAppearance.BorderSize = 2;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.DarkGreen;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(3, 519);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(231, 167);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Analysis\r\nChart";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // HomeWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -346,5 +365,6 @@
         private Button btn_staff;
         private Button btn_Roles;
         private Button button1;
+        private Button button2;
     }
 }

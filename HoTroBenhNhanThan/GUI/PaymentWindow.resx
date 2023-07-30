@@ -57,30 +57,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnBack.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAEEAAABBCAYAAACO98lFAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
-        cgAAEnIBXmVb4wAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAARgSURBVHhe7ZvL
-        ahRBFIZ9AkFQwZ0oSgIBF4J3JW5EiIK4VdAHEN2rGzeiC1cKruLWpbrMSp/AEFGMlxfwMkkmTjKZyeVY
-        X81U6O7p7qnuru7pyfQPP7lVV5/zdVXXbbJLKkkFQamCoFQIhK2tLWm129JYbUq90ZCF+rL8XarLn8Ul
-        +b2wpL/yM7/n75SjPNcVodwgbGxu6mRI7tfCokpWWSVLwv1MOcpzHddTD/XlJecQ1lptqdW7iXsSI5mk
-        9kKhvppqKc1Wq3snd3IGgeB0wCrYtEn3s7d+lzAyQ6CZEmCeyQdtYPC9i26SCQJ99VetuOSD5r7cnziy
-        KDUE+meRTz/KplUQT1olhsCwxY0HnXzQJqY0w2oiCJuq/5Xh6UeZuIiPOJPIGgKEywzAeBtEghZhDYHK
-        yw7A2MRqKysIvHSGBYAx8dq+LPtCYPiheYXdqOwmbpvhMxYCE5FBzgOymriJv9+EKhaCqShYeVrXV1Z0
-        vf/U0wn7ex7uxB/fLSIhMDd32Q2a6+sy+2Vejp6eknczHwoFQR5xa41ICBB01QoAMPf1h+wbPy97jpyW
-        R89eSrPdDi2bh00uUQqFsOawFTTX2/JpvgPgwMSk3L73UN8jrGyeJh/yClMoBFdDIk/bB+DuYABg8oka
-        Mnsg6BHBQSvYBjBmADzQ9YeVLcrkFTZS9EBorK7qnZywSmzdAfDT0wIGDwCTV9i8oQdCTRXO0hWCXeBW
-        SQDgTpeo63i88kFgkUSTSQuh5yVYIgCYvMgvuNz2QWCbO+2owDAIgP0leAnGmfzI0ysfhEZTrRNStIIe
-        AAMaBm2s3wsqT698EDj4SNoVeobBEgPA5EeeXvkgcAKUBMKwAcDkR55e+SCYQsELw+wFcPD4Jblz/7Gu
-        o7WxIWuqexTtpcZKaJxBm/y88kGggA0EVoMfP89rAGNnrsqxi9dl+vUbefrilTx5Pl24WYvMfvlmBcLk
-        6JUPAi8NGwjMuc5euSmHT1yWiQvXZPzsVQ1k79i5gXj3oZNyZuqGjissXq/Jjzy9ctMSJndQSzCFgheG
-        ece+E6rRQcnJPKGkM0Vj8oudJ2SZMc4pEGWfMuO+M8asa4dhANF37VCtIrsa+f0ElMfOUllA6PeBzc5S
-        tcfY1cjvNqNczx0GBIJ8Ep07IMi5aA1YD59fv2sQQ3MChVyfRTK/Z9F19NSUvJ15PxxnkYjTXFetAddX
-        VnW9Q3MqjfRIMeqfT0Aj/0kVI1dDZpEm3qghMSgrCIhKhwWEidVW1hCqzzF2NfKfaDWiRXCzsoEwMQWX
-        yTZKDMGIl04ZWgX3Jw7bl2CYUkNADD+DnEdwX+5vMwzGKRMExESEgIpsFebp832/iZCNMkMwYm5ugssL
-        hrf+uLVAUjmDYNT5b7hlvYHBTg4Bp4VirqUe6qPeqOVwFjmHYEQzpa/W1OJFAwlAiTPlKG92uKjHRbOP
-        Um4QvGLYYpub/X4OPjgBMk96R/+H7DCpgqBUQRCR/zM/i9RN6JHLAAAAAElFTkSuQmCC
-</value>
-  </data>
+  <metadata name="snoGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="TurnGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="patientIDGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="patientGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="GuardGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ageGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="phoneGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="apointDateGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="doctorGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="DoctorIDGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="appIDGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="statusGV.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

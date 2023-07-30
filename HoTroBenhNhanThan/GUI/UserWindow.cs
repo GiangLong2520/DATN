@@ -199,6 +199,60 @@ namespace HoTroBenhNhanThan
         {
             LoadUsers();
             LibCRUD.loadRole(cb_Roles);
+
+            Listprovince();
+        }
+
+
+        private void Listprovince()
+        {
+            DataTable dt = new DataTable();
+            dt = LibCRUD.LoadDataTable("SELECT * FROM province");
+            cboCity.DataSource = dt;
+            cboCity.DisplayMember = "prov_name";
+            cboCity.ValueMember = "prov_id";
+        }
+
+        private int selectedProvinceId = 0;
+
+        private void ProviceDrop(object sender, EventArgs e)
+        {
+            selectedProvinceId = Convert.ToInt32(cboCity.SelectedValue);
+            Listdistrict();
+        }
+
+        private void Listdistrict()
+        {
+            DataTable dt = new DataTable();
+            dt = LibCRUD.LoadDataTable($"SELECT * FROM district WHERE dis_provID = {selectedProvinceId}");
+            cboDistrict.DataSource = dt;
+            cboDistrict.DisplayMember = "dis_name";
+            cboDistrict.ValueMember = "dis_id";
+        }
+
+        private int selectedDistrictId = 0;
+
+        private void DistrictDrop(object sender, EventArgs e)
+        {
+            selectedDistrictId = Convert.ToInt32(cboDistrict.SelectedValue);
+            Listward();
+        }
+
+        private void Listward()
+        {
+            DataTable dt = new DataTable();
+            dt = LibCRUD.LoadDataTable($"SELECT * FROM ward WHERE ward_disID = {selectedDistrictId}");
+            cboWard.DataSource = dt;
+            cboWard.DisplayMember = "ward_name";
+            cboWard.ValueMember = "ward_id";
+        }
+
+        private void WardDrop(object sender, EventArgs e)
+        {
+            int selectedWardId = Convert.ToInt32(cboWard.SelectedValue);
+            // Đoạn code sau này có thể sử dụng selectedWardId
+            // để thực hiện các tác vụ khác liên quan đến xã đã chọn.
+            // Ví dụ: Lấy thông tin xã, thêm/sửa/xóa dữ liệu liên quan, v.v.
         }
 
         private void dataGridView2_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -246,5 +300,12 @@ namespace HoTroBenhNhanThan
 
             }
         }
+
+        private void left_panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
     }
 }

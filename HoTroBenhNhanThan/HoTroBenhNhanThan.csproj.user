@@ -43,6 +43,12 @@
     <Compile Update="GUI\PatienRegisterWindow.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GUI\PaymentWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUI\ReportWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="GUI\RoleWindow.cs">
       <SubType>Form</SubType>
     </Compile>

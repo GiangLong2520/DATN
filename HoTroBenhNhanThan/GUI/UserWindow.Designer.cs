@@ -52,6 +52,13 @@
             this.AddressGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoleIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoleGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cboWard = new System.Windows.Forms.ComboBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cboDistrict = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cboCity = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.left_panel.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
@@ -73,7 +80,7 @@
             // 
             // left_panel
             // 
-            this.left_panel.Controls.Add(this.label3);
+            this.left_panel.Controls.Add(this.label11);
             this.left_panel.Controls.Add(this.txt_Name);
             this.left_panel.Controls.Add(this.label4);
             this.left_panel.Controls.Add(this.txt_usename);
@@ -85,6 +92,13 @@
             this.left_panel.Controls.Add(this.txt_Address);
             this.left_panel.Controls.Add(this.label8);
             this.left_panel.Controls.Add(this.cb_Roles);
+            this.left_panel.Controls.Add(this.label10);
+            this.left_panel.Controls.Add(this.cboCity);
+            this.left_panel.Controls.Add(this.label9);
+            this.left_panel.Controls.Add(this.cboDistrict);
+            this.left_panel.Controls.Add(this.label2);
+            this.left_panel.Controls.Add(this.cboWard);
+            this.left_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.left_panel_Paint);
             // 
             // btnBack
             // 
@@ -169,9 +183,9 @@
             this.label7.Location = new System.Drawing.Point(10, 212);
             this.label7.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 20);
+            this.label7.Size = new System.Drawing.Size(104, 20);
             this.label7.TabIndex = 10;
-            this.label7.Text = "Address";
+            this.label7.Text = "Address detail";
             // 
             // txt_Address
             // 
@@ -313,6 +327,79 @@
             this.RoleGV.Name = "RoleGV";
             this.RoleGV.ReadOnly = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 421);
+            this.label2.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(44, 20);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Ward";
+            // 
+            // cboWard
+            // 
+            this.cboWard.FormattingEnabled = true;
+            this.cboWard.Location = new System.Drawing.Point(10, 442);
+            this.cboWard.Margin = new System.Windows.Forms.Padding(10, 1, 3, 3);
+            this.cboWard.MaxDropDownItems = 4;
+            this.cboWard.Name = "cboWard";
+            this.cboWard.Size = new System.Drawing.Size(303, 28);
+            this.cboWard.TabIndex = 16;
+            this.cboWard.DropDown += new System.EventHandler(this.WardDrop);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(10, 369);
+            this.label9.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(56, 20);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "District";
+            // 
+            // cboDistrict
+            // 
+            this.cboDistrict.FormattingEnabled = true;
+            this.cboDistrict.Location = new System.Drawing.Point(10, 390);
+            this.cboDistrict.Margin = new System.Windows.Forms.Padding(10, 1, 3, 3);
+            this.cboDistrict.MaxDropDownItems = 4;
+            this.cboDistrict.Name = "cboDistrict";
+            this.cboDistrict.Size = new System.Drawing.Size(303, 28);
+            this.cboDistrict.TabIndex = 18;
+            this.cboDistrict.DropDown += new System.EventHandler(this.DistrictDrop);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(10, 317);
+            this.label10.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 20);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Province";
+            // 
+            // cboCity
+            // 
+            this.cboCity.FormattingEnabled = true;
+            this.cboCity.Location = new System.Drawing.Point(10, 338);
+            this.cboCity.Margin = new System.Windows.Forms.Padding(10, 1, 3, 3);
+            this.cboCity.MaxDropDownItems = 4;
+            this.cboCity.Name = "cboCity";
+            this.cboCity.Size = new System.Drawing.Size(303, 28);
+            this.cboCity.TabIndex = 20;
+            this.cboCity.DropDown += new System.EventHandler(this.ProviceDrop);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(10, 0);
+            this.label11.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(49, 20);
+            this.label11.TabIndex = 4;
+            this.label11.Text = "Name";
+            // 
             // UserWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -358,5 +445,12 @@
         private DataGridViewTextBoxColumn AddressGV;
         private DataGridViewTextBoxColumn RoleIDGV;
         private DataGridViewTextBoxColumn RoleGV;
+        private Label label2;
+        private ComboBox cboWard;
+        private Label label9;
+        private ComboBox cboDistrict;
+        private Label label10;
+        private ComboBox cboCity;
+        private Label label11;
     }
 }

@@ -45,5 +45,40 @@ namespace HoTroBenhNhanThan
             HomeWindow homeWindow = new HomeWindow();
             LibMainClass.showWindow(homeWindow, this, MDI.ActiveForm);
         }
+
+        private void LEFTPANEL_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void BtnBackPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void left_panel_common_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RIGHTPANEL_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void UserPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void User_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

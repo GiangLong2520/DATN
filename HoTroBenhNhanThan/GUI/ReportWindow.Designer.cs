@@ -128,7 +128,7 @@ namespace HoTroBenhNhanThan.GUI
             this.right_panel.TabIndex = 1;
             // 
             // reportViewer1
-            // 
+            //                                                    
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "ReportViewer";

@@ -30,10 +30,9 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.button2 = new System.Windows.Forms.Button();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label12 = new System.Windows.Forms.Label();
-            this.picker_DateTime = new System.Windows.Forms.DateTimePicker();
-            this.btn_load = new System.Windows.Forms.Button();
             this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TurnGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +46,9 @@
             this.appIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.printBtn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label12 = new System.Windows.Forms.Label();
+            this.picker_DateTime = new System.Windows.Forms.DateTimePicker();
+            this.btn_load = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.left_panel.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
@@ -55,6 +57,7 @@
             this.RIGHTPANEL.SuspendLayout();
             this.UserPanel.SuspendLayout();
             this.right_panel.SuspendLayout();
+            this.reportViewer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +68,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
+            this.groupBox1.Controls.Add(this.reportViewer1);
             // 
             // left_panel
             // 
@@ -75,6 +79,41 @@
             // btnBack
             // 
             this.btnBack.FlatAppearance.BorderSize = 0;
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(0, 548);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(941, 51);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Print";
+            this.button2.UseVisualStyleBackColor = false;
+            // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Controls.Add(this.button2);
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.Location = new System.Drawing.Point(3, 23);
+            this.reportViewer1.Name = "ReportViewer";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.ShowBackButton = false;
+            this.reportViewer1.ShowContextMenu = false;
+            this.reportViewer1.ShowCredentialPrompts = false;
+            this.reportViewer1.ShowDocumentMapButton = false;
+            this.reportViewer1.ShowExportButton = false;
+            this.reportViewer1.ShowFindControls = false;
+            this.reportViewer1.ShowPageNavigationControls = false;
+            this.reportViewer1.ShowParameterPrompts = false;
+            this.reportViewer1.ShowProgress = false;
+            this.reportViewer1.ShowPromptAreaButton = false;
+            this.reportViewer1.ShowRefreshButton = false;
+            this.reportViewer1.ShowZoomControl = false;
+            this.reportViewer1.Size = new System.Drawing.Size(943, 601);
+            this.reportViewer1.TabIndex = 0;
             // 
             // dataGridView1
             // 
@@ -121,40 +160,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(943, 601);
             this.dataGridView1.TabIndex = 2;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(3, 3);
-            this.label12.Margin = new System.Windows.Forms.Padding(3);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(85, 20);
-            this.label12.TabIndex = 65;
-            this.label12.Text = "Select Date";
-            // 
-            // picker_DateTime
-            // 
-            this.picker_DateTime.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.picker_DateTime.CustomFormat = "dd-MMM-yyyy";
-            this.picker_DateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.picker_DateTime.Location = new System.Drawing.Point(3, 29);
-            this.picker_DateTime.Name = "picker_DateTime";
-            this.picker_DateTime.Size = new System.Drawing.Size(314, 27);
-            this.picker_DateTime.TabIndex = 68;
-            this.picker_DateTime.TabStop = false;
-            // 
-            // btn_load
-            // 
-            this.btn_load.FlatAppearance.BorderSize = 2;
-            this.btn_load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_load.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_load.Location = new System.Drawing.Point(3, 62);
-            this.btn_load.Name = "btn_load";
-            this.btn_load.Size = new System.Drawing.Size(314, 45);
-            this.btn_load.TabIndex = 69;
-            this.btn_load.Text = "Load";
-            this.btn_load.UseVisualStyleBackColor = true;
-            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // snoGV
             // 
@@ -252,6 +258,40 @@
             this.printBtn.Text = "Print";
             this.printBtn.UseColumnTextForButtonValue = true;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(3, 3);
+            this.label12.Margin = new System.Windows.Forms.Padding(3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(85, 20);
+            this.label12.TabIndex = 65;
+            this.label12.Text = "Select Date";
+            // 
+            // picker_DateTime
+            // 
+            this.picker_DateTime.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.picker_DateTime.CustomFormat = "dd-MMM-yyyy";
+            this.picker_DateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.picker_DateTime.Location = new System.Drawing.Point(3, 29);
+            this.picker_DateTime.Name = "picker_DateTime";
+            this.picker_DateTime.Size = new System.Drawing.Size(314, 27);
+            this.picker_DateTime.TabIndex = 68;
+            this.picker_DateTime.TabStop = false;
+            // 
+            // btn_load
+            // 
+            this.btn_load.FlatAppearance.BorderSize = 2;
+            this.btn_load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_load.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_load.Location = new System.Drawing.Point(3, 62);
+            this.btn_load.Name = "btn_load";
+            this.btn_load.Size = new System.Drawing.Size(314, 45);
+            this.btn_load.TabIndex = 69;
+            this.btn_load.Text = "Load";
+            this.btn_load.UseVisualStyleBackColor = true;
+            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
+            // 
             // PaymentWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -269,6 +309,7 @@
             this.RIGHTPANEL.ResumeLayout(false);
             this.UserPanel.ResumeLayout(false);
             this.right_panel.ResumeLayout(false);
+            this.reportViewer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -293,5 +334,8 @@
         private DataGridViewTextBoxColumn appIDGV;
         private DataGridViewTextBoxColumn statusGV;
         private DataGridViewButtonColumn printBtn;
+
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Button button2;
     }
 }

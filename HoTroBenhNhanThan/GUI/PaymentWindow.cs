@@ -45,5 +45,17 @@ namespace HoTroBenhNhanThan.GUI
         {
             dataGridView1.AutoGenerateColumns = false;
         }
+
+        int rowSelect = -1;
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1 && e.ColumnIndex != -1)
+            {
+                rowSelect = e.RowIndex;
+                dataGridView1.Hide();
+                reportViewer1.Show();      
+               
+            }
+        }
     }
 }

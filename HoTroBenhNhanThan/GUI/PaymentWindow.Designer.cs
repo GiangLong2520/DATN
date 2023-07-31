@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
+            this.picker_DateTime = new System.Windows.Forms.DateTimePicker();
+            this.btn_load = new System.Windows.Forms.Button();
             this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TurnGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +46,9 @@
             this.DoctorIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.appIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.printBtn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.groupBox1.SuspendLayout();
+            this.left_panel.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
             this.left_panel_common.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
@@ -61,6 +66,12 @@
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
             // 
+            // left_panel
+            // 
+            this.left_panel.Controls.Add(this.label12);
+            this.left_panel.Controls.Add(this.picker_DateTime);
+            this.left_panel.Controls.Add(this.btn_load);
+            // 
             // btnBack
             // 
             this.btnBack.FlatAppearance.BorderSize = 0;
@@ -70,14 +81,14 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.snoGV,
@@ -91,15 +102,16 @@
             this.doctorGV,
             this.DoctorIDGV,
             this.appIDGV,
-            this.statusGV});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.DarkGreen;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.statusGV,
+            this.printBtn});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkGreen;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 23);
             this.dataGridView1.Name = "dataGridView1";
@@ -109,6 +121,40 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(943, 601);
             this.dataGridView1.TabIndex = 2;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(3, 3);
+            this.label12.Margin = new System.Windows.Forms.Padding(3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(85, 20);
+            this.label12.TabIndex = 65;
+            this.label12.Text = "Select Date";
+            // 
+            // picker_DateTime
+            // 
+            this.picker_DateTime.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.picker_DateTime.CustomFormat = "dd-MMM-yyyy";
+            this.picker_DateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.picker_DateTime.Location = new System.Drawing.Point(3, 29);
+            this.picker_DateTime.Name = "picker_DateTime";
+            this.picker_DateTime.Size = new System.Drawing.Size(314, 27);
+            this.picker_DateTime.TabIndex = 68;
+            this.picker_DateTime.TabStop = false;
+            // 
+            // btn_load
+            // 
+            this.btn_load.FlatAppearance.BorderSize = 2;
+            this.btn_load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_load.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_load.Location = new System.Drawing.Point(3, 62);
+            this.btn_load.Name = "btn_load";
+            this.btn_load.Size = new System.Drawing.Size(314, 45);
+            this.btn_load.TabIndex = 69;
+            this.btn_load.Text = "Load";
+            this.btn_load.UseVisualStyleBackColor = true;
+            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
             // 
             // snoGV
             // 
@@ -125,6 +171,7 @@
             this.TurnGV.MinimumWidth = 6;
             this.TurnGV.Name = "TurnGV";
             this.TurnGV.ReadOnly = true;
+            this.TurnGV.Visible = false;
             // 
             // patientIDGV
             // 
@@ -164,7 +211,7 @@
             // 
             // apointDateGV
             // 
-            this.apointDateGV.HeaderText = "Apointment For";
+            this.apointDateGV.HeaderText = "Date Time";
             this.apointDateGV.MinimumWidth = 6;
             this.apointDateGV.Name = "apointDateGV";
             this.apointDateGV.ReadOnly = true;
@@ -197,6 +244,14 @@
             this.statusGV.Name = "statusGV";
             this.statusGV.ReadOnly = true;
             // 
+            // printBtn
+            // 
+            this.printBtn.HeaderText = "Action";
+            this.printBtn.MinimumWidth = 6;
+            this.printBtn.Name = "printBtn";
+            this.printBtn.Text = "Print";
+            this.printBtn.UseColumnTextForButtonValue = true;
+            // 
             // PaymentWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -204,7 +259,10 @@
             this.ClientSize = new System.Drawing.Size(1272, 760);
             this.Name = "PaymentWindow";
             this.Text = "PaymentWindow";
+            this.Load += new System.EventHandler(this.PaymentWindow_Load);
             this.groupBox1.ResumeLayout(false);
+            this.left_panel.ResumeLayout(false);
+            this.left_panel.PerformLayout();
             this.LEFTPANEL.ResumeLayout(false);
             this.left_panel_common.ResumeLayout(false);
             this.BtnBackPanel.ResumeLayout(false);
@@ -219,6 +277,9 @@
         #endregion
 
         private DataGridView dataGridView1;
+        private Label label12;
+        public DateTimePicker picker_DateTime;
+        private Button btn_load;
         private DataGridViewTextBoxColumn snoGV;
         private DataGridViewTextBoxColumn TurnGV;
         private DataGridViewTextBoxColumn patientIDGV;
@@ -231,5 +292,6 @@
         private DataGridViewTextBoxColumn DoctorIDGV;
         private DataGridViewTextBoxColumn appIDGV;
         private DataGridViewTextBoxColumn statusGV;
+        private DataGridViewButtonColumn printBtn;
     }
 }

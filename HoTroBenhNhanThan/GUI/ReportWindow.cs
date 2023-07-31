@@ -12,6 +12,11 @@ namespace HoTroBenhNhanThan.GUI
 {
     public partial class ReportWindow : Form
     {
+        public string patientName { get; set; }
+        public int patirntAge { get; set; }
+        public string Guardian { get; set; }
+        public string ApointmentID { get; set; }
+
         public ReportWindow()
         {
             InitializeComponent();
@@ -27,6 +32,11 @@ namespace HoTroBenhNhanThan.GUI
         {
             reportViewer1.LocalReport.ReportEmbeddedResource = "HoTroBenhNhanThan.Report1.rdlc";
             this.reportViewer1.RefreshReport();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.reportViewer1.PrintDialog();
         }
     }
 }

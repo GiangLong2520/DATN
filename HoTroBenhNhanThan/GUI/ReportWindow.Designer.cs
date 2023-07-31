@@ -43,6 +43,7 @@ namespace HoTroBenhNhanThan.GUI
             this.panel1 = new System.Windows.Forms.Panel();
             this.UserPanel = new System.Windows.Forms.Panel();
             this.User = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             this.LEFTPANEL.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
             this.right_panel.SuspendLayout();
@@ -118,6 +119,7 @@ namespace HoTroBenhNhanThan.GUI
             // 
             // right_panel
             // 
+            this.right_panel.Controls.Add(this.button2);
             this.right_panel.Controls.Add(this.reportViewer1);
             this.right_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.right_panel.Location = new System.Drawing.Point(0, 0);
@@ -187,6 +189,20 @@ namespace HoTroBenhNhanThan.GUI
             this.User.Text = "User";
             this.User.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.button2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 13.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Location = new System.Drawing.Point(0, 629);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(568, 51);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Print";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // ReportWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -221,5 +237,6 @@ namespace HoTroBenhNhanThan.GUI
         protected Panel panel1;
         protected Panel UserPanel;
         protected Label User;
+        private Button button2;
     }
 }

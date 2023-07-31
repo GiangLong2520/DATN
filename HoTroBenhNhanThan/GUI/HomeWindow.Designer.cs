@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeWindow));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@
             this.btn_benhAn = new System.Windows.Forms.Button();
             this.btn_staff = new System.Windows.Forms.Button();
             this.btn_Roles = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.LEFTPANEL.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
             this.RIGHTPANEL.SuspendLayout();
@@ -94,6 +94,23 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(949, 689);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
+            // 
+            // button2
+            // 
+            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button2.FlatAppearance.BorderSize = 2;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button2.ForeColor = System.Drawing.Color.DarkGreen;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(3, 519);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(231, 167);
+            this.button2.TabIndex = 13;
+            this.button2.Text = "Analysis\r\nChart";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -315,22 +332,6 @@
             this.btn_Roles.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.btn_Roles.UseVisualStyleBackColor = true;
             this.btn_Roles.Click += new System.EventHandler(this.btn_Roles_Click);
-            // 
-            // button2
-            // 
-            this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button2.FlatAppearance.BorderSize = 2;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button2.ForeColor = System.Drawing.Color.DarkGreen;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(3, 519);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(231, 167);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Analysis\r\nChart";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // HomeWindow
             // 

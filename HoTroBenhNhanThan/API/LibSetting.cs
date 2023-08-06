@@ -24,7 +24,7 @@ namespace HoTroBenhNhanThan.API
                     s = "Data Source = " + ds + ";Initial Catalog=" + db + ";User ID=" + user + ";Password=" + password + ";Trust Server Certificate=true";
                 }
                 File.WriteAllText(path, s);
-                LibMainClass.showMessage("Settings Saved Successfully.", "success");
+                LibMainClass.LibMainClass.showMessage("Settings Saved Successfully.", "success");
             }
 
         }

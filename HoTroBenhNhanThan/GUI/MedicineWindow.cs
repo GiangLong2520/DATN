@@ -22,15 +22,15 @@ namespace HoTroBenhNhanThan.GUI
             loadData.Items.Add(TypeGV);
             loadData.Items.Add(CompanyGV);
 
-            LibCRUD.loadData("st_getMedicine", dataGridView1, loadData);
+            LibCRUD.LibCRUD.loadData("st_getMedicine", dataGridView1, loadData);
         }
 
         int MedID;
         public override void button3_Click(object sender, EventArgs e)          //save btn
         {
-            if (LibMainClass.checkControls(left_panel).Count > 0)
+            if (LibMainClass.LibMainClass.checkControls(left_panel).Count > 0)
             {
-                LibMainClass.showMessage("Field with RED are mandatory.", "error");
+                LibMainClass.LibMainClass.showMessage("Field with RED are mandatory.", "error");
 
             }
             else
@@ -50,11 +50,11 @@ namespace HoTroBenhNhanThan.GUI
 
                     ht.Add("@type", cb_Type.SelectedIndex);
 
-                    int ret = LibCRUD.data_insert_update_delete("st_insertMedicine", ht);
+                    int ret = LibCRUD.LibCRUD.data_insert_update_delete("st_insertMedicine", ht);
                     if (ret > 0)
                     {
-                        LibMainClass.showMessage(txt_medi.Text + " added successfully..", "success");
-                        LibMainClass.resetEnable(left_panel);
+                        LibMainClass.LibMainClass.showMessage(txt_medi.Text + " added successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(left_panel);
                         Loadmedicine();
                     }
                 }
@@ -74,10 +74,10 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add("@type", cb_Type.SelectedIndex);
                     ht.Add("@id", MedID);
 
-                    if (LibCRUD.data_insert_update_delete("st_updateUsers", ht) > 0)
+                    if (LibCRUD.LibCRUD.data_insert_update_delete("st_updateUsers", ht) > 0)
                     {
-                        LibMainClass.showMessage(txt_medi.Text + " added successfully..", "success");
-                        LibMainClass.resetEnable(left_panel);
+                        LibMainClass.LibMainClass.showMessage(txt_medi.Text + " added successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(left_panel);
                         Loadmedicine();
                     }
                 }
@@ -94,10 +94,10 @@ namespace HoTroBenhNhanThan.GUI
                 {
                     Hashtable ht = new Hashtable();
                     ht.Add(@"id", MedID);
-                    if (LibCRUD.data_insert_update_delete("st_deleteUser", ht) > 0)
+                    if (LibCRUD.LibCRUD.data_insert_update_delete("st_deleteUser", ht) > 0)
                     {
-                        LibMainClass.showMessage(txt_company.Text + " deleted successfully..", "success");
-                        LibMainClass.resetEnable(left_panel);
+                        LibMainClass.LibMainClass.showMessage(txt_company.Text + " deleted successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(left_panel);
                         Loadmedicine();
                     }
                 }
@@ -113,7 +113,7 @@ namespace HoTroBenhNhanThan.GUI
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
             {
                 edit = 1;
-                LibMainClass.DisableControl(left_panel);
+                LibMainClass.LibMainClass.DisableControl(left_panel);
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 MedID = Convert.ToInt32(row.Cells["MediIDGV"].Value.ToString());
                 txt_medi.Text = row.Cells["MedicineGV"].Value.ToString(); ;
@@ -156,13 +156,13 @@ namespace HoTroBenhNhanThan.GUI
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
             {
                 edit = 1;
-                LibMainClass.DisableControl(LEFTPANEL);
+                LibMainClass.LibMainClass.DisableControl(LEFTPANEL);
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 MedID = Convert.ToInt32(row.Cells["MediIDGV"].Value.ToString());
                 txt_medi.Text = row.Cells["MedicineGV"].Value.ToString(); ;
                 txt_company.Text = row.Cells["CompanyGV"].Value.ToString();
                 cb_Type.SelectedItem = row.Cells["TypeGV"].Value.ToString();
-                LibMainClass.DisableControl(left_panel);
+                LibMainClass.LibMainClass.DisableControl(left_panel);
             }
         }
     }

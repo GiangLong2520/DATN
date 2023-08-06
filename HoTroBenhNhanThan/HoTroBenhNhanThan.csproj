@@ -22,6 +22,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="LibCRUD">
+      <HintPath>..\LibCRUD\bin\Debug\net6.0-windows\LibCRUD.dll</HintPath>
+    </Reference>
+    <Reference Include="LibMainClass">
+      <HintPath>..\LibCRUD\bin\Debug\net6.0-windows\LibMainClass.dll</HintPath>
+    </Reference>
     <Reference Include="MainClass">
       <HintPath>..\MainClass\bin\Debug\MainClass.dll</HintPath>
     </Reference>

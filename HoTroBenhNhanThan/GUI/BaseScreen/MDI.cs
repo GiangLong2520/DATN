@@ -24,19 +24,19 @@ namespace HoTroBenhNhanThan
             if (File.Exists(path))
             {
                 LoginWindow lw = new LoginWindow();
-                LibMainClass.showWindow(lw,  MDI.ActiveForm);
+                LibMainClass.LibMainClass.showWindow(lw,  MDI.ActiveForm);
             }
             else
             {
                 SettingWindow lw = new SettingWindow();
-                LibMainClass.showWindow(lw,  MDI.ActiveForm);
+                LibMainClass.LibMainClass.showWindow(lw,  MDI.ActiveForm);
             }
         }
 
         private void settingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SettingWindow lw = new SettingWindow();
-            LibMainClass.showWindow(lw, MDI.ActiveForm);
+            LibMainClass.LibMainClass.showWindow(lw, MDI.ActiveForm);
         }
     }
 }

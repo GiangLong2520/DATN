@@ -1,0 +1,5 @@
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibMainClass\obj\Debug\net7.0\LibMainClass.csproj.AssemblyReference.cache
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibMainClass\obj\Debug\net7.0\LibMainClass.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibMainClass\obj\Debug\net7.0\LibMainClass.AssemblyInfoInputs.cache
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibMainClass\obj\Debug\net7.0\LibMainClass.AssemblyInfo.cs
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibMainClass\obj\Debug\net7.0\LibMainClass.csproj.CoreCompileInputs.cache

@@ -40,9 +40,9 @@ namespace HoTroBenhNhanThan
             {
                 txt_userid.AllowDrop = true;
                 txt_pass.AllowDrop = true;
-                if (LibMainClass.checkControls(left_panel_common).Count > 0)
+                if (LibMainClass.LibMainClass.checkControls(left_panel_common).Count > 0)
                 {
-                    LibMainClass.showMessage("Fields With Red Coler Are Mandatory", "error");
+                    LibMainClass.LibMainClass.showMessage("Fields With Red Coler Are Mandatory", "error");
                 }
                 else
                 {
@@ -53,9 +53,9 @@ namespace HoTroBenhNhanThan
             {
                 txt_userid.AllowDrop = false;
                 txt_pass.AllowDrop = false;
-                if (LibMainClass.checkControls(LEFTPANEL).Count > 0)
+                if (LibMainClass.LibMainClass.checkControls(LEFTPANEL).Count > 0)
                 {
-                    LibMainClass.showMessage("Fields With Red Coler Are Mandatory", "error");
+                    LibMainClass.LibMainClass.showMessage("Fields With Red Coler Are Mandatory", "error");
                 }
                 else
                 {
@@ -64,7 +64,7 @@ namespace HoTroBenhNhanThan
 
             }
             LoginWindow lw = new LoginWindow();
-            LibMainClass.showWindow(lw, this, MDI.ActiveForm);
+            LibMainClass.LibMainClass.showWindow(lw, this, MDI.ActiveForm);
         }
     }
 }

@@ -8,7 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using LibMainClass;
+using LibCRUD;
 namespace HoTroBenhNhanThan.GUI
 {
     public partial class TestWindow : Sample2
@@ -28,15 +29,15 @@ namespace HoTroBenhNhanThan.GUI
             loadData.Items.Add(testGV);
             loadData.Items.Add(priceGV);
             loadData.Items.Add(precautionsGV);
-            LibCRUD.loadData("st_getTest", dataGridView2, loadData);
+            LibCRUD.LibCRUD.loadData("st_getTest", dataGridView2, loadData);
         }
 
         //--------------------------------------------------------//
         public override void button3_Click(object sender, EventArgs e)          //save btn
         {
-            if (LibMainClass.checkControls(LEFTPANEL).Count > 0)
+            if (LibMainClass.LibMainClass.checkControls(LEFTPANEL).Count > 0)
             {
-                LibMainClass.showMessage("Field with RED are mandatory.", "error");
+                LibMainClass.LibMainClass.showMessage("Field with RED are mandatory.", "error");
 
             }
             else
@@ -47,11 +48,11 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add(@"test", txt_test.Text);
                     ht.Add("@price",txt_price.Text);
                     ht.Add("@precautions", txtPrecautions);
-                    int ret = LibCRUD.data_insert_update_delete("st_insertTest", ht);
+                    int ret = LibCRUD.LibCRUD.data_insert_update_delete("st_insertTest", ht);
                     if (ret > 0)
                     {
-                        LibMainClass.showMessage(txt_test.Text + " added successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.LibMainClass.showMessage(txt_test.Text + " added successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(LEFTPANEL);
                         LoadDisease();
                     }
                 }
@@ -62,10 +63,10 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add("@price", txt_price.Text);
                     ht.Add("@precautions", txtPrecautions);
                     ht.Add(@"id", testID);
-                    if (LibCRUD.data_insert_update_delete("st_updateRoles", ht) > 0)
+                    if (LibCRUD.LibCRUD.data_insert_update_delete("st_updateRoles", ht) > 0)
                     {
-                        LibMainClass.showMessage(txt_test.Text + " added successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.LibMainClass.showMessage(txt_test.Text + " added successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(LEFTPANEL);
                         LoadDisease();
                     }
                 }
@@ -82,10 +83,10 @@ namespace HoTroBenhNhanThan.GUI
                 {
                     Hashtable ht = new Hashtable();
                     ht.Add(@"id", testID);
-                    if (LibCRUD.data_insert_update_delete("st_deleteRoles", ht) > 0)
+                    if (LibCRUD.LibCRUD.data_insert_update_delete("st_deleteRoles", ht) > 0)
                     {
-                        LibMainClass.showMessage(txt_test.Text + " deleted successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.LibMainClass.showMessage(txt_test.Text + " deleted successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(LEFTPANEL);
                         LoadDisease();
                     }
                 }
@@ -101,7 +102,7 @@ namespace HoTroBenhNhanThan.GUI
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
             {
                 edit = 1;
-                LibMainClass.DisableControl(LEFTPANEL);
+                LibMainClass.LibMainClass.DisableControl(LEFTPANEL);
                 DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
                 testID = Convert.ToInt32(row.Cells["testIDGV"].Value.ToString());
                 txt_test.Text = row.Cells["testGV"].Value.ToString();

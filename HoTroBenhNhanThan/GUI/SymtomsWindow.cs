@@ -10,7 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static Azure.Core.HttpHeader;
-
+using LibCRUD;
+using LibMainClass;
 namespace HoTroBenhNhanThan.GUI
 {
     public partial class SymtomsWindow : Sample2
@@ -35,14 +36,14 @@ namespace HoTroBenhNhanThan.GUI
             ListBox loadData = new ListBox();
             loadData.Items.Add(symptomIDGV);
             loadData.Items.Add(symptomGV);
-            LibCRUD.loadData("st_getSymptoms", dataGridView1, loadData);
+            LibCRUD.LibCRUD.loadData("st_getSymptoms", dataGridView1, loadData);
         }
 
         public override void button3_Click(object sender, EventArgs e)          //save btn
         {
-            if (LibMainClass.checkControls(left_panel).Count > 0)
+            if (LibMainClass.LibMainClass.checkControls(left_panel).Count > 0)
             {
-                LibMainClass.showMessage("Field with RED are mandatory.", "error");
+                LibMainClass    .LibMainClass.showMessage("Field with RED are mandatory.", "error");
 
             }
             else
@@ -51,11 +52,11 @@ namespace HoTroBenhNhanThan.GUI
                 {
                     Hashtable ht = new Hashtable();
                     ht.Add(@"symptom", txt_symptom.Text);
-                    int ret = LibCRUD.data_insert_update_delete("st_insertSymptom", ht);
+                    int ret = LibCRUD.LibCRUD.data_insert_update_delete("st_insertSymptom", ht);
                     if (ret > 0)
                     {
-                        LibMainClass.showMessage(txt_symptom.Text + " added successfully..", "success");
-                        LibMainClass.resetDisable(left_panel);
+                        LibMainClass.LibMainClass.showMessage(txt_symptom.Text + " added successfully..", "success");
+                        LibMainClass.LibMainClass.resetDisable(left_panel);
                         LoadSymptom();
                     }
                 }
@@ -65,10 +66,10 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add(@"symptom", txt_symptom.Text);
                     ht.Add(@"sid", symptomID);
 
-                    if (LibCRUD.data_insert_update_delete("st_updateSymptom", ht) > 0)
+                    if (LibCRUD.LibCRUD.data_insert_update_delete("st_updateSymptom", ht) > 0)
                     {
-                        LibMainClass.showMessage(txt_symptom.Text + " update successfully..", "success");
-                        LibMainClass.resetDisable(left_panel);
+                        LibMainClass.LibMainClass.showMessage(txt_symptom.Text + " update successfully..", "success");
+                        LibMainClass.LibMainClass.resetDisable(left_panel);
                         LoadSymptom();
                     }
                 }
@@ -85,10 +86,10 @@ namespace HoTroBenhNhanThan.GUI
                 {
                     Hashtable ht = new Hashtable();
                     ht.Add(@"sid", symptomID);
-                    if (LibCRUD.data_insert_update_delete("st_deleteSymptom", ht) > 0)
+                    if (LibCRUD.LibCRUD.data_insert_update_delete("st_deleteSymptom", ht) > 0)
                     {
-                        LibMainClass.showMessage(txt_symptom.Text + " deleted successfully..", "success");
-                        LibMainClass.resetDisable(left_panel);
+                        LibMainClass.LibMainClass.showMessage(txt_symptom.Text + " deleted successfully..", "success");
+                        LibMainClass.LibMainClass.resetDisable(left_panel);
                         LoadSymptom();
                     }
                 }
@@ -104,7 +105,7 @@ namespace HoTroBenhNhanThan.GUI
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
             {
                 edit = 1;
-                LibMainClass.DisableControl(left_panel);
+                LibMainClass.LibMainClass.DisableControl(left_panel);
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 symptomID = Convert.ToInt32(row.Cells["symptomIDGV"].Value.ToString());
                 txt_symptom.Text = row.Cells["symptomGV"].Value.ToString();

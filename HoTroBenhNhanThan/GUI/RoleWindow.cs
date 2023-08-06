@@ -28,8 +28,8 @@ namespace HoTroBenhNhanThan
             ListBox loadData = new ListBox();
             loadData.Items.Add(RoleIDGV);
             loadData.Items.Add(RoleGV);
-            LibCRUD.loadData("st_getRoles", dataGridView1, loadData);
-            LibMainClass.resetDisable(left_panel);
+            LibCRUD.LibCRUD.loadData("st_getRoles", dataGridView1, loadData);
+            LibMainClass.LibMainClass.resetDisable(left_panel);
         }
         private void txt_role_TextChanged(object sender, EventArgs e)
         {
@@ -38,9 +38,9 @@ namespace HoTroBenhNhanThan
 
         public override void button3_Click(object sender, EventArgs e)          //save btn
         {
-            if (LibMainClass.checkControls(LEFTPANEL).Count > 0)
+            if (LibMainClass.LibMainClass.checkControls(LEFTPANEL).Count > 0)
             {
-                LibMainClass.showMessage("Field with RED are mandatory.", "error");
+                LibMainClass.LibMainClass.showMessage("Field with RED are mandatory.", "error");
 
             }
             else
@@ -50,11 +50,11 @@ namespace HoTroBenhNhanThan
                     Hashtable ht = new Hashtable();
                     ht.Add(@"name", txt_role.Text);
                    
-                    int ret = LibCRUD.data_insert_update_delete("st_insertRoles", ht);
+                    int ret = LibCRUD.LibCRUD.data_insert_update_delete("st_insertRoles", ht);
                     if (ret > 0)
                     {
-                        LibMainClass.showMessage(txt_role.Text + " added successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.LibMainClass.showMessage(txt_role.Text + " added successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(LEFTPANEL);
                         LoadRoles();
                     }
                 }
@@ -63,10 +63,10 @@ namespace HoTroBenhNhanThan
                     Hashtable ht = new Hashtable();
                     ht.Add("@roleId", roleID);
                     ht.Add("@newName", txt_role.Text);
-                    if (LibCRUD.data_insert_update_delete("st_updateRole",ht) > 0)
+                    if (LibCRUD.LibCRUD.data_insert_update_delete("st_updateRole",ht) > 0)
                     {
-                        LibMainClass.showMessage(txt_role.Text + " added successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.LibMainClass.showMessage(txt_role.Text + " added successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(LEFTPANEL);
                         LoadRoles();
                     }
                 }
@@ -83,10 +83,10 @@ namespace HoTroBenhNhanThan
                 {
                     Hashtable ht = new Hashtable();
                     ht.Add("@roleId", roleID);
-                    if (LibCRUD.data_insert_update_delete("st_deleteRole", ht) > 0)
+                    if (LibCRUD.LibCRUD.data_insert_update_delete("st_deleteRole", ht) > 0)
                     {
-                        LibMainClass.showMessage(txt_role.Text + " deleted successfully..", "success");
-                        LibMainClass.resetEnable(left_panel);
+                        LibMainClass.LibMainClass.showMessage(txt_role.Text + " deleted successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadRoles();
                     }
                 }
@@ -102,11 +102,11 @@ namespace HoTroBenhNhanThan
             if(e.RowIndex!=-1 && e.ColumnIndex != -1)
             {
                 edit = 1;
-                LibMainClass.DisableControl(LEFTPANEL);
+                LibMainClass.LibMainClass.DisableControl(LEFTPANEL);
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 roleID = Convert.ToInt32(row.Cells["RoleIDGV"].Value.ToString());
                 txt_role.Text = row.Cells["RoleGV"].Value.ToString();
-                LibMainClass.DisableControl(left_panel);
+                LibMainClass.LibMainClass.DisableControl(left_panel);
             }
         }
 

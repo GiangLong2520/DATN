@@ -1,0 +1,5 @@
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibCRUD\obj\Debug\net7.0\LibCRUD.csproj.AssemblyReference.cache
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibCRUD\obj\Debug\net7.0\LibCRUD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibCRUD\obj\Debug\net7.0\LibCRUD.AssemblyInfoInputs.cache
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibCRUD\obj\Debug\net7.0\LibCRUD.AssemblyInfo.cs
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibCRUD\obj\Debug\net7.0\LibCRUD.csproj.CoreCompileInputs.cache

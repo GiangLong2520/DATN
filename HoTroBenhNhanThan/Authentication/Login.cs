@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Collections;
+using LibCRUD;
+using LibMainClass;
 namespace HoTroBenhNhanThan.Authentication
 {
     internal class Login
@@ -41,7 +43,7 @@ namespace HoTroBenhNhanThan.Authentication
             bool r = false;
             try
             {
-                SqlCommand cmd = new SqlCommand(proc, LibMainClass.con);
+                SqlCommand cmd = new SqlCommand(proc, LibMainClass.LibMainClass.con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 foreach(DictionaryEntry item in ht)
@@ -49,7 +51,7 @@ namespace HoTroBenhNhanThan.Authentication
 
                     cmd.Parameters.AddWithValue(item.Key.ToString(), item.Value);
                 }    
-                LibMainClass.con.Open();
+                LibMainClass.LibMainClass.con.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows) {
                     r = true;
@@ -65,13 +67,13 @@ namespace HoTroBenhNhanThan.Authentication
                 else
                 {
                     r = false;
-                    LibMainClass.showMessage("Invalid UseName Or Password.", "error");
+                    LibMainClass.LibMainClass.showMessage("Invalid UseName Or Password.", "error");
                 }
-                LibMainClass.con.Close();
+                LibMainClass.LibMainClass.con.Close();
             }   catch(Exception ex)
             {
-                LibMainClass.con.Close();
-                LibMainClass.showMessage(ex.Message, "error");
+                LibMainClass.LibMainClass.con.Close();
+                LibMainClass.LibMainClass.showMessage(ex.Message, "error");
             }
             return r;
         }

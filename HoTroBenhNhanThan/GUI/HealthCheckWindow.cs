@@ -32,23 +32,23 @@ namespace HoTroBenhNhanThan.GUI
             ht.Add("@day", picker_DateTime.Value.Day);
             ht.Add("@month", picker_DateTime.Value.Month);
             ht.Add("@year", picker_DateTime.Value.Year);
-            LibCRUD.loadList("[st_getTodayPatientApointment]", cb_selectPatient, "PatientApointment ID", "Patient", ht);
+             LibCRUD.LibCRUD.loadList("[st_getTodayPatientApointment]", cb_selectPatient, "PatientApointment ID", "Patient", ht);
         }
         private void HealthCheckWindow_Load(object sender, EventArgs e)
         {
             loadTodayPatient();
 
             Hashtable ht = new Hashtable();
-            LibCRUD.loadList("[st_getDisease]", cb_disease_name, "ID", "Disease", ht);
-            LibCRUD.loadList("[st_getSymptoms]", cb_symptom, "SymptomID", "Symptom", ht);
+             LibCRUD.LibCRUD.loadList("[st_getDisease]", cb_disease_name, "ID", "Disease", ht);
+             LibCRUD.LibCRUD.loadList("[st_getSymptoms]", cb_symptom, "SymptomID", "Symptom", ht);
 
             Hashtable ht1 = new Hashtable();
             ht1.Add("@type", 0);
-            LibCRUD.loadList("st_getMedicineType", cb_DescripInternal, "ID", "Medicine", ht1);
+             LibCRUD.LibCRUD.loadList("st_getMedicineType", cb_DescripInternal, "ID", "Medicine", ht1);
 
             Hashtable ht2 = new Hashtable();
             ht2.Add("@type", 1);
-            LibCRUD.loadList("st_getMedicineType", cb_DescripExternal, "ID", "Medicine", ht2);
+             LibCRUD.LibCRUD.loadList("st_getMedicineType", cb_DescripExternal, "ID", "Medicine", ht2);
 
            
         }
@@ -67,7 +67,7 @@ namespace HoTroBenhNhanThan.GUI
             ht.Add("@month", picker_DateTime.Value.Month);
             ht.Add("@year", picker_DateTime.Value.Year);
             ht.Add("@partID", Convert.ToInt64(cb_selectPatient.SelectedValue).ToString());
-            turnNo = LibCRUD.getTurnNumber("st_getTurnNumberWRTpatientWRTToday", ht);
+            turnNo =  LibCRUD.LibCRUD.getTurnNumber("st_getTurnNumberWRTpatientWRTToday", ht);
 
         }
 
@@ -79,15 +79,15 @@ namespace HoTroBenhNhanThan.GUI
 
         public override void btn_Save_Click(object sender, EventArgs e)          //save btn
         {
-            if (LibMainClass.checkControls(LEFTPANEL).Count > 0)
+            if (LibMainClass.LibMainClass.checkControls(LEFTPANEL).Count > 0)
             {
-                LibMainClass.showMessage("Field with RED are mandatory.", "error");
+                LibMainClass.LibMainClass.showMessage("Field with RED are mandatory.", "error");
 
             }
             else
             {
                 if(AppID== -1) {
-                    LibMainClass.showMessage("Please select the patient", "warning");
+                    LibMainClass.LibMainClass.showMessage("Please select the patient", "warning");
                     return;
                 }
                 if (edit == 0)
@@ -101,7 +101,7 @@ namespace HoTroBenhNhanThan.GUI
                             h.Add("@disease", item);
                             if(!CheckExistance("st_checkExistDisease", h))
                             {
-                                LibCRUD.data_insert_update_delete("st_insertDisease", h);
+                                 LibCRUD.LibCRUD.data_insert_update_delete("st_insertDisease", h);
                             }
 
                             int diseaseID = getDiseaseIDFromName(item);
@@ -114,7 +114,7 @@ namespace HoTroBenhNhanThan.GUI
                             }
                             htpatientDisease.Add("@appID", AppID);
                             htpatientDisease.Add("@diseaseID", diseaseID);
-                            LibCRUD.data_insert_update_delete("[st_insertPatientDisease]", htpatientDisease);
+                             LibCRUD.LibCRUD.data_insert_update_delete("[st_insertPatientDisease]", htpatientDisease);
                         }
 
                         // symptom data            //
@@ -124,7 +124,7 @@ namespace HoTroBenhNhanThan.GUI
                             h.Add("@symptom", item);
                             if (!CheckExistance("st_checkExistSymptom", h))
                             {
-                                LibCRUD.data_insert_update_delete("st_insertSymptom", h);
+                                 LibCRUD.LibCRUD.data_insert_update_delete("st_insertSymptom", h);
                             }
 
                             int symptomID = getsymptomIDFromName(item);
@@ -137,7 +137,7 @@ namespace HoTroBenhNhanThan.GUI
                             }
                             htpatientDisease.Add("@appID", AppID);
                             htpatientDisease.Add("@symptomID", symptomID);
-                            LibCRUD.data_insert_update_delete("[st_insertPatientSymptom]", htpatientDisease);
+                             LibCRUD.LibCRUD.data_insert_update_delete("[st_insertPatientSymptom]", htpatientDisease);
                         }
 
 
@@ -151,7 +151,7 @@ namespace HoTroBenhNhanThan.GUI
                             h.Add("@type", 0);
                             if (!CheckExistance("st_checkExistMedicine", h))
                             {
-                                LibCRUD.data_insert_update_delete("st_insertMedicineOnlyName", h);
+                                 LibCRUD.LibCRUD.data_insert_update_delete("st_insertMedicineOnlyName", h);
                             }
 
                             int descriptionID = getMedicineIDFromName(arr[0]);
@@ -186,11 +186,11 @@ namespace HoTroBenhNhanThan.GUI
                             if (dosage == 6)
                             {
                                 ht.Add("@other", txt_otherInternal.Text);
-                                LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
+                                 LibCRUD.LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
                             }
                             else
                             {
-                                LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
+                                 LibCRUD.LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
                             }
                         }
 
@@ -205,7 +205,7 @@ namespace HoTroBenhNhanThan.GUI
                             h.Add("@type", 0);
                             if (!CheckExistance("st_checkExistMedicine", h))
                             {
-                                LibCRUD.data_insert_update_delete("st_insertMedicineOnlyName", h);
+                                 LibCRUD.LibCRUD.data_insert_update_delete("st_insertMedicineOnlyName", h);
                             }
 
                             int descriptionID = getMedicineIDFromName(arr[0]);
@@ -242,11 +242,11 @@ namespace HoTroBenhNhanThan.GUI
                             if (dosage == 6)
                             {
                                 ht.Add("@other", txt_ExternalOther.Text);
-                                LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
+                                 LibCRUD.LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
                             }
                             else
                             {
-                                LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
+                                 LibCRUD.LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
                             }
                         }
 
@@ -257,7 +257,7 @@ namespace HoTroBenhNhanThan.GUI
                         htRemFee.Add("@appID", AppID);
                         htRemFee.Add("@remark", txt_rem.Text);
                         htRemFee.Add("@fees", txt_fees.Text);
-                        LibCRUD.data_insert_update_delete("st_insertpatientHealthCheckup", htRemFee);
+                         LibCRUD.LibCRUD.data_insert_update_delete("st_insertpatientHealthCheckup", htRemFee);
 
 
 
@@ -265,9 +265,9 @@ namespace HoTroBenhNhanThan.GUI
                         Hashtable htAppStaus = new Hashtable();
                         htAppStaus.Add("@appID", AppID);
                         htAppStaus.Add("@status", 1);
-                        LibCRUD.data_insert_update_delete("st_updateAppointmentStatus", htRemFee);
+                         LibCRUD.LibCRUD.data_insert_update_delete("st_updateAppointmentStatus", htRemFee);
 
-                        LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " Health checkup successfully..", "success");
+                        LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " Health checkup successfully..", "success");
 
                         sc.Complete();
                     }
@@ -289,11 +289,11 @@ namespace HoTroBenhNhanThan.GUI
                     //ht.Add("@Urobilinogen", radioUrobilKhongCo.Checked ? true : false);
 
 
-                    //int ret = LibCRUD.data_insert_update_delete("[st_UpdateUrineTestPatientAppointmentReg]", ht);
+                    //int ret =  LibCRUD.LibCRUD.data_insert_update_delete("[st_UpdateUrineTestPatientAppointmentReg]", ht);
                     //if (ret > 0)
                     //{
-                    //    LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " Update successfully..", "success");
-                    //    LibMainClass.resetEnable(left_panel);
+                    //    LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " Update successfully..", "success");
+                    //    LibMainClass.LibMainClass.resetEnable(left_panel);
                     //    LoadUrineTest();
                     //}
                 }
@@ -310,10 +310,10 @@ namespace HoTroBenhNhanThan.GUI
                 //{
                 //    Hashtable ht = new Hashtable();
                 //    ht.Add("@ID", urineID);
-                //    if (LibCRUD.data_insert_update_delete("st_DeleteUrineTestPatientAppointmentReg", ht) > 0)
+                //    if ( LibCRUD.LibCRUD.data_insert_update_delete("st_DeleteUrineTestPatientAppointmentReg", ht) > 0)
                 //    {
-                //        LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " deleted successfully..", "success");
-                //        LibMainClass.resetEnable(left_panel);
+                //        LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " deleted successfully..", "success");
+                //        LibMainClass.LibMainClass.resetEnable(left_panel);
                 //        LoadUrineTest();
                 //    }
                 //}
@@ -325,7 +325,7 @@ namespace HoTroBenhNhanThan.GUI
             //ht.Add("@day", picker_DateTime.Value.Day);
             //ht.Add("@month", picker_DateTime.Value.Month);
             //ht.Add("@year", picker_DateTime.Value.Year);
-            //LibCRUD.loadList("[st_getTodayPatientApointment]", cb_selectPatient, "PatientApointment ID", "Patient", ht);
+            // LibCRUD.LibCRUD.loadList("[st_getTodayPatientApointment]", cb_selectPatient, "PatientApointment ID", "Patient", ht);
 
             getInforPatientReg();
             setTestResult(-1, -1, -1);
@@ -341,7 +341,7 @@ namespace HoTroBenhNhanThan.GUI
         {
             if(cb_DescripInternal.Text == null)
             {
-                LibMainClass.showMessage("Please select medicine", "warning");
+                LibMainClass.LibMainClass.showMessage("Please select medicine", "warning");
             }   
             else
             {                                              
@@ -349,7 +349,7 @@ namespace HoTroBenhNhanThan.GUI
                 {
                     if(!radio_0InM.Checked && !radio_1InME.Checked && !radio_2InMEN.Checked && !radio_3InBE.Checked && !radioIn_4AE.Checked && !radioIn_5BS.Checked && !radio_6internalOther.Checked)
                     {
-                        LibMainClass.showMessage("Please sellect dosage for the medicine", "warning");
+                        LibMainClass.LibMainClass.showMessage("Please sellect dosage for the medicine", "warning");
                     }
                     else
                     {
@@ -387,7 +387,7 @@ namespace HoTroBenhNhanThan.GUI
                         {
                             if (txt_otherInternal.Text == "")
                             {
-                                LibMainClass.showMessage("Plese Input other dosage", "warning");
+                                LibMainClass.LibMainClass.showMessage("Plese Input other dosage", "warning");
                             }
                             else
                             {
@@ -426,7 +426,7 @@ namespace HoTroBenhNhanThan.GUI
         {
             if (cb_DescripExternal.SelectedIndex == -1)                           
             {
-                LibMainClass.showMessage("Please select medicine", "warning");
+                LibMainClass.LibMainClass.showMessage("Please select medicine", "warning");
             }
             else
             {
@@ -434,7 +434,7 @@ namespace HoTroBenhNhanThan.GUI
                 {
                     if (!radio0ExM.Checked && !radio1ExME.Checked && !radio2ExMEN.Checked && !radio3ExBE.Checked && !radio4ExAE.Checked && !radio5ExBS.Checked && !radio6EXother.Checked)
                     {
-                        LibMainClass.showMessage("Please sellect dosage for the medicine", "warning");
+                        LibMainClass.LibMainClass.showMessage("Please sellect dosage for the medicine", "warning");
                     }
                     else
                     {
@@ -472,7 +472,7 @@ namespace HoTroBenhNhanThan.GUI
                         {
                             if (txt_ExternalOther.Text == "")
                             {
-                                LibMainClass.showMessage("Plese Input other dosage", "warning");
+                                LibMainClass.LibMainClass.showMessage("Plese Input other dosage", "warning");
                             }
                             else
                             {
@@ -560,7 +560,7 @@ namespace HoTroBenhNhanThan.GUI
         {
             try
             {
-                SqlCommand cmd = new SqlCommand("[st_GetPatientInforReg]", LibMainClass.con);
+                SqlCommand cmd = new SqlCommand("[st_GetPatientInforReg]", LibMainClass.LibMainClass.con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 Hashtable ht = new Hashtable();
@@ -595,7 +595,7 @@ namespace HoTroBenhNhanThan.GUI
             }
             catch (Exception ex)
             {
-                LibMainClass.showMessage(ex.Message, "error");
+                LibMainClass.LibMainClass.showMessage(ex.Message, "error");
 
             }
         }
@@ -605,15 +605,15 @@ namespace HoTroBenhNhanThan.GUI
             int did = 0;
             try
             {
-                SqlCommand cmd = new SqlCommand("st_getDiseaseIDFromName", LibMainClass.con);
+                SqlCommand cmd = new SqlCommand("st_getDiseaseIDFromName", LibMainClass.LibMainClass.con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@name", name);
-                LibMainClass.con.Open();
+                LibMainClass.LibMainClass.con.Open();
                 did = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-                LibMainClass.con.Close();
+                LibMainClass.LibMainClass.con.Close();
             }   catch(Exception ex)
             {
-                LibMainClass.con.Close();
+                LibMainClass.LibMainClass.con.Close();
             }
             return did;
         }
@@ -623,16 +623,16 @@ namespace HoTroBenhNhanThan.GUI
             int did = 0;
             try
             {
-                SqlCommand cmd = new SqlCommand("st_getsymptomIDIDFromName", LibMainClass.con);
+                SqlCommand cmd = new SqlCommand("st_getsymptomIDIDFromName", LibMainClass.LibMainClass.con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@name", name);
-                LibMainClass.con.Open();
+                LibMainClass.LibMainClass.con.Open();
                 did = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-                LibMainClass.con.Close();
+                LibMainClass.LibMainClass.con.Close();
             }
             catch (Exception ex)
             {
-                LibMainClass.con.Close();
+                LibMainClass.LibMainClass.con.Close();
             }
             return did;
         }
@@ -641,16 +641,16 @@ namespace HoTroBenhNhanThan.GUI
             int did = 0;
             try
             {
-                SqlCommand cmd = new SqlCommand("st_getMedicineIDFromName", LibMainClass.con);
+                SqlCommand cmd = new SqlCommand("st_getMedicineIDFromName", LibMainClass.LibMainClass.con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@name", name);
-                LibMainClass.con.Open();
+                LibMainClass.LibMainClass.con.Open();
                 did = Convert.ToInt32(cmd.ExecuteScalar().ToString());
-                LibMainClass.con.Close();
+                LibMainClass.LibMainClass.con.Close();
             }
             catch (Exception ex)
             {
-                LibMainClass.con.Close();
+                LibMainClass.LibMainClass.con.Close();
             }
             return did;
         }
@@ -662,13 +662,13 @@ namespace HoTroBenhNhanThan.GUI
             bool check = false;
             try
             {
-                SqlCommand cmd = new SqlCommand(proc, LibMainClass.con);
+                SqlCommand cmd = new SqlCommand(proc, LibMainClass.LibMainClass.con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 foreach (DictionaryEntry item in ht)
                 {
                     cmd.Parameters.AddWithValue(item.Key.ToString(), item.Value.ToString());
                 }
-                LibMainClass.con.Open();
+                LibMainClass.LibMainClass.con.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
@@ -678,11 +678,11 @@ namespace HoTroBenhNhanThan.GUI
                 {
                     check = false;
                 }
-                LibMainClass.con.Close();
+                LibMainClass.LibMainClass.con.Close();
             }
             catch (Exception ex)
             {
-                LibMainClass.con.Close();
+                LibMainClass.LibMainClass.con.Close();
             }
             return check;
         }

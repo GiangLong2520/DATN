@@ -53,7 +53,7 @@ namespace HoTroBenhNhanThan.GUI
                 AppID = Convert.ToInt64(selectedValue);
             }
             ht.Add("@appID", AppID);
-            LibCRUD.loadData("st_GetBioTestPatientAppointmentReg", dataGridView1, loadData, ht);
+            LibCRUD.LibCRUD.loadData("st_GetBioTestPatientAppointmentReg", dataGridView1, loadData, ht);
 
             txt_phone.Text = dataGridView1.Rows[0].Cells[PhoneGV.Name].Value.ToString();
             txtage.Text = dataGridView1.Rows[0].Cells[ageGV.Name].Value.ToString();
@@ -66,7 +66,7 @@ namespace HoTroBenhNhanThan.GUI
             ht.Add("@day", picker_DateTime.Value.Day);
             ht.Add("@month", picker_DateTime.Value.Month);
             ht.Add("@year", picker_DateTime.Value.Year);
-            LibCRUD.loadList("[st_getTodayPatientApointment]", cb_selectPatient, "PatientApointment ID", "Patient", ht);
+            LibCRUD.LibCRUD.loadList("[st_getTodayPatientApointment]", cb_selectPatient, "PatientApointment ID", "Patient", ht);
         }
 
         public static int turnNo;
@@ -80,16 +80,16 @@ namespace HoTroBenhNhanThan.GUI
             //ht.Add("@month", picker_DateTime.Value.Month);
             //ht.Add("@year", picker_DateTime.Value.Year);
             //ht.Add("@patID", Convert.ToInt64(cb_selectPatient.SelectedValue.ToString()));
-            //turnNo = LibCRUD.getTurnNumber("[st_getTurnNumberPatient]", ht);
+            //turnNo = LibCRUD.LibCRUD.getTurnNumber("[st_getTurnNumberPatient]", ht);
             LoadBioTest();
 
         }
 
         public override void btn_Save_Click(object sender, EventArgs e)          //save btn
         {
-            if (LibMainClass.checkControls(LEFTPANEL).Count > 0)
+            if (LibMainClass.LibMainClass.checkControls(LEFTPANEL).Count > 0)
             {
-                LibMainClass.showMessage("Field with RED are mandatory.", "error");
+                LibMainClass.LibMainClass.showMessage("Field with RED are mandatory.", "error");
 
             }
             else
@@ -116,11 +116,11 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add("@cholesterolHDL", txt_cholesHDL.Text.ToString());
                     ht.Add("@cholesterolLDL", txt_cholesLDL.Text.ToString());
                     ht.Add("@triglycerid", txt_trigly.Text.ToString());
-                    int ret = LibCRUD.data_insert_update_delete("[st_InsertBioTestPatientAppointmentReg]", ht);
+                    int ret = LibCRUD.LibCRUD.data_insert_update_delete("[st_InsertBioTestPatientAppointmentReg]", ht);
                     if (ret > 0)
                     {
-                        LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " added successfully..", "success");
-                        LibMainClass.resetEnable(left_panel);
+                        LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " added successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadBioTest();
                     }
                 }
@@ -140,11 +140,11 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add("@cholesterolHDL", txt_cholesHDL.Text.ToString());
                     ht.Add("@cholesterolLDL", txt_cholesLDL.Text.ToString());
                     ht.Add("@triglycerid", txt_trigly.Text.ToString());
-                    int ret = LibCRUD.data_insert_update_delete("[st_UpdateBioTestPatientAppointmentReg]", ht);
+                    int ret = LibCRUD.LibCRUD.data_insert_update_delete("[st_UpdateBioTestPatientAppointmentReg]", ht);
                     if (ret > 0)
                     {
-                        LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " added successfully..", "success");
-                        LibMainClass.resetEnable(left_panel);
+                        LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " added successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadBioTest();
                     }
                 }
@@ -161,10 +161,10 @@ namespace HoTroBenhNhanThan.GUI
                 {
                     Hashtable ht = new Hashtable();
                     ht.Add("@ID", bioID);
-                    if (LibCRUD.data_insert_update_delete("st_DeleteBioTestPatientAppointmentReg", ht) > 0)
+                    if (LibCRUD.LibCRUD.data_insert_update_delete("st_DeleteBioTestPatientAppointmentReg", ht) > 0)
                     {
-                        LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " deleted successfully..", "success");
-                        LibMainClass.resetEnable(left_panel);
+                        LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " deleted successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadBioTest();
                     }
                 }
@@ -181,7 +181,7 @@ namespace HoTroBenhNhanThan.GUI
             ht.Add("@day", picker_DateTime.Value.Day);
             ht.Add("@month", picker_DateTime.Value.Month);
             ht.Add("@year", picker_DateTime.Value.Year);
-            LibCRUD.loadList("[st_getTodayPatientApointment]", cb_selectPatient, "PatientApointment ID", "Patient", ht);
+            LibCRUD.LibCRUD.loadList("[st_getTodayPatientApointment]", cb_selectPatient, "PatientApointment ID", "Patient", ht);
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -189,7 +189,7 @@ namespace HoTroBenhNhanThan.GUI
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
             {
                 edit = 1;
-                LibMainClass.DisableControl(left_panel);
+                LibMainClass.LibMainClass.DisableControl(left_panel);
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 bioID = Convert.ToInt32(row.Cells["BioIDGV"].Value.ToString());
 
@@ -206,7 +206,7 @@ namespace HoTroBenhNhanThan.GUI
                 txt_cholesLDL.Text = row.Cells["CholesLDLGV"].Value.ToString();
                 txt_trigly.Text = row.Cells["TriglyceridGV"].Value.ToString();
 
-                LibMainClass.DisableControl(left_panel);
+                LibMainClass.LibMainClass.DisableControl(left_panel);
             }
         }
     }

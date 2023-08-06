@@ -107,5 +107,11 @@ namespace HoTroBenhNhanThan
             ReportWindow screen = new ReportWindow();
             LibMainClass.showWindow(screen, this, MDI.ActiveForm);
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PaymentWindow screen = new PaymentWindow();
+            LibMainClass.showWindow(screen, this, MDI.ActiveForm);
+        }
     }
 }

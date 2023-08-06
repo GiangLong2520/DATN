@@ -397,12 +397,13 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(123, 3);
-            this.label4.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.label4.Location = new System.Drawing.Point(113, 0);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 19);
+            this.label4.Size = new System.Drawing.Size(45, 20);
             this.label4.TabIndex = 33;
-            this.label4.Text = "cm";
+            this.label4.Text = "None";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_PH
             // 
@@ -501,12 +502,12 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(123, 3);
-            this.label11.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.label11.Location = new System.Drawing.Point(113, 0);
+            this.label11.Margin = new System.Windows.Forms.Padding(0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(29, 19);
+            this.label11.Size = new System.Drawing.Size(45, 20);
             this.label11.TabIndex = 33;
-            this.label11.Text = "cm";
+            this.label11.Text = "None";
             // 
             // txt_SG
             // 

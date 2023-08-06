@@ -508,12 +508,13 @@
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(123, 3);
-            this.label40.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.label40.Location = new System.Drawing.Point(113, 0);
+            this.label40.Margin = new System.Windows.Forms.Padding(0);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(29, 19);
+            this.label40.Size = new System.Drawing.Size(41, 25);
             this.label40.TabIndex = 33;
-            this.label40.Text = "cm";
+            this.label40.Text = "mol/L";
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_ure
             // 

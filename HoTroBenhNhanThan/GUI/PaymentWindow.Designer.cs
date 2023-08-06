@@ -97,6 +97,7 @@
             // 
             this.reportViewer1.Controls.Add(this.button2);
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.DocumentMapWidth = 1;
             this.reportViewer1.Location = new System.Drawing.Point(3, 23);
             this.reportViewer1.Name = "ReportViewer";
             this.reportViewer1.ServerReport.BearerToken = null;

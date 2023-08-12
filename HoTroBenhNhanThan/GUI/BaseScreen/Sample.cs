@@ -43,7 +43,7 @@ namespace HoTroBenhNhanThan
         private void btnBack_Click(object sender, EventArgs e)
         {
             HomeWindow homeWindow = new HomeWindow();
-            LibMainClass.showWindow(homeWindow, this, MDI.ActiveForm);
+            LibMainClass.LibMainClass.showWindow(homeWindow, this, MDI.ActiveForm);
         }
 
         private void LEFTPANEL_Paint(object sender, PaintEventArgs e)

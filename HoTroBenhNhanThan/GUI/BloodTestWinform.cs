@@ -55,7 +55,7 @@ namespace HoTroBenhNhanThan.GUI
                 AppID = Convert.ToInt64(selectedValue);
             }
             ht.Add("@appID", AppID);
-            LibCRUD.loadData("st_GetBloodTestPatientAppointmentReg", dataGridView1, loadData, ht);
+            LibCRUD.LibCRUD.loadData("st_GetBloodTestPatientAppointmentReg", dataGridView1, loadData, ht);
 
            // txt_phone.Text = dataGridView1.Rows[0].Cells[PhoneGV.Name].Value.ToString();
             //txtage.Text = dataGridView1.Rows[0].Cells[ageGV.Name].Value.ToString();
@@ -68,15 +68,15 @@ namespace HoTroBenhNhanThan.GUI
             ht.Add("@day", picker_DateTime.Value.Day);
             ht.Add("@month", picker_DateTime.Value.Month);
             ht.Add("@year", picker_DateTime.Value.Year);
-            LibCRUD.loadList("[st_getTodayPatientApointment]", cb_selectPatient, "PatientApointment ID", "Patient", ht);
+            LibCRUD.LibCRUD.loadList("[st_getTodayPatientApointment]", cb_selectPatient, "PatientApointment ID", "Patient", ht);
         }
 
 
         public override void btn_Save_Click(object sender, EventArgs e)          //save btn
         {
-            if (LibMainClass.checkControls(LEFTPANEL).Count > 0)
+            if (LibMainClass.LibMainClass.checkControls(LEFTPANEL).Count > 0)
             {
-                LibMainClass.showMessage("Field with RED are mandatory.", "error");
+                LibMainClass.LibMainClass.showMessage("Field with RED are mandatory.", "error");
 
             }
             else
@@ -104,11 +104,11 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add("@txt_MCNC",                Math.Round(float.Parse(txt_MCNC.Text.ToString()), 3));
 
 
-                    int ret = LibCRUD.data_insert_update_delete("[st_InsertBloodTestPatientAppointmentReg]", ht);
+                    int ret = LibCRUD.LibCRUD.data_insert_update_delete("[st_InsertBloodTestPatientAppointmentReg]", ht);
                     if (ret > 0)
                     {
-                        LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " added successfully..", "success");
-                        LibMainClass.resetEnable(left_panel);
+                        LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " added successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadBioTest();
                     }
                     txt_phone.Text = dataGridView1.Rows[0].Cells[PhoneGV.Name].Value.ToString();
@@ -119,10 +119,10 @@ namespace HoTroBenhNhanThan.GUI
                     Hashtable ht = new Hashtable();
                     //ht.Add("@roleId", roleID);
                     //ht.Add("@newName", txt_role.Text);
-                    //if (LibCRUD.data_insert_update_delete("st_updateRole", ht) > 0)
+                    //if (LibCRUD.LibCRUD.data_insert_update_delete("st_updateRole", ht) > 0)
                     //{
-                    //    LibMainClass.showMessage(txt_role.Text + " added successfully..", "success");
-                    //    LibMainClass.resetEnable(LEFTPANEL);
+                    //    LibMainClass.LibMainClass.showMessage(txt_role.Text + " added successfully..", "success");
+                    //    LibMainClass.LibMainClass.resetEnable(LEFTPANEL);
                     //    LoadBioTest();
                     //}
                 }
@@ -139,10 +139,10 @@ namespace HoTroBenhNhanThan.GUI
                 {
                     Hashtable ht = new Hashtable();
                     ht.Add("@AppID", AppID);
-                    if (LibCRUD.data_insert_update_delete("st_deleteRole", ht) > 0)
+                    if (LibCRUD.LibCRUD.data_insert_update_delete("st_deleteRole", ht) > 0)
                     {
-                        LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " deleted successfully..", "success");
-                        LibMainClass.resetEnable(left_panel);
+                        LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " deleted successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadBioTest();
                     }
                 }
@@ -158,11 +158,11 @@ namespace HoTroBenhNhanThan.GUI
             //if (e.RowIndex != -1 && e.ColumnIndex != -1)
             //{
             //    edit = 1;
-            //    LibMainClass.DisableControl(LEFTPANEL);
+            //    LibMainClass.LibMainClass.DisableControl(LEFTPANEL);
             //    DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
             //    roleID = Convert.ToInt32(row.Cells["RoleIDGV"].Value.ToString());
             //    txt_role.Text = row.Cells["RoleGV"].Value.ToString();
-            //    LibMainClass.DisableControl(left_panel);
+            //    LibMainClass.LibMainClass.DisableControl(left_panel);
             //}
         }
     }

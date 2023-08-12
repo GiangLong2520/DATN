@@ -110,14 +110,14 @@ namespace HoTroBenhNhanThan
             loadData.Items.Add(AddressGV);
             loadData.Items.Add(RoleIDGV);
             loadData.Items.Add(RoleGV);
-            LibCRUD.loadData("st_getUsers", dataGridViewstaff, loadData);
+            LibCRUD.LibCRUD.loadData("st_getUsers", dataGridViewstaff, loadData);
         }
 
         public override void button3_Click(object sender, EventArgs e)          //save btn
         {
-            if (LibMainClass.checkControls(LEFTPANEL).Count > 0)
+            if (LibMainClass.LibMainClass.checkControls(LEFTPANEL).Count > 0)
             {
-                LibMainClass.showMessage("Field with RED are mandatory.", "error");
+                LibMainClass.LibMainClass.showMessage("Field with RED are mandatory.", "error");
 
             }
             else
@@ -132,11 +132,11 @@ namespace HoTroBenhNhanThan
                     ht.Add(@"address", txt_address.Text);
                     ht.Add(@"roleId", Convert.ToInt32(cb_role.SelectedValue.ToString()));
 
-                    int ret = LibCRUD.data_insert_update_delete("st_insertUsers", ht);
+                    int ret = LibCRUD.LibCRUD.data_insert_update_delete("st_insertUsers", ht);
                     if (ret > 0)
                     {
-                        LibMainClass.showMessage(txt_name.Text + " added successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.LibMainClass.showMessage(txt_name.Text + " added successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(LEFTPANEL);
                         LoadUsers();
                     }
                 }
@@ -151,10 +151,10 @@ namespace HoTroBenhNhanThan
                     ht.Add(@"roleId", Convert.ToInt32(cb_role.SelectedValue.ToString()));
                     ht.Add(@"id", UserID);
 
-                    if (LibCRUD.data_insert_update_delete("st_updateUsers", ht) > 0)
+                    if (LibCRUD.LibCRUD.data_insert_update_delete("st_updateUsers", ht) > 0)
                     {
-                        LibMainClass.showMessage(txt_name.Text + " added successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.LibMainClass.showMessage(txt_name.Text + " added successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(LEFTPANEL);
                         LoadUsers();
                     }
                 }
@@ -171,10 +171,10 @@ namespace HoTroBenhNhanThan
                 {
                     Hashtable ht = new Hashtable();
                     ht.Add(@"id", UserID);
-                    if (LibCRUD.data_insert_update_delete("st_deleteUser", ht) > 0)
+                    if (LibCRUD.LibCRUD.data_insert_update_delete("st_deleteUser", ht) > 0)
                     {
-                        LibMainClass.showMessage(txt_usename.Text + " deleted successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.LibMainClass.showMessage(txt_usename.Text + " deleted successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(LEFTPANEL);
                         LoadUsers();
                     }
                 }
@@ -196,7 +196,7 @@ namespace HoTroBenhNhanThan
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
             {
                 edit = 1;
-                LibMainClass.DisableControl(LEFTPANEL);
+                LibMainClass.LibMainClass.DisableControl(LEFTPANEL);
                 DataGridViewRow row = dataGridViewstaff.Rows[e.RowIndex];
                 UserID = Convert.ToInt32(row.Cells["UserIDGV"].Value.ToString());
                 txt_name.Text = row.Cells["nameGV"].Value.ToString(); ;
@@ -212,7 +212,7 @@ namespace HoTroBenhNhanThan
         private void StaffWindow_Load(object sender, EventArgs e)
         {
             Hashtable ht = new Hashtable();
-            LibCRUD.loadList("st_getRoles", cb_role, "ID", "Role", ht);
+            LibCRUD.LibCRUD.loadList("st_getRoles", cb_role, "ID", "Role", ht);
             cb_role.BackColor = Color.White;
             LoadUsers();
         }

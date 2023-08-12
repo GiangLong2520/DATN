@@ -9,7 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using LibCRUD;
+ using LibMainClass;
 namespace HoTroBenhNhanThan.GUI
 {
     public partial class UrineTestWinform : Sample01
@@ -35,7 +36,7 @@ namespace HoTroBenhNhanThan.GUI
             ht.Add("@day", picker_DateTime.Value.Day);
             ht.Add("@month", picker_DateTime.Value.Month);
             ht.Add("@year", picker_DateTime.Value.Year);
-            LibCRUD.loadList("[st_getTodayPatientApointment]", cb_selectPatient, "PatientApointment ID", "Patient", ht);
+            LibCRUD.LibCRUD.loadList("[st_getTodayPatientApointment]", cb_selectPatient, "PatientApointment ID", "Patient", ht);
         }
         private void LoadUrineTest()
         {
@@ -66,7 +67,7 @@ namespace HoTroBenhNhanThan.GUI
                 AppID = Convert.ToInt64(selectedValue);
             }
             ht.Add("@appID", AppID);
-            LibCRUD.loadData("st_GetUrineTestPatientAppointmentReg", dataGridView1, loadData, ht);
+            LibCRUD.LibCRUD.loadData("st_GetUrineTestPatientAppointmentReg", dataGridView1, loadData, ht);
 
             txt_phone.Text = dataGridView1.Rows[0].Cells[PhoneGV.Name].Value.ToString();
             txtage.Text = dataGridView1.Rows[0].Cells[ageGV.Name].Value.ToString();
@@ -74,9 +75,9 @@ namespace HoTroBenhNhanThan.GUI
 
         public override void btn_Save_Click(object sender, EventArgs e)          //save btn
         {
-            if (LibMainClass.checkControls(LEFTPANEL).Count > 0)
+            if (LibMainClass.LibMainClass.checkControls(LEFTPANEL).Count > 0)
             {
-                LibMainClass.showMessage("Field with RED are mandatory.", "error");
+                LibMainClass.LibMainClass.showMessage("Field with RED are mandatory.", "error");
 
             }
             else
@@ -101,11 +102,11 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add("@Urobilinogen"      ,   radioUrobilKhongCo.Checked ? true: false);
 
 
-                    int ret = LibCRUD.data_insert_update_delete("[st_InsertUrineTestPatientAppointmentReg]", ht);
+                    int ret = LibCRUD.LibCRUD.data_insert_update_delete("[st_InsertUrineTestPatientAppointmentReg]", ht);
                     if (ret > 0)
                     {
-                        LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " added successfully..", "success");
-                        LibMainClass.resetEnable(left_panel);
+                        LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " added successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadUrineTest();
                     }
                     txt_phone.Text = dataGridView1.Rows[0].Cells[PhoneGV.Name].Value.ToString();
@@ -125,11 +126,11 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add("@Urobilinogen", radioUrobilKhongCo.Checked ? true : false);
 
 
-                    int ret = LibCRUD.data_insert_update_delete("[st_UpdateUrineTestPatientAppointmentReg]", ht);
+                    int ret = LibCRUD.LibCRUD.data_insert_update_delete("[st_UpdateUrineTestPatientAppointmentReg]", ht);
                     if (ret > 0)
                     {
-                        LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " Update successfully..", "success");
-                        LibMainClass.resetEnable(left_panel);
+                        LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " Update successfully..", "success");
+                        LibMainClass  .LibMainClass.resetEnable(left_panel);
                         LoadUrineTest();
                     }
                 }
@@ -146,10 +147,10 @@ namespace HoTroBenhNhanThan.GUI
                 {
                     Hashtable ht = new Hashtable();
                     ht.Add("@ID", urineID);
-                    if (LibCRUD.data_insert_update_delete("st_DeleteUrineTestPatientAppointmentReg", ht) > 0)
+                    if (LibCRUD.LibCRUD.data_insert_update_delete("st_DeleteUrineTestPatientAppointmentReg", ht) > 0)
                     {
-                        LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " deleted successfully..", "success");
-                        LibMainClass.resetEnable(left_panel);
+                        LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " deleted successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadUrineTest();
                     }
                 }
@@ -166,7 +167,7 @@ namespace HoTroBenhNhanThan.GUI
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
             {
                 edit = 1;
-                LibMainClass.DisableControl(left_panel);
+                LibMainClass.LibMainClass.DisableControl(left_panel);
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
                 urineID = Convert.ToInt32(row.Cells["IDGV"].Value.ToString());
                 //txt_role.Text = row.Cells["RoleGV"].Value.ToString(); 
@@ -224,7 +225,7 @@ namespace HoTroBenhNhanThan.GUI
                 }
 
 
-                LibMainClass.DisableControl(left_panel);
+                LibMainClass.LibMainClass.DisableControl(left_panel);
             }
         }
     }

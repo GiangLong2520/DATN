@@ -21,9 +21,9 @@ namespace HoTroBenhNhanThan
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            if (LibMainClass.checkControls(left_panel_common).Count > 0)
+            if (LibMainClass.LibMainClass.checkControls(left_panel_common).Count > 0)
             {
-                LibMainClass.showMessage("Fields with RED are madatory", "error");
+                LibMainClass.LibMainClass.showMessage("Fields with RED are madatory", "error");
             }
             else
             {
@@ -33,11 +33,11 @@ namespace HoTroBenhNhanThan
                 if (Login.getLoginDetails("[st_getAuthentication]", ht))
                 {
                     HomeWindow hw = new HomeWindow();
-                    LibMainClass.showWindow(hw, this, MDI.ActiveForm);
+                    LibMainClass.LibMainClass.showWindow(hw, this, MDI.ActiveForm);
                 }
                 else
                 {
-                    LibMainClass.showMessage("UseName or Password not correct.", "error");
+                    LibMainClass.LibMainClass.showMessage("UseName or Password not correct.", "error");
                 }
             }
         }
@@ -73,9 +73,9 @@ namespace HoTroBenhNhanThan
 
         private void btn_Login_Click_1(object sender, EventArgs e)
         {
-            if (LibMainClass.checkControls(left_panel_common).Count > 0)
+            if (LibMainClass.LibMainClass.checkControls(left_panel_common).Count > 0)
             {
-                LibMainClass.showMessage("Fields with RED are madatory", "error");
+                LibMainClass.LibMainClass.showMessage("Fields with RED are madatory", "error");
             }
             else
             {
@@ -85,7 +85,7 @@ namespace HoTroBenhNhanThan
                 if (Login.getLoginDetails("[st_getAuthentication]", ht))
                 {
                     HomeWindow hw = new HomeWindow();
-                    LibMainClass.showWindow(hw, this, MDI.ActiveForm);
+                    LibMainClass.LibMainClass.showWindow(hw, this, MDI.ActiveForm);
                 }
                 else
                 {

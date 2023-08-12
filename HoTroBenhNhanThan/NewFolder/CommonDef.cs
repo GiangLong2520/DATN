@@ -9,5 +9,6 @@ namespace HoTroBenhNhanThan.NewFolder
     internal class CommonDef
     {
 
+
     }
 }

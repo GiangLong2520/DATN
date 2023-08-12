@@ -1,0 +1,12 @@
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibMainClass\bin\Debug\net6.0-windows\LibMainClass.deps.json
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibMainClass\bin\Debug\net6.0-windows\LibMainClass.dll
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibMainClass\bin\Debug\net6.0-windows\LibMainClass.pdb
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibMainClass\obj\Debug\net6.0-windows\LibMainClass.csproj.AssemblyReference.cache
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibMainClass\obj\Debug\net6.0-windows\LibMainClass.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibMainClass\obj\Debug\net6.0-windows\LibMainClass.AssemblyInfoInputs.cache
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibMainClass\obj\Debug\net6.0-windows\LibMainClass.AssemblyInfo.cs
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibMainClass\obj\Debug\net6.0-windows\LibMainClass.csproj.CoreCompileInputs.cache
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibMainClass\obj\Debug\net6.0-windows\LibMainClass.dll
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibMainClass\obj\Debug\net6.0-windows\refint\LibMainClass.dll
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibMainClass\obj\Debug\net6.0-windows\LibMainClass.pdb
+C:\Users\longd\source\repos\HoTroBenhNhanThan\LibMainClass\obj\Debug\net6.0-windows\ref\LibMainClass.dll

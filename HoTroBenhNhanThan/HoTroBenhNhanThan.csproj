@@ -17,11 +17,19 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.Chart.Controls" Version="4.7.2046" />
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.0.1" />
     <PackageReference Include="ReportViewerCore.WinForms" Version="15.1.17" />
+    <PackageReference Include="Syncfusion.Chart.Windows" Version="22.2.7" />
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="LibCRUD">
+      <HintPath>..\LibCRUD\bin\Debug\net6.0-windows\LibCRUD.dll</HintPath>
+    </Reference>
+    <Reference Include="LibMainClass">
+      <HintPath>..\LibCRUD\bin\Debug\net6.0-windows\LibMainClass.dll</HintPath>
+    </Reference>
     <Reference Include="MainClass">
       <HintPath>..\MainClass\bin\Debug\MainClass.dll</HintPath>
     </Reference>

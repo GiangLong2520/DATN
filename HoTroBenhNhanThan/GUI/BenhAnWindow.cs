@@ -34,7 +34,7 @@ namespace HoTroBenhNhanThan
         }
         private void LoadData()
         {
-            sqlConnection = new SqlConnection(LibMainClass.connectionString());
+            sqlConnection = new SqlConnection(LibMainClass.LibMainClass.connectionString());
             sqlConnection.Open();
             LoadBenhAn();
         }

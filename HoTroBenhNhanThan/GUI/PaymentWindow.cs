@@ -38,7 +38,7 @@ namespace HoTroBenhNhanThan.GUI
             ht.Add("@month", picker_DateTime.Value.Month);
             ht.Add("@year", picker_DateTime.Value.Year);
             ht.Add("@status", 1);
-            LibCRUD.loadData("st_GetPatientAppointmentRegConsulted", dataGridView1, loadData, ht);
+            LibCRUD.LibCRUD.loadData("st_GetPatientAppointmentRegConsulted", dataGridView1, loadData, ht);
         }
 
         private void PaymentWindow_Load(object sender, EventArgs e)

@@ -8,9 +8,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using LibCRUD;
+using LibMainClass;
 namespace HoTroBenhNhanThan
 {
+    
     public partial class UserWindow : Sample2
     {
         public UserWindow()
@@ -104,14 +106,14 @@ namespace HoTroBenhNhanThan
             loadData.Items.Add(RoleIDGV         );
             loadData.Items.Add(RoleGV           );
 
-            LibCRUD.loadData("st_getUsers", dataGridView2, loadData);
+            LibCRUD.LibCRUD.loadData("st_getUsers", dataGridView2, loadData);
         }
 
         public override void button3_Click(object sender, EventArgs e)          //save btn
         {
-            if (LibMainClass.checkControls(LEFTPANEL).Count > 0)
+            if (LibMainClass.LibMainClass.checkControls(LEFTPANEL).Count > 0)
             {
-                LibMainClass.showMessage("Field with RED are mandatory.", "error");
+                LibMainClass.LibMainClass.showMessage("Field with RED are mandatory.", "error");
 
             }
             else
@@ -126,11 +128,11 @@ namespace HoTroBenhNhanThan
                     ht.Add(@"address",  txt_Address.Text);
                     ht.Add(@"roleId", Convert.ToInt32(cb_Roles.SelectedValue.ToString()));                           
 
-                    int ret = LibCRUD.data_insert_update_delete("st_insertUsers", ht);
+                    int ret = LibCRUD.LibCRUD.data_insert_update_delete("st_insertUsers", ht);
                     if (ret > 0)
                     {
-                        LibMainClass.showMessage(txt_Name.Text + " added successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.LibMainClass.showMessage(txt_Name.Text + " added successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(LEFTPANEL);
                         LoadUsers();
                     }
                 }
@@ -145,10 +147,10 @@ namespace HoTroBenhNhanThan
                     ht.Add(@"roleId", Convert.ToInt32(cb_Roles.SelectedValue.ToString()));
                     ht.Add(@"id", UserID);
 
-                    if (LibCRUD.data_insert_update_delete("st_updateUsers", ht) > 0)
+                    if (LibCRUD.LibCRUD.data_insert_update_delete("st_updateUsers", ht) > 0)
                     {
-                        LibMainClass.showMessage(txt_Name.Text + " update successfully..", "success");
-                        LibMainClass.resetEnable(LEFTPANEL);
+                        LibMainClass.LibMainClass.showMessage(txt_Name.Text + " update successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(LEFTPANEL);
                         LoadUsers();
                     }
                 }
@@ -165,10 +167,10 @@ namespace HoTroBenhNhanThan
                 {
                     Hashtable ht = new Hashtable();
                     ht.Add(@"id", UserID);
-                    if (LibCRUD.data_insert_update_delete("st_deleteUser", ht) > 0)
+                    if (LibCRUD.LibCRUD.data_insert_update_delete("st_deleteUser", ht) > 0)
                     {
-                        LibMainClass.showMessage(txt_usename.Text + " deleted successfully..", "success");
-                        LibMainClass.resetEnable(left_panel);
+                        LibMainClass.LibMainClass.showMessage(txt_usename.Text + " deleted successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadUsers();
                     }
                 }
@@ -184,7 +186,7 @@ namespace HoTroBenhNhanThan
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
             {
                 edit = 1;
-                LibMainClass.DisableControl(left_panel);
+                LibMainClass.LibMainClass.DisableControl(left_panel);
                 DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
                 UserID = Convert.ToInt32(row.Cells["UserIDGV"].Value.ToString());
                 txt_Name.Text = row.Cells["NameGV"].Value.ToString(); ;
@@ -198,7 +200,7 @@ namespace HoTroBenhNhanThan
         private void UserWindow_Load(object sender, EventArgs e)
         {
             LoadUsers();
-            LibCRUD.loadRole(cb_Roles);
+            LibCRUD.LibCRUD.loadRole(cb_Roles);
 
             Listprovince();
         }
@@ -207,7 +209,7 @@ namespace HoTroBenhNhanThan
         private void Listprovince()
         {
             DataTable dt = new DataTable();
-            dt = LibCRUD.LoadDataTable("SELECT * FROM province");
+            dt = LibCRUD.LibCRUD.LoadDataTable("SELECT * FROM province");
             cboCity.DataSource = dt;
             cboCity.DisplayMember = "prov_name";
             cboCity.ValueMember = "prov_id";
@@ -224,7 +226,7 @@ namespace HoTroBenhNhanThan
         private void Listdistrict()
         {
             DataTable dt = new DataTable();
-            dt = LibCRUD.LoadDataTable($"SELECT * FROM district WHERE dis_provID = {selectedProvinceId}");
+            dt = LibCRUD.LibCRUD.LoadDataTable($"SELECT * FROM district WHERE dis_provID = {selectedProvinceId}");
             cboDistrict.DataSource = dt;
             cboDistrict.DisplayMember = "dis_name";
             cboDistrict.ValueMember = "dis_id";
@@ -241,7 +243,7 @@ namespace HoTroBenhNhanThan
         private void Listward()
         {
             DataTable dt = new DataTable();
-            dt = LibCRUD.LoadDataTable($"SELECT * FROM ward WHERE ward_disID = {selectedDistrictId}");
+            dt = LibCRUD.LibCRUD.LoadDataTable($"SELECT * FROM ward WHERE ward_disID = {selectedDistrictId}");
             cboWard.DataSource = dt;
             cboWard.DisplayMember = "ward_name";
             cboWard.ValueMember = "ward_id";
@@ -260,7 +262,7 @@ namespace HoTroBenhNhanThan
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
             {
                 edit = 1;
-                LibMainClass.DisableControl(left_panel);
+                LibMainClass.LibMainClass.DisableControl(left_panel);
                 DataGridViewRow row = dataGridView2.Rows[e.RowIndex];
 
                 //IDGV

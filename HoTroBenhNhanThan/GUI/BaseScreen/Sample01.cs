@@ -20,19 +20,19 @@ namespace HoTroBenhNhanThan.GUI.BaseScreen
         private void btnBack_Click(object sender, EventArgs e)
         {
             HomeWindow homeWindow = new HomeWindow();
-            LibMainClass.showWindow(homeWindow, this, MDI.ActiveForm);
+            LibMainClass.LibMainClass.showWindow(homeWindow, this, MDI.ActiveForm);
         }
 
         private void btn_Add_Click(object sender, EventArgs e)               // add
         {
-            LibMainClass.resetEnable(left_panel);
+            LibMainClass.LibMainClass.resetEnable(left_panel);
             edit = 0;
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)              // edit
         {
             edit = 1;
-            LibMainClass.EnableControl(left_panel);
+            LibMainClass.LibMainClass.EnableControl(left_panel);
         }
 
         public virtual void btn_Save_Click(object sender, EventArgs e)               //save

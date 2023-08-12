@@ -25,7 +25,7 @@ namespace HoTroBenhNhanThan.GUI
         private void btnBack_Click(object sender, EventArgs e)
         {
             HomeWindow homeWindow = new HomeWindow();
-            LibMainClass.showWindow(homeWindow, this, MDI.ActiveForm);
+            LibMainClass.LibMainClass.showWindow(homeWindow, this, MDI.ActiveForm);
         }
 
         private void ReportWindow_Load(object sender, EventArgs e)

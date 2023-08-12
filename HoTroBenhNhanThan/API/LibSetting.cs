@@ -24,7 +24,21 @@ namespace HoTroBenhNhanThan.API
                     s = "Data Source = " + ds + ";Initial Catalog=" + db + ";User ID=" + user + ";Password=" + password + ";Trust Server Certificate=true";
                 }
                 File.WriteAllText(path, s);
-                LibMainClass.showMessage("Settings Saved Successfully.", "success");
+                LibMainClass.LibMainClass.showMessage("Settings Saved Successfully.", "success");
+            }
+            else
+            {
+                if (status == 1)
+                {
+                    s = "Data Source = " + ds + ";Initial Catalog=" + db + ";Integrated Security=True;Trust Server Certificate=true";
+
+                }
+                else if (status == 0)
+                {
+                    s = "Data Source = " + ds + ";Initial Catalog=" + db + ";User ID=" + user + ";Password=" + password + ";Trust Server Certificate=true";
+                }
+                File.WriteAllText(path, s);
+                LibMainClass.LibMainClass.showMessage("Settings Saved Successfully.", "success");
             }
 
         }

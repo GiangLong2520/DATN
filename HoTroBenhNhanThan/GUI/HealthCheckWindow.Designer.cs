@@ -139,7 +139,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.txt_testResults = new System.Windows.Forms.TextBox();
+            this.txt_doctor = new System.Windows.Forms.TextBox();
             this.x = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label28 = new System.Windows.Forms.Label();
@@ -1480,7 +1480,7 @@
             // 
             // panel11
             // 
-            this.panel11.Controls.Add(this.txt_testResults);
+            this.panel11.Controls.Add(this.txt_doctor);
             this.panel11.Controls.Add(this.x);
             this.panel11.Controls.Add(this.dateTimePicker1);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1489,14 +1489,13 @@
             this.panel11.Size = new System.Drawing.Size(233, 130);
             this.panel11.TabIndex = 42;
             // 
-            // txt_testResults
+            // txt_doctor
             // 
-            this.txt_testResults.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txt_testResults.Location = new System.Drawing.Point(0, 47);
-            this.txt_testResults.Multiline = true;
-            this.txt_testResults.Name = "txt_testResults";
-            this.txt_testResults.Size = new System.Drawing.Size(233, 83);
-            this.txt_testResults.TabIndex = 12;
+            this.txt_doctor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_doctor.Location = new System.Drawing.Point(0, 47);
+            this.txt_doctor.Name = "txt_doctor";
+            this.txt_doctor.Size = new System.Drawing.Size(233, 27);
+            this.txt_doctor.TabIndex = 12;
             // 
             // x
             // 
@@ -1505,9 +1504,9 @@
             this.x.Location = new System.Drawing.Point(0, 27);
             this.x.Margin = new System.Windows.Forms.Padding(3);
             this.x.Name = "x";
-            this.x.Size = new System.Drawing.Size(85, 20);
+            this.x.Size = new System.Drawing.Size(55, 20);
             this.x.TabIndex = 11;
-            this.x.Text = "Test Results";
+            this.x.Text = "Doctor";
             // 
             // dateTimePicker1
             // 
@@ -1781,7 +1780,7 @@
         private ListBox listBox2;
         private Label label28;
         private Panel panel11;
-        private TextBox txt_testResults;
+        private TextBox txt_doctor;
         private Label x;
         private DateTimePicker dateTimePicker1;
         private Label label6;

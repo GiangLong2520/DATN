@@ -27,10 +27,10 @@ namespace HoTroBenhNhanThan.GUI
             bool check = false;
             try
             {
-                SqlCommand cmd = new SqlCommand("st_CheckPatientRegistrationExist", LibMainClass.con);
+                SqlCommand cmd = new SqlCommand("st_CheckPatientRegistrationExist", LibMainClass.LibMainClass.con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@phone", phone);
-                LibMainClass.con.Open();
+                LibMainClass.LibMainClass.con.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.HasRows)
                 {
@@ -50,10 +50,10 @@ namespace HoTroBenhNhanThan.GUI
                 {
                     check = false;
                 }               
-                LibMainClass.con.Close();
+                LibMainClass.LibMainClass.con.Close();
             }
             catch(Exception) {
-                LibMainClass.con.Close();
+                LibMainClass.LibMainClass.con.Close();
                 throw;
             }
             return check;
@@ -61,8 +61,8 @@ namespace HoTroBenhNhanThan.GUI
         private void PatienRegisterWindow_Load(object sender, EventArgs e)
         {
             Hashtable ht= new Hashtable();// không có trong bài 10, nên check lại ở nội dung các bài khác
-            LibCRUD.loadList("st_getDoctors", cb_ApointmentFor, "ID", "Doctor", ht);
-            LibMainClass.resetDisable(left_panel);
+            LibCRUD.LibCRUD.loadList("st_getDoctors", cb_ApointmentFor, "ID", "Doctor", ht);
+            LibMainClass.LibMainClass.resetDisable(left_panel);
         }
 
         private void PhoneTxt_Leave(object sender, EventArgs e)
@@ -76,7 +76,7 @@ namespace HoTroBenhNhanThan.GUI
                 }
                 else
                 {
-                    LibMainClass.resetEnable(left_panel);
+                    LibMainClass.LibMainClass.resetEnable(left_panel);
                     txt_Phone.Text = tmp;
                 }
             }
@@ -99,16 +99,16 @@ namespace HoTroBenhNhanThan.GUI
             loadData.Items.Add(appIDGV);
             loadData.Items.Add(phoneGV);
 
-            LibCRUD.loadData("st_GetPatientAppointmentReg", dataGridView1, loadData);
+            LibCRUD.LibCRUD.loadData("st_GetPatientAppointmentReg", dataGridView1, loadData);
         }
 
         Int64 partID;
         Int64 apointmentID;
         public override void button3_Click(object sender, EventArgs e)          //save btn
         {
-            if (LibMainClass.checkControls(left_panel, edit).Count > 0)
+            if (LibMainClass.LibMainClass.checkControls(left_panel, edit).Count > 0)
             {
-                LibMainClass.showMessage("Field with RED are mandatory.", "error");
+                LibMainClass.LibMainClass.showMessage("Field with RED are mandatory.", "error");
 
             }
             else
@@ -120,17 +120,17 @@ namespace HoTroBenhNhanThan.GUI
                     {
                         if (getCheckPatientRecord(txt_Phone.Text))
                         {
-                            //LibMainClass.resetEnable(left_panel);
+                            //LibMainClass.LibMainClass.resetEnable(left_panel);
                             Hashtable ht = new Hashtable();
                             ht.Add("@name", txt_Patient.Text);
                             ht.Add("@guard", txt_Father.Text);
                             ht.Add("@phone", txt_Phone.Text);
                             ht.Add("@age",  txt_age.Text);
                             ht.Add("@id", partID);
-                            int ret = LibCRUD.data_insert_update_delete("st_updatePatientReg", ht); //  LibCRUD.data_insert_update_delete("st_insertPatientReg", ht) 55;03
+                            int ret = LibCRUD.LibCRUD.data_insert_update_delete("st_updatePatientReg", ht); //  LibCRUD.LibCRUD.data_insert_update_delete("st_insertPatientReg", ht) 55;03
                             if (ret > 0)
                             {
-                               // Int64 patientID = Convert.ToInt64(LibCRUD.getLastID("st_getlastPatientID")); 
+                               // Int64 patientID = Convert.ToInt64(LibCRUD.LibCRUD.getLastID("st_getlastPatientID")); 
                                 Hashtable htt = new Hashtable();
                                 htt.Add("@date", Picker_ApointmentDate.Value);
                                 htt.Add("@doctorID", Convert.ToInt32(cb_ApointmentFor.SelectedValue.ToString()));
@@ -139,32 +139,32 @@ namespace HoTroBenhNhanThan.GUI
                                 htt.Add("@day", picker_LastApointmentDate.Value.Day);
                                 htt.Add("@month", picker_LastApointmentDate.Value.Month);
                                 htt.Add("@year", picker_LastApointmentDate.Value.Year);
-                                if (LibCRUD.data_insert_update_delete("st_insertAppointment", htt) > 0)
+                                if (LibCRUD.LibCRUD.data_insert_update_delete("st_insertAppointment", htt) > 0)
                                 {
 
-                                    LibMainClass.showMessage(txt_Patient.Text + " added successfully..", "success");
-                                    LibMainClass.resetDisable(left_panel);
+                                    LibMainClass.LibMainClass.showMessage(txt_Patient.Text + " added successfully..", "success");
+                                    LibMainClass.LibMainClass.resetDisable(left_panel);
                                     LoadPatient();
                                 }
                             }
                             else
                             {
-                                LibMainClass.showMessage("Unable to save record.", "error");
+                                LibMainClass.LibMainClass.showMessage("Unable to save record.", "error");
                             }
                         }
                         else
                         {
-                            //LibMainClass.resetEnable(left_panel);
+                            //LibMainClass.LibMainClass.resetEnable(left_panel);
                             Hashtable ht = new Hashtable();
                             ht.Add("@name", txt_Patient.Text);
                             ht.Add("@guard", txt_Father.Text);
                             ht.Add("@phone", txt_Phone.Text);
                             ht.Add("@age", txt_age.Text);
                             // ht.Add("@id", partID);
-                            int ret = LibCRUD.data_insert_update_delete("st_insertPatientReg", ht); //  LibCRUD.data_insert_update_delete("st_insertPatientReg", ht) 55;03
+                            int ret = LibCRUD.LibCRUD.data_insert_update_delete("st_insertPatientReg", ht); //  LibCRUD.LibCRUD.data_insert_update_delete("st_insertPatientReg", ht) 55;03
                             if (ret > 0)
                             {
-                                Int64 patientID = Convert.ToInt64(LibCRUD.getLastID("st_getlastPatientID"));
+                                Int64 patientID = Convert.ToInt64(LibCRUD.LibCRUD.getLastID("st_getlastPatientID"));
                                 Hashtable htt = new Hashtable();
                                 htt.Add("@date", picker_LastApointmentDate.Value);
                                 htt.Add("@doctorID", Convert.ToInt32(cb_ApointmentFor.SelectedValue.ToString()));
@@ -173,17 +173,17 @@ namespace HoTroBenhNhanThan.GUI
                                 htt.Add("@day", Picker_ApointmentDate.Value.Day);
                                 htt.Add("@month", Picker_ApointmentDate.Value.Month);
                                 htt.Add("@year", Picker_ApointmentDate.Value.Year);
-                                if (LibCRUD.data_insert_update_delete("st_insertAppointment", htt) > 0)
+                                if (LibCRUD.LibCRUD.data_insert_update_delete("st_insertAppointment", htt) > 0)
                                 {
 
-                                    LibMainClass.showMessage(txt_Patient.Text + " added successfully..", "success");
-                                    LibMainClass.resetDisable(left_panel);
+                                    LibMainClass.LibMainClass.showMessage(txt_Patient.Text + " added successfully..", "success");
+                                    LibMainClass.LibMainClass.resetDisable(left_panel);
                                     LoadPatient();
                                 }
                             }
                             else
                             {
-                                LibMainClass.showMessage("Unable to save record.", "error");
+                                LibMainClass.LibMainClass.showMessage("Unable to save record.", "error");
                             }
                         }
                     }
@@ -196,10 +196,10 @@ namespace HoTroBenhNhanThan.GUI
                         ht.Add(@"age", txt_age.Text);
                         ht.Add(@"id", partID);
 
-                        int ret = LibCRUD.data_insert_update_delete("st_updatePatientReg", ht);
+                        int ret = LibCRUD.LibCRUD.data_insert_update_delete("st_updatePatientReg", ht);
                         if (ret > 0)
                         {
-                            // Int64 patientID = Convert.ToInt64(LibCRUD.getLastID("st_getLastPatientID"));
+                            // Int64 patientID = Convert.ToInt64(LibCRUD.LibCRUD.getLastID("st_getLastPatientID"));
 
                             Hashtable htt = new Hashtable();
                             htt.Add("@date", picker_LastApointmentDate.Value);
@@ -207,17 +207,17 @@ namespace HoTroBenhNhanThan.GUI
                             htt.Add("@patientID", partID);
                             htt.Add("@status", 0);
                             htt.Add("@id", apointmentID);
-                            if (LibCRUD.data_insert_update_delete("st_updateAppointment", htt) > 0)
+                            if (LibCRUD.LibCRUD.data_insert_update_delete("st_updateAppointment", htt) > 0)
                             {
 
-                                LibMainClass.showMessage(txt_Patient.Text + " update successfully..", "success");
-                                LibMainClass.resetEnable(left_panel);
+                                LibMainClass.LibMainClass.showMessage(txt_Patient.Text + " update successfully..", "success");
+                                LibMainClass.LibMainClass.resetEnable(left_panel);
                                 LoadPatient();
                             }
                         }
                         else
                         {
-                            LibMainClass.showMessage("Unable to update record.", "error");
+                            LibMainClass.LibMainClass.showMessage("Unable to update record.", "error");
                         }
                     }
                     sc.Complete();
@@ -234,10 +234,10 @@ namespace HoTroBenhNhanThan.GUI
                 {
                     Hashtable ht = new Hashtable();
                     ht.Add(@"id", apointmentID);
-                    if (LibCRUD.data_insert_update_delete("[st_deleteAppointment]", ht) > 0)
+                    if (LibCRUD.LibCRUD.data_insert_update_delete("[st_deleteAppointment]", ht) > 0)
                     {
-                        LibMainClass.showMessage(txt_Patient.Text + " appointment deleted appointment successfully..", "success");
-                        LibMainClass.resetEnable(left_panel);
+                        LibMainClass.LibMainClass.showMessage(txt_Patient.Text + " appointment deleted appointment successfully..", "success");
+                        LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadPatient();
                     }
                 }
@@ -267,7 +267,7 @@ namespace HoTroBenhNhanThan.GUI
                 cb_ApointmentFor.SelectedValue = row.Cells["doctorIDGV"].Value;
                 txt_age.Text = row.Cells["ageGV"].Value.ToString();
                 getCheckPatientRecord(txt_Phone.Text);
-                LibMainClass.DisableControl(left_panel);
+                LibMainClass.LibMainClass.DisableControl(left_panel);
             }
         }
     }

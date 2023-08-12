@@ -32,16 +32,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_name = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txt_usename = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txt_password = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_phone = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_address = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cb_role = new System.Windows.Forms.ComboBox();
             this.dataGridViewstaff = new System.Windows.Forms.DataGridView();
             this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +46,8 @@
             this.AddressGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoleIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RoleGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_password = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.left_panel.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
@@ -71,20 +67,16 @@
             // 
             this.groupBox1.Controls.Add(this.dataGridViewstaff);
             // 
-            // flowPanel
+            // left_panel
             // 
             this.left_panel.Controls.Add(this.label2);
             this.left_panel.Controls.Add(this.txt_name);
-            this.left_panel.Controls.Add(this.label4);
-            this.left_panel.Controls.Add(this.txt_usename);
             this.left_panel.Controls.Add(this.label5);
             this.left_panel.Controls.Add(this.txt_password);
             this.left_panel.Controls.Add(this.label6);
             this.left_panel.Controls.Add(this.txt_phone);
             this.left_panel.Controls.Add(this.label7);
             this.left_panel.Controls.Add(this.txt_address);
-            this.left_panel.Controls.Add(this.label8);
-            this.left_panel.Controls.Add(this.cb_role);
             // 
             // btnBack
             // 
@@ -110,50 +102,10 @@
             this.txt_name.TabIndex = 2;
             this.txt_name.TextChanged += new System.EventHandler(this.txt_name_TextChanged);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 73);
-            this.label4.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "UserName";
-            // 
-            // txt_usename
-            // 
-            this.txt_usename.Location = new System.Drawing.Point(10, 96);
-            this.txt_usename.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.txt_usename.MaxLength = 50;
-            this.txt_usename.Name = "txt_usename";
-            this.txt_usename.Size = new System.Drawing.Size(303, 27);
-            this.txt_usename.TabIndex = 4;
-            this.txt_usename.TextChanged += new System.EventHandler(this.txt_usename_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 126);
-            this.label5.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 20);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Password";
-            // 
-            // txt_password
-            // 
-            this.txt_password.Location = new System.Drawing.Point(10, 149);
-            this.txt_password.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.txt_password.MaxLength = 50;
-            this.txt_password.Name = "txt_password";
-            this.txt_password.Size = new System.Drawing.Size(303, 27);
-            this.txt_password.TabIndex = 6;
-            this.txt_password.TextChanged += new System.EventHandler(this.txt_password_TextChanged);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(10, 179);
+            this.label6.Location = new System.Drawing.Point(10, 126);
             this.label6.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 20);
@@ -162,7 +114,7 @@
             // 
             // txt_phone
             // 
-            this.txt_phone.Location = new System.Drawing.Point(10, 202);
+            this.txt_phone.Location = new System.Drawing.Point(10, 149);
             this.txt_phone.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.txt_phone.MaxLength = 50;
             this.txt_phone.Name = "txt_phone";
@@ -173,7 +125,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(10, 232);
+            this.label7.Location = new System.Drawing.Point(10, 179);
             this.label7.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 20);
@@ -182,35 +134,13 @@
             // 
             // txt_address
             // 
-            this.txt_address.Location = new System.Drawing.Point(10, 255);
+            this.txt_address.Location = new System.Drawing.Point(10, 202);
             this.txt_address.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.txt_address.MaxLength = 50;
             this.txt_address.Name = "txt_address";
             this.txt_address.Size = new System.Drawing.Size(303, 27);
             this.txt_address.TabIndex = 10;
             this.txt_address.TextChanged += new System.EventHandler(this.txt_address_TextChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(10, 285);
-            this.label8.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(39, 20);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Role";
-            // 
-            // cb_role
-            // 
-            this.cb_role.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cb_role.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cb_role.FormattingEnabled = true;
-            this.cb_role.Location = new System.Drawing.Point(10, 308);
-            this.cb_role.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.cb_role.Name = "cb_role";
-            this.cb_role.Size = new System.Drawing.Size(303, 28);
-            this.cb_role.TabIndex = 12;
-            this.cb_role.SelectedIndexChanged += new System.EventHandler(this.DD_role_SelectedIndexChanged);
             // 
             // dataGridViewstaff
             // 
@@ -323,6 +253,26 @@
             this.RoleGV.MinimumWidth = 6;
             this.RoleGV.Name = "RoleGV";
             this.RoleGV.ReadOnly = true;
+            // 
+            // txt_password
+            // 
+            this.txt_password.Location = new System.Drawing.Point(10, 96);
+            this.txt_password.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
+            this.txt_password.MaxLength = 50;
+            this.txt_password.Name = "txt_password";
+            this.txt_password.Size = new System.Drawing.Size(303, 27);
+            this.txt_password.TabIndex = 6;
+            this.txt_password.TextChanged += new System.EventHandler(this.txt_password_TextChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(10, 73);
+            this.label5.Margin = new System.Windows.Forms.Padding(10, 0, 3, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 20);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Password";
             // 
             // StaffWindow
             // 

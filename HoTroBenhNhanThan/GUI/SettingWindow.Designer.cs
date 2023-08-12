@@ -167,6 +167,7 @@
             this.ClientSize = new System.Drawing.Size(1272, 760);
             this.Name = "SettingWindow";
             this.Text = "Setting...";
+            this.Load += new System.EventHandler(this.SettingWindow_Load);
             this.LEFTPANEL.ResumeLayout(false);
             this.left_panel_common.ResumeLayout(false);
             this.left_panel_common.PerformLayout();

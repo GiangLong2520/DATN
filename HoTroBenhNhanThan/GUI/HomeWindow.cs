@@ -104,7 +104,7 @@ namespace HoTroBenhNhanThan
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ReportWindow screen = new ReportWindow();
+            AnalysisScreen screen = new AnalysisScreen();
             LibMainClass.LibMainClass.showWindow(screen, this, MDI.ActiveForm);
         }
 

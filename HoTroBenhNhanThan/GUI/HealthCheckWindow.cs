@@ -54,9 +54,9 @@ namespace HoTroBenhNhanThan.GUI
         }
         void setTestResult(int bioTest, int uretest, int bloodTest)
         {
-            txt_testResults.Text += "Bio Test: " + ((bioTest == -1) ? "UnKnow" : ((bioTest==1) ? "Consulted" : "Not Consult"));
-            txt_testResults.Text += "\nUrine Test: " + ((uretest == -1) ? "UnKnow" : ((uretest == 1) ? "Consulted" : "Not Consult"));
-            txt_testResults.Text += "\nBlood Test: " + ((bloodTest == -1) ? "UnKnow" : ((bloodTest == 1) ? "Consulted" : "Not Consult"));
+            txt_doctor.Text += "Bio Test: " + ((bioTest == -1) ? "UnKnow" : ((bioTest==1) ? "Consulted" : "Not Consult"));
+            txt_doctor.Text += "\nUrine Test: " + ((uretest == -1) ? "UnKnow" : ((uretest == 1) ? "Consulted" : "Not Consult"));
+            txt_doctor.Text += "\nBlood Test: " + ((bloodTest == -1) ? "UnKnow" : ((bloodTest == 1) ? "Consulted" : "Not Consult"));
         }
         public static int turnNo;
         public static string patentName;
@@ -329,6 +329,7 @@ namespace HoTroBenhNhanThan.GUI
 
             getInforPatientReg();
             setTestResult(-1, -1, -1);
+
         }
 
 
@@ -690,6 +691,27 @@ namespace HoTroBenhNhanThan.GUI
         private void groupBox14_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        public void getLastMedicine(ListBox lb, Int64 appID, Int16 type)
+        {
+            try
+            {
+                lb.Items.Clear();
+                SqlCommand cmd = new SqlCommand("st_getPrescribeMedicine", LibMainClass.LibMainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@type", type);
+                cmd.Parameters.AddWithValue("@appID", appID);
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                lb.DataSource= dt;
+                                 
+            }
+            catch ( Exception e)
+            {
+                throw;
+            }          
         }
     }
 }

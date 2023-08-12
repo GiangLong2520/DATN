@@ -66,5 +66,30 @@ namespace HoTroBenhNhanThan
             LoginWindow lw = new LoginWindow();
             LibMainClass.LibMainClass.showWindow(lw, this, MDI.ActiveForm);
         }
+
+        private void SettingWindow_Load(object sender, EventArgs e)
+        {
+            Initdata();
+        }
+        void Initdata()
+        {
+            string s = "";
+            string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "\\cms_connect";
+            if (File.Exists(path))
+            {
+                string connectionString = File.ReadAllText(path);
+
+                if (!string.IsNullOrEmpty(connectionString))
+                {
+
+                    Microsoft.Data.SqlClient.SqlConnectionStringBuilder builder = new Microsoft.Data.SqlClient.SqlConnectionStringBuilder(connectionString);
+
+                    txt_source.Text = builder.DataSource;
+                    txt_Db.Text = builder.InitialCatalog;
+                    txt_userid.Text = builder.UserID;
+                    txt_pass.Text = builder.Password;
+                }
+            }
+        }
     }
 }

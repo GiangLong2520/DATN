@@ -38,5 +38,17 @@ namespace HoTroBenhNhanThan
             SettingWindow lw = new SettingWindow();
             LibMainClass.LibMainClass.showWindow(lw, MDI.ActiveForm);
         }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginWindow lw = new LoginWindow();
+            LibMainClass.LibMainClass.showWindow(lw, MDI.ActiveForm);
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LoginWindow lw = new LoginWindow();
+            LibMainClass.LibMainClass.showWindow(lw, MDI.ActiveForm);
+        }
     }
 }

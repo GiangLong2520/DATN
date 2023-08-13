@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿using Microsoft.Data.SqlClient;
+using System.Collections;
+using System.Data;
+using System.Web.UI.DataVisualization.Charting;
 
 namespace HoTroBenhNhanThan.GUI
 {
@@ -35,7 +38,15 @@ namespace HoTroBenhNhanThan.GUI
             }
             else
             {
-                if (edit == 0)                              // code for save
+                Hashtable h = new Hashtable();
+                h.Add("@name", txt_medi.Text);
+                h.Add("@type", cb_Type.SelectedIndex);
+                if (CheckExistance("st_checkExistMedicine", h))
+                {
+                    LibMainClass.LibMainClass.showMessage("Medicine Existed", "warning");
+                    return;
+                }    
+                    if (edit == 0)                              // code for save
                 {
                     Hashtable ht = new Hashtable();
                     ht.Add(@"name", txt_medi.Text);
@@ -74,7 +85,7 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add("@type", cb_Type.SelectedIndex);
                     ht.Add("@id", MedID);
 
-                    if (LibCRUD.LibCRUD.data_insert_update_delete("st_updateUsers", ht) > 0)
+                    if (LibCRUD.LibCRUD.data_insert_update_delete("st_updateMedicine", ht) > 0)
                     {
                         LibMainClass.LibMainClass.showMessage(txt_medi.Text + " added successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(left_panel);
@@ -94,7 +105,7 @@ namespace HoTroBenhNhanThan.GUI
                 {
                     Hashtable ht = new Hashtable();
                     ht.Add(@"id", MedID);
-                    if (LibCRUD.LibCRUD.data_insert_update_delete("st_deleteUser", ht) > 0)
+                    if (LibCRUD.LibCRUD.data_insert_update_delete("st_deleteMedicine", ht) > 0)
                     {
                         LibMainClass.LibMainClass.showMessage(txt_company.Text + " deleted successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(left_panel);
@@ -164,6 +175,37 @@ namespace HoTroBenhNhanThan.GUI
                 cb_Type.SelectedItem = row.Cells["TypeGV"].Value.ToString();
                 LibMainClass.LibMainClass.DisableControl(left_panel);
             }
+        }
+
+
+        private bool CheckExistance(string proc, Hashtable ht)
+        {
+            bool check = false;
+            try
+            {
+                SqlCommand cmd = new SqlCommand(proc, LibMainClass.LibMainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                foreach (DictionaryEntry item in ht)
+                {
+                    cmd.Parameters.AddWithValue(item.Key.ToString(), item.Value.ToString());
+                }
+                LibMainClass.LibMainClass.con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    check = true;
+                }
+                else
+                {
+                    check = false;
+                }
+                LibMainClass.LibMainClass.con.Close();
+            }
+            catch (Exception ex)
+            {
+                LibMainClass.LibMainClass.con.Close();
+            }
+            return check;
         }
     }
 }

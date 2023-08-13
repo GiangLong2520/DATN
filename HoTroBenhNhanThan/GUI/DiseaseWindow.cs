@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Data.SqlClient;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,6 +44,13 @@ namespace HoTroBenhNhanThan.GUI
             }
             else
             {
+                Hashtable h = new Hashtable();
+                h.Add("@disease", txt_disease.Text);
+                if (CheckExistance("st_checkExistdisease", h))
+                {
+                    LibMainClass.LibMainClass.showMessage("Symptom Existed", "warning");
+                    return;
+                }
                 if (edit == 0)
                 {
                     Hashtable ht = new Hashtable();
@@ -106,6 +114,36 @@ namespace HoTroBenhNhanThan.GUI
                 diseaseID = Convert.ToInt32(row.Cells["IDGV"].Value.ToString());
                 txt_disease.Text = row.Cells["DiseaseGV"].Value.ToString();
             }
+        }
+
+        private bool CheckExistance(string proc, Hashtable ht)
+        {
+            bool check = false;
+            try
+            {
+                SqlCommand cmd = new SqlCommand(proc, LibMainClass.LibMainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                foreach (DictionaryEntry item in ht)
+                {
+                    cmd.Parameters.AddWithValue(item.Key.ToString(), item.Value.ToString());
+                }
+                LibMainClass.LibMainClass.con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    check = true;
+                }
+                else
+                {
+                    check = false;
+                }
+                LibMainClass.LibMainClass.con.Close();
+            }
+            catch (Exception ex)
+            {
+                LibMainClass.LibMainClass.con.Close();
+            }
+            return check;
         }
     }
 }

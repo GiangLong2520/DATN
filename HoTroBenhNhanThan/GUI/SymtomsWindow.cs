@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using static Azure.Core.HttpHeader;
 using LibCRUD;
 using LibMainClass;
+using Microsoft.Data.SqlClient;
+
 namespace HoTroBenhNhanThan.GUI
 {
     public partial class SymtomsWindow : Sample2
@@ -48,7 +50,14 @@ namespace HoTroBenhNhanThan.GUI
             }
             else
             {
-                if (edit == 0)                              // code for save
+                Hashtable h = new Hashtable();
+                h.Add("@symptom", txt_symptom.Text);
+                if (CheckExistance("st_checkExistSymptom", h))
+                {
+                    LibMainClass.LibMainClass.showMessage("Symptom Existed, Cannot add this", "warning");
+                    return;
+                }    
+                    if (edit == 0)                              // code for save
                 {
                     Hashtable ht = new Hashtable();
                     ht.Add(@"symptom", txt_symptom.Text);
@@ -111,6 +120,36 @@ namespace HoTroBenhNhanThan.GUI
                 txt_symptom.Text = row.Cells["symptomGV"].Value.ToString();
 
             }
+        }
+
+        private bool CheckExistance(string proc, Hashtable ht)
+        {
+            bool check = false;
+            try
+            {
+                SqlCommand cmd = new SqlCommand(proc, LibMainClass.LibMainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                foreach (DictionaryEntry item in ht)
+                {
+                    cmd.Parameters.AddWithValue(item.Key.ToString(), item.Value.ToString());
+                }
+                LibMainClass.LibMainClass.con.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    check = true;
+                }
+                else
+                {
+                    check = false;
+                }
+                LibMainClass.LibMainClass.con.Close();
+            }
+            catch (Exception ex)
+            {
+                LibMainClass.LibMainClass.con.Close();
+            }
+            return check;
         }
     }
 }

@@ -190,6 +190,7 @@ namespace HoTroBenhNhanThan.GUI
                             }
                             else
                             {
+                                ht.Add("@dosage", dosage);
                                  LibCRUD.LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
                             }
                         }
@@ -246,7 +247,7 @@ namespace HoTroBenhNhanThan.GUI
                             }
                             else
                             {
-                                 LibCRUD.LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
+                                LibCRUD.LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
                             }
                         }
 
@@ -328,7 +329,9 @@ namespace HoTroBenhNhanThan.GUI
             // LibCRUD.LibCRUD.loadList("[st_getTodayPatientApointment]", cb_selectPatient, "PatientApointment ID", "Patient", ht);
 
             getInforPatientReg();
-            setTestResult(-1, -1, -1);
+            // setTestResult(-1, -1, -1);
+            //getLastMedicine(listBox1,AppID,0);
+            //getLastMedicine(listBox2,AppID,1);
 
         }
 
@@ -591,6 +594,8 @@ namespace HoTroBenhNhanThan.GUI
                     txt_phone.Text = row["Phone"].ToString(); // Lấy giá trị của cột "Name" tại hàng hiện tại
                     txtage.Text = row["Age"].ToString();
                     // Sử dụng các giá trị lấy được ở đây...
+                    txt_doctor.Text = row["Doctor"].ToString();
+                    dateTimePicker1.Value = Convert.ToDateTime(row["Date"].ToString());
                 }
 
             }
@@ -704,8 +709,11 @@ namespace HoTroBenhNhanThan.GUI
                 cmd.Parameters.AddWithValue("@appID", appID);
                 SqlDataAdapter da = new SqlDataAdapter();
                 DataTable dt = new DataTable();
-                da.Fill(dt);
-                lb.DataSource= dt;
+                if (dt != null)
+                {
+                    da.Fill(dt);
+                    lb.DataSource = dt;
+                }
                                  
             }
             catch ( Exception e)

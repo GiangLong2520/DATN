@@ -148,6 +148,8 @@
             this.listBox3 = new System.Windows.Forms.ListBox();
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
+            this.f = new System.Windows.Forms.Label();
+            this.txt_remarkHis = new System.Windows.Forms.TextBox();
             this.left_panel_common.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
@@ -1587,6 +1589,8 @@
             this.tableLayoutPanel8.Controls.Add(this.label8, 1, 2);
             this.tableLayoutPanel8.Controls.Add(this.label10, 1, 0);
             this.tableLayoutPanel8.Controls.Add(this.label11, 0, 0);
+            this.tableLayoutPanel8.Controls.Add(this.f, 1, 4);
+            this.tableLayoutPanel8.Controls.Add(this.txt_remarkHis, 1, 5);
             this.tableLayoutPanel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel8.Location = new System.Drawing.Point(7, 298);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(7, 10, 0, 3);
@@ -1601,6 +1605,25 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(485, 526);
             this.tableLayoutPanel8.TabIndex = 92;
+            // 
+            // f
+            // 
+            this.f.AutoSize = true;
+            this.f.Location = new System.Drawing.Point(246, 357);
+            this.f.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.f.Name = "f";
+            this.f.Size = new System.Drawing.Size(59, 20);
+            this.f.TabIndex = 46;
+            this.f.Text = "Remark";
+            // 
+            // txt_remarkHis
+            // 
+            this.txt_remarkHis.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txt_remarkHis.Location = new System.Drawing.Point(246, 389);
+            this.txt_remarkHis.Multiline = true;
+            this.txt_remarkHis.Name = "txt_remarkHis";
+            this.txt_remarkHis.Size = new System.Drawing.Size(234, 132);
+            this.txt_remarkHis.TabIndex = 47;
             // 
             // HealthCheckWindow
             // 
@@ -1787,5 +1810,7 @@
         private Label label8;
         private Label label10;
         private Label label11;
+        private Label f;
+        private TextBox txt_remarkHis;
     }
 }

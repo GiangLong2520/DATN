@@ -330,9 +330,12 @@ namespace HoTroBenhNhanThan.GUI
 
             getInforPatientReg();
             // setTestResult(-1, -1, -1);
-            //getLastMedicine(listBox1,AppID,0);
-            //getLastMedicine(listBox2,AppID,1);
 
+            getLastMedicine(listBox1, AppID, 0);
+            getLastMedicine(listBox2, AppID, 1);
+            getLastDetail("[st_getLastDisease]", listBox4, "@appID", AppID, "Disease", "ID");
+            getLastDetail("[st_getLastSymptom]", listBox3, "@appID", AppID, "Symptom", "ID");
+            getLastRemark();
         }
 
 
@@ -707,19 +710,73 @@ namespace HoTroBenhNhanThan.GUI
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@type", type);
                 cmd.Parameters.AddWithValue("@appID", appID);
-                SqlDataAdapter da = new SqlDataAdapter();
-                DataTable dt = new DataTable();
-                if (dt != null)
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();            
+                 da.Fill(dt);
+                if (dt.Rows.Count > 0) // Kiểm tra xem có dữ liệu hay không
                 {
-                    da.Fill(dt);
-                    lb.DataSource = dt;
+                    lb.ValueMember = "Medicine";
+                    lb.DataSource = dt; // Gán DataTable vào DataSource của ListBox để hiển thị dữ liệu
                 }
-                                 
+                else
+                {
+                    // Xử lý khi không có dữ liệu
+                    // Ví dụ: lb.Items.Add("Không có đơn thuốc nào."); hoặc thực hiện hành động khác tùy vào yêu cầu của bạn.
+                }
             }
+                                
             catch ( Exception e)
             {
                 throw;
             }          
+        }
+
+        public void getLastDetail(string proc, ListBox lb, string param, object val, string dmember,string vmember)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand(proc, LibMainClass.LibMainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue(param, val);
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                if (dt.Rows.Count > 0) // Kiểm tra xem có dữ liệu hay không
+                {
+                    lb.DisplayMember = dmember;
+                    lb.ValueMember = vmember;
+                    lb.DataSource = dt; // Gán DataTable vào DataSource của ListBox để hiển thị dữ liệu
+                }
+                else
+                {
+                    // Xử lý khi không có dữ liệu
+                    // Ví dụ: lb.Items.Add("Không có đơn thuốc nào."); hoặc thực hiện hành động khác tùy vào yêu cầu của bạn.
+                }
+            }
+
+            catch (Exception e)
+            {
+                throw;
+            }
+        }
+
+        public void getLastRemark()
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("[st_getLastRemark]", LibMainClass.LibMainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@appID", AppID);
+                LibMainClass.LibMainClass.con.Open();
+                txt_remarkHis.Text = cmd.ExecuteScalar().ToString();
+                LibMainClass.LibMainClass.con.Close();
+            }
+
+            catch (Exception e)
+            {
+                LibMainClass.LibMainClass.con.Close();
+                throw;
+            }
         }
     }
 }

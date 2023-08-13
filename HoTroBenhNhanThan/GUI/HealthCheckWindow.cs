@@ -247,7 +247,6 @@ namespace HoTroBenhNhanThan.GUI
                             }
                             else
                             {
-                                ht.Add("@dosage", dosage);
                                 LibCRUD.LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
                             }
                         }

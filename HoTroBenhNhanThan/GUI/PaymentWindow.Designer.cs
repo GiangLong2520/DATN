@@ -45,6 +45,9 @@
             this.DoctorIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.appIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FeesGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiscountGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.printBtn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.picker_DateTime = new System.Windows.Forms.DateTimePicker();
@@ -143,6 +146,9 @@
             this.DoctorIDGV,
             this.appIDGV,
             this.statusGV,
+            this.FeesGV,
+            this.DiscountGV,
+            this.TotalGV,
             this.printBtn});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
@@ -251,6 +257,27 @@
             this.statusGV.Name = "statusGV";
             this.statusGV.ReadOnly = true;
             // 
+            // FeesGV
+            // 
+            this.FeesGV.HeaderText = "Fees";
+            this.FeesGV.MinimumWidth = 6;
+            this.FeesGV.Name = "FeesGV";
+            this.FeesGV.ReadOnly = true;
+            // 
+            // DiscountGV
+            // 
+            this.DiscountGV.HeaderText = "Discount %";
+            this.DiscountGV.MinimumWidth = 6;
+            this.DiscountGV.Name = "DiscountGV";
+            this.DiscountGV.ReadOnly = true;
+            // 
+            // TotalGV
+            // 
+            this.TotalGV.HeaderText = "Total Fees";
+            this.TotalGV.MinimumWidth = 6;
+            this.TotalGV.Name = "TotalGV";
+            this.TotalGV.ReadOnly = true;
+            // 
             // printBtn
             // 
             this.printBtn.HeaderText = "Action";
@@ -322,6 +349,9 @@
         private Label label12;
         public DateTimePicker picker_DateTime;
         private Button btn_load;
+
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Button button2;
         private DataGridViewTextBoxColumn snoGV;
         private DataGridViewTextBoxColumn TurnGV;
         private DataGridViewTextBoxColumn patientIDGV;
@@ -334,9 +364,9 @@
         private DataGridViewTextBoxColumn DoctorIDGV;
         private DataGridViewTextBoxColumn appIDGV;
         private DataGridViewTextBoxColumn statusGV;
+        private DataGridViewTextBoxColumn FeesGV;
+        private DataGridViewTextBoxColumn DiscountGV;
+        private DataGridViewTextBoxColumn TotalGV;
         private DataGridViewButtonColumn printBtn;
-
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private Button button2;
     }
 }

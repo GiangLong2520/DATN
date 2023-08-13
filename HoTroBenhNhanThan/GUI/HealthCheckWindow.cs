@@ -32,6 +32,7 @@ namespace HoTroBenhNhanThan.GUI
             ht.Add("@day", picker_DateTime.Value.Day);
             ht.Add("@month", picker_DateTime.Value.Month);
             ht.Add("@year", picker_DateTime.Value.Year);
+
              LibCRUD.LibCRUD.loadList("[st_getTodayPatientApointment]", cb_selectPatient, "PatientApointment ID", "Patient", ht);
         }
         private void HealthCheckWindow_Load(object sender, EventArgs e)
@@ -256,9 +257,9 @@ namespace HoTroBenhNhanThan.GUI
                         // Remark and fees
                         Hashtable htRemFee= new Hashtable();
                         htRemFee.Add("@appID", AppID);
-                        htRemFee.Add("@remark", txt_rem.Text);
+                        htRemFee.Add("@rem", txt_rem.Text);
                         htRemFee.Add("@fees", txt_fees.Text);
-                         LibCRUD.LibCRUD.data_insert_update_delete("st_insertpatientHealthCheckup", htRemFee);
+                        LibCRUD.LibCRUD.data_insert_update_delete("st_insertpatientHealthCheckup", htRemFee);
 
 
 
@@ -266,14 +267,12 @@ namespace HoTroBenhNhanThan.GUI
                         Hashtable htAppStaus = new Hashtable();
                         htAppStaus.Add("@appID", AppID);
                         htAppStaus.Add("@status", 1);
-                         LibCRUD.LibCRUD.data_insert_update_delete("st_updateAppointmentStatus", htRemFee);
+                        LibCRUD.LibCRUD.data_insert_update_delete("st_updateAppointmentStatus", htAppStaus);
 
                         LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " Health checkup successfully..", "success");
-
+                        LibMainClass.LibMainClass.resetEnable(groupBox1);
                         sc.Complete();
                     }
-
-
 
                 }
                 else if (edit == 1)
@@ -596,11 +595,29 @@ namespace HoTroBenhNhanThan.GUI
                     PatientID =  Convert.ToInt32(row["ID"]); // Lấy giá trị của cột "ID" tại hàng hiện tại
                     txt_phone.Text = row["Phone"].ToString(); // Lấy giá trị của cột "Name" tại hàng hiện tại
                     txtage.Text = row["Age"].ToString();
-                    // Sử dụng các giá trị lấy được ở đây...
+                }
+
+
+
+                //
+                cmd = new SqlCommand("[st_GetPatientInforRegHealthCheck]", LibMainClass.LibMainClass.con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                ht.Clear();
+                ht.Add("@appID", AppID);
+                foreach (DictionaryEntry item in ht)
+                {
+                    cmd.Parameters.AddWithValue(item.Key.ToString(), item.Value);
+                }
+
+                da = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                da.Fill(dt);
+
+                foreach (DataRow row in dt.Rows)
+                {
                     txt_doctor.Text = row["Doctor"].ToString();
                     dateTimePicker1.Value = Convert.ToDateTime(row["Date"].ToString());
                 }
-
             }
             catch (Exception ex)
             {
@@ -705,7 +722,7 @@ namespace HoTroBenhNhanThan.GUI
         {
             try
             {
-                lb.Items.Clear();
+                //lb.Items.Clear();
                 SqlCommand cmd = new SqlCommand("st_getPrescribeMedicine", LibMainClass.LibMainClass.con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@type", type);
@@ -768,7 +785,10 @@ namespace HoTroBenhNhanThan.GUI
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@appID", AppID);
                 LibMainClass.LibMainClass.con.Open();
-                txt_remarkHis.Text = cmd.ExecuteScalar().ToString();
+                if (cmd.ExecuteScalar().ToString() != null)
+                {
+                    txt_remarkHis.Text = cmd.ExecuteScalar().ToString();
+                }
                 LibMainClass.LibMainClass.con.Close();
             }
 

@@ -33,6 +33,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label12 = new System.Windows.Forms.Label();
+            this.picker_DateTime = new System.Windows.Forms.DateTimePicker();
+            this.btn_load = new System.Windows.Forms.Button();
             this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TurnGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,13 +48,15 @@
             this.DoctorIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.appIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.statusGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SymptomGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RemarkGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FeesGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DiseaseGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InMedicineGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ExMedicineGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiscountGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.printBtn = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.label12 = new System.Windows.Forms.Label();
-            this.picker_DateTime = new System.Windows.Forms.DateTimePicker();
-            this.btn_load = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.left_panel.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
@@ -146,7 +151,12 @@
             this.DoctorIDGV,
             this.appIDGV,
             this.statusGV,
+            this.SymptomGV,
+            this.RemarkGV,
             this.FeesGV,
+            this.DiseaseGV,
+            this.InMedicineGV,
+            this.ExMedicineGV,
             this.DiscountGV,
             this.TotalGV,
             this.printBtn});
@@ -168,6 +178,40 @@
             this.dataGridView1.Size = new System.Drawing.Size(943, 601);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(3, 3);
+            this.label12.Margin = new System.Windows.Forms.Padding(3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(85, 20);
+            this.label12.TabIndex = 65;
+            this.label12.Text = "Select Date";
+            // 
+            // picker_DateTime
+            // 
+            this.picker_DateTime.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.picker_DateTime.CustomFormat = "dd-MMM-yyyy";
+            this.picker_DateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.picker_DateTime.Location = new System.Drawing.Point(3, 29);
+            this.picker_DateTime.Name = "picker_DateTime";
+            this.picker_DateTime.Size = new System.Drawing.Size(314, 27);
+            this.picker_DateTime.TabIndex = 68;
+            this.picker_DateTime.TabStop = false;
+            // 
+            // btn_load
+            // 
+            this.btn_load.FlatAppearance.BorderSize = 2;
+            this.btn_load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_load.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_load.Location = new System.Drawing.Point(3, 62);
+            this.btn_load.Name = "btn_load";
+            this.btn_load.Size = new System.Drawing.Size(314, 45);
+            this.btn_load.TabIndex = 69;
+            this.btn_load.Text = "Load";
+            this.btn_load.UseVisualStyleBackColor = true;
+            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
             // 
             // snoGV
             // 
@@ -257,12 +301,52 @@
             this.statusGV.Name = "statusGV";
             this.statusGV.ReadOnly = true;
             // 
+            // SymptomGV
+            // 
+            this.SymptomGV.HeaderText = "Symptom";
+            this.SymptomGV.MinimumWidth = 6;
+            this.SymptomGV.Name = "SymptomGV";
+            this.SymptomGV.ReadOnly = true;
+            this.SymptomGV.Visible = false;
+            // 
+            // RemarkGV
+            // 
+            this.RemarkGV.HeaderText = "Remark";
+            this.RemarkGV.MinimumWidth = 6;
+            this.RemarkGV.Name = "RemarkGV";
+            this.RemarkGV.ReadOnly = true;
+            this.RemarkGV.Visible = false;
+            // 
             // FeesGV
             // 
             this.FeesGV.HeaderText = "Fees";
             this.FeesGV.MinimumWidth = 6;
             this.FeesGV.Name = "FeesGV";
             this.FeesGV.ReadOnly = true;
+            // 
+            // DiseaseGV
+            // 
+            this.DiseaseGV.HeaderText = "Disease";
+            this.DiseaseGV.MinimumWidth = 6;
+            this.DiseaseGV.Name = "DiseaseGV";
+            this.DiseaseGV.ReadOnly = true;
+            this.DiseaseGV.Visible = false;
+            // 
+            // InMedicineGV
+            // 
+            this.InMedicineGV.HeaderText = "InMedicine";
+            this.InMedicineGV.MinimumWidth = 6;
+            this.InMedicineGV.Name = "InMedicineGV";
+            this.InMedicineGV.ReadOnly = true;
+            this.InMedicineGV.Visible = false;
+            // 
+            // ExMedicineGV
+            // 
+            this.ExMedicineGV.HeaderText = "ExMedicine";
+            this.ExMedicineGV.MinimumWidth = 6;
+            this.ExMedicineGV.Name = "ExMedicineGV";
+            this.ExMedicineGV.ReadOnly = true;
+            this.ExMedicineGV.Visible = false;
             // 
             // DiscountGV
             // 
@@ -285,40 +369,6 @@
             this.printBtn.Name = "printBtn";
             this.printBtn.Text = "Print";
             this.printBtn.UseColumnTextForButtonValue = true;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(3, 3);
-            this.label12.Margin = new System.Windows.Forms.Padding(3);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(85, 20);
-            this.label12.TabIndex = 65;
-            this.label12.Text = "Select Date";
-            // 
-            // picker_DateTime
-            // 
-            this.picker_DateTime.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.picker_DateTime.CustomFormat = "dd-MMM-yyyy";
-            this.picker_DateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.picker_DateTime.Location = new System.Drawing.Point(3, 29);
-            this.picker_DateTime.Name = "picker_DateTime";
-            this.picker_DateTime.Size = new System.Drawing.Size(314, 27);
-            this.picker_DateTime.TabIndex = 68;
-            this.picker_DateTime.TabStop = false;
-            // 
-            // btn_load
-            // 
-            this.btn_load.FlatAppearance.BorderSize = 2;
-            this.btn_load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_load.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_load.Location = new System.Drawing.Point(3, 62);
-            this.btn_load.Name = "btn_load";
-            this.btn_load.Size = new System.Drawing.Size(314, 45);
-            this.btn_load.TabIndex = 69;
-            this.btn_load.Text = "Load";
-            this.btn_load.UseVisualStyleBackColor = true;
-            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
             // 
             // PaymentWindow
             // 
@@ -364,7 +414,12 @@
         private DataGridViewTextBoxColumn DoctorIDGV;
         private DataGridViewTextBoxColumn appIDGV;
         private DataGridViewTextBoxColumn statusGV;
+        private DataGridViewTextBoxColumn SymptomGV;
+        private DataGridViewTextBoxColumn RemarkGV;
         private DataGridViewTextBoxColumn FeesGV;
+        private DataGridViewTextBoxColumn DiseaseGV;
+        private DataGridViewTextBoxColumn InMedicineGV;
+        private DataGridViewTextBoxColumn ExMedicineGV;
         private DataGridViewTextBoxColumn DiscountGV;
         private DataGridViewTextBoxColumn TotalGV;
         private DataGridViewButtonColumn printBtn;

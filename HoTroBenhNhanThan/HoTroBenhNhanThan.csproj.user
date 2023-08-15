@@ -81,5 +81,8 @@
     <None Update="DataSet1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Update="DataSet2.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
 </Project>

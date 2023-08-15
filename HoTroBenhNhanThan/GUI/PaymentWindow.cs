@@ -34,6 +34,11 @@ namespace HoTroBenhNhanThan.GUI
             loadData.Items.Add(appIDGV);
             loadData.Items.Add(phoneGV);
             loadData.Items.Add(FeesGV);
+            loadData.Items.Add(SymptomGV);
+            loadData.Items.Add(RemarkGV);
+            loadData.Items.Add(DiseaseGV);
+            loadData.Items.Add(InMedicineGV);
+            loadData.Items.Add(ExMedicineGV);
 
             Hashtable ht = new Hashtable();
             ht.Add("@day", picker_DateTime.Value.Day);
@@ -51,20 +56,23 @@ namespace HoTroBenhNhanThan.GUI
         }
         int rowSelect = -1;
 
-        string name, age, guard, Doctor,status,phone,Fees;
+        string name, age, guard, Doctor,status,phone,Fees, symptom, remark;
+        long AppID;
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1 && e.ColumnIndex != -1)
             {
                 rowSelect = e.RowIndex;
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                AppID = Convert.ToInt64( row.Cells["appIDGV"].Value.ToString());
                 name = row.Cells["patientGV"].Value.ToString();
                 age = row.Cells["ageGV"].Value.ToString();
                 guard = row.Cells["GuardGV"].Value.ToString();
                 Doctor  = row.Cells["doctorGV"].Value.ToString();
                 phone = row.Cells["phoneGV"].Value.ToString();
                 Fees = row.Cells["FeesGV"].Value.ToString();
-
+                symptom = row.Cells["SymptomGV"].Value.ToString();
+                remark = row.Cells["RemarkGV"].Value.ToString();
 
 
                 DataTable dataTable = new DataTable();
@@ -80,6 +88,23 @@ namespace HoTroBenhNhanThan.GUI
                 dataTable.Columns.Add("Phone", typeof(string));
                 // Thêm cột "Fees" kiểu string vào DataTable
                 dataTable.Columns.Add("Fees", typeof(string));
+                // Thêm cột "Fees" kiểu string vào DataTable
+                dataTable.Columns.Add("Remark", typeof(string));
+                // Thêm cột "Fees" kiểu string vào DataTable
+                dataTable.Columns.Add("Symptom", typeof(string));
+                // Thêm cột "Fees" kiểu string vào DataTable
+                dataTable.Columns.Add("DateTime", typeof(string));
+                // Thêm cột "Fees" kiểu string vào DataTable
+                dataTable.Columns.Add("Disease", typeof(string));
+                // Thêm cột "Fees" kiểu string vào DataTable
+                dataTable.Columns.Add("InMedicine", typeof(string));
+                // Thêm cột "Fees" kiểu string vào DataTable
+                dataTable.Columns.Add("ExMedicine", typeof(string));
+
+                dataTable.Columns.Add("Year", typeof(string));
+                dataTable.Columns.Add("Month", typeof(string));
+                dataTable.Columns.Add("Day", typeof(string));
+
 
                 // Thêm dòng dữ liệu với Name, Age và các trường còn lại
                 DataRow newRow = dataTable.NewRow();
@@ -89,11 +114,19 @@ namespace HoTroBenhNhanThan.GUI
                 newRow["Doctor"] = Doctor;
                 newRow["Phone"] = phone;
                 newRow["Fees"] = Fees;
+                newRow["Remark"] = Fees;
+                newRow["Symptom"] = symptom;
 
+                newRow["DateTime"] = row.Cells["apointDateGV"].Value.ToString();
+                newRow["Year"] = DateTime.Now.Year.ToString();
+                newRow["Month"] = DateTime.Now.Month.ToString();
+                newRow["Day"] = DateTime.Now.Day.ToString();
+
+                newRow["Disease"] = row.Cells["DiseaseGV"].Value.ToString();
+                newRow["InMedicine"] = row.Cells["InMedicineGV"].Value.ToString();
+                newRow["ExMedicine"] = row.Cells["ExMedicineGV"].Value.ToString();
                 // Thêm dòng vào DataTable
                 dataTable.Rows.Add(newRow);
-
-
 
                 ReportDataSource s = new ReportDataSource("DataSet1", dataTable);
                 reportViewer1.LocalReport.DataSources.Add(s);

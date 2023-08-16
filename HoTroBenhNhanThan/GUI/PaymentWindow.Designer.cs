@@ -33,9 +33,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label12 = new System.Windows.Forms.Label();
-            this.picker_DateTime = new System.Windows.Forms.DateTimePicker();
-            this.btn_load = new System.Windows.Forms.Button();
             this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TurnGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,6 +54,10 @@
             this.DiscountGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.printBtn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.label12 = new System.Windows.Forms.Label();
+            this.picker_DateTime = new System.Windows.Forms.DateTimePicker();
+            this.btn_load = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.left_panel.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
@@ -82,6 +83,7 @@
             // 
             this.left_panel.Controls.Add(this.label12);
             this.left_panel.Controls.Add(this.picker_DateTime);
+            this.left_panel.Controls.Add(this.checkBox1);
             this.left_panel.Controls.Add(this.btn_load);
             // 
             // btnBack
@@ -178,40 +180,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(943, 601);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(3, 3);
-            this.label12.Margin = new System.Windows.Forms.Padding(3);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(85, 20);
-            this.label12.TabIndex = 65;
-            this.label12.Text = "Select Date";
-            // 
-            // picker_DateTime
-            // 
-            this.picker_DateTime.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.picker_DateTime.CustomFormat = "dd-MMM-yyyy";
-            this.picker_DateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.picker_DateTime.Location = new System.Drawing.Point(3, 29);
-            this.picker_DateTime.Name = "picker_DateTime";
-            this.picker_DateTime.Size = new System.Drawing.Size(314, 27);
-            this.picker_DateTime.TabIndex = 68;
-            this.picker_DateTime.TabStop = false;
-            // 
-            // btn_load
-            // 
-            this.btn_load.FlatAppearance.BorderSize = 2;
-            this.btn_load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_load.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btn_load.Location = new System.Drawing.Point(3, 62);
-            this.btn_load.Name = "btn_load";
-            this.btn_load.Size = new System.Drawing.Size(314, 45);
-            this.btn_load.TabIndex = 69;
-            this.btn_load.Text = "Load";
-            this.btn_load.UseVisualStyleBackColor = true;
-            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
             // 
             // snoGV
             // 
@@ -370,6 +338,50 @@
             this.printBtn.Text = "Print";
             this.printBtn.UseColumnTextForButtonValue = true;
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(3, 3);
+            this.label12.Margin = new System.Windows.Forms.Padding(3);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(85, 20);
+            this.label12.TabIndex = 65;
+            this.label12.Text = "Select Date";
+            // 
+            // picker_DateTime
+            // 
+            this.picker_DateTime.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.picker_DateTime.CustomFormat = "dd-MMM-yyyy";
+            this.picker_DateTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.picker_DateTime.Location = new System.Drawing.Point(3, 29);
+            this.picker_DateTime.Name = "picker_DateTime";
+            this.picker_DateTime.Size = new System.Drawing.Size(314, 27);
+            this.picker_DateTime.TabIndex = 68;
+            this.picker_DateTime.TabStop = false;
+            // 
+            // btn_load
+            // 
+            this.btn_load.FlatAppearance.BorderSize = 2;
+            this.btn_load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_load.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btn_load.Location = new System.Drawing.Point(3, 92);
+            this.btn_load.Name = "btn_load";
+            this.btn_load.Size = new System.Drawing.Size(314, 45);
+            this.btn_load.TabIndex = 69;
+            this.btn_load.Text = "Load";
+            this.btn_load.UseVisualStyleBackColor = true;
+            this.btn_load.Click += new System.EventHandler(this.btn_load_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(3, 62);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(171, 24);
+            this.checkBox1.TabIndex = 70;
+            this.checkBox1.Text = "Take both completed";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // PaymentWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -423,5 +435,6 @@
         private DataGridViewTextBoxColumn DiscountGV;
         private DataGridViewTextBoxColumn TotalGV;
         private DataGridViewButtonColumn printBtn;
+        private CheckBox checkBox1;
     }
 }

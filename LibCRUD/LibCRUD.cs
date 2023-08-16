@@ -163,11 +163,14 @@ namespace LibCRUD
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
+                string temp;
+                Console.Write("This is ");
                 for (int i = 0; i < lb.Items.Count; i++)
                 {
                     string colName = ((DataGridViewColumn)lb.Items[i]).Name;
                     //if (colName.Equals("NhomMauGV")) { }
-                    gv.Columns[colName].DataPropertyName = dt.Columns[i].ToString().TrimEnd().TrimStart();
+                    temp = dt.Columns[i].ToString().TrimEnd().TrimStart();
+                    gv.Columns[colName].DataPropertyName = temp ;
                 }
                 gv.DataSource = dt;
                 int count = 0;

@@ -1,4 +1,5 @@
 ﻿using HoTroBenhNhanThan.GUI.BaseScreen;
+using HoTroBenhNhanThan.Source;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -107,12 +108,22 @@ namespace HoTroBenhNhanThan.GUI
                     int ret = LibCRUD.LibCRUD.data_insert_update_delete("[st_InsertBloodTestPatientAppointmentReg]", ht);
                     if (ret > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_InsertBloodTestPatientAppointmentReg", ht);
                         LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " added successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadBioTest();
                     }
-                    txt_phone.Text = dataGridView1.Rows[0].Cells[PhoneGV.Name].Value.ToString();
-                    txtage.Text = dataGridView1.Rows[0].Cells[ageGV.Name].Value.ToString();
+                    if (dataGridView1.RowCount > 0)
+                    {
+                        txt_phone.Text = dataGridView1.Rows[0].Cells[PhoneGV.Name].Value.ToString();
+                        txtage.Text = dataGridView1.Rows[0].Cells[ageGV.Name].Value.ToString();
+                    }
+                    else
+                    {
+                        txt_phone.Text = "";
+                        txtage.Text = "";
+                    }
                 }
                 else if (edit == 1)
                 {
@@ -141,6 +152,8 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add("@AppID", AppID);
                     if (LibCRUD.LibCRUD.data_insert_update_delete("st_deleteRole", ht) > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_deleteRole",ht);
                         LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " deleted successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadBioTest();

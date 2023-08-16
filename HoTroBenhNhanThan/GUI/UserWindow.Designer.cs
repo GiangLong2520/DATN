@@ -43,15 +43,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.cb_Roles = new System.Windows.Forms.ComboBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UserNameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PasswordGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PhoneGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AddressGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoleIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RoleGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.cboWard = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -59,6 +50,21 @@
             this.label10 = new System.Windows.Forms.Label();
             this.cboCity = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.snoGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserNameGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PasswordGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PhoneGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProvinceGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProvinceIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DistrictGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DistrictIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WardGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WardIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AddressGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoleIDGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoleGV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.left_panel.SuspendLayout();
             this.LEFTPANEL.SuspendLayout();
@@ -236,6 +242,12 @@
             this.UserNameGV,
             this.PasswordGV,
             this.PhoneGV,
+            this.ProvinceGV,
+            this.ProvinceIDGV,
+            this.DistrictGV,
+            this.DistrictIDGV,
+            this.WardGV,
+            this.WardIDGV,
             this.AddressGV,
             this.RoleIDGV,
             this.RoleGV});
@@ -258,74 +270,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(943, 601);
             this.dataGridView2.TabIndex = 3;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick_1);
-            // 
-            // snoGV
-            // 
-            this.snoGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
-            this.snoGV.HeaderText = "#";
-            this.snoGV.MinimumWidth = 6;
-            this.snoGV.Name = "snoGV";
-            this.snoGV.ReadOnly = true;
-            this.snoGV.Width = 47;
-            // 
-            // IDGV
-            // 
-            this.IDGV.HeaderText = "ID";
-            this.IDGV.MinimumWidth = 6;
-            this.IDGV.Name = "IDGV";
-            this.IDGV.ReadOnly = true;
-            this.IDGV.Visible = false;
-            // 
-            // NameGV
-            // 
-            this.NameGV.HeaderText = "Name";
-            this.NameGV.MinimumWidth = 6;
-            this.NameGV.Name = "NameGV";
-            this.NameGV.ReadOnly = true;
-            // 
-            // UserNameGV
-            // 
-            this.UserNameGV.HeaderText = "UserName";
-            this.UserNameGV.MinimumWidth = 6;
-            this.UserNameGV.Name = "UserNameGV";
-            this.UserNameGV.ReadOnly = true;
-            // 
-            // PasswordGV
-            // 
-            this.PasswordGV.HeaderText = "Password";
-            this.PasswordGV.MinimumWidth = 6;
-            this.PasswordGV.Name = "PasswordGV";
-            this.PasswordGV.ReadOnly = true;
-            this.PasswordGV.Visible = false;
-            // 
-            // PhoneGV
-            // 
-            this.PhoneGV.HeaderText = "Phone";
-            this.PhoneGV.MinimumWidth = 6;
-            this.PhoneGV.Name = "PhoneGV";
-            this.PhoneGV.ReadOnly = true;
-            // 
-            // AddressGV
-            // 
-            this.AddressGV.HeaderText = "Address";
-            this.AddressGV.MinimumWidth = 6;
-            this.AddressGV.Name = "AddressGV";
-            this.AddressGV.ReadOnly = true;
-            // 
-            // RoleIDGV
-            // 
-            this.RoleIDGV.HeaderText = "RoleID";
-            this.RoleIDGV.MinimumWidth = 6;
-            this.RoleIDGV.Name = "RoleIDGV";
-            this.RoleIDGV.ReadOnly = true;
-            this.RoleIDGV.Visible = false;
-            // 
-            // RoleGV
-            // 
-            this.RoleGV.HeaderText = "Role";
-            this.RoleGV.MinimumWidth = 6;
-            this.RoleGV.Name = "RoleGV";
-            this.RoleGV.ReadOnly = true;
             // 
             // label2
             // 
@@ -400,6 +344,119 @@
             this.label11.TabIndex = 4;
             this.label11.Text = "Name";
             // 
+            // snoGV
+            // 
+            this.snoGV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.snoGV.HeaderText = "#";
+            this.snoGV.MinimumWidth = 6;
+            this.snoGV.Name = "snoGV";
+            this.snoGV.ReadOnly = true;
+            this.snoGV.Width = 47;
+            // 
+            // IDGV
+            // 
+            this.IDGV.HeaderText = "ID";
+            this.IDGV.MinimumWidth = 6;
+            this.IDGV.Name = "IDGV";
+            this.IDGV.ReadOnly = true;
+            this.IDGV.Visible = false;
+            // 
+            // NameGV
+            // 
+            this.NameGV.HeaderText = "Name";
+            this.NameGV.MinimumWidth = 6;
+            this.NameGV.Name = "NameGV";
+            this.NameGV.ReadOnly = true;
+            // 
+            // UserNameGV
+            // 
+            this.UserNameGV.HeaderText = "UserName";
+            this.UserNameGV.MinimumWidth = 6;
+            this.UserNameGV.Name = "UserNameGV";
+            this.UserNameGV.ReadOnly = true;
+            // 
+            // PasswordGV
+            // 
+            this.PasswordGV.HeaderText = "Password";
+            this.PasswordGV.MinimumWidth = 6;
+            this.PasswordGV.Name = "PasswordGV";
+            this.PasswordGV.ReadOnly = true;
+            this.PasswordGV.Visible = false;
+            // 
+            // PhoneGV
+            // 
+            this.PhoneGV.HeaderText = "Phone";
+            this.PhoneGV.MinimumWidth = 6;
+            this.PhoneGV.Name = "PhoneGV";
+            this.PhoneGV.ReadOnly = true;
+            // 
+            // ProvinceGV
+            // 
+            this.ProvinceGV.HeaderText = "Province";
+            this.ProvinceGV.MinimumWidth = 6;
+            this.ProvinceGV.Name = "ProvinceGV";
+            this.ProvinceGV.ReadOnly = true;
+            // 
+            // ProvinceIDGV
+            // 
+            this.ProvinceIDGV.HeaderText = "ProvinceID";
+            this.ProvinceIDGV.MinimumWidth = 6;
+            this.ProvinceIDGV.Name = "ProvinceIDGV";
+            this.ProvinceIDGV.ReadOnly = true;
+            this.ProvinceIDGV.Visible = false;
+            // 
+            // DistrictGV
+            // 
+            this.DistrictGV.HeaderText = "District";
+            this.DistrictGV.MinimumWidth = 6;
+            this.DistrictGV.Name = "DistrictGV";
+            this.DistrictGV.ReadOnly = true;
+            // 
+            // DistrictIDGV
+            // 
+            this.DistrictIDGV.HeaderText = "DistrictID";
+            this.DistrictIDGV.MinimumWidth = 6;
+            this.DistrictIDGV.Name = "DistrictIDGV";
+            this.DistrictIDGV.ReadOnly = true;
+            this.DistrictIDGV.Visible = false;
+            // 
+            // WardGV
+            // 
+            this.WardGV.HeaderText = "Ward";
+            this.WardGV.MinimumWidth = 6;
+            this.WardGV.Name = "WardGV";
+            this.WardGV.ReadOnly = true;
+            // 
+            // WardIDGV
+            // 
+            this.WardIDGV.HeaderText = "WardID";
+            this.WardIDGV.MinimumWidth = 6;
+            this.WardIDGV.Name = "WardIDGV";
+            this.WardIDGV.ReadOnly = true;
+            this.WardIDGV.Visible = false;
+            // 
+            // AddressGV
+            // 
+            this.AddressGV.HeaderText = "Address";
+            this.AddressGV.MinimumWidth = 6;
+            this.AddressGV.Name = "AddressGV";
+            this.AddressGV.ReadOnly = true;
+            // 
+            // RoleIDGV
+            // 
+            this.RoleIDGV.HeaderText = "RoleID";
+            this.RoleIDGV.MinimumWidth = 6;
+            this.RoleIDGV.Name = "RoleIDGV";
+            this.RoleIDGV.ReadOnly = true;
+            this.RoleIDGV.Visible = false;
+            // 
+            // RoleGV
+            // 
+            this.RoleGV.HeaderText = "Role";
+            this.RoleGV.MinimumWidth = 6;
+            this.RoleGV.Name = "RoleGV";
+            this.RoleGV.ReadOnly = true;
+            // 
             // UserWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -436,15 +493,6 @@
         private TextBox txt_Address;
         private Label label8;
         private DataGridView dataGridView2;
-        private DataGridViewTextBoxColumn snoGV;
-        private DataGridViewTextBoxColumn IDGV;
-        private DataGridViewTextBoxColumn NameGV;
-        private DataGridViewTextBoxColumn UserNameGV;
-        private DataGridViewTextBoxColumn PasswordGV;
-        private DataGridViewTextBoxColumn PhoneGV;
-        private DataGridViewTextBoxColumn AddressGV;
-        private DataGridViewTextBoxColumn RoleIDGV;
-        private DataGridViewTextBoxColumn RoleGV;
         private Label label2;
         private ComboBox cboWard;
         private Label label9;
@@ -452,5 +500,20 @@
         private Label label10;
         private ComboBox cboCity;
         private Label label11;
+        private DataGridViewTextBoxColumn snoGV;
+        private DataGridViewTextBoxColumn IDGV;
+        private DataGridViewTextBoxColumn NameGV;
+        private DataGridViewTextBoxColumn UserNameGV;
+        private DataGridViewTextBoxColumn PasswordGV;
+        private DataGridViewTextBoxColumn PhoneGV;
+        private DataGridViewTextBoxColumn ProvinceGV;
+        private DataGridViewTextBoxColumn ProvinceIDGV;
+        private DataGridViewTextBoxColumn DistrictGV;
+        private DataGridViewTextBoxColumn DistrictIDGV;
+        private DataGridViewTextBoxColumn WardGV;
+        private DataGridViewTextBoxColumn WardIDGV;
+        private DataGridViewTextBoxColumn AddressGV;
+        private DataGridViewTextBoxColumn RoleIDGV;
+        private DataGridViewTextBoxColumn RoleGV;
     }
 }

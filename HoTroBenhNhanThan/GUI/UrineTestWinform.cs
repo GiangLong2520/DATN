@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibCRUD;
  using LibMainClass;
+using HoTroBenhNhanThan.Source;
+
 namespace HoTroBenhNhanThan.GUI
 {
     public partial class UrineTestWinform : Sample01
@@ -68,9 +70,15 @@ namespace HoTroBenhNhanThan.GUI
             }
             ht.Add("@appID", AppID);
             LibCRUD.LibCRUD.loadData("st_GetUrineTestPatientAppointmentReg", dataGridView1, loadData, ht);
-
-            txt_phone.Text = dataGridView1.Rows[0].Cells[PhoneGV.Name].Value.ToString();
-            txtage.Text = dataGridView1.Rows[0].Cells[ageGV.Name].Value.ToString();
+            if (dataGridView1.RowCount > 0)
+            {
+                txt_phone.Text = dataGridView1.Rows[0].Cells[PhoneGV.Name].Value.ToString();
+                txtage.Text = dataGridView1.Rows[0].Cells[ageGV.Name].Value.ToString();
+            }
+            else{
+                txt_phone.Text = "";
+                txtage.Text = "";
+            }
         }
 
         public override void btn_Save_Click(object sender, EventArgs e)          //save btn
@@ -105,6 +113,8 @@ namespace HoTroBenhNhanThan.GUI
                     int ret = LibCRUD.LibCRUD.data_insert_update_delete("[st_InsertUrineTestPatientAppointmentReg]", ht);
                     if (ret > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_InsertUrineTestPatientAppointmentReg", ht);
                         LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " added successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadUrineTest();
@@ -129,6 +139,8 @@ namespace HoTroBenhNhanThan.GUI
                     int ret = LibCRUD.LibCRUD.data_insert_update_delete("[st_UpdateUrineTestPatientAppointmentReg]", ht);
                     if (ret > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_UpdateUrineTestPatientAppointmentReg", ht);
                         LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " Update successfully..", "success");
                         LibMainClass  .LibMainClass.resetEnable(left_panel);
                         LoadUrineTest();
@@ -149,6 +161,8 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add("@ID", urineID);
                     if (LibCRUD.LibCRUD.data_insert_update_delete("st_DeleteUrineTestPatientAppointmentReg", ht) > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_DeleteUrineTestPatientAppointmentReg", ht);
                         LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " deleted successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadUrineTest();

@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
+﻿using HoTroBenhNhanThan.Source;
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -135,6 +136,8 @@ namespace HoTroBenhNhanThan
                     int ret = LibCRUD.LibCRUD.data_insert_update_delete("st_insertUsers", ht);
                     if (ret > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_insertUsers", ht);
                         LibMainClass.LibMainClass.showMessage(txt_name.Text + " added successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(LEFTPANEL);
                         LoadUsers();
@@ -153,6 +156,8 @@ namespace HoTroBenhNhanThan
 
                     if (LibCRUD.LibCRUD.data_insert_update_delete("st_updateUsers", ht) > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_updateUsers", ht);
                         LibMainClass.LibMainClass.showMessage(txt_name.Text + " added successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(LEFTPANEL);
                         LoadUsers();
@@ -173,6 +178,8 @@ namespace HoTroBenhNhanThan
                     ht.Add(@"id", UserID);
                     if (LibCRUD.LibCRUD.data_insert_update_delete("st_deleteUser", ht) > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_deleteUser", ht);
                         LibMainClass.LibMainClass.showMessage(txt_usename.Text + " deleted successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(LEFTPANEL);
                         LoadUsers();

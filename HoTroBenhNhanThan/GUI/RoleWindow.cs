@@ -1,4 +1,5 @@
 ﻿
+using HoTroBenhNhanThan.Source;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections;
@@ -53,6 +54,8 @@ namespace HoTroBenhNhanThan
                     int ret = LibCRUD.LibCRUD.data_insert_update_delete("st_insertRoles", ht);
                     if (ret > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_insertRoles", ht);
                         LibMainClass.LibMainClass.showMessage(txt_role.Text + " added successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(LEFTPANEL);
                         LoadRoles();
@@ -65,6 +68,8 @@ namespace HoTroBenhNhanThan
                     ht.Add("@newName", txt_role.Text);
                     if (LibCRUD.LibCRUD.data_insert_update_delete("st_updateRole",ht) > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_updateRole", ht);
                         LibMainClass.LibMainClass.showMessage(txt_role.Text + " added successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(LEFTPANEL);
                         LoadRoles();
@@ -85,6 +90,8 @@ namespace HoTroBenhNhanThan
                     ht.Add("@roleId", roleID);
                     if (LibCRUD.LibCRUD.data_insert_update_delete("st_deleteRole", ht) > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_deleteRole", ht);
                         LibMainClass.LibMainClass.showMessage(txt_role.Text + " deleted successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadRoles();

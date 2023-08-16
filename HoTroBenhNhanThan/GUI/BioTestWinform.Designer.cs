@@ -72,19 +72,19 @@
             this.label25 = new System.Windows.Forms.Label();
             this.Urea = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.label41 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.txt_glu = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.label42 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.txt_creati = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel6 = new System.Windows.Forms.TableLayoutPanel();
-            this.label43 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
             this.txt_acidUric = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
-            this.label44 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
             this.txt_biliTP = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.label45 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.txt_biliTT = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.label46 = new System.Windows.Forms.Label();
@@ -96,13 +96,13 @@
             this.label48 = new System.Windows.Forms.Label();
             this.txt_GGT = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel12 = new System.Windows.Forms.TableLayoutPanel();
-            this.label49 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.txt_cholesHDL = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel13 = new System.Windows.Forms.TableLayoutPanel();
-            this.label50 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.txt_cholesLDL = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel14 = new System.Windows.Forms.TableLayoutPanel();
-            this.label51 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.txt_trigly = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -492,8 +492,8 @@
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.55696F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.44304F));
             this.tableLayoutPanel3.Controls.Add(this.label40, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.txt_ure, 0, 0);
             this.tableLayoutPanel3.Location = new System.Drawing.Point(2, 34);
@@ -508,12 +508,13 @@
             // label40
             // 
             this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(113, 0);
+            this.label40.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label40.Location = new System.Drawing.Point(102, 0);
             this.label40.Margin = new System.Windows.Forms.Padding(0);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(41, 25);
+            this.label40.Size = new System.Drawing.Size(50, 15);
             this.label40.TabIndex = 33;
-            this.label40.Text = "mol/L";
+            this.label40.Text = "mmol/L";
             this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_ure
@@ -521,7 +522,7 @@
             this.txt_ure.Location = new System.Drawing.Point(0, 0);
             this.txt_ure.Margin = new System.Windows.Forms.Padding(0);
             this.txt_ure.Name = "txt_ure";
-            this.txt_ure.Size = new System.Drawing.Size(113, 27);
+            this.txt_ure.Size = new System.Drawing.Size(100, 27);
             this.txt_ure.TabIndex = 34;
             // 
             // label37
@@ -647,9 +648,9 @@
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
-            this.tableLayoutPanel4.Controls.Add(this.label41, 1, 0);
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.89308F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.10692F));
+            this.tableLayoutPanel4.Controls.Add(this.label6, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.txt_glu, 0, 0);
             this.tableLayoutPanel4.Location = new System.Drawing.Point(162, 34);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
@@ -660,30 +661,32 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(159, 25);
             this.tableLayoutPanel4.TabIndex = 35;
             // 
-            // label41
+            // label6
             // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(124, 3);
-            this.label41.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(29, 19);
-            this.label41.TabIndex = 33;
-            this.label41.Text = "cm";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.Location = new System.Drawing.Point(100, 0);
+            this.label6.Margin = new System.Windows.Forms.Padding(0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 15);
+            this.label6.TabIndex = 35;
+            this.label6.Text = "mmol/L";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_glu
             // 
             this.txt_glu.Location = new System.Drawing.Point(0, 0);
             this.txt_glu.Margin = new System.Windows.Forms.Padding(0);
             this.txt_glu.Name = "txt_glu";
-            this.txt_glu.Size = new System.Drawing.Size(114, 27);
+            this.txt_glu.Size = new System.Drawing.Size(100, 27);
             this.txt_glu.TabIndex = 34;
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
-            this.tableLayoutPanel5.Controls.Add(this.label42, 1, 0);
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.125F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.875F));
+            this.tableLayoutPanel5.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.txt_creati, 0, 0);
             this.tableLayoutPanel5.Location = new System.Drawing.Point(323, 34);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
@@ -694,30 +697,32 @@
             this.tableLayoutPanel5.Size = new System.Drawing.Size(160, 25);
             this.tableLayoutPanel5.TabIndex = 36;
             // 
-            // label42
+            // label8
             // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(125, 3);
-            this.label42.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(29, 19);
-            this.label42.TabIndex = 33;
-            this.label42.Text = "cm";
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.Location = new System.Drawing.Point(101, 0);
+            this.label8.Margin = new System.Windows.Forms.Padding(0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(50, 15);
+            this.label8.TabIndex = 35;
+            this.label8.Text = "mmol/L";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_creati
             // 
             this.txt_creati.Location = new System.Drawing.Point(0, 0);
             this.txt_creati.Margin = new System.Windows.Forms.Padding(0);
             this.txt_creati.Name = "txt_creati";
-            this.txt_creati.Size = new System.Drawing.Size(115, 27);
+            this.txt_creati.Size = new System.Drawing.Size(100, 27);
             this.txt_creati.TabIndex = 34;
             // 
             // tableLayoutPanel6
             // 
             this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
-            this.tableLayoutPanel6.Controls.Add(this.label43, 1, 0);
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.29114F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.70886F));
+            this.tableLayoutPanel6.Controls.Add(this.label41, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.txt_acidUric, 0, 0);
             this.tableLayoutPanel6.Location = new System.Drawing.Point(2, 98);
             this.tableLayoutPanel6.Margin = new System.Windows.Forms.Padding(0);
@@ -728,30 +733,32 @@
             this.tableLayoutPanel6.Size = new System.Drawing.Size(158, 25);
             this.tableLayoutPanel6.TabIndex = 37;
             // 
-            // label43
+            // label41
             // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(123, 3);
-            this.label43.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(29, 19);
-            this.label43.TabIndex = 33;
-            this.label43.Text = "cm";
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label41.Location = new System.Drawing.Point(100, 0);
+            this.label41.Margin = new System.Windows.Forms.Padding(0);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(46, 15);
+            this.label41.TabIndex = 36;
+            this.label41.Text = "umol/L";
+            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_acidUric
             // 
             this.txt_acidUric.Location = new System.Drawing.Point(0, 0);
             this.txt_acidUric.Margin = new System.Windows.Forms.Padding(0);
             this.txt_acidUric.Name = "txt_acidUric";
-            this.txt_acidUric.Size = new System.Drawing.Size(113, 27);
+            this.txt_acidUric.Size = new System.Drawing.Size(100, 27);
             this.txt_acidUric.TabIndex = 34;
             // 
             // tableLayoutPanel7
             // 
             this.tableLayoutPanel7.ColumnCount = 2;
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
-            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
-            this.tableLayoutPanel7.Controls.Add(this.label44, 1, 0);
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 64.15094F));
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35.84906F));
+            this.tableLayoutPanel7.Controls.Add(this.label38, 0, 0);
             this.tableLayoutPanel7.Controls.Add(this.txt_biliTP, 0, 0);
             this.tableLayoutPanel7.Location = new System.Drawing.Point(162, 98);
             this.tableLayoutPanel7.Margin = new System.Windows.Forms.Padding(0);
@@ -762,30 +769,32 @@
             this.tableLayoutPanel7.Size = new System.Drawing.Size(159, 25);
             this.tableLayoutPanel7.TabIndex = 38;
             // 
-            // label44
+            // label38
             // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(124, 3);
-            this.label44.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(29, 19);
-            this.label44.TabIndex = 33;
-            this.label44.Text = "cm";
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label38.Location = new System.Drawing.Point(101, 0);
+            this.label38.Margin = new System.Windows.Forms.Padding(0);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(46, 15);
+            this.label38.TabIndex = 36;
+            this.label38.Text = "umol/L";
+            this.label38.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_biliTP
             // 
             this.txt_biliTP.Location = new System.Drawing.Point(0, 0);
             this.txt_biliTP.Margin = new System.Windows.Forms.Padding(0);
             this.txt_biliTP.Name = "txt_biliTP";
-            this.txt_biliTP.Size = new System.Drawing.Size(114, 27);
+            this.txt_biliTP.Size = new System.Drawing.Size(100, 27);
             this.txt_biliTP.TabIndex = 34;
             // 
             // tableLayoutPanel8
             // 
             this.tableLayoutPanel8.ColumnCount = 2;
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
-            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
-            this.tableLayoutPanel8.Controls.Add(this.label45, 1, 0);
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.5F));
+            this.tableLayoutPanel8.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
+            this.tableLayoutPanel8.Controls.Add(this.label34, 0, 0);
             this.tableLayoutPanel8.Controls.Add(this.txt_biliTT, 0, 0);
             this.tableLayoutPanel8.Location = new System.Drawing.Point(323, 98);
             this.tableLayoutPanel8.Margin = new System.Windows.Forms.Padding(0);
@@ -796,29 +805,31 @@
             this.tableLayoutPanel8.Size = new System.Drawing.Size(160, 25);
             this.tableLayoutPanel8.TabIndex = 39;
             // 
-            // label45
+            // label34
             // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(125, 3);
-            this.label45.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(29, 19);
-            this.label45.TabIndex = 33;
-            this.label45.Text = "cm";
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label34.Location = new System.Drawing.Point(100, 0);
+            this.label34.Margin = new System.Windows.Forms.Padding(0);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(46, 15);
+            this.label34.TabIndex = 35;
+            this.label34.Text = "umol/L";
+            this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_biliTT
             // 
             this.txt_biliTT.Location = new System.Drawing.Point(0, 0);
             this.txt_biliTT.Margin = new System.Windows.Forms.Padding(0);
             this.txt_biliTT.Name = "txt_biliTT";
-            this.txt_biliTT.Size = new System.Drawing.Size(115, 27);
+            this.txt_biliTT.Size = new System.Drawing.Size(100, 27);
             this.txt_biliTT.TabIndex = 34;
             // 
             // tableLayoutPanel9
             // 
             this.tableLayoutPanel9.ColumnCount = 2;
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
-            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.29114F));
+            this.tableLayoutPanel9.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.70886F));
             this.tableLayoutPanel9.Controls.Add(this.label46, 1, 0);
             this.tableLayoutPanel9.Controls.Add(this.txt_AST, 0, 0);
             this.tableLayoutPanel9.Location = new System.Drawing.Point(2, 162);
@@ -833,26 +844,26 @@
             // label46
             // 
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(123, 3);
+            this.label46.Location = new System.Drawing.Point(110, 3);
             this.label46.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(29, 19);
+            this.label46.Size = new System.Drawing.Size(24, 19);
             this.label46.TabIndex = 33;
-            this.label46.Text = "cm";
+            this.label46.Text = "°C";
             // 
             // txt_AST
             // 
             this.txt_AST.Location = new System.Drawing.Point(0, 0);
             this.txt_AST.Margin = new System.Windows.Forms.Padding(0);
             this.txt_AST.Name = "txt_AST";
-            this.txt_AST.Size = new System.Drawing.Size(113, 27);
+            this.txt_AST.Size = new System.Drawing.Size(100, 27);
             this.txt_AST.TabIndex = 34;
             // 
             // tableLayoutPanel10
             // 
             this.tableLayoutPanel10.ColumnCount = 2;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.89308F));
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.10692F));
             this.tableLayoutPanel10.Controls.Add(this.label47, 1, 0);
             this.tableLayoutPanel10.Controls.Add(this.txt_ALT, 0, 0);
             this.tableLayoutPanel10.Location = new System.Drawing.Point(162, 162);
@@ -867,26 +878,26 @@
             // label47
             // 
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(124, 3);
+            this.label47.Location = new System.Drawing.Point(110, 3);
             this.label47.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(29, 19);
+            this.label47.Size = new System.Drawing.Size(24, 19);
             this.label47.TabIndex = 33;
-            this.label47.Text = "cm";
+            this.label47.Text = "°C";
             // 
             // txt_ALT
             // 
             this.txt_ALT.Location = new System.Drawing.Point(0, 0);
             this.txt_ALT.Margin = new System.Windows.Forms.Padding(0);
             this.txt_ALT.Name = "txt_ALT";
-            this.txt_ALT.Size = new System.Drawing.Size(114, 27);
+            this.txt_ALT.Size = new System.Drawing.Size(100, 27);
             this.txt_ALT.TabIndex = 34;
             // 
             // tableLayoutPanel11
             // 
             this.tableLayoutPanel11.ColumnCount = 2;
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
-            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.125F));
+            this.tableLayoutPanel11.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.875F));
             this.tableLayoutPanel11.Controls.Add(this.label48, 1, 0);
             this.tableLayoutPanel11.Controls.Add(this.txt_GGT, 0, 0);
             this.tableLayoutPanel11.Location = new System.Drawing.Point(323, 162);
@@ -901,27 +912,27 @@
             // label48
             // 
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(125, 3);
+            this.label48.Location = new System.Drawing.Point(111, 3);
             this.label48.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(29, 19);
+            this.label48.Size = new System.Drawing.Size(24, 19);
             this.label48.TabIndex = 33;
-            this.label48.Text = "cm";
+            this.label48.Text = "°C";
             // 
             // txt_GGT
             // 
             this.txt_GGT.Location = new System.Drawing.Point(0, 0);
             this.txt_GGT.Margin = new System.Windows.Forms.Padding(0);
             this.txt_GGT.Name = "txt_GGT";
-            this.txt_GGT.Size = new System.Drawing.Size(115, 27);
+            this.txt_GGT.Size = new System.Drawing.Size(100, 27);
             this.txt_GGT.TabIndex = 34;
             // 
             // tableLayoutPanel12
             // 
             this.tableLayoutPanel12.ColumnCount = 2;
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
-            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
-            this.tableLayoutPanel12.Controls.Add(this.label49, 1, 0);
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.92405F));
+            this.tableLayoutPanel12.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.07595F));
+            this.tableLayoutPanel12.Controls.Add(this.label9, 0, 0);
             this.tableLayoutPanel12.Controls.Add(this.txt_cholesHDL, 0, 0);
             this.tableLayoutPanel12.Location = new System.Drawing.Point(2, 226);
             this.tableLayoutPanel12.Margin = new System.Windows.Forms.Padding(0);
@@ -932,30 +943,32 @@
             this.tableLayoutPanel12.Size = new System.Drawing.Size(158, 25);
             this.tableLayoutPanel12.TabIndex = 43;
             // 
-            // label49
+            // label9
             // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(123, 3);
-            this.label49.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(29, 19);
-            this.label49.TabIndex = 33;
-            this.label49.Text = "cm";
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.Location = new System.Drawing.Point(101, 0);
+            this.label9.Margin = new System.Windows.Forms.Padding(0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(50, 15);
+            this.label9.TabIndex = 35;
+            this.label9.Text = "mmol/L";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_cholesHDL
             // 
             this.txt_cholesHDL.Location = new System.Drawing.Point(0, 0);
             this.txt_cholesHDL.Margin = new System.Windows.Forms.Padding(0);
             this.txt_cholesHDL.Name = "txt_cholesHDL";
-            this.txt_cholesHDL.Size = new System.Drawing.Size(113, 27);
+            this.txt_cholesHDL.Size = new System.Drawing.Size(100, 27);
             this.txt_cholesHDL.TabIndex = 34;
             // 
             // tableLayoutPanel13
             // 
             this.tableLayoutPanel13.ColumnCount = 2;
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
-            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
-            this.tableLayoutPanel13.Controls.Add(this.label50, 1, 0);
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.89308F));
+            this.tableLayoutPanel13.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.10692F));
+            this.tableLayoutPanel13.Controls.Add(this.label10, 0, 0);
             this.tableLayoutPanel13.Controls.Add(this.txt_cholesLDL, 0, 0);
             this.tableLayoutPanel13.Location = new System.Drawing.Point(162, 226);
             this.tableLayoutPanel13.Margin = new System.Windows.Forms.Padding(0);
@@ -966,30 +979,32 @@
             this.tableLayoutPanel13.Size = new System.Drawing.Size(159, 25);
             this.tableLayoutPanel13.TabIndex = 44;
             // 
-            // label50
+            // label10
             // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(124, 3);
-            this.label50.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(29, 19);
-            this.label50.TabIndex = 33;
-            this.label50.Text = "cm";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label10.Location = new System.Drawing.Point(100, 0);
+            this.label10.Margin = new System.Windows.Forms.Padding(0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(50, 15);
+            this.label10.TabIndex = 35;
+            this.label10.Text = "mmol/L";
+            this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_cholesLDL
             // 
             this.txt_cholesLDL.Location = new System.Drawing.Point(0, 0);
             this.txt_cholesLDL.Margin = new System.Windows.Forms.Padding(0);
             this.txt_cholesLDL.Name = "txt_cholesLDL";
-            this.txt_cholesLDL.Size = new System.Drawing.Size(114, 27);
+            this.txt_cholesLDL.Size = new System.Drawing.Size(100, 27);
             this.txt_cholesLDL.TabIndex = 34;
             // 
             // tableLayoutPanel14
             // 
             this.tableLayoutPanel14.ColumnCount = 2;
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
-            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
-            this.tableLayoutPanel14.Controls.Add(this.label51, 1, 0);
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.69427F));
+            this.tableLayoutPanel14.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.30573F));
+            this.tableLayoutPanel14.Controls.Add(this.label30, 0, 0);
             this.tableLayoutPanel14.Controls.Add(this.txt_trigly, 0, 0);
             this.tableLayoutPanel14.Location = new System.Drawing.Point(326, 226);
             this.tableLayoutPanel14.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
@@ -1000,22 +1015,24 @@
             this.tableLayoutPanel14.Size = new System.Drawing.Size(157, 25);
             this.tableLayoutPanel14.TabIndex = 45;
             // 
-            // label51
+            // label30
             // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(122, 3);
-            this.label51.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(29, 19);
-            this.label51.TabIndex = 33;
-            this.label51.Text = "cm";
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label30.Location = new System.Drawing.Point(100, 0);
+            this.label30.Margin = new System.Windows.Forms.Padding(0);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(50, 15);
+            this.label30.TabIndex = 35;
+            this.label30.Text = "mmol/L";
+            this.label30.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_trigly
             // 
             this.txt_trigly.Location = new System.Drawing.Point(0, 0);
             this.txt_trigly.Margin = new System.Windows.Forms.Padding(0);
             this.txt_trigly.Name = "txt_trigly";
-            this.txt_trigly.Size = new System.Drawing.Size(112, 27);
+            this.txt_trigly.Size = new System.Drawing.Size(100, 27);
             this.txt_trigly.TabIndex = 34;
             // 
             // tableLayoutPanel2
@@ -1350,37 +1367,27 @@
         private Label label55;
         private TableLayoutPanel tableLayoutPanel2;
         private TableLayoutPanel tableLayoutPanel14;
-        private Label label51;
         private TextBox txt_trigly;
         private TableLayoutPanel tableLayoutPanel13;
-        private Label label50;
         private TextBox txt_cholesLDL;
         private TableLayoutPanel tableLayoutPanel12;
-        private Label label49;
         private TextBox txt_cholesHDL;
         private TableLayoutPanel tableLayoutPanel11;
-        private Label label48;
         private TextBox txt_GGT;
         private TableLayoutPanel tableLayoutPanel10;
-        private Label label47;
         private TextBox txt_ALT;
         private TableLayoutPanel tableLayoutPanel9;
         private Label label46;
         private TextBox txt_AST;
         private TableLayoutPanel tableLayoutPanel8;
-        private Label label45;
         private TextBox txt_biliTT;
         private TableLayoutPanel tableLayoutPanel7;
-        private Label label44;
         private TextBox txt_biliTP;
         private TableLayoutPanel tableLayoutPanel6;
-        private Label label43;
         private TextBox txt_acidUric;
         private TableLayoutPanel tableLayoutPanel5;
-        private Label label42;
         private TextBox txt_creati;
         private TableLayoutPanel tableLayoutPanel4;
-        private Label label41;
         private TextBox txt_glu;
         private Label Urea;
         private Label label25;
@@ -1419,5 +1426,15 @@
         private DataGridViewTextBoxColumn CholesLDLGV;
         private DataGridViewTextBoxColumn TriglyceridGV;
         private Label t;
+        private Label label30;
+        private Label label10;
+        private Label label9;
+        private Label label48;
+        private Label label47;
+        private Label label34;
+        private Label label38;
+        private Label label41;
+        private Label label8;
+        private Label label6;
     }
 }

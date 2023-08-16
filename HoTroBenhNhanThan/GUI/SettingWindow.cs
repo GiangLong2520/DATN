@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using HoTroBenhNhanThan.API;
+using HoTroBenhNhanThan.Source;
 
 namespace HoTroBenhNhanThan
 {
@@ -70,6 +71,12 @@ namespace HoTroBenhNhanThan
         private void SettingWindow_Load(object sender, EventArgs e)
         {
             Initdata();
+           if (Data.WorkingDataInstance.UseLog == 1) {
+                  checkBox1.Checked= true;
+            }else
+            {
+                  checkBox1.Checked= false;
+            }
         }
         void Initdata()
         {
@@ -89,6 +96,18 @@ namespace HoTroBenhNhanThan
                     txt_userid.Text = builder.UserID;
                     txt_pass.Text = builder.Password;
                 }
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked == true)
+            {
+                Data.WorkingDataInstance.UseLog = 1;
+            }
+            else
+            {
+                Data.WorkingDataInstance.UseLog = 0;
             }
         }
     }

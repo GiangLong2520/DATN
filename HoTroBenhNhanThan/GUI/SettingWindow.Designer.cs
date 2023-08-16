@@ -39,6 +39,7 @@
             this.txt_source = new System.Windows.Forms.TextBox();
             this.isCB = new System.Windows.Forms.CheckBox();
             this.btn_Save = new System.Windows.Forms.Button();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.LEFTPANEL.SuspendLayout();
             this.left_panel_common.SuspendLayout();
             this.BtnBackPanel.SuspendLayout();
@@ -48,6 +49,7 @@
             // 
             // left_panel_common
             // 
+            this.left_panel_common.Controls.Add(this.checkBox1);
             this.left_panel_common.Controls.Add(this.btn_Save);
             this.left_panel_common.Controls.Add(this.isCB);
             this.left_panel_common.Controls.Add(this.txt_source);
@@ -160,6 +162,19 @@
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click_1);
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.checkBox1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.checkBox1.Location = new System.Drawing.Point(0, 665);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(323, 24);
+            this.checkBox1.TabIndex = 4;
+            this.checkBox1.Text = "Use Log System";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
             // SettingWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -190,5 +205,6 @@
         private Label label3;
         private TextBox txt_pass;
         private Label label2;
+        private CheckBox checkBox1;
     }
 }

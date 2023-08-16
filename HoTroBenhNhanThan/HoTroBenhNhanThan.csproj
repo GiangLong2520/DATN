@@ -24,21 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="LibCRUD">
-      <HintPath>..\LibCRUD\bin\Debug\net6.0-windows\LibCRUD.dll</HintPath>
-    </Reference>
-    <Reference Include="LibMainClass">
-      <HintPath>..\LibCRUD\bin\Debug\net6.0-windows\LibMainClass.dll</HintPath>
-    </Reference>
-    <Reference Include="MainClass">
-      <HintPath>..\MainClass\bin\Debug\MainClass.dll</HintPath>
-    </Reference>
-    <Reference Include="Setting">
-      <HintPath>..\Setting\bin\Debug\Setting.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="DataSet1.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -65,6 +50,15 @@
 
   <ItemGroup>
     <Folder Include="Model\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="LibCRUD">
+      <HintPath>..\LibCRUD\bin\Debug\net6.0-windows\LibCRUD.dll</HintPath>
+    </Reference>
+    <Reference Include="LibMainClass">
+      <HintPath>..\LibCRUD\bin\Debug\net6.0-windows\LibMainClass.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

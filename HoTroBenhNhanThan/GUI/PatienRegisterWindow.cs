@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using HoTroBenhNhanThan.Source;
+using Microsoft.Data.SqlClient;
 using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections;
@@ -141,7 +142,8 @@ namespace HoTroBenhNhanThan.GUI
                                 htt.Add("@year", picker_LastApointmentDate.Value.Year);
                                 if (LibCRUD.LibCRUD.data_insert_update_delete("st_insertAppointment", htt) > 0)
                                 {
-
+                                    // Write Log
+                                    LogControler.WriteLog("st_insertAppointment", htt);
                                     LibMainClass.LibMainClass.showMessage(txt_Patient.Text + " added successfully..", "success");
                                     LibMainClass.LibMainClass.resetDisable(left_panel);
                                     LoadPatient();
@@ -162,6 +164,9 @@ namespace HoTroBenhNhanThan.GUI
                             ht.Add("@age", txt_age.Text);
                             // ht.Add("@id", partID);
                             int ret = LibCRUD.LibCRUD.data_insert_update_delete("st_insertPatientReg", ht); //  LibCRUD.LibCRUD.data_insert_update_delete("st_insertPatientReg", ht) 55;03
+                            // Write Log
+                            LogControler.WriteLog("st_insertPatientReg", ht);                                                      
+
                             if (ret > 0)
                             {
                                 Int64 patientID = Convert.ToInt64(LibCRUD.LibCRUD.getLastID("st_getlastPatientID"));
@@ -175,7 +180,8 @@ namespace HoTroBenhNhanThan.GUI
                                 htt.Add("@year", Picker_ApointmentDate.Value.Year);
                                 if (LibCRUD.LibCRUD.data_insert_update_delete("st_insertAppointment", htt) > 0)
                                 {
-
+                                    // Write Log
+                                    LogControler.WriteLog("st_insertAppointment", htt);
                                     LibMainClass.LibMainClass.showMessage(txt_Patient.Text + " added successfully..", "success");
                                     LibMainClass.LibMainClass.resetDisable(left_panel);
                                     LoadPatient();
@@ -197,6 +203,8 @@ namespace HoTroBenhNhanThan.GUI
                         ht.Add(@"id", partID);
 
                         int ret = LibCRUD.LibCRUD.data_insert_update_delete("st_updatePatientReg", ht);
+                        // Write Log
+                        LogControler.WriteLog("st_updatePatientReg", ht);
                         if (ret > 0)
                         {
                             // Int64 patientID = Convert.ToInt64(LibCRUD.LibCRUD.getLastID("st_getLastPatientID"));
@@ -209,7 +217,8 @@ namespace HoTroBenhNhanThan.GUI
                             htt.Add("@id", apointmentID);
                             if (LibCRUD.LibCRUD.data_insert_update_delete("st_updateAppointment", htt) > 0)
                             {
-
+                                // Write Log
+                                LogControler.WriteLog("st_updateAppointment", htt);
                                 LibMainClass.LibMainClass.showMessage(txt_Patient.Text + " update successfully..", "success");
                                 LibMainClass.LibMainClass.resetEnable(left_panel);
                                 LoadPatient();
@@ -236,6 +245,8 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add(@"id", apointmentID);
                     if (LibCRUD.LibCRUD.data_insert_update_delete("[st_deleteAppointment]", ht) > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_deleteAppointment", ht);
                         LibMainClass.LibMainClass.showMessage(txt_Patient.Text + " appointment deleted appointment successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadPatient();

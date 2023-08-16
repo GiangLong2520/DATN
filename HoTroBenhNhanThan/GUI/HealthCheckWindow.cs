@@ -1,4 +1,5 @@
 ﻿using HoTroBenhNhanThan.GUI.BaseScreen;
+using HoTroBenhNhanThan.Source;
 using Microsoft.Data.SqlClient;
 using System;
 using System.Collections;
@@ -102,7 +103,9 @@ namespace HoTroBenhNhanThan.GUI
                             h.Add("@disease", item);
                             if(!CheckExistance("st_checkExistDisease", h))
                             {
-                                 LibCRUD.LibCRUD.data_insert_update_delete("st_insertDisease", h);
+                                LibCRUD.LibCRUD.data_insert_update_delete("st_insertDisease", h);
+                                // Write Log
+                                LogControler.WriteLog("st_insertDisease",h);
                             }
 
                             int diseaseID = getDiseaseIDFromName(item);
@@ -116,6 +119,8 @@ namespace HoTroBenhNhanThan.GUI
                             htpatientDisease.Add("@appID", AppID);
                             htpatientDisease.Add("@diseaseID", diseaseID);
                              LibCRUD.LibCRUD.data_insert_update_delete("[st_insertPatientDisease]", htpatientDisease);
+                            // Write Log
+                            LogControler.WriteLog("st_insertPatientDisease",htpatientDisease);
                         }
 
                         // symptom data            //
@@ -126,6 +131,8 @@ namespace HoTroBenhNhanThan.GUI
                             if (!CheckExistance("st_checkExistSymptom", h))
                             {
                                  LibCRUD.LibCRUD.data_insert_update_delete("st_insertSymptom", h);
+                                // Write Log
+                                LogControler.WriteLog("st_insertSymptom", h);
                             }
 
                             int symptomID = getsymptomIDFromName(item);
@@ -139,6 +146,8 @@ namespace HoTroBenhNhanThan.GUI
                             htpatientDisease.Add("@appID", AppID);
                             htpatientDisease.Add("@symptomID", symptomID);
                              LibCRUD.LibCRUD.data_insert_update_delete("[st_insertPatientSymptom]", htpatientDisease);
+                            // Write Log
+                            LogControler.WriteLog("st_insertPatientSymptom", htpatientDisease);
                         }
 
 
@@ -153,6 +162,8 @@ namespace HoTroBenhNhanThan.GUI
                             if (!CheckExistance("st_checkExistMedicine", h))
                             {
                                  LibCRUD.LibCRUD.data_insert_update_delete("st_insertMedicineOnlyName", h);
+                                // Write Log
+                                LogControler.WriteLog("st_insertMedicineOnlyName", h);
                             }
 
                             int descriptionID = getMedicineIDFromName(arr[0]);
@@ -188,11 +199,15 @@ namespace HoTroBenhNhanThan.GUI
                             {
                                 ht.Add("@other", txt_otherInternal.Text);
                                  LibCRUD.LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
+                                // Write Log
+                                LogControler.WriteLog("st_insertPatientDescription", ht);
                             }
                             else
                             {
                                 ht.Add("@dosage", dosage);
                                  LibCRUD.LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
+                                // Write Log
+                                LogControler.WriteLog("st_insertPatientDescription", ht);
                             }
                         }
 
@@ -208,6 +223,8 @@ namespace HoTroBenhNhanThan.GUI
                             if (!CheckExistance("st_checkExistMedicine", h))
                             {
                                  LibCRUD.LibCRUD.data_insert_update_delete("st_insertMedicineOnlyName", h);
+                                // Write Log
+                                LogControler.WriteLog("st_insertMedicineOnlyName", h);
                             }
 
                             int descriptionID = getMedicineIDFromName(arr[0]);
@@ -245,10 +262,14 @@ namespace HoTroBenhNhanThan.GUI
                             {
                                 ht.Add("@other", txt_ExternalOther.Text);
                                  LibCRUD.LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
+                                // Write Log
+                                LogControler.WriteLog("st_insertMedicineOnlyName", ht);
                             }
                             else
                             {
                                 LibCRUD.LibCRUD.data_insert_update_delete("st_insertPatientDescription", ht);
+                                // Write Log
+                                LogControler.WriteLog("st_insertPatientDescription", ht);
                             }
                         }
 
@@ -260,6 +281,8 @@ namespace HoTroBenhNhanThan.GUI
                         htRemFee.Add("@rem", txt_rem.Text);
                         htRemFee.Add("@fees", txt_fees.Text);
                         LibCRUD.LibCRUD.data_insert_update_delete("st_insertpatientHealthCheckup", htRemFee);
+                        // Write Log
+                        LogControler.WriteLog("st_insertpatientHealthCheckup", htRemFee);
 
 
 
@@ -268,6 +291,8 @@ namespace HoTroBenhNhanThan.GUI
                         htAppStaus.Add("@appID", AppID);
                         htAppStaus.Add("@status", 1);
                         LibCRUD.LibCRUD.data_insert_update_delete("st_updateAppointmentStatus", htAppStaus);
+                        // Write Log
+                        LogControler.WriteLog("st_updateAppointmentStatus", htAppStaus);
 
                         LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " Health checkup successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(groupBox1);
@@ -785,9 +810,15 @@ namespace HoTroBenhNhanThan.GUI
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@appID", AppID);
                 LibMainClass.LibMainClass.con.Open();
-                if (cmd.ExecuteScalar().ToString() != null)
+                object result = cmd.ExecuteScalar();
+                if (result != null)
                 {
-                    txt_remarkHis.Text = cmd.ExecuteScalar().ToString();
+                    txt_remarkHis.Text = result.ToString();
+                }
+                else
+                {
+                    // Không có dữ liệu trả về, thực hiện xử lý tương ứng nếu cần
+                    txt_remarkHis.Text = "";
                 }
                 LibMainClass.LibMainClass.con.Close();
             }

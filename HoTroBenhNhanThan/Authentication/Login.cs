@@ -8,6 +8,8 @@ using System.Data;
 using System.Collections;
 using LibCRUD;
 using LibMainClass;
+using HoTroBenhNhanThan.Source;
+
 namespace HoTroBenhNhanThan.Authentication
 {
     internal class Login
@@ -57,11 +59,10 @@ namespace HoTroBenhNhanThan.Authentication
                     r = true;
                     while (dr.Read())
                     {
-                        USERID = Convert.ToInt32(dr[0].ToString());
-                        NAME = dr[1].ToString();
-                        ROLEID = Convert.ToInt32(dr[2].ToString());
-                        ROLE = dr[3].ToString();
-
+                        Data.WorkingDataInstance.nameID = USERID = Convert.ToInt32(dr[0].ToString());
+                        Data.WorkingDataInstance.name = NAME = dr[1].ToString();
+                        Data.WorkingDataInstance.roleID = ROLEID = Convert.ToInt32(dr[2].ToString());
+                        Data.WorkingDataInstance.role =ROLE = dr[3].ToString();
                     }
                 }
                 else

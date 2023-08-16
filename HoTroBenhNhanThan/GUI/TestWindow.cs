@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using LibMainClass;
 using LibCRUD;
+using HoTroBenhNhanThan.Source;
+
 namespace HoTroBenhNhanThan.GUI
 {
     public partial class TestWindow : Sample2
@@ -51,6 +53,8 @@ namespace HoTroBenhNhanThan.GUI
                     int ret = LibCRUD.LibCRUD.data_insert_update_delete("st_insertTest", ht);
                     if (ret > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_deleteSymptom", ht);
                         LibMainClass.LibMainClass.showMessage(txt_test.Text + " added successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(LEFTPANEL);
                         LoadDisease();

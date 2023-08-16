@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using HoTroBenhNhanThan.Source;
+using Microsoft.Data.SqlClient;
 using System.Collections;
 using System.Data;
 using System.Web.UI.DataVisualization.Charting;
@@ -52,7 +53,7 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add(@"name", txt_medi.Text);
                     if (txt_company.Text == "")
                     {
-                        ht.Add("@company", DBNull.Value);
+                        ht.Add("@comp", DBNull.Value);
                     }
                     else
                     {
@@ -64,6 +65,8 @@ namespace HoTroBenhNhanThan.GUI
                     int ret = LibCRUD.LibCRUD.data_insert_update_delete("st_insertMedicine", ht);
                     if (ret > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_insertMedicine", ht);
                         LibMainClass.LibMainClass.showMessage(txt_medi.Text + " added successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(left_panel);
                         Loadmedicine();
@@ -75,11 +78,11 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add(@"name", txt_medi.Text);
                     if (txt_company.Text == "")
                     {
-                        ht.Add("@company", DBNull.Value);
+                        ht.Add("@comp", DBNull.Value);
                     }
                     else
                     {
-                        ht.Add("@company", txt_company.Text);
+                        ht.Add("@comp", txt_company.Text);
                     }
 
                     ht.Add("@type", cb_Type.SelectedIndex);
@@ -87,6 +90,8 @@ namespace HoTroBenhNhanThan.GUI
 
                     if (LibCRUD.LibCRUD.data_insert_update_delete("st_updateMedicine", ht) > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_updateMedicine", ht);
                         LibMainClass.LibMainClass.showMessage(txt_medi.Text + " added successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(left_panel);
                         Loadmedicine();
@@ -107,6 +112,8 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add(@"id", MedID);
                     if (LibCRUD.LibCRUD.data_insert_update_delete("st_deleteMedicine", ht) > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_deleteMedicine", ht);
                         LibMainClass.LibMainClass.showMessage(txt_company.Text + " deleted successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(left_panel);
                         Loadmedicine();

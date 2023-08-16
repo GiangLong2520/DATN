@@ -47,7 +47,7 @@
             this.radioNitritDuongTinh = new System.Windows.Forms.RadioButton();
             this.radioNitritAmtinh = new System.Windows.Forms.RadioButton();
             this.tableLayoutPanel15 = new System.Windows.Forms.TableLayoutPanel();
-            this.label2 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
             this.txt_ASC = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel16 = new System.Windows.Forms.TableLayoutPanel();
             this.label4 = new System.Windows.Forms.Label();
@@ -347,9 +347,9 @@
             // tableLayoutPanel15
             // 
             this.tableLayoutPanel15.ColumnCount = 2;
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.95122F));
-            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.04878F));
-            this.tableLayoutPanel15.Controls.Add(this.label2, 1, 0);
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 68.125F));
+            this.tableLayoutPanel15.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 31.875F));
+            this.tableLayoutPanel15.Controls.Add(this.label41, 0, 0);
             this.tableLayoutPanel15.Controls.Add(this.txt_ASC, 0, 0);
             this.tableLayoutPanel15.Location = new System.Drawing.Point(322, 38);
             this.tableLayoutPanel15.Margin = new System.Windows.Forms.Padding(0);
@@ -360,22 +360,24 @@
             this.tableLayoutPanel15.Size = new System.Drawing.Size(160, 25);
             this.tableLayoutPanel15.TabIndex = 36;
             // 
-            // label2
+            // label41
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(125, 3);
-            this.label2.Margin = new System.Windows.Forms.Padding(10, 3, 3, 3);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 19);
-            this.label2.TabIndex = 33;
-            this.label2.Text = "cm";
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Segoe UI", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label41.Location = new System.Drawing.Point(109, 0);
+            this.label41.Margin = new System.Windows.Forms.Padding(0);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(50, 15);
+            this.label41.TabIndex = 37;
+            this.label41.Text = "mmol/L";
+            this.label41.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_ASC
             // 
             this.txt_ASC.Location = new System.Drawing.Point(0, 0);
             this.txt_ASC.Margin = new System.Windows.Forms.Padding(0);
             this.txt_ASC.Name = "txt_ASC";
-            this.txt_ASC.Size = new System.Drawing.Size(115, 27);
+            this.txt_ASC.Size = new System.Drawing.Size(109, 27);
             this.txt_ASC.TabIndex = 34;
             // 
             // tableLayoutPanel16
@@ -778,7 +780,6 @@
         public DateTimePicker picker_DateTime;
         private TableLayoutPanel tableLayoutPanel6;
         private TableLayoutPanel tableLayoutPanel15;
-        private Label label2;
         private TextBox txt_ASC;
         private TableLayoutPanel tableLayoutPanel16;
         private Label label4;
@@ -823,5 +824,6 @@
         private DataGridViewTextBoxColumn NitritGV;
         private DataGridViewTextBoxColumn KetoneGV;
         private DataGridViewTextBoxColumn UrobilinogenGV;
+        private Label label41;
     }
 }

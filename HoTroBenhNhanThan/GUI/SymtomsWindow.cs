@@ -13,6 +13,7 @@ using static Azure.Core.HttpHeader;
 using LibCRUD;
 using LibMainClass;
 using Microsoft.Data.SqlClient;
+using HoTroBenhNhanThan.Source;
 
 namespace HoTroBenhNhanThan.GUI
 {
@@ -64,6 +65,8 @@ namespace HoTroBenhNhanThan.GUI
                     int ret = LibCRUD.LibCRUD.data_insert_update_delete("st_insertSymptom", ht);
                     if (ret > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_insertSymptom", ht);
                         LibMainClass.LibMainClass.showMessage(txt_symptom.Text + " added successfully..", "success");
                         LibMainClass.LibMainClass.resetDisable(left_panel);
                         LoadSymptom();
@@ -71,12 +74,15 @@ namespace HoTroBenhNhanThan.GUI
                 }
                 else if (edit == 1)                        // code for update
                 {
+
                     Hashtable ht = new Hashtable();
                     ht.Add(@"symptom", txt_symptom.Text);
                     ht.Add(@"sid", symptomID);
 
                     if (LibCRUD.LibCRUD.data_insert_update_delete("st_updateSymptom", ht) > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_updateSymptom", ht);
                         LibMainClass.LibMainClass.showMessage(txt_symptom.Text + " update successfully..", "success");
                         LibMainClass.LibMainClass.resetDisable(left_panel);
                         LoadSymptom();
@@ -97,6 +103,8 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add(@"sid", symptomID);
                     if (LibCRUD.LibCRUD.data_insert_update_delete("st_deleteSymptom", ht) > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_deleteSymptom", ht);
                         LibMainClass.LibMainClass.showMessage(txt_symptom.Text + " deleted successfully..", "success");
                         LibMainClass.LibMainClass.resetDisable(left_panel);
                         LoadSymptom();

@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using HoTroBenhNhanThan.Source;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -59,6 +60,8 @@ namespace HoTroBenhNhanThan.GUI
                     int ret = LibCRUD.LibCRUD.data_insert_update_delete("st_insertDisease", ht);
                     if (ret > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_insertDisease", ht);
                         LibMainClass.LibMainClass.showMessage(txt_disease.Text + " added successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadDisease();
@@ -71,6 +74,8 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add("@did", diseaseID);
                     if (LibCRUD.LibCRUD.data_insert_update_delete("st_updateDisease", ht) > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_updateDisease", ht);
                         LibMainClass.LibMainClass.showMessage(txt_disease.Text + " update successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadDisease();
@@ -91,6 +96,8 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add(@"did", diseaseID);
                     if (LibCRUD.LibCRUD.data_insert_update_delete("st_deleteDisease", ht) > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_deleteDisease", ht);
                         LibMainClass.LibMainClass.showMessage(txt_disease.Text + " deleted successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(LEFTPANEL);
                         LoadDisease();

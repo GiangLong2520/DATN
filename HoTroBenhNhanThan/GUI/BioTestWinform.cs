@@ -1,4 +1,5 @@
 ﻿using HoTroBenhNhanThan.GUI.BaseScreen;
+using HoTroBenhNhanThan.Source;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -55,8 +56,12 @@ namespace HoTroBenhNhanThan.GUI
             ht.Add("@appID", AppID);
             LibCRUD.LibCRUD.loadData("st_GetBioTestPatientAppointmentReg", dataGridView1, loadData, ht);
 
-            txt_phone.Text = dataGridView1.Rows[0].Cells[PhoneGV.Name].Value.ToString();
-            txtage.Text = dataGridView1.Rows[0].Cells[ageGV.Name].Value.ToString();
+            if (dataGridView1.RowCount > 0)
+            {
+                txt_phone.Text = dataGridView1.Rows[0].Cells[PhoneGV.Name].Value.ToString();
+
+                txtage.Text = dataGridView1.Rows[0].Cells[ageGV.Name].Value.ToString();
+            }
         }
 
 
@@ -119,6 +124,8 @@ namespace HoTroBenhNhanThan.GUI
                     int ret = LibCRUD.LibCRUD.data_insert_update_delete("[st_InsertBioTestPatientAppointmentReg]", ht);
                     if (ret > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_InsertBioTestPatientAppointmentReg", ht);
                         LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " added successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadBioTest();
@@ -143,6 +150,8 @@ namespace HoTroBenhNhanThan.GUI
                     int ret = LibCRUD.LibCRUD.data_insert_update_delete("[st_UpdateBioTestPatientAppointmentReg]", ht);
                     if (ret > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_InsertBioTestPatientAppointmentReg", ht);
                         LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " added successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadBioTest();
@@ -163,6 +172,8 @@ namespace HoTroBenhNhanThan.GUI
                     ht.Add("@ID", bioID);
                     if (LibCRUD.LibCRUD.data_insert_update_delete("st_DeleteBioTestPatientAppointmentReg", ht) > 0)
                     {
+                        // Write Log
+                        LogControler.WriteLog("st_InsertBioTestPatientAppointmentReg", ht);
                         LibMainClass.LibMainClass.showMessage(cb_selectPatient.ValueMember.ToString() + " deleted successfully..", "success");
                         LibMainClass.LibMainClass.resetEnable(left_panel);
                         LoadBioTest();

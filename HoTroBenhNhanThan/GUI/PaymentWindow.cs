@@ -1,4 +1,5 @@
-﻿using Microsoft.Reporting.WinForms;
+﻿using HoTroBenhNhanThan.Source;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -45,8 +46,14 @@ namespace HoTroBenhNhanThan.GUI
             ht.Add("@month", picker_DateTime.Value.Month);
             ht.Add("@year", picker_DateTime.Value.Year);
             ht.Add("@status", 1);
-            LibCRUD.LibCRUD.loadData("st_GetPatientAppointmentRegConsulted", dataGridView1, loadData, ht);
-
+            if (checkBox1.Checked != true)
+            {
+                LibCRUD.LibCRUD.loadData("st_GetPatientAppointmentRegConsulted", dataGridView1, loadData, ht);
+            }
+            else
+            {
+                LibCRUD.LibCRUD.loadData("st_GetPatientAppointmentRegConsultedCompleted", dataGridView1, loadData, ht);
+            }
             dataGridView1.Columns["DiscountGV"].DataPropertyName = Convert.ToString(0);
             dataGridView1.Columns["TotalGV"].DataPropertyName = dataGridView1.Columns["FeesGV"].DataPropertyName;
         }
@@ -115,7 +122,7 @@ namespace HoTroBenhNhanThan.GUI
                 newRow["Phone"] = phone;
                 newRow["Fees"] = Fees;
                 newRow["Remark"] = Fees;
-                newRow["Symptom"] = symptom;
+                newRow["Symptom"] = remark;
 
                 newRow["DateTime"] = row.Cells["apointDateGV"].Value.ToString();
                 newRow["Year"] = DateTime.Now.Year.ToString();
@@ -138,6 +145,13 @@ namespace HoTroBenhNhanThan.GUI
 
                 reportViewer1.LocalReport.ReportPath = "C:\\Users\\longd\\source\\repos\\HoTroBenhNhanThan\\HoTroBenhNhanThan\\Report1.rdlc";
                 reportViewer1.RefreshReport();
+                // Update apointment done
+                Hashtable htAppStaus = new Hashtable();
+                htAppStaus.Add("@appID", AppID);
+                htAppStaus.Add("@status", 2);
+                LibCRUD.LibCRUD.data_insert_update_delete("st_updateAppointmentStatus", htAppStaus);
+                // Write Log
+                LogControler.WriteLog("st_updateAppointmentStatus", htAppStaus);
             }
         }
     }

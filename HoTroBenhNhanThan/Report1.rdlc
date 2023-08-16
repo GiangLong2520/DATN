@@ -13,6 +13,7 @@
                 <Style>
                   <FontSize>14pt</FontSize>
                   <FontWeight>Bold</FontWeight>
+                  <Color>Green</Color>
                 </Style>
               </TextRun>
             </TextRuns>
@@ -996,6 +997,7 @@
                   <Value>CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</Value>
                   <Style>
                     <FontSize>12pt</FontSize>
+                    <Color>Green</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1009,6 +1011,7 @@
                   <Value>Độc Lập - Tự Do - Hạnh Phúc</Value>
                   <Style>
                     <FontSize>12pt</FontSize>
+                    <Color>Green</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1043,6 +1046,7 @@
                   <Value>BỆNH VIỆN BẠCH MAI</Value>
                   <Style>
                     <FontSize>12pt</FontSize>
+                    <Color>Green</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
@@ -1056,6 +1060,7 @@
                   <Value>Bộ Y Tế</Value>
                   <Style>
                     <FontSize>12pt</FontSize>
+                    <Color>Green</Color>
                   </Style>
                 </TextRun>
               </TextRuns>
